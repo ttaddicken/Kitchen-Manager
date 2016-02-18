@@ -1,0 +1,170 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+<link rel="stylesheet" type="text/css" href="visio.css"/>
+<title>
+masterflow
+</title>
+<script type="text/javascript" language="javascript">
+function UpdateTooltip(){};
+function OnShapeClick(){};
+</script>
+
+<script src="png_1.js" type="text/javascript" language="javascript"></script>
+<script type="text/javascript" language="javascript">
+	if( (parent.isSVG) || 
+		(parent.isVML && parent.vmlSupported) || 
+		(parent.isXAML && parent.isUpLevel)) 
+	{
+		location.replace(parent.g_FileList[parent.g_CurPageIndex].PriImage);
+	}
+</script>
+
+
+<script type="text/javascript" language="javascript">
+var pageID = 19;
+var isUpLevel = parent.isUpLevel;
+var OnShapeClick = null;
+if (!parent.isMac)
+{
+	OnShapeClick = parent.OnShapeClick;
+}
+
+var OnShapeKey = parent.OnShapeKey;
+var UpdateTooltip = parent.UpdateTooltip;
+var clickMenu = parent.clickMenu;
+var toggleMenuDiv = parent.toggleMenuDiv;
+var toggleMenuLink = parent.toggleMenuLink;
+var GoToPage = parent.GoToPage;
+
+
+if (parent.isUpLevel)
+{
+
+	if (parent.g_FirstPageToLoad != null && parent.g_FirstPageToLoad.length > 0)
+	{
+		if (parent.g_FileList[parent.g_CurPageIndex].PageID != pageID)
+		{
+			var fileEntry = parent.g_FileList[parent.g_CurPageIndex];
+			var fileToLoad = fileToLoad = fileEntry.PriImage;
+			if (fileEntry.SecImage.length > 0)
+			{
+				fileToLoad = fileEntry.SecImage;
+			}
+
+			location.replace(fileToLoad);
+		}
+
+		parent.g_FirstPageToLoad = null;
+	}
+
+
+	var viewMgr = new parent.CViewMgr();
+	parent.viewMgr = viewMgr;
+
+	viewMgr.SupportsDetails = true;
+	viewMgr.SupportsSearch = true;
+
+	viewMgr.put_Location = ViewMgrSetRasterLocation;
+	viewMgr.visBBoxLeft = 0.000000;
+	viewMgr.visBBoxRight = 11.000000;
+	viewMgr.visBBoxBottom = 0.000000;
+	viewMgr.visBBoxTop = 8.500000;
+	viewMgr.highlightDiv = null;
+}
+
+function load ()
+{
+	if(isUpLevel)
+	{
+		arrowdiv.innerHTML = '<img id="arrowgif" alt="Shows the location of the selected shape" src="arrow.png"/>';
+
+		var pageIndex = parent.PageIndexFromID (pageID);
+		parent.CurPageUpdate (pageIndex);
+	}
+}
+
+function unload()
+{
+	if(isUpLevel)
+	{
+		viewMgr = null;
+		parent.viewMgr = null;
+	}
+}
+
+window.onload = load;
+window.onunload = unload;
+document.onclick = clickMenu;
+
+</script>
+<style type="text/css"> 
+body {
+	background:url(foo) fixed;
+	padding: 10px;
+}
+div.banner {
+	position: fixed;
+	_position: absolute;
+	top: 0;
+	left: 0;
+	_top: expression(eval(document.body.scrollTop));
+	_left: expression(eval(document.body.scrollLeft));
+	width: 100%;
+	_width: expression(eval(document.body.clientWidth));
+	margin: 0;
+	padding: 3px;
+	padding-left: 6px;
+	background:lime;
+	background-color: #FFFFC6;
+	font: 11px tahoma,arial,serif;
+	border-bottom: 2px ridge #FFFFC6;
+}
+</style>
+</head>
+
+<body class="pageView" bgcolor="#FFFFFF" style="margin: 0px">
+
+<script type="text/javascript" language="javascript">
+// Displays the banner prompt to install Silverlight
+if (parent.slSupported && !parent.slInstalled)
+{
+	var slBanner = document.createElement("div");
+	slBanner.className = "banner";
+	slBanner.innerHTML = 'To enable full functionality such as Pan and Zoom, <a href="http://www.microsoft.com/silverlight/resources/install.aspx" target="parent">click here</a> to install the Silverlight plug-in.';
+
+	document.body.appendChild(slBanner);
+	document.body.style.paddingTop = "2.5em";
+}
+</script>
+
+
+<div id="arrowdiv" style="position:absolute;top:0;left:0;visibility:hidden;z-index:5">
+</div>
+
+<div id="menu1" onclick="clickMenu()" class="hlMenu">
+</div>
+<DIV id="RasterDiv" style="margin:10px">
+
+<center>
+  <IMG id="ConvertedImage" SRC="png_5.png" ALT="Manage Dishes" name=RasterImage BORDER="0" USEMAP="#visImageMap">
+</center>
+
+<MAP NAME="visImageMap">
+  <AREA shape="POLYGON" tabindex="1" ALT="Home" origTitle="Home" TITLE="Home" HREF="png_1.htm" target="frmDrawing" COORDS="758,303,830,303,836,303,841,300,846,297,849,292,852,287,852,281,852,275,849,270,846,265,841,262,836,260,830,259,758,259,753,260,747,262,743,265,739,270,737,275,736,281,737,287,739,292,743,297,747,300,753,303,758,303" onmouseover="UpdateTooltip(this,19,27,event)" onfocus="UpdateTooltip(this,19,27,event)" onclick="return OnShapeClick(19,27,event);" onkeyup="OnShapeKey(19,27,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Confirm changes" origTitle="Confirm changes" TITLE="Confirm changes"  target="_top" COORDS="230,146,199,122,141,166,199,211,257,166,231,146,231,146,230,146" onmouseover="UpdateTooltip(this,19,21,event)" onfocus="UpdateTooltip(this,19,21,event)" onclick="return OnShapeClick(19,21,event);" onkeyup="OnShapeKey(19,21,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Save" origTitle="Save" TITLE="Save"  target="_top" COORDS="157,294,199,326,240,294,199,262,157,294" onmouseover="UpdateTooltip(this,19,17,event)" onfocus="UpdateTooltip(this,19,17,event)" onclick="return OnShapeClick(19,17,event);" onkeyup="OnShapeKey(19,17,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Modal opens for editing" origTitle="Modal opens for editing" TITLE="Modal opens for editing"  target="_top" COORDS="141,463,257,463,257,374,141,374,141,463" onmouseover="UpdateTooltip(this,19,16,event)" onfocus="UpdateTooltip(this,19,16,event)" onclick="return OnShapeClick(19,16,event);" onkeyup="OnShapeKey(19,16,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Removes dish from database" origTitle="Removes dish from database" TITLE="Removes dish from database"  target="_top" COORDS="497,722,613,722,613,633,497,633,497,722" onmouseover="UpdateTooltip(this,19,11,event)" onfocus="UpdateTooltip(this,19,11,event)" onclick="return OnShapeClick(19,11,event);" onkeyup="OnShapeKey(19,11,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Manage dishes" origTitle="Manage dishes" TITLE="Manage dishes"  target="_top" COORDS="826,531,794,507,736,552,794,596,852,552,826,531,826,531,826,531" onmouseover="UpdateTooltip(this,19,6,event)" onfocus="UpdateTooltip(this,19,6,event)" onclick="return OnShapeClick(19,6,event);" onkeyup="OnShapeKey(19,6,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Select dish to enter dish details page" origTitle="Select dish to enter dish details page" TITLE="Select dish to enter dish details page"  target="_top" COORDS="497,463,613,463,613,374,497,374,497,463" onmouseover="UpdateTooltip(this,19,5,event)" onfocus="UpdateTooltip(this,19,5,event)" onclick="return OnShapeClick(19,5,event);" onkeyup="OnShapeKey(19,5,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Display all dishes for selection" origTitle="Display all dishes for selection" TITLE="Display all dishes for selection"  target="_top" COORDS="497,326,613,326,613,237,497,237,497,326" onmouseover="UpdateTooltip(this,19,4,event)" onfocus="UpdateTooltip(this,19,4,event)" onclick="return OnShapeClick(19,4,event);" onkeyup="OnShapeKey(19,4,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Edit Dish" origTitle="Edit Dish" TITLE="Edit Dish"  target="_top" COORDS="300,418,359,463,417,418,359,374,300,418" onmouseover="UpdateTooltip(this,19,3,event)" onfocus="UpdateTooltip(this,19,3,event)" onclick="return OnShapeClick(19,3,event);" onkeyup="OnShapeKey(19,3,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Delete dish" origTitle="Delete dish" TITLE="Delete dish"  target="_top" COORDS="497,544,555,589,613,544,555,500,497,544" onmouseover="UpdateTooltip(this,19,2,event)" onfocus="UpdateTooltip(this,19,2,event)" onclick="return OnShapeClick(19,2,event);" onkeyup="OnShapeKey(19,2,event);">
+  <AREA shape="POLYGON" tabindex="1" ALT="Manage Dishes" origTitle="Manage Dishes" TITLE="Manage Dishes"  target="_top" COORDS="526,198,584,198,590,197,596,195,602,191,606,186,610,180,612,173,613,166,612,159,610,152,606,146,602,141,596,138,590,135,584,134,526,134,519,135,513,138,507,141,503,146,499,152,497,159,497,166,497,173,499,180,503,186,507,191,513,195,519,197,526,198" onmouseover="UpdateTooltip(this,19,1,event)" onfocus="UpdateTooltip(this,19,1,event)" onclick="return OnShapeClick(19,1,event);" onkeyup="OnShapeKey(19,1,event);">
+</MAP>
+
+
+</DIV>
+</body>
+</html>
