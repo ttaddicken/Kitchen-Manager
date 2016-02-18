@@ -1,1 +1,1 @@
-var app=angular.module('Kitchen', [])
+var app = angular.module('Kitchen', ['ui.router'])
