@@ -6,49 +6,49 @@ app.config(function($stateProvider, $urlRouterProvider){
         .state('home',{
             url:'/',
             templateUrl:'/app/views/login/login.html',
-            controller: 'loginController',
+            controller: 'LoginController',
             controllerAs: 'lc'
         })
         .state('favorites',{
             url:'/favorites',
             templateUrl:'/app/views/favorites/favorites.html',
-            controller: 'favoritesController',
+            controller: 'FavoritesController',
             controllerAs: 'fc'
         })
     	.state('grocery',{
             url:'/grocery',
             templateUrl: '/app/views/grocery/grocery.html',
-            controller: 'groceryController',
+            controller: 'GroceryController',
             controllerAs: 'gc'
         }) 
         .state('login',{
             url:'/login',
             templateUrl: '/app/views/login/login.html',
-            controller: 'loginController',
+            controller: 'LoginController',
             controllerAs: 'lc'
         }) 
         .state('profile',{
             url:'/profile',
             templateUrl: '/app/views/profile/profile.html',
-            controller: 'profileController',
+            controller: 'ProfileController',
             controllerAs: 'pc'
         }) 
         .state('registration',{
             url:'/registration',
             templateUrl: '/app/views/registration/registration.html',
-            controller: 'registrationController',
+            controller: 'RegistrationController',
             controllerAs: 'rc'
         }) 
         .state('dishCreation',{
             url:'/dish-creation',
             templateUrl: '/app/views/dishes/dishCreation.html',
-            controller: 'dishCreationController',
+            controller: 'DishCreationController',
             controllerAs: 'dc'
         }) 
         .state('manageDishes',{
             url:'/manage-dishes',
             templateUrl: '/app/views/dishes/manageDishes.html',
-            controller: 'manageDishesController',
+            controller: 'ManageDishesController',
             controllerAs: 'mc'
         }) 
 })

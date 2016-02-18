@@ -1,3 +1,3 @@
-app.controller=('dishCreationController', function() {
+app.controller=('DishCreationController', function() {
     this.test='dishCreationController'
 })

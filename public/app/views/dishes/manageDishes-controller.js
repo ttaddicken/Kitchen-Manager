@@ -1,3 +1,3 @@
-app.controller=('manageDishesController', function() {
+app.controller=('ManageDishesController', function() {
     this.test='manageDishesController'
 })
