@@ -1,3 +1,7 @@
-app.controller('LoginController', function(){
+app.controller('LoginController', function($scope){
+    
+    $scope.login = function () {
+        debugger;
+    }
     
 })

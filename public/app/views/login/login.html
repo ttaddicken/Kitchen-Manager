@@ -1,0 +1,16 @@
+<div class="col-sm-6 login">
+    <form ng-submit="login()">
+        <div>
+            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Sign In
+            </h4>
+            <input class="input" ng-model="user.name" type="text" placeholder="Enter family login Name">
+        </div>
+        <div>
+            <input class="input" ng-model="user.password" type="email" placeholder="email">
+        </div>
+        <button type="submit">Login</button>
+        <button ng-click="registration()">Register New User</button>
+    </form>
+
+</div>
