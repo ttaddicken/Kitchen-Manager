@@ -5,9 +5,9 @@ app.config(function($stateProvider, $urlRouterProvider){
     $stateProvider
         .state('home',{
             url:'/',
-            templateUrl:'/app/views/login/login.html',
-            controller: 'LoginController',
-            controllerAs: 'lc'
+            templateUrl:'/app/views/home/home.html',
+            controller: 'HomeController',
+            controllerAs: 'hc'
         })
         .state('favorites',{
             url:'/favorites',

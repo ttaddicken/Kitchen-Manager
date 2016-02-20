@@ -1,0 +1,35 @@
+<div class="col-sm-6 login">
+    <form ng-submit="login()">
+        <div>
+            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Resting at the Dish Creation page
+            </h4>
+            <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
+            <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
+        </div>
+        <div class="container">
+            <label>Prep Time: </label>
+            <input class="input" ng-model="dish.prepTime" type="time" placeholder="enter the time to Prepare HH:MM:SS"><br>
+            <label>Cook Time: </label>
+            <input class="input" ng-model="dish.cookTime" type="time" placeholder="enter the time to cook HH:MM:SS"><br>
+            <label>Ingredients: </label>
+            <input class="input" ng-model="dish.ingredients" type="text" placeholder="Enter ingredients separated by a comma"><button ng-click="addIngredient">Add Ingredient</button><br>
+            <label ui-sref="home">Instructions: </label>
+            <input class="input" ng-model="dish.instructions" type="text" placeholder="Enter/Paste instructions"><br>
+            <label ui-sref="home">Nutritional Info: </label>
+            <input class="input" ng-model="dish.nutrientFacts" type="text" placeholder="Enter/Paste Nutrient Information"><br>
+        </div>
+        <button type="submit" ng-click="addToFavorites()">Add to Favorites (incomplete)</button>
+        <button ng-click="importToFavorites()">Import Dish to favorites (incomplete)</button>
+
+
+
+        <div>
+            <div class="well">
+                <button ui-sref="createDish">Manage Dishes</button>
+                <button ui-sref="home">Go Home</button>
+            </div>
+        </div>
+    </form>
+
+</div>
