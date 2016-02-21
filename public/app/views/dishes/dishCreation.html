@@ -1,35 +1,47 @@
-<div class="col-sm-6 login">
-    <form ng-submit="login()">
-        <div>
-            <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                Resting at the Dish Creation page
-            </h4>
-            <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
-            <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
+<h4 style="margin-top: 10px; margin-bottom: 0px;">
+Resting at the Dish Creation page
+</h4>
+</body>
+<div class="max-height:490px;">
+    <div class="row">
+        <div class="col-lg-4">
+            <form ng-submit="createRecipe()" class="recipeInput">
+                <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
+                <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
+                <label>Prep Time: </label>
+                <input class="input" ng-model="dish.prepTime" type="time" placeholder="enter the time to Prepare HH:MM:SS" />
+                <br>
+                <label>Cook Time: </label>
+                <input class="input" ng-model="dish.cookTime" type="time" placeholder="enter the time to cook HH:MM:SS" />
+                <br>
+                <label>Ingredients: </label>
+                <input class="input" ng-model="dish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
+                <button ng-click="addIngredient">Add Ingredient</button>
+                <br>
+                <label ui-sref="home">Instructions: </label>
+                <input class="input" ng-model="dish.instructions" type="text" placeholder="Enter/Paste instructions" />
+                <br>
+                <label ui-sref="home">Nutritional Info: </label>
+                <input class="input" ng-model="dish.nutrientFacts" type="text" placeholder="Enter/Paste Nutrient Information" />
+                <button ng-click="addNutritionalInfo" class="btn btn-info">Add Nutritional Info.</button>
+                <BR>
+                <button type="submit" ng-click="addToFavorites()" class="btn btn-success">Add to Favorites (incomplete)</button>
+                <button type="submit" ng-click="clearRecipe()" class="btn btn-danger">Clear Recipe (incomplete)</button>
+            </form>
         </div>
-        <div class="container">
-            <label>Prep Time: </label>
-            <input class="input" ng-model="dish.prepTime" type="time" placeholder="enter the time to Prepare HH:MM:SS"><br>
-            <label>Cook Time: </label>
-            <input class="input" ng-model="dish.cookTime" type="time" placeholder="enter the time to cook HH:MM:SS"><br>
-            <label>Ingredients: </label>
-            <input class="input" ng-model="dish.ingredients" type="text" placeholder="Enter ingredients separated by a comma"><button ng-click="addIngredient">Add Ingredient</button><br>
-            <label ui-sref="home">Instructions: </label>
-            <input class="input" ng-model="dish.instructions" type="text" placeholder="Enter/Paste instructions"><br>
-            <label ui-sref="home">Nutritional Info: </label>
-            <input class="input" ng-model="dish.nutrientFacts" type="text" placeholder="Enter/Paste Nutrient Information"><br>
+        <div class="col-lg-8 recipeCard">
+            <h2>{{dish.title}}</h2>
+            {{dish.img}}
+            <br> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
+            <br>
+            <p>Ingredients: {{dish.ingredients}}</p>
+            <p>Instructions: {{dish.instructions}}</p>
+            <p> Nutritional Information: {{dish.nutrientFacts}}</p>
+            <button ng-click="importToFavorites()" class="btn btn-info">Import New Dish Into favorites (incomplete)</button>
         </div>
-        <button type="submit" ng-click="addToFavorites()">Add to Favorites (incomplete)</button>
-        <button ng-click="importToFavorites()">Import Dish to favorites (incomplete)</button>
-
-
-
-        <div>
-            <div class="well">
-                <button ui-sref="createDish">Manage Dishes</button>
-                <button ui-sref="home">Go Home</button>
-            </div>
-        </div>
-    </form>
-
+    </div>
+    <div class="row input">
+        <button ui-sref="manageDish">Manage Dishes</button>
+        <button ui-sref="home">Go Home</button>
+    </div>
 </div>

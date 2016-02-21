@@ -1,9 +1,9 @@
-/*BEGIN: DISHES CSS CONTENT*/
-
 .recipeInput{
     background-color: lightblue;
     border: 5 px solid black;
     text-align: left;
+    height: 100%;
+    width: 33.333333%;
 }
 .input{
     margin: 2px;
@@ -12,8 +12,7 @@
     background-color: papayawhip;
     border: 5 px solid black;
     text-align: left;
-    min-height: 300px;
+    width: 66.666666%;
+    height: 100%;
+    
 }
-
-
-/*END: DISHES CSS CONTENT*/
