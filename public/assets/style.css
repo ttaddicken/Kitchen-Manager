@@ -4,15 +4,19 @@
     background-color: lightblue;
     border: 5 px solid black;
     text-align: left;
+    height: 100%;
+    width: 31.333333%;
 }
 .input{
-    margin: 2px;
+    margin: 3px;
 }
 .recipeCard{
     background-color: papayawhip;
     border: 5 px solid black;
     text-align: left;
-    min-height: 300px;
+    width: 65.666666%;
+    height: 100%;
+    
 }
 
 
@@ -31,3 +35,4 @@
 .modal-body .form-horizontal .col-sm-offset-2 {
     margin-left: 15px;
 }
+/*END MODAL CSS CONTENT*/
