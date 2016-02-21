@@ -6,6 +6,9 @@ Resting at the Dish Creation page
     <div class="row">
         <div class="col-lg-4">
             <form ng-submit="createRecipe()" class="recipeInput">
+                <div>
+                <button type="submit" ng-click="clearRecipe()" class="btn btn-danger">Clear Recipe (incomplete)</button>
+                </div>
                 <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
                 <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
                 <label>Prep Time: </label>
@@ -21,17 +24,13 @@ Resting at the Dish Creation page
                 <label ui-sref="home">Instructions: </label>
                 <input class="input" ng-model="dish.instructions" type="text" placeholder="Enter/Paste instructions" />
                 <br>
-                <label ui-sref="home">Nutritional Info: </label>
-                <input class="input" ng-model="dish.nutrientFacts" type="text" placeholder="Enter/Paste Nutrient Information" />
-                <button ng-click="addNutritionalInfo" class="btn btn-info">Add Nutritional Info.</button>
-                <BR>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#nutritionModal" data-whatever="">Enter Nutrition Info</button>
                 <button type="submit" ng-click="addToFavorites()" class="btn btn-success">Add to Favorites (incomplete)</button>
-                <button type="submit" ng-click="clearRecipe()" class="btn btn-danger">Clear Recipe (incomplete)</button>
             </form>
         </div>
         <div class="col-lg-8 recipeCard">
-            <h2>{{dish.title}}</h2>
-            {{dish.img}}
+            <h2>{{dish.title}}</h2> {{dish.img}}
             <br> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
             <br>
             <p>Ingredients: {{dish.ingredients}}</p>
@@ -41,7 +40,7 @@ Resting at the Dish Creation page
         </div>
     </div>
     <div class="row input">
-        <button ui-sref="manageDish">Manage Dishes</button>
+        <button ui-sref="manageDishes">Manage Dishes</button>
         <button ui-sref="home">Go Home</button>
     </div>
 </div>

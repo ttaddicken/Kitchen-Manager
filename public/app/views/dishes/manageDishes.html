@@ -1,0 +1,22 @@
+<div class="col-sm-6 login">
+    <!--<form ng-submit="login()">-->
+        <div>
+            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Resting at the Manage Dishes page
+                
+            </h4>
+            <div ng-repeat="dish in dishes" class="panel">
+                
+                <ul>
+                    <li>{{dish.img}}<br>{{dish.title}}</li>
+                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editDishModal" data-whatever="">Edit</button>
+                </ul>
+                
+            </div>    
+            <button ui-sref="home">Go Home</button>
+            <button ui-sref="dishCreation">Create Dishes</button>
+            <button ui-sref="profile">Update Profile</button>
+        </div>
+    </form>
+
+</div>
