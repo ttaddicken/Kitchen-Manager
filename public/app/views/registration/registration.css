@@ -2,12 +2,15 @@
     margin: 10px;
 }
 .calendar{
-    text-align: center;
+  margin: 2px;
 }
 .dessert{
-    text-align: center;
+  
     margin: 20px;
 }
 .desshow{
     margin-right: 15px
+}
+.reg{
+    text-align: center;
 }
