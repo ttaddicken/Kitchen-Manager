@@ -9,25 +9,38 @@
         <div><label for="">Email</label></div>
         <input ng-model="" type="text">
     </div>
+    
+    <div>
+       <div> <label for="">Password</label> </div>
+        <input ng-model="user.password" type="text"> 
+    </div>
+
+    <div>
+       <div> <label for="password2">Confirm Password</label> </div>
+        <input ng-model="password2" type="text">
+    </div>
+
+
 
     <div>
         <label for=""> Show Dessert
-        <input ng-model="showDessert" type="radio">
+        <input name = "test" ng-model="showDessert" type="radio">
         </label>
         <label for="">Do not show dessert
-        <input ng-model="showDessert" type="radio">
+        <input name = "test" ng-model="showDessert" type="radio">
         </label>
     </div>
-
+    
     <div>
-        <label for=""></label>
-        <input ng-model="" type="text">
+        <label for=""> Number of weeks to show on calendar</label>
+        <div>
+        <label class="weeks" for="">1 Week  <input name = "calendarWeeks" type="radio"> </label>
+        <label class="weeks" for="">2 Weeks  <input name = "calendarWeeks" type="radio"> </label>
+        <label class="weeks" for="">3 Weeks  <input name = "calendarWeeks" type="radio"> </label>
+        <label class="weeks" for="">4 Weeks  <input name = "calendarWeeks" type="radio"> </label>
+        </div>
     </div>
 
-    <div>
-        <label for=""></label>
-        <input ng-model="" type="text">
-    </div>
 
     <div>
         <label for=""></label>
