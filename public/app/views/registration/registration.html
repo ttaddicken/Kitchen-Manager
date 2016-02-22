@@ -22,16 +22,19 @@
 
 
 
-    <div>
-        <label for=""> Show Dessert
+    <div class="dessert">
+        <label for="">Would you like to view Desserts on your calendar</label>
+        <div>
+        <label class="desshow"> Show Dessert
         <input name = "test" ng-model="showDessert" type="radio">
         </label>
-        <label for="">Do not show dessert
+        <label class="desshow">Do not show dessert
         <input name = "test" ng-model="showDessert" type="radio">
         </label>
+        </div>
     </div>
     
-    <div>
+    <div class= "calendar">
         <label for=""> Number of weeks to show on calendar</label>
         <div>
         <label class="weeks" for="">1 Week  <input name = "calendarWeeks" type="radio"> </label>
