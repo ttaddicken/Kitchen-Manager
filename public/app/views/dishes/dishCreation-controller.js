@@ -28,4 +28,6 @@ $scope.dishes = DataService.getDishes();
 // addToFavorites()
 // addIngredient()
 // importToFavorites()
+}
+
 })
