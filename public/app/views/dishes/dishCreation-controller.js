@@ -1,4 +1,4 @@
-app.controller('DishCreationController', function($scope) {
+app.controller('DishCreationController', function($scope, $rootScope, DataService, RecipeService) {
 
 // links recipies/dishes from firebase
 $scope.dishes = DataService.getDishes();
@@ -28,4 +28,6 @@ $scope.dishes = DataService.getDishes();
 // addToFavorites()
 // addIngredient()
 // importToFavorites()
+}
+
 })
