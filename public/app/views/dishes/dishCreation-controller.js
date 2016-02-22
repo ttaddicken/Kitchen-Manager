@@ -23,11 +23,15 @@ $scope.dishes = DataService.getDishes();
 
 // clearRecipe()
     $scope.clearRecipe = function(clearRecipe){
+        
+    }    
+
 
 // WE NEED THESE FUNCTIONS:
 // addToFavorites()
 // addIngredient()
 // importToFavorites()
-}
 
+    });
+}
 })
