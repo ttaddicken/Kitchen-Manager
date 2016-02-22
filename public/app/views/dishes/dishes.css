@@ -1,10 +1,10 @@
-/*BEGIN: DISHES CSS CONTENT*/
+/*BEGIN: DISHCREATION CSS CONTENT*/
 
 .recipeInput{
     background-color: lightblue;
     border: 5 px solid black;
     text-align: left;
-    height: 100%;
+    height: 75%;
     width: 31.333333%;
 }
 .input{
@@ -15,9 +15,7 @@
     border: 5 px solid black;
     text-align: left;
     width: 65.666666%;
-    height: 100%;
+    height: 75%;
     
 }
-
-
-/*END: DISHES CSS CONTENT*/
+/*END: DISHCREATION CSS CONTENT*/

@@ -1,52 +1,49 @@
-<h4 style="margin-top: 10px; margin-bottom: 0px;">
+<div class="container-fluid">
+    <h4 style="margin-top: 10px; margin-bottom: 0px;">
 Resting at the Dish Creation page
 </h4>
-</body>
-<div class="max-height:250px;">
-    <div class="row">
-        <div class="col-lg-4 recipeInput">
-            <form ng-submit="createRecipe()" class="recipeInput">
-                <div>
-                    <button type="button" class="btn btn-danger input" ng-click="removeRecipe($index)">Remove Recipe </button>
-                    <button type="submit" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
-                </div>
-                <div class="media">
-                    <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
-                    <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
-                    <label>Prep Time: </label>
-                    <input class="input" ng-model="dish.prepTime" type="time" placeholder="enter the time to Prepare in minutes" />
-                    <br>
-                    <label>Cook Time: </label>
-                    <input class="input" ng-model="dish.cookTime" type="time" placeholder="enter the time to cook in minutes" />
-                    <br>
-                    <label>Ingredients: </label>
-                    <input class="input" ng-model="dish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
-                    <button ng-click="addIngredient()">Add Ingredient</button>
-                    <br>
-                    <label ui-sref="home">Instructions: </label>
-                    <input class="input" ng-model="dish.instructions" type="text" placeholder="Enter/Paste instructions" />
-                    <br>
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary input" data-toggle="modal" data-target="#nutritionModal" data-whatever="">Modal: Nutrition Info</button>
-                    <button type="submit" ng-click="addToFavorites()" class="btn btn-success input">Add to Favorites (incomplete)</button>
-            </form>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-lg-8 recipeCard">
-                <h2>{{dish.title}}</h2> {{dish.img}}
-                <br> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
+    <div class="col-sm-3 recipeInput min-height: 1000px">
+        <form ng-submit="createRecipe()" class="recipeInput">
+            <div>
+                <button type="button" class="btn btn-danger input" ng-click="removeRecipe($index)">Remove Recipe </button>
+                <button type="submit" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
+                <!--<div class="media">
+                </div>-->
+                <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
+                <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
+                <label>Prep Time: </label>
+                <input class="input" ng-model="dish.prepTime" type="time" placeholder="enter the time to Prepare in minutes" />
                 <br>
-                <p>Ingredients: {{dish.ingredients}}</p>
-                <p>Instructions: {{dish.instructions}}</p>
-                <p> Nutritional Information: {{dish.nutrientFacts}}</p>
-                <button ng-click="importToFavorites()" class="btn btn-info">Import New Dish Into favorites (incomplete)</button>
+                <label>Cook Time: </label>
+                <input class="input" ng-model="dish.cookTime" type="time" placeholder="enter the time to cook in minutes" />
+                <br>
+                <label>Ingredients: </label>
+                <input class="input" ng-model="dish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
+                <button ng-click="addIngredient()">Add Ingredient</button>
+                <br>
+                <label ui-sref="home">Instructions: </label>
+                <input class="input" ng-model="dish.instructions" type="text" placeholder="Enter/Paste instructions" />
+                <br>
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary input" data-toggle="modal" data-target="#nutritionModal" data-whatever="">Modal: Nutrition Info</button>
+                <button type="submit" ng-click="addToFavorites()" class="btn btn-success input">Add to Favorites (incomplete)</button>
             </div>
+        </form>
+    </div>
+    <div class="row">
+        <div class="col-sm-8 recipeCard">
+            <img class="img-circle" height="120" src="{{dish.img}}" alt="{{dish.title}">
+            <h2>{{dish.title}}</h2>
+            <br> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
+            <br>
+            <p>Ingredients: {{dish.ingredients}}</p>
+            <p>Instructions: {{dish.instructions}}</p>
+            <p> Nutritional Information: {{dish.nutrientFacts}}</p>
+            <button ng-click="importToFavorites()" class="btn btn-info">Import New Dish Into favorites (incomplete)</button>
         </div>
     </div>
     <div class="row input">
         <button ui-sref="manageDishes">Manage Dishes</button>
         <button ui-sref="home">Go Home</button>
     </div>
-</div>
 </div>
