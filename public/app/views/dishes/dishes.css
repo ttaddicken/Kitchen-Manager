@@ -1,4 +1,6 @@
-/*.recipeInput{
+/*BEGIN: DISHES CSS CONTENT*/
+
+.recipeInput{
     background-color: lightblue;
     border: 5 px solid black;
     text-align: left;
@@ -6,13 +8,16 @@
     width: 31.333333%;
 }
 .input{
-    margin: 2px;
+    margin: 3px;
 }
 .recipeCard{
     background-color: papayawhip;
     border: 5 px solid black;
     text-align: left;
-    width: 66.666666%;
+    width: 65.666666%;
     height: 100%;
     
-}*/
+}
+
+
+/*END: DISHES CSS CONTENT*/
