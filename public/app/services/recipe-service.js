@@ -1,4 +1,4 @@
-app.service('StatesService', function(){
+app.service('RecipeService', function(){
     //how do constructors work???
     
     
