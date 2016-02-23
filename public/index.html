@@ -1,26 +1,27 @@
-
 <html ng-app="Kitchen">
 <html>
+
 <head>
     <meta charset="UTF-8">
-    <title>Kitchen manager</title>   
+    <title>Kitchen manager</title>
     <!--CSS Files-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="app/views/login/login.css">
     <link rel="stylesheet" href="app/views/registration/registration.css">
     <link rel="stylesheet" href="app/views/dishes/dishes.css">
     <link rel="stylesheet" href="app/views/modals/modal.css">
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <!--End CSS-->
 </head>
 
 <body>
- 
 
- 
- <ui-view class="font"></ui-view>
+    <div class="container-fluid">
+        <div class="font clearfix">
+            <ui-view></ui-view>
+        </div>
+    </div>
    
-
 
 
 
@@ -46,7 +47,7 @@
     <!--START APP CONFIG-->
     <script src="app/init.js"></script>
     <script src="app/config/routes.js"></script>
-    
+
     <!--LOAD CONTROLLERS-->
     <script src="app/views/login/login-controller.js"></script>
     <script src="app/views/registration/registration-controller.js"></script>
