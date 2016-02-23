@@ -1,12 +1,33 @@
 .font{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
-.backColor{
+.back-color{
     background-color: #9fd496; 
 }
-.accColor{
+.acc-color{
     background-color: #83e972
 }
+
+
+/*stuff we can take out*/
+.acc-color-dark-blue{
+    background-color:#112233
+}
+
+
+.acc-color-light-blue{
+    background-color:#44BBFF;
+}
+
+.font-color {
+    color: #112233;   
+}
+
+.font-color-red {
+    color:#FC575E;
+}
+
+
 
 /*BEGIN MODAL CSS CONTENT*/
 

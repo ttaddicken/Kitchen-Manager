@@ -23,7 +23,63 @@
 
 /*Start Manage Dishes CSS Content*/
 
-.navbar-brand:hover{
-    background-color:black !important;
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FC575E;  /*Sets the text hover color on navbar*/
 }
+
+.navbar-kitchen-manager{
+    color: #44BBFF !important;
+    font-size: 25;
+}
+
+body{
+    background-color:#66CC99 !important;
+}
+
+.panel-body{
+    background-color: #F0F1F5;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px lightgrey;
+    margin: 20px;
+}
+
+p {
+    color:#112233 
+}
+
+.navbar-default .navbar-nav > li > a{
+    color:#F0F1F5; /*Sets the text color on navbar*/
+    font-weight:color;
+}
+
+.button{
+    background-color: #112233;
+    color:#44BBFF; 
+    margin: 5px;
+    font-weight:bold;
+}
+
+.button:hover{
+    color:#FC575E; 
+}
+
+.button-inverse{
+    background-color: #44BBFF;
+    color:#112233; 
+    margin: 5px;
+    font-weight:bold;
+}
+
+.button-inverse{
+    background-color: #44BBFF;
+    color:#112233; 
+    margin: 5px;
+    font-weight:bold;
+}
+
+.button-inverse:hover{
+    color:#FC575E; 
+}
+
 
