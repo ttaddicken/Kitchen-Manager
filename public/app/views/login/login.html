@@ -1,17 +1,21 @@
-<div class="col-sm-12 login">
-    <form ng-submit="login()">
+<div class="col-sm-6 login">
+    <form ng-submit="login(user)">
         <div>
             <h4 style="margin-top: 10px; margin-bottom: 0px;">
                 Sign In
             </h4>
-            <input class="input" ng-model="user.name" type="text" placeholder="Enter family login Name">
+            <!--<input class="input" ng-model="user.userName" type="text" placeholder="Enter family login Name">
+        </div>-->
+        <div>
+            <input class="input" ng-model="user.email" type="email" placeholder="email">
         </div>
         <div>
-            <input class="input" ng-model="user.password" type="email" placeholder="email">
+            <input class="input" ng-model="user.password" type="password" placeholder="password">
         </div>
         <button type="submit">Login</button>
-        <button ng-click="registration()">Register New User</button>
+        <button ng-click="register(user)">Register New User</button>
         <button ng-click="" ui-sref="home">Temp. Skip to Home</button>
     </form>
 
 </div>
+
