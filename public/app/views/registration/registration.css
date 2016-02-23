@@ -14,3 +14,7 @@
 .reg{
     text-align: center;
 }
+.seporator{
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}

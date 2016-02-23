@@ -1,50 +1,87 @@
-<div class="col-sm-12 container-fluid reg" >
+<div class="col-sm-12 container-fluid reg">
     <h4>Register new user</h4>
     <div>
-        <div><label for="">Family Name</label></div>
+        <div>
+            <label for="">Family Name</label>
+        </div>
         <input ng-model="" type="text">
     </div>
 
     <div>
-        <div><label for="">Email</label></div>
+        <div>
+            <label for="">Email</label>
+        </div>
         <input ng-model="" type="text">
     </div>
-    
+
     <div>
-       <div> <label for="">Password</label> </div>
-        <input ng-model="user.password" type="text"> 
+        <div>
+            <label for="">Password</label>
+        </div>
+        <input ng-model="user.password" type="text">
     </div>
 
     <div>
-       <div> <label for="password2">Confirm Password</label> </div>
-        <input ng-model="password2" type="text">
+        <div>
+            <label for="password2">Confirm Password</label>
+        </div>
+        <input style="margin-bottom: 10px" ng-model="password2" type="text">
     </div>
 
-
+    <div class="row seporator">
+        <h2> User view preferences</h2>
+    </div>
 
     <div class="dessert">
-        <label for="">Would you like to view Desserts on your calendar</label>
+        <h3>Would you like to view Desserts on your calendar</h3>
         <div>
-        <label class="desshow"> Show Dessert
-        <input name = "test" ng-model="showDessert" type="radio">
-        </label>
-        <label class="desshow">Do not show dessert
-        <input name = "test" ng-model="showDessert" type="radio">
-        </label>
+            <label class="desshow"> Show Dessert
+                <input name="test" ng-model="showDessert" type="radio">
+            </label>
+            <label class="desshow">Do not show dessert
+                <input name="test" ng-model="showDessert" type="radio">
+            </label>
         </div>
     </div>
-    
-    <div class= "calendar">
-        <label for=""> Number of weeks to show on calendar</label>
+    <div class="calendar">
+        <h3>Number of weeks to show on calendar</h3>
         <div>
-        <label class="weeks" for=""> 1 Week  <input name = "calendarWeeks" type="radio"> </label>
-        <label class="weeks" for=""> 2 Weeks  <input name = "calendarWeeks" type="radio"> </label>
-        <label class="weeks" for=""> 3 Weeks  <input name = "calendarWeeks" type="radio"> </label>
-        <label class="weeks" for=""> 4 Weeks  <input name = "calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 1 Week
+                <input name="calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 2 Weeks
+                <input name="calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 3 Weeks
+                <input name="calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 4 Weeks
+                <input name="calendarWeeks" type="radio"> </label>
         </div>
     </div>
 
-
+    <div class="checkbox">
+        <h3>Select the options you would like to total on your meal Calendar</h3>
+        <label>
+            <input type="checkbox" ng-model="">Calories</label>
+        <label>
+            <input type="checkbox" ng-model="">Total Fat</label>
+        <label>
+            <input type="checkbox" ng-model="">Saturated Fats</label>
+        <label>
+            <input type="checkbox" ng-model="">Cholesterol</label>
+        <label>
+            <input type="checkbox" ng-model="">Carbohydrates</label>
+        <label>
+            <input type="checkbox" ng-model="dish.protein">Protein</label>
+        <label>
+            <input type="checkbox" ng-model="">Fiber</label>
+        <label>
+            <input type="checkbox" ng-model="">Sodium</label>
+        <label>
+            <input type="checkbox" ng-model="">Potassium</label>
+        <label>
+            <input type="checkbox" ng-model="">Calcium</label>
+        <label>
+            <input type="checkbox" ng-model="">Iron</label>
+    </div>
     <!--<div>
         <label for=""></label>
         <input ng-model="" type="text">

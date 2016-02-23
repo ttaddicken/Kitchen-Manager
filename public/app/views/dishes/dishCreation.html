@@ -12,7 +12,8 @@ Resting at the Dish Creation page
                 <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
                 <input class="input" ng-model="dish.img" type="url" placeholder="Paste Image UL here">
                 <label>Prep Time: </label>
-                <input class="input" ng-model="dish.prepTime" type="time" placeholder="enter the time to Prepare in minutes" />
+                <input class="input" ng-model="dish.prepHours | time " type="time" placeholder="enter the time to Prepare in minutes" />
+                <ng-timepicker ng-model="ctrl.time4" step="30" theme="green"></ng-timepicker>
                 <br>
                 <label>Cook Time: </label>
                 <input class="input" ng-model="dish.cookTime" type="time" placeholder="enter the time to cook in minutes" />
