@@ -1,1 +1,4 @@
-var app = angular.module('Kitchen', ['ui.router'])
+var app = angular.module('Kitchen', [
+    'ui.router',
+     'firebase',
+     ]);
