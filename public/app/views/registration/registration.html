@@ -1,24 +1,24 @@
-<div class="col-sm-12 container-fluid reg">
-    <h4>Register new user</h4>
+<div class="col-sm-12 align-center">
+   <h4>Register new user</h4>
     <div>
         <div>
-            <label for="">Family Name</label>
+            <label>Family Name</label>
         </div>
-        <input ng-model="" type="text">
+        <input ng-model="famName" type="text">
     </div>
 
     <div>
         <div>
-            <label for="">Email</label>
+            <label>Email</label>
         </div>
-        <input ng-model="" type="text">
+        <input ng-model="user.email" type="e-mail">
     </div>
 
     <div>
         <div>
-            <label for="">Password</label>
+            <label>Password</label>
         </div>
-        <input ng-model="user.password" type="text">
+        <input ng-model="user.password" type="password">
     </div>
 
     <div>
@@ -60,49 +60,26 @@
     <div class="checkbox">
         <h3>Select the options you would like to total on your meal Calendar</h3>
         <label>
-            <input type="checkbox" ng-model="">Calories</label>
+            <input type="checkbox" ng-model="dish.calories">Calories</label>
         <label>
-            <input type="checkbox" ng-model="">Total Fat</label>
+            <input type="checkbox" ng-model="dish.tfat">Total Fat</label>
         <label>
-            <input type="checkbox" ng-model="">Saturated Fats</label>
+            <input type="checkbox" ng-model="dish.sfat">Saturated Fats</label>
         <label>
-            <input type="checkbox" ng-model="">Cholesterol</label>
+            <input type="checkbox" ng-model="dish.cholesterol">Cholesterol</label>
         <label>
-            <input type="checkbox" ng-model="">Carbohydrates</label>
+            <input type="checkbox" ng-model="dish.carbohydrates">Carbohydrates</label>
         <label>
             <input type="checkbox" ng-model="dish.protein">Protein</label>
         <label>
-            <input type="checkbox" ng-model="">Fiber</label>
+            <input type="checkbox" ng-model="dish.fiber">Fiber</label>
         <label>
-            <input type="checkbox" ng-model="">Sodium</label>
+            <input type="checkbox" ng-model="dish.sodium">Sodium</label>
         <label>
-            <input type="checkbox" ng-model="">Potassium</label>
+            <input type="checkbox" ng-model="dish.potassium">Potassium</label>
         <label>
-            <input type="checkbox" ng-model="">Calcium</label>
+            <input type="checkbox" ng-model="dish.calcium">Calcium</label>
         <label>
-            <input type="checkbox" ng-model="">Iron</label>
-    </div>
-    <!--<div>
-        <label for=""></label>
-        <input ng-model="" type="text">
-    </div>
-
-    <div>
-        <label for=""></label>
-        <input ng-model="" type="text">
-    </div>
-
-    <div>
-        <label for=""></label>
-        <input ng-model="" type="text">
-    </div>
-
-    <div>
-        <label for=""></label>
-        <input ng-model="" type="text">
-    </div>-->
-
-
+            <input type="checkbox" ng-model="dish.iron">Iron</label>
+ </div>   
 </div>
-</div>
-<div>
