@@ -1,11 +1,90 @@
+/*general colors*/
 .font{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
-.backColor{
+.back-color{
     background-color: #9fd496; 
 }
-.accColor{
+.acc-color{
     background-color: #83e972
+}
+
+.acc-color-dark-blue{
+    background-color:#112233
+}
+
+
+.acc-color-light-blue{
+    background-color:#44BBFF;
+}
+
+.font-color {
+    color: #112233;   
+}
+
+.font-color-red {
+    color:#FC575E;
+}
+
+/*comment out for now*/
+
+body{
+    background-color:#66CC99 !important;
+}
+
+p {
+    color:#112233 
+}
+
+/*Navbar css*/
+
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: #FC575E;  /*Sets the text hover color on navbar*/
+}
+
+.navbar-kitchen-manager{
+    color: #44BBFF !important;
+    font-size: 29;
+}
+
+.navbar-default .navbar-nav > li > a{
+    color:#F0F1F5; /*Sets the text color on navbar*/
+    
+}
+
+/*css for panels*/
+.panel-body{
+    background-color: #F0F1F5;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 1px lightgrey;
+    margin: 20px;
+}
+
+
+/*css for buttons*/
+
+.button{
+    background-color: #112233;
+    color:#44BBFF; 
+    margin: 5px;
+    font-weight:bold;
+}
+
+.button:hover{
+    color:#FC575E; 
+}
+
+.button-inverse{
+    background-color: #44BBFF;
+    color:#112233; 
+    margin: 5px;
+    font-weight:bold;
+}
+
+.button-inverse:hover{
+    color:#FC575E; 
 }
 
 /*BEGIN MODAL CSS CONTENT*/
