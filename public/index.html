@@ -4,8 +4,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Kitchen manager</title>
-    <!--CSS Files-->
+
+    <!--BOOTSTRAP & OTHER CSS FILES-->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="app/views/dishes/ngTimepicker.css">
+
+    <!--OUR CSS Files-->
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="app/views/login/login.css">
     <link rel="stylesheet" href="app/views/registration/registration.css">
@@ -16,14 +21,17 @@
 
 <body>
 
+
+
+    <ui-view class="font"></ui-view>
+
+
     <div class="container-fluid">
         <div class="font clearfix">
             <ui-view></ui-view>
         </div>
     </div>
    
-
-
 
 
     <!-- Load Angular -->
@@ -40,15 +48,16 @@
 
     <!--Load Bootstrap-->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/ngTimepicker/src/js/ngTimepicker.min.js"></script>
 
     <!--Load Firebase-->
     <script src="bower_components/firebase/firebase.js"></script>
-    
+
     <!--START APP CONFIG-->
     <script src="app/init.js"></script>
     <script src="app/config/routes.js"></script>
     <script src="app/config/constants.js"></script>
-    
+
     <!--LOAD CONTROLLERS-->
     <script src="app/views/login/login-controller.js"></script>
     <script src="app/views/registration/registration-controller.js"></script>
@@ -59,6 +68,7 @@
     <script src="app/views/dishes/dishCreation-controller.js"></script>
     <script src="app/views/grocery/groceryList-controller.js"></script>
     <script src="app/services/firebase-service.js"></script>
+    <script src="app/services/recipe-service.js"></script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <body>
-
+<!--start of nav bar-->
     <nav class="navbar navbar-default acc-color-dark-blue font-color-red">
         <div class="container">
             <div class="navbar-header">
@@ -22,37 +22,22 @@
             </div>
         </div>
     </nav>
+<!--end nav bar-->
 
-    <div class="panel-body container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam dolore animi ipsam! Amet officia repudiandae voluptatem
-            aliquid magni, quaerat tempora non. Laboriosam facilis ad magni et mollitia sint error! Sapiente.</p>
+    <div class="panel-body container-fluid">
+        <h1>My Recipes</h1>
+        <div>
+            <ul class="list-group">
+                <li class="list-group-item" ng-repeat="recipe in recipes track by $index">{{recipe.title}}<span class="badge" ng-click="removeRecipe($index)">X</span><span class="badge" ng-click="editRecipe()">Edit Recipe</span></li>
+            </ul>
+        </div>
     </div>
 
-
-    <div class="panel-body container">
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis exercitationem nulla dolor eaque error, magni
-            culpa, accusamus, praesentium, nesciunt ducimus eius? Explicabo reprehenderit odit velit ipsam asperiores sunt
-            eius fugiat. Libero repellendus repellat porro dicta dignissimos quo sunt voluptatibus quod fugit asperiores,
-            perspiciatis esse ipsa minus similique. Placeat doloremque laudantium, nisi deserunt quos, repellendus unde error,
-            laborum, modi assumenda illum ex molestias. Cum totam minus, perferendis quasi, ducimus ullam voluptates vel
-            optio magni, delectus temporibus eligendi assumenda at necessitatibus. Temporibus reprehenderit blanditiis itaque
-            optio. Nulla voluptas, porro sed et quaerat, impedit, explicabo odio sunt perspiciatis illo, officiis dolorum
-            autem! Neque ut nesciunt assumenda ipsum delectus voluptatem illum quia eum, culpa enim. Modi aperiam recusandae
-            nam nisi quas maxime commodi voluptatibus omnis ullam sed vel, iure obcaecati repellendus eveniet rem magni iste,
-            possimus cumque quia ipsa tempore fugit? Officiis, repellat magnam dicta quos voluptatibus esse quas id quaerat
-            nemo quasi animi odio deserunt eveniet cupiditate eos qui molestias amet ut quo illum sit facilis! Mollitia perferendis
-            ratione nihil quos excepturi perspiciatis, praesentium aperiam, alias atque quam pariatur, impedit! Dolores eligendi
-            temporibus, doloremque modi id ea ipsam magni voluptate, voluptas natus enim nihil laudantium, explicabo quo.
-            Officiis, recusandae molestias mollitia error maiores.
-        </p>
-    </div>
-
-    <div class="panel-body-transparent">
+    <!--<div class="panel-body-transparent">
         <button class="button btn">This is a button</button>
 
         <button class="button-inverse btn">This is an inverse button</button>
-    </div>
-
+    </div>-->
 
 </body>
 
