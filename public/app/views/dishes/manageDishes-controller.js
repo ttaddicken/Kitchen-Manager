@@ -1,7 +1,9 @@
 app.controller('ManageDishesController', function($scope, RecipeService) {
     
-    $scope.recipies = RecipeService.getRecipes();
+    $scope.recipes = RecipeService.getRecipes();
     
-    
+    $scope.removeRecipe = function (index){
+        $scope.recipes.splice(index,1)
+    }
     
 })

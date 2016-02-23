@@ -28,7 +28,7 @@
         <h1>My Recipes</h1>
         <div>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="recipe in recipies track by $index">{{recipe.title}}<span class="badge" ng-click="removeRecipe($index)">X</span><span class="badge" ng-click="editRecipe()">Edit Recipe</span></li>
+                <li class="list-group-item" ng-repeat="recipe in recipes track by $index">{{recipe.title}}<span class="badge" ng-click="removeRecipe($index)">X</span><span class="badge" ng-click="editRecipe()">Edit Recipe</span></li>
             </ul>
         </div>
     </div>
