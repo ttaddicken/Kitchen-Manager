@@ -28,9 +28,9 @@
 
 /*comment out for now*/
 
-/*body{
+body{
     background-color:#66CC99 !important;
-}*/
+}
 
 p {
     color:#112233 
@@ -45,17 +45,12 @@ p {
 
 .navbar-kitchen-manager{
     color: #44BBFF !important;
-    font-size: 25;
+    font-size: 29;
 }
 
 .navbar-default .navbar-nav > li > a{
     color:#F0F1F5; /*Sets the text color on navbar*/
-    font-weight:color;
-}
-
-.navbar-default .navbar-nav > li > a{
-    color:#F0F1F5; /*Sets the text color on navbar*/
-    font-weight:color;
+    
 }
 
 /*css for panels*/

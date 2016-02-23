@@ -1,3 +1,5 @@
-app.controller('ManageDishesController', function() {
-    this.test='manageDishesController'
+app.controller('ManageDishesController', function($scope, RecipeService) {
+    
+    $scope.recipies = RecipeService.getRecipes();
+    
 })
