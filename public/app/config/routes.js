@@ -57,6 +57,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'ManageDishesController',
             controllerAs: 'mc'
         })
+        .state('publicDishes', {
+            url: '/public-dishes',
+            templateUrl: '/app/views/public-dishes/publicDishes.html',
+            controller: 'PublicDishesController',
+            controllerAs: 'pdc'
+        })
 })
 
 // Sets auto Login
@@ -65,7 +71,7 @@ app.run(function ($rootScope, $state, AuthService) {
         var invalidUser = AuthService.authMember();
         if (invalidUser) {
             //FORCES AUTHENTICATION
-            if (toState.name !== 'login' || 'registration') {
+            if (toState.name !== 'login' && toState.name !== 'registration') {
                 event.preventDefault()
                 $state.go('login')
             }
