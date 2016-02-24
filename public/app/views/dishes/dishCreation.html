@@ -5,24 +5,20 @@ Resting at the Dish Creation page
     <div class="col-sm-3 recipeInput min-height: 1000px">
         <form ng-submit="createRecipe()" class="recipeInput">
             <div>
-                
-                <button type="button" ng-click="removeRecipe($index)" class="btn btn-danger input">Remove Recipe </button>
                 <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
-                
-                
                 <input class="input" ng-model="newDish.title" type="text" placeholder="Enter Dish Name">
                 <input class="input" ng-model="newDish.img" type="url" placeholder="Paste Image UL here">
                 <div class="inline-block">
                 <label>Prep Time: </label>
-                <input class="input" ng-model="newDish.prepTime | HH:mm" type="time" value="00:00" />
+                <input class="input" ng-model="newDish.prepTime" type="number" value="00" placeholder="MM"/>
                 
                 <label>Cook Time: </label>
-                <input class="input" ng-model="newDish.cookTime | HH:mm" type="time" value="00:00" />
+                <input class="input" ng-model="newDish.cookTime" type="number" value="00" placeholder="MM"/>
                 </div>
                 <br>
 <!--Will this work a submit button inside a form???-->
                 <label>Ingredients: </label>
-                <input class="input" ng-model="newDish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
+                <input class="input"  ng-model="newDish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
                 <button ng-click="addIngredient()">Add Ingredient</button>
                 <br>
                 <label ui-sref="home">Instructions: </label>
@@ -43,12 +39,7 @@ Resting at the Dish Creation page
             </div>
             <b>Instructions: </b></p>{{newDish.instructions | }}</p>
             <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
-            <button ng-click="importToFavorites()" class="btn btn-info">Import New Dish Into favorites (incomplete)</button>
+            <button ng-click="addRecipe(newRecipe)" class="btn btn-info">Save (incomplete)</button>
         </div>
-    </div>
-    <div class="row input">
-
-        <button ui-sref="manageDishes">Manage Dishes</button>
-        <button ui-sref="home">Go Home</button>
     </div>
 </div>
