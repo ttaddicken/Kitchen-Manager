@@ -5,12 +5,29 @@ app.controller('ManageDishesController', function($scope, DishService, CONSTANTS
     $scope.removeRecipe = function (index){
         $scope.dishes.splice(index,1)
     }
+    $scope.dishList = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/' + 'dishes'));
     $scope.testPush= function(){
     debugger
-    this.dishes = DishService.getDishes();
-    this.dishes = $firebaseArray(new Firebase(CONSTANTS + 'dishes'));
-    this.dishes.$add(this.dishes)
+   $scope.dishes = DishService.getDishes();
+    $scope.dishList.$add(this.dishes);
     
     
 }
 })
+//  Begginning of barrowed from firebase
+// {
+//   "rules": {
+//     "users": {
+//       "$uid": {
+//         ".write": "auth != null && auth.uid == $uid"
+//       }
+//     },
+//     "dishes": {
+//       "$uid": {
+//         ".write": "auth != null && auth.uid == $uid"
+        
+//       }
+//     }
+//   }
+// }
+// End of barroweed from firebase
