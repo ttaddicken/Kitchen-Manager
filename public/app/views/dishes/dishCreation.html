@@ -13,9 +13,15 @@ Resting at the Dish Creation page
                 <input class="input" ng-model="newDish.img" type="url" placeholder="Paste Image UL here">
 
                 <label>Prep Time: </label>
+
+                <!--<input class="input" ng-model="dish.prepHours" type="time" placeholder="enter the time to Prepare in minutes" />-->
+                <!--<input ng-model="dish.prepHours" type="text" ng-focus="showTimepicker()" ng-value="viewValue" class="ng-timepicker-input" ng-readonly="true" value="00:00" readonly="readonly">-->
+                <ng-timepicker ng-model="ctrl.time4" step="1" theme="green" value="00:00" class="ng-untouched ng-valid ng-scope ng-dirty ng-valid-parse">
+
                 <input class="input" ng-model="dish.prepHours" type="time" placeholder="enter the time to Prepare in minutes" />
                 <input ng-model="dish.prepHours" type="text" ng-focus="showTimepicker()" ng-value="viewValue" class="ng-timepicker-input" ng-readonly="true" value="00:00" readonly="readonly">
                 <!--<ng-timepicker ng-model="ctrl.time4" step="1" theme="green" class="ng-untouched ng-valid ng-scope ng-dirty ng-valid-parse">
+
                     <div>
                         <input type="text" ng-focus="showTimepicker()" ng-value="viewValue" class="ng-timepicker-input" ng-readonly="true" value="00:00" readonly="readonly">
                     </div>
@@ -23,7 +29,7 @@ Resting at the Dish Creation page
                         <table>
                             <tbody>
                                 <tr>
-                                    <td class="act noselect width=25px" ng-click="incrementHour()"><i class="fa fa-angle-up"></i></td>
+                                    <td class="act noselect" ng-click="incrementHour()"><i class="fa fa-angle-up"></i></td>
                                     <td></td>
                                     <td class="act noselect" ng-click="incrementMinutes()"><i class="fa fa-angle-up"></i></td>
                                     <td class="act noselect ng-hide" ng-click="toggleMeridian()" ng-show="showMeridian"><i class="fa fa-angle-up"></i></td>
