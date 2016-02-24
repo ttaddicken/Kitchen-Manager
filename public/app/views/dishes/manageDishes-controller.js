@@ -10,6 +10,7 @@ app.controller('ManageDishesController', function($scope, DishService, CONSTANTS
 
    $scope.dishes = DishService.getDishes();
     $scope.dishList.$add(this.dishes);
+     $scope.member.dishList.$add(this.dishes);
     
     
 }
