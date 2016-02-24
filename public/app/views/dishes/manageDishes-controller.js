@@ -1,5 +1,5 @@
 app.controller('ManageDishesController', function($scope, DishService, CONSTANTS, $firebaseArray) {
-    debugger
+ 
     $scope.dishes = DishService.getDishes();
     
     $scope.removeRecipe = function (index){
@@ -7,7 +7,7 @@ app.controller('ManageDishesController', function($scope, DishService, CONSTANTS
     }
     $scope.dishList = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/' + 'dishes'));
     $scope.testPush= function(){
-    debugger
+
    $scope.dishes = DishService.getDishes();
     $scope.dishList.$add(this.dishes);
     
