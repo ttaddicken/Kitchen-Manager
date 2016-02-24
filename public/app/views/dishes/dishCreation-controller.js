@@ -1,3 +1,4 @@
+/* global Firebase */
 app.controller('DishCreationController', function($scope) {
 
 // links recipies/dishes from firebase
@@ -22,9 +23,13 @@ app.controller('DishCreationController', function($scope) {
     //   }
 
 // clearRecipe()
-    $scope.clearRecipe = function(clearRecipe){
+    $scope.clearDish = function(clearRecipe){
         
     }    
+
+
+
+
 
 
 // WE NEED THESE FUNCTIONS:

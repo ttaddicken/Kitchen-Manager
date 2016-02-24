@@ -1,11 +1,15 @@
 app.constant('CONSTANTS', (function(){ 
 	var root = 'https://kitchen-manager.firebaseio.com/';
-	var recipes = root + 'recipes/'
+	var dishes = root + 'dishes/'
 	// var tags = root + 'tags/' 
 	
 	return {
 		fbRef: root,
-		recipes: recipes,
+		recipes: dishes,
 		// tags: tags
 	}
 }()));
+
+
+
+// app.constant('FBREF', 'https://kitchen-manager.firebaseio.com/');
