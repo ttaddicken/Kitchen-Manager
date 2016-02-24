@@ -39,6 +39,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'RegistrationController',
             controllerAs: 'rc'
         })
+        .state('defaults', {
+            url: '/defaults',
+            templateUrl: '/app/views/defaults/defaults.html',
+            controller: 'RegistrationController',
+            controllerAs: 'rc'
+        })
         .state('dishCreation', {
             url: '/dish-creation',
             templateUrl: '/app/views/dishes/dishCreation.html',

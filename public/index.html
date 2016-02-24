@@ -21,17 +21,50 @@
 
 <body>
 
+    <!--<div ng-if="ui-view !== registration">
+        <div class="container-fluid">
+            <div class="font clearfix">
+                <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar font-color-red"></span>
+                                <span class="icon-bar font-color-red"></span>
+                                <span class="icon-bar font-color-red"></span>
+                            </button>
+                            <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/" class="font-color">Home</a></li>
+                                <li><a href="#/dish-creation" class="font-color">Create Dish</a></li>
+                                <li><a href="#/profile" class="font-color">Update Profile</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>-->
 
 
+<<<<<<< HEAD
     <!--<ui-view class="font"></ui-view>-->
 
+=======
+>>>>>>> 68433e650f00c3c865e22ae5e8586609e62393dd
 
-    <div class="container-fluid">
-        <div class="font clearfix">
-            <ui-view></ui-view>
+    <!--<div ng-if="ui-view === login || register">-->
+        <div class="container-fluid">
+            <div class="font clearfix">
+                <ui-view></ui-view>
+            </div>
         </div>
-    </div>
-   
+    <!--</div>-->
 
 
     <!-- Load Angular -->
@@ -68,7 +101,8 @@
     <script src="app/views/dishes/dishCreation-controller.js"></script>
     <script src="app/views/grocery/groceryList-controller.js"></script>
     <script src="app/services/firebase-service.js"></script>
-    <script src="app/services/recipe-service.js"></script>
+    <script src="app/services/dish-service.js"></script>
+    <script src="app/config/constants.js"></script>
 
 </body>
 

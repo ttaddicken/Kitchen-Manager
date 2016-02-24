@@ -1,9 +1,9 @@
-app.service('RecipeService', function(){
+app.service('DishService', function(){
     //how do constructors work???
     
     
     
-    var recipes = [{
+    var dishes = [{
         id: 1,
         title: 'DoubleTree Chocolate Chip Cookies',
         prepTime: 15,
@@ -30,16 +30,16 @@ app.service('RecipeService', function(){
 
 
 
-    this.getRecipes = function(){
-        return recipes;
+    this.getDishes = function(){
+        return dishes;
     }
 	
-    this.getRecipe = function(title){
+    this.getDish = function(title){
 
-        for (var i = 0; i < recipes.length; i++) {
-            var currentRecipe = recipes[i];
-            if(currentRecipe.title.toLowerCase() === title.toLowerCase()){
-                return currentRecipe;
+        for (var i = 0; i < dishes.length; i++) {
+            var currentDish = dishes[i];
+            if(currentDish.title.toLowerCase() === title.toLowerCase()){
+                return currentDish;
             }
         }
     }

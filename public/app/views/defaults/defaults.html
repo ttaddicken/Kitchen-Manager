@@ -1,0 +1,86 @@
+<!--NavBar-->
+<nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar font-color-red"></span>
+                    <span class="icon-bar font-color-red"></span>
+                    <span class="icon-bar font-color-red"></span>
+                </button>
+                <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav">
+                    <li><a href="/" class="font-color">Home</a></li>
+                    <li><a href="#/dish-creation" class="font-color">Create Dish</a></li>
+                    <li><a href="#/profile" class="font-color">Update Profile</a></li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--end Nav Bar-->
+   <div class = "align-center">
+    <div>
+        <div>
+            <label >Family Name</label>
+        </div>
+        <input style="margin-bottom: 5px;" ng-model="famName" type="text">
+    </div>
+    <div class="row seporator">
+        <h2> User view preferences</h2>
+    </div>
+
+    <div class="dessert">
+        <h3>Would you like to view Desserts on your calendar</h3>
+        <div>
+            <label class="desshow"> Show Dessert
+                <input name="test" ng-model="showDessert" type="radio">
+            </label>
+            <label class="desshow">Do not show dessert
+                <input name="test" ng-model="showDessert" type="radio">
+            </label>
+        </div>
+    </div>
+    <div class="calendar">
+        <h3>Number of weeks to show on calendar</h3>
+        <div>
+            <label class="weeks" for=""> 1 Week
+                <input name="calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 2 Weeks
+                <input name="calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 3 Weeks
+                <input name="calendarWeeks" type="radio"> </label>
+            <label class="weeks" for=""> 4 Weeks
+                <input name="calendarWeeks" type="radio"> </label>
+        </div>
+    </div>
+
+    <div class="checkbox">
+        <h3>Select the options you would like to total on your meal Calendar</h3>
+        <label>
+            <input type="checkbox" ng-model="dish.calories">Calories</label>
+        <label>
+            <input type="checkbox" ng-model="dish.tfat">Total Fat</label>
+        <label>
+            <input type="checkbox" ng-model="dish.sfat">Saturated Fats</label>
+        <label>
+            <input type="checkbox" ng-model="dish.cholesterol">Cholesterol</label>
+        <label>
+            <input type="checkbox" ng-model="dish.carbohydrates">Carbohydrates</label>
+        <label>
+            <input type="checkbox" ng-model="dish.protein">Protein</label>
+        <label>
+            <input type="checkbox" ng-model="dish.fiber">Fiber</label>
+        <label>
+            <input type="checkbox" ng-model="dish.sodium">Sodium</label>
+        <label>
+            <input type="checkbox" ng-model="dish.potassium">Potassium</label>
+        <label>
+            <input type="checkbox" ng-model="dish.calcium">Calcium</label>
+        <label>
+            <input type="checkbox" ng-model="dish.iron">Iron</label>
+ </div>   
+ </div>

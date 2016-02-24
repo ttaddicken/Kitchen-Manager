@@ -1,12 +1,6 @@
 <div class="col-sm-12 align-center">
+    
    <h4>Register new user</h4>
-    <div>
-        <div>
-            <label>Family Name</label>
-        </div>
-        <input ng-model="famName" type="text">
-    </div>
-
     <div>
         <div>
             <label>Email</label>
@@ -27,59 +21,6 @@
         </div>
         <input style="margin-bottom: 10px" ng-model="password2" type="text">
     </div>
-
-    <div class="row seporator">
-        <h2> User view preferences</h2>
-    </div>
-
-    <div class="dessert">
-        <h3>Would you like to view Desserts on your calendar</h3>
-        <div>
-            <label class="desshow"> Show Dessert
-                <input name="test" ng-model="showDessert" type="radio">
-            </label>
-            <label class="desshow">Do not show dessert
-                <input name="test" ng-model="showDessert" type="radio">
-            </label>
-        </div>
-    </div>
-    <div class="calendar">
-        <h3>Number of weeks to show on calendar</h3>
-        <div>
-            <label class="weeks" for=""> 1 Week
-                <input name="calendarWeeks" type="radio"> </label>
-            <label class="weeks" for=""> 2 Weeks
-                <input name="calendarWeeks" type="radio"> </label>
-            <label class="weeks" for=""> 3 Weeks
-                <input name="calendarWeeks" type="radio"> </label>
-            <label class="weeks" for=""> 4 Weeks
-                <input name="calendarWeeks" type="radio"> </label>
-        </div>
-    </div>
-
-    <div class="checkbox">
-        <h3>Select the options you would like to total on your meal Calendar</h3>
-        <label>
-            <input type="checkbox" ng-model="dish.calories">Calories</label>
-        <label>
-            <input type="checkbox" ng-model="dish.tfat">Total Fat</label>
-        <label>
-            <input type="checkbox" ng-model="dish.sfat">Saturated Fats</label>
-        <label>
-            <input type="checkbox" ng-model="dish.cholesterol">Cholesterol</label>
-        <label>
-            <input type="checkbox" ng-model="dish.carbohydrates">Carbohydrates</label>
-        <label>
-            <input type="checkbox" ng-model="dish.protein">Protein</label>
-        <label>
-            <input type="checkbox" ng-model="dish.fiber">Fiber</label>
-        <label>
-            <input type="checkbox" ng-model="dish.sodium">Sodium</label>
-        <label>
-            <input type="checkbox" ng-model="dish.potassium">Potassium</label>
-        <label>
-            <input type="checkbox" ng-model="dish.calcium">Calcium</label>
-        <label>
-            <input type="checkbox" ng-model="dish.iron">Iron</label>
- </div>   
+<button ng-click="register(user)">Submitt Registration</button>
+    
 </div>
