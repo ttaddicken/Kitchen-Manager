@@ -2,16 +2,19 @@
     
     
 <!--Kitchen Manager NAV BAR Start-->
-
-    <div class="panel-body container-fluid">
-        <h1>My Recipes</h1>
-        <div>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="dish in dishes track by $index">{{dish.title}}<span class="badge" ng-click="removeRecipe($index)">X</span><span class="badge" ng-click="editRecipe()">Edit Recipe</span></li>
-            </ul>
-        </div>
-        <button ng-click="testPush()">push to firebase</button>
+<div class="container-fluid">
+    <div class="font clearfix back-color">
+        <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+            <div class="container">
+                <div class="navbar-header">
+                    <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                </div>
+            </div>
+        </nav>
     </div>
+</div>
 <!--Kitchen Manager NAV BAR End-->
     
     
