@@ -65,7 +65,7 @@ app.run(function ($rootScope, $state, AuthService) {
         var invalidUser = AuthService.authMember();
         if (invalidUser) {
             //FORCES AUTHENTICATION
-            if (toState.name !== 'login') {
+            if (toState.name !== 'login' || 'registration') {
                 event.preventDefault()
                 $state.go('login')
             }

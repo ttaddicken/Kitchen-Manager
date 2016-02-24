@@ -19,12 +19,12 @@ app.controller('ManageDishesController', function($scope, DishService, CONSTANTS
 //   "rules": {
 //     "users": {
 //       "$uid": {
-//         ".write": "auth != null && auth.uid == $uid"
+//         ".read": "auth != null && auth.uid == $uid"
 //       }
 //     },
 //     "dishes": {
 //       "$uid": {
-//         ".write": "auth != null && auth.uid == $uid"
+//         ".read": "auth != null && auth.uid == $uid"
         
 //       }
 //     }
