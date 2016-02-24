@@ -14,7 +14,7 @@ app.controller('ManageDishesController', function($scope, DishService, CONSTANTS
     
 }
 })
-//  Begginning of barrowed from firebase
+//  Begginning of borrowed from firebase
 // {
 //   "rules": {
 //     "users": {
