@@ -6,7 +6,7 @@
         <h1>My Recipes</h1>
         <div>
             <ul class="list-group">
-                <li class="list-group-item" ng-repeat="dish in dishes track by $index">{{dish.title}}<span class="badge" ng-click="removeRecipe($index)">X</span><span class="badge" ng-click="editRecipe()">Edit Recipe</span></li>
+                <li class="list-group-item" ng-repeat="dish in member.dishList track by $index">{{dish.title}}<span class="badge" ng-click="removeRecipe($index)">X</span><span class="badge" ng-click="editRecipe()">Edit Recipe</span></li>
             </ul>
         </div>
         <button ng-click="testPush()">push to firebase</button>

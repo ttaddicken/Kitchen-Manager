@@ -1,9 +1,10 @@
 <div>
     <div >
-        <span ng-repeat="dish in dishes"> 
+        <span ng-repeat="dish in indatabase"> 
             <img style="height:60px; margin-bottom: 5px;" src="{{dish.img}}" alt="Dish pic here"> 
             <a style="margin-right: 5px" href="">
-                {{dish.title}}
+                {{dish["title"]}}
+               
             </a>
         </span>
     </div>

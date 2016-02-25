@@ -1,19 +1,20 @@
-app.controller('ManageDishesController', function($scope, DishService, CONSTANTS, $firebaseArray) {
- 
-    $scope.dishes = DishService.getDishes();
+app.controller('ManageDishesController', function ($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
     
-    $scope.removeRecipe = function (index){
-        $scope.dishes.splice(index,1)
+    $scope.removeRecipe = function (index) {
+        $scope.dishes.splice(index, 1)
     }
-    $scope.dishList = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/' + 'dishes'));
-    $scope.testPush= function(){
-
-   $scope.dishes = DishService.getDishes();
-    $scope.dishList.$add(this.dishes);
-     $scope.member.dishList.$add(this.dishes);
     
+    // $scope.publicDishList = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
     
-}
+    $scope.testPush = function () {
+        //GET LOCAL DISH FROM YOUR FORM
+        $scope.dishList.$add($scope.localdish).then(function(dish){
+            $rootScope.member.dishList = $rootScope.member.dishList || {}
+            $rootScope.member.dishList[dish.key()] = $scope.localdish;
+            $rootScope.member.$save();
+        });
+    }
+    
 })
 //  Begginning of borrowed from firebase
 // {
