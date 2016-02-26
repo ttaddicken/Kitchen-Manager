@@ -1,55 +1,70 @@
 <div class="col-sm-3 recipeInput min-height: 1000px">
+    <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
+    
+    <div class="form">
+        <div class="form-group"><label for="title">Title:</label>
+            <input class="form-control" type="text" ng-model="newdish.title" placeholder="Recipe Title"/>
+        </div>
+        <div class="form-group"><label for="prepTIme">Prep Time:</label>
+            <input class="form-control" type="number" ng-model="newTask.prepTime" value="00" />
+        </div>
+        <div class="form-group"><label for="cookTime">Cook Time:</label>
+            <input class="form-control" type="number" ng-model="newTask.cookTime" value="00" />
+        </div>
+        <div class="form-group"><label for="ingredients">Ingredients:</label>
+            <input class="form-control" type="text" ng-model="newTask.instructions" placeholder="instructions"/>
+        </div>
+        <div class="form-group"><label for="instructons">Instructions:</label>
+            <input class="form-control" type="text" ng-model="newTask.instructions" placeholder="instructions"/>
+        </div>
+         <div class="form-group"><label for="stars">Stars:</label>
+            <input class="form-control" type="range"" ng-model="newTask.stars"/>
+        </div>
+        <button ng-click="createRecipe()">Add Recipe</button>    
+    </div>
+    
+    
+    
+    
+    <!--<div>
         <form ng-submit="createRecipe()" class="recipeInput">
-            <div>
-                <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
-                <input class="input" ng-model="newDish.title" type="text" placeholder="Enter Dish Name">
-                <input class="input" ng-model="newDish.img" type="url" placeholder="Paste Image UL here">
-                <div class="inline-block">
-                    <label>Prep Time: </label>
-                    <input class="input" ng-model="newDish.prepTime" type="number" value="00" placeholder="00" />
+            <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
+            <input class="input" ng-model="newDish.img" type="url" placeholder="Paste Image UL here">
+            <div class="inline-block">
+                <label>Prep Time: </label>
+                <input class="input" ng-model="newDish.prepTime" type="number" value="0:00" placeholder="00" />
 
-                    <label>Cook Time: </label>
-                    <input class="input" ng-model="newDish.cookTime" type="number" value="00" placeholder="00" />
-                </div>
-                <br>
-                <!--Will this work a submit button inside a form???-->
+                <label>Cook Time: </label>
+                <input class="input" ng-model="newDish.cookTime" type="number" value="00" placeholder="00" />
+            </div>
+            <br>
+            <!--Will this work a submit button inside a form???-->
+            <!--<div>
                 <label>Ingredients: </label>
                 <input class="input" ng-model="newDish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
                 <button ng-click="addIngredient()">Add Ingredient</button>
-                <br>
-                <label ui-sref="home">Instructions: </label>
-                <input class="input" ng-model="newDish.instructions" type="text" placeholder="Enter/Paste instructions" />
-                <br>
             </div>
-        </form>
+            <label>Instructions: </label>
+            <input class="input" ng-model="newDish.instructions" type="text" placeholder="Enter/Paste instructions" />
+            <br>
             <button type="submit" ng-click="addRecipe(newRecipe)" class="btn btn-info">Save (incomplete)</button>
-    </div>
-    <div class="row">
-        <div class="col-sm-8 recipeCard">
-            <img class="img" height="120" src="{{newDish.img}}" alt="{{newDish.title}">
-            <p>http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2008/4/23/0/RB0106_Citrus-Baked-Salmon.jpg.rend.sni12col.landscape.jpeg</p>
-            <h2>{{newDish.title}}</h2>
-            <br> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}
-            <br>
-            <div <div class="panel" ng-repeat="ingredient in ingredients">
-                <b>Ingredients:</b>
-                <p>{{newDish.ingredient}}</p>
-                
-                <p>8 slices fresh lemon, 8 slices fresh orange, 4 (6 to 8-ounce) skinless salmon fillets, Sea salt and freshly
-                    ground black pepper, 4 tbs freshly chopped dill, 4 tbs sun-dried tomatoes in oil, plus 1 tablespoon oil
-                    from jar , 2 cups white wine
-                </p>
-            </div>
-            <b>Instructions: </b></p>{{newDish.instructions | }}</p>
-            <br>
-            <p>1. Preheat the oven to 375 degrees F. 2. In a large 9 by 13 shallow baking dish place 1 lemon slice with 1 orange
-                slice side by side so you'll end up with 4 groups. 3. Each salmon fillet will have its own bed of citrus.
-                4. Season each fillet with salt and pepper then place each salmon fillet over the 2 slices of lemon and orange.
-                5. In a small bowl mix the dill, sun-dried tomatoes and tomato oil. 6. Divide mixture on top of the salmon
-                fillet, then drizzle with the wine. 7. Place the baking dish in the oven and cook for 15 to 20 minutes or
-                longer for well done."
-            </p>
-            <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
+        </form>
+    </div>-->
+<!--</div>-->
+<!--<div class="row">
+    <div class="col-sm-8 recipeCard">
+        <img class="img" height="120" src="{{newDish.img}}" alt="{{newDish.title}">
+
+        <h2>{{dish.title}}</h2> Prep Time: {{dish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}
+
+        <div <div class="panel" ng-repeat="ingredient in ingredients">
+            <b>Ingredients:</b>
+            <p>{{newDish.ingredient}}</p>
         </div>
+        <b>Instructions: </b></p>{{newDish.instructions}}</p>
+
+
+        <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
     </div>
 </div>
+</div>-->
