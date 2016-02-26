@@ -1,6 +1,6 @@
 app.controller('ManageDishesController', function ($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
     
-    $scope.removeRecipe = function (index) {
+    $scope.removeDish = function (index) {
         $scope.dishes.splice(index, 1)
     }
     
