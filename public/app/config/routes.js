@@ -63,6 +63,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controller: 'PublicDishesController',
             controllerAs: 'pdc'
         })
+        .state('dishDetails', {
+            url: '/public-dishes/:id',
+            templateUrl: '/app/views/public-dishes/dish-details.html',
+            controller: 'PublicDishesController',
+            controllerAs: 'pdc'
+        })
 })
 
 // Sets auto Login

@@ -3,5 +3,5 @@ app.controller('PublicDishesController', function ($scope, DishService, CONSTANT
     // $scope.dishes = DishService.getDishes();
     //   $scope.dishList.$get(dishes);
  $scope.indatabase = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
- console.log($scope.indatabase, $scope.indatabase.length);
+//  console.log($scope.indatabase, $scope.indatabase.length);
 });

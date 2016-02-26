@@ -9,6 +9,7 @@ app.controller('RegistrationController', function ($scope, $rootScope, $state, A
     $scope.register = function (user) {
         clearErr();
         AuthService.register($scope.user, handleDBResponse);
+        $state.go('home');
     };
 
     $scope.facebookLogin = function () {
