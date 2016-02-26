@@ -28,15 +28,10 @@ app.controller('RegistrationController', function ($scope, $rootScope, $state, A
             $state.go('home');
         }
     }   
-// Logout Function    
-//     $scope.logout = function () {
-//         $rootScope.member = null;
-//         $state.go('login')
-//         }
-// },
+
 });
 
-app.controller('AuthController', function ($rootScope, $state, AuthService) {
+app.controller('AuthController', function ($scope, $rootScope, $state, AuthService) {
     //Redirect if Unable to Authenticate
     if (!$rootScope.member) {
         AuthService.authMember(function (err) {
@@ -103,7 +98,8 @@ app.service('AuthService', function ($rootScope, $firebaseObject, CONSTANTS) {
         })
     }
 
-    this.logout = function () {
+    $rootScope.logout = function () {
+        debugger
         db.unauth();
         $rootScope.member = null;
         $state.go('login')
