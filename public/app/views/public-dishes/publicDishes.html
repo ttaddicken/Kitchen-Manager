@@ -2,8 +2,8 @@
     <div>
         <span ng-repeat="dish in indatabase"> 
             <img style="height:60px; margin-bottom: 5px;" src="{{dish.img}}" alt="Dish pic here"> 
-            <a style="margin-right: 5px" ng-href="/#/public-dishes/{{dishes.$id}}">
-                {{dish["title"]}}
+            <a style="margin-right: 5px" ng-href="/#/public-dishes/{{dish.title}}">
+                {{dish["title"]}}{{dish.id}}
                
             </a>
         </span>
