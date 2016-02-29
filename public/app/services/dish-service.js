@@ -35,11 +35,11 @@ app.service('DishService', function(){
         return dishes;
     }
 	
-    this.getDish = function(title){
+    this.getDish = function(id){
 
         for (var i = 0; i < dishes.length; i++) {
             var currentDish = dishes[i];
-            if(currentDish.title.toLowerCase() === title.toLowerCase()){
+            if(currentDish.id === id){
                 return currentDish;
             }
         }

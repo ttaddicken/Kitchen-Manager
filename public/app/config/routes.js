@@ -66,8 +66,13 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         .state('dishDetails', {
             url: '/public-dishes/:id',
             templateUrl: '/app/views/public-dishes/dish-details.html',
-            controller: 'PublicDishesController',
-            controllerAs: 'pdc'
+            controller: 'DishDetails',
+            controllerAs: 'dd',
+            resolve: {
+			dish: function($stateParams, DishService){
+				return DishService.getDish($stateParams.id);
+			},
+					}
         })
 })
 

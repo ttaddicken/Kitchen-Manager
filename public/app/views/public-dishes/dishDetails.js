@@ -1,4 +1,4 @@
-app.controller('PublicDishesController', function ($firebaseArray, $scope, DishService, CONSTANTS ) {
+app.controller('DishDetails', function($firebaseArray, $scope, dish, DishService, CONSTANTS ) {
 
     // $scope.dishes = DishService.getDishes();
     //   $scope.dishList.$get(dishes);
