@@ -1,27 +1,40 @@
-
-{{dish}}
-{{dishList}}
-{{dish["title"]}}
-{{member.email}}
-{{dish.title}}
-{{dish.nutrientFacts}}
-{{title}}
-<!--<div> </div>
 <div class="row">
-    <div class="col-sm-8 recipeCard">
-        <img class="img" height="120" src="{{dish.img}}" alt="{{dish.title}">
-        <img style="height:60px; margin-bottom: 5px;" src="{{dish.img}}" alt="Dish pic here"> 
-        <p>http://foodnetwork.sndimg.com/content/dam/images/food/fullset/2008/4/23/0/RB0106_Citrus-Baked-Salmon.jpg.rend.sni12col.landscape.jpeg</p>
-        <h2>{{dish.title}}</h2>
-        <br> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
-        <br>
-        <div <div class="panel" ng-repeat="ingredient in ingredients">
-           <p>{{dish.ingredient}}</p>
-
-            <p>8 slices fresh lemon, 8 slices fresh orange, 4 (6 to 8-ounce) skinless salmon fillets, Sea salt and freshly ground
-                black pepper, 4 tbs freshly chopped dill, 4 tbs sun-dried tomatoes in oil, plus 1 tablespoon oil from jar
-                , 2 cups white wine
-    
-        <p> {{dish.nutrientFacts}}</p>
+    <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
+    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" src="{{dish.img}}" alt="{{dish.title}"></div>
+    </span>
+</div>
+<span>
+    <div class="col-sm-12">
+        <div style="text-align: center" class="row">
+         Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
+        </div>
+        <div style="text-align: center">
+            Dish Stars:{{dish.stars}}
+        </div>
+        <h4>Ingredients:</h4>
+        <div  style="margin-right: 8px; margin-bottom: 8px;" class="col-sm-3 panel" ng-repeat="ingredient in dish.ingredients">
+           {{ingredient}} 
+        </div>
+        </div>
+</span>
+<div class="col-sm-12">
+<div>
+    <h4>Instructions:</h4>
+    <div class="panel">
+        {{dish.instructions}}
     </div>
-</div>-->
+</div>
+<div>
+    <div>{{dish.nutritionInfo.Calories}}</div>
+    <div>{{dish.tfat}}</div>
+    <div>{{dish.sfat}}</div>
+    <div>{{dish.cholesterol}}</div>
+    <div>{{dish.carbohydrates}}</div>
+    <div>{{dish.protein}}</div>
+    <div>{{dish.fiber}}</div>
+    <div>{{dish.sodium}}</div>
+    <div>{{dish.potassium}}</div>
+    <div>{{dish.calcium}}</div>
+    <div>{{dish.iron}}</div>
+    </div>
+</div>

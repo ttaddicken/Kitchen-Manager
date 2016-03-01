@@ -38,8 +38,9 @@ app.service('DishService', function(){
     this.getDish = function(id){
 
         for (var i = 0; i < dishes.length; i++) {
+            debugger;
             var currentDish = dishes[i];
-            if(currentDish.id === id){
+            if(currentDish.id == id){
                 return currentDish;
             }
         }
