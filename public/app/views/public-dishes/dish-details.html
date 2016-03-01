@@ -24,17 +24,17 @@
         {{dish.instructions}}
     </div>
 </div>
-<div>
-    <div>{{dish.nutritionInfo.Calories}}</div>
-    <div>{{dish.tfat}}</div>
-    <div>{{dish.sfat}}</div>
-    <div>{{dish.cholesterol}}</div>
-    <div>{{dish.carbohydrates}}</div>
-    <div>{{dish.protein}}</div>
-    <div>{{dish.fiber}}</div>
-    <div>{{dish.sodium}}</div>
-    <div>{{dish.potassium}}</div>
-    <div>{{dish.calcium}}</div>
-    <div>{{dish.iron}}</div>
+<span style="display: inline">
+    <div>Calories: {{dish.nutritionInfo[0].Calories}}</div>
+    <div>Total Fat: {{dish.nutritionInfo[0].TotalFat}}</div>
+    <div>Saturated Fats: {{dish.sfat}}</div>
+    <div>Cholesterol: {{dish.cholesterol}}</div>
+    <div>Carbohydrates: {{dish.carbohydrates}}</div>
+    <div>Protein: {{dish.protein}}</div>
+    <div>Fiber: {{dish.fiber}}</div>
+    <div>Sodium: {{dish.sodium}}</div>
+    <div>Potassium: {{dish.potassium}}</div>
+    <div>Calcium: {{dish.calcium}}</div>
+    <div>Iron: {{dish.iron}}</div>
     </div>
-</div>
+</span>
