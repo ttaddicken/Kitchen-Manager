@@ -1,5 +1,5 @@
 /* global Firebase */
-app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
+app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS, $firebaseArray, summernote) {
 
     // links recipies/dishes from firebase
     // $scope.dishes = DataService.getDishes();
