@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html ng-app="StarRating">
+
+<head>
+    <title>Star Rating</title>
+    <link rel="stylesheet" href="app/styles/stars.css" />
+</head>
+<body>
+<div ng-controller="StarController">
+    
+    <h4>This rating is Clickable</h4>
+        Rating is {{rating}}
+    <div rating-directive rating-value="rating" max="5" on-rating-selected="saveRatingToServer(rating)"></div>
+    <h4> This rating is Readonly</h4>
+        Rating is {{rating}}
+    <div rating-directive rating-value="rating" max="5" readonly="true"></div>
+</div>  
+
+
+    <!-- Latest compiled and minified Angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-rc.2/angular.min.js"></script>
+
+    </script>
+    <!--Load bootstrap & jquery-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <!--Load App-->
+    <script src="app/config/stars.js"></script>
+</body>
+
+</html>

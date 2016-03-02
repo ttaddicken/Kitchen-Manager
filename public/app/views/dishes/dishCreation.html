@@ -1,6 +1,5 @@
 <div class="col-sm-3 recipeInput min-height: 1000px">
     <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
-    
     <form class="form" ng-submit="createDish()">
         <div class="form-group"><label for="title">Title:</label>
             <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title"/>
@@ -16,12 +15,15 @@
         </div>
         <div class="form-group"><label for="instructons">Instructions:</label>
             <input class="form-control" type="text" ng-model="newDish.instructions" placeholder="instructions"/>
-          <!--<div summernote></div>-->
+          <div summernote></div>
         </div>
-         <div class="form-group"><label for="stars">Stars:</label>
-            <input class="form-control" type="range"" ng-model="newDish.stars"/>
+         <div ng-controller="StarController" class="form-group">
+            
+             <label for="stars">Stars:</label>
+             <div rating-directive rating-value="rating" max="5" ng-model="newDish.stars"></div>
+            <!--<input class="form-control" type="range"" ng-model="newDish.stars"/>-->
         </div>
-        <button type="submit">Add Recipe</button>    
+        <button ng-click="testPush()"type="submit">Add Recipe</button>    
     </form>
     
 <!--Begin view of build-->
