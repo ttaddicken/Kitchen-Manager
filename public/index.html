@@ -64,12 +64,18 @@
 
     <!--Start nonmember view-->
     <div ng-if="!member">
-        <div class="">
-            <div class="font">
-                <ui-view></ui-view>
-            </div>
+        <div class="container-fluid row font">
+            <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                    </div>
+                </div>
+            </nav>
+            <ui-view></ui-view>
         </div>
     </div>
+
     <!--end nonmember view-->
 
     <!-- Load Angular -->
