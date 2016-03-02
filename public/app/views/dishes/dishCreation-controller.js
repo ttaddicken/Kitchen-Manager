@@ -6,7 +6,7 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
     
 
     // Create a recipe 
-    $scope.addRecipe = function (newRecipe) {
+    $scope.createDish = function (newRecipe) {
         newRecipe.memberId = $rootScope.member.$id
         $scope.newRecipe.member = $rootScope.member;
         $scope.newRecipe.date = Date.now();

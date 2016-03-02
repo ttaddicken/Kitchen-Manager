@@ -1,70 +1,46 @@
 <div class="col-sm-3 recipeInput min-height: 1000px">
     <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
     
-    <div class="form">
+    <form class="form" ng-submit="createDish()">
         <div class="form-group"><label for="title">Title:</label>
-            <input class="form-control" type="text" ng-model="newdish.title" placeholder="Recipe Title"/>
+            <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title"/>
         </div>
-        <div class="form-group"><label for="prepTIme">Prep Time:</label>
-            <input class="form-control" type="number" ng-model="newTask.prepTime" value="00" />
+        <div class="form-group"><label for="prepTIme">Prep Time (minutes):</label>
+            <input class="form-control" type="number" ng-model="newDish.prepTime" value="00" />
         </div>
-        <div class="form-group"><label for="cookTime">Cook Time:</label>
-            <input class="form-control" type="number" ng-model="newTask.cookTime" value="00" />
+        <div class="form-group"><label for="cookTime">Cook Time (minutes):</label>
+            <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
         </div>
         <div class="form-group"><label for="ingredients">Ingredients:</label>
-            <input class="form-control" type="text" ng-model="newTask.instructions" placeholder="instructions"/>
+            <input class="form-control" type="text" ng-model="newIngredient" placeholder="instructions"/>+<button type="button" ng-init="newDish.ingredients = newDish.ingredients || [] "  ng-click="newDish.ingredients.push(newIngredient)">add ingredient</button>
         </div>
         <div class="form-group"><label for="instructons">Instructions:</label>
-            <input class="form-control" type="text" ng-model="newTask.instructions" placeholder="instructions"/>
+            <input class="form-control" type="text" ng-model="newDish.instructions" placeholder="instructions"/>
         </div>
          <div class="form-group"><label for="stars">Stars:</label>
-            <input class="form-control" type="range"" ng-model="newTask.stars"/>
+            <input class="form-control" type="range"" ng-model="newDish.stars"/>
         </div>
-        <button ng-click="createRecipe()">Add Recipe</button>    
-    </div>
-    
-    
-    
-    
-    <!--<div>
-        <form ng-submit="createRecipe()" class="recipeInput">
-            <input class="input" ng-model="dish.title" type="text" placeholder="Enter Dish Name">
-            <input class="input" ng-model="newDish.img" type="url" placeholder="Paste Image UL here">
-            <div class="inline-block">
-                <label>Prep Time: </label>
-                <input class="input" ng-model="newDish.prepTime" type="number" value="0:00" placeholder="00" />
-
-                <label>Cook Time: </label>
-                <input class="input" ng-model="newDish.cookTime" type="number" value="00" placeholder="00" />
-            </div>
-            <br>
-            <!--Will this work a submit button inside a form???-->
-            <!--<div>
-                <label>Ingredients: </label>
-                <input class="input" ng-model="newDish.ingredients" type="text" placeholder="Enter ingredients separated by a comma" />
-                <button ng-click="addIngredient()">Add Ingredient</button>
-            </div>
-            <label>Instructions: </label>
-            <input class="input" ng-model="newDish.instructions" type="text" placeholder="Enter/Paste instructions" />
-            <br>
-            <button type="submit" ng-click="addRecipe(newRecipe)" class="btn btn-info">Save (incomplete)</button>
-        </form>
-    </div>-->
-<!--</div>-->
-<!--<div class="row">
+        <button type="submit">Add Recipe</button>    
+    </form>
+<!--Begin view of build-->
+</div>
     <div class="col-sm-8 recipeCard">
         <img class="img" height="120" src="{{newDish.img}}" alt="{{newDish.title}">
 
-        <h2>{{dish.title}}</h2> Prep Time: {{dish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}
+        <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}} Minutes
 
-        <div <div class="panel" ng-repeat="ingredient in ingredients">
+        <div <div class="panel">
             <b>Ingredients:</b>
-            <p>{{newDish.ingredient}}</p>
+            <div>
+                <ul>
+                    <li ng-repeat="i in newDish.ingredients">{{i}}</li>
+                </ul>
+            </div>
+           
         </div>
         <b>Instructions: </b></p>{{newDish.instructions}}</p>
 
 
         <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
     </div>
-</div>
-</div>-->
+<!--end view of build-->
