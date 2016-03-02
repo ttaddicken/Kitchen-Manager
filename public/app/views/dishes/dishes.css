@@ -1,7 +1,6 @@
 /*BEGIN: DISHCREATION CSS CONTENT*/
 
 .recipeInput{
-    background-color: lightblue;
     border: 5 px solid black;
     text-align: left;
     height: 75%;
@@ -11,7 +10,6 @@
     margin: 3px;
 }
 .recipeCard{
-    background-color: papayawhip;
     border: 5 px solid black;
     text-align: left;
     width: 65.666666%;
