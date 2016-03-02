@@ -1,4 +1,4 @@
-app.controller('ManageDishesController', function ($rootScope, $scope, DishService, CONSTANTS, $firebaseArray, summernote) {
+app.controller('ManageDishesController', function ($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
     
     $scope.removeDish = function (index) {
         $scope.dishes.splice(index, 1)
