@@ -7,8 +7,14 @@
 
     <!--BOOTSTRAP & OTHER CSS FILES-->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <!--text area summernote-->
 
+    <!-- include summernote css/js-->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
+    <!--end summer note-->
 
     <!--OUR CSS Files-->
     <link rel="stylesheet" href="assets/style.css">
@@ -20,7 +26,7 @@
 </head>
 
 <body>
-
+    <!--start of member view-->
     <div ng-if="member">
         <div class="">
             <div class="font clearfix back-color">
@@ -43,7 +49,9 @@
                                 <li><a href="#/public-dishes" class="font-color">Public Dishes</a></li>
                             </ul>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#/login" ng-click="logout()" ng-click="showDropDown = false" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+                                <li>
+                                    <a href="#/login" ng-click="logout()" ng-click="showDropDown = false" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -52,17 +60,23 @@
             </div>
         </div>
     </div>
+    <!--end member view-->
 
-  
-
+    <!--Start nonmember view-->
     <div ng-if="!member">
-        <div class="">
-            <div class="font">
-              <ui-view></ui-view>
-            </div>
+        <div class="container-fluid row font">
+            <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                    </div>
+                </div>
+            </nav>
+            <ui-view></ui-view>
         </div>
     </div>
 
+    <!--end nonmember view-->
 
     <!-- Load Angular -->
     <script src="bower_components/angular/angular.js"></script>
@@ -78,9 +92,15 @@
 
     <!--Load Bootstrap-->
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
-    
+
     <!--Load Firebase-->
     <script src="bower_components/firebase/firebase.js"></script>
+
+    <!--Load angular bootstrap-->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <!--Load Summernote-->
+    <script src="bower_components/angular-summernote/dist/angular-summernote.js"></script>
 
     <!--START APP CONFIG-->
     <script src="app/config/init.js"></script>
