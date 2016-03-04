@@ -20,7 +20,7 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
     //         $rootScope.member.$save();
     //     })
     // }
-        $scope.testPush = function () {
+    $scope.testPush = function () {
         //GET LOCAL DISH FROM YOUR FORM
         $scope.dishList.$add($scope.localdish).then(function(dish){
             $rootScope.member.dishList = $rootScope.member.dishList || {}
@@ -45,46 +45,24 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
     // addIngredient()
     // importToFavorites()
 
-});
+// });
 
-    //CREATE A STAR RATING CAPABILITY
-app.controller('StarController', function($scope, $window) {     
-    $scope.rating = 5;
-    $scope.saveRatingToServer = function(rating) {};
-    //THIS DIRECTIVE BUILDS OUR STARS
-    app.directive('ratingDirective', function () {
-    return {
-      restrict: 'A',
-      templateUrl: '/app/views/stars/rating.html',
-      scope: {
-        ratingValue: '=',
-        max: '=',
-        readonly: '@',
-        onRatingSelected: '&'
-      },
-      link: function (scope, elem, attrs) {
+//CREATE A STAR RATING CAPABILITY TO CREATE A DISH **Also needed for Manage Dishes
 
-        var updateStars = function() {
-          scope.stars = [];
-          for (var  i = 0; i < scope.max; i++) {
-            scope.stars.push({filled: i < scope.ratingValue});
-          }
-        };
+    //     $scope.rate = 7;
+    //     $scope.max = 10;
+    //     $scope.isReadonly = false;
 
-        scope.toggle = function(index) {
-          if (scope.readonly && scope.readonly === 'true') {
-            return;
-          }
-          scope.ratingValue = index + 1;
-          scope.onRatingSelected({rating: index + 1});
-        };
+    //     $scope.hoveringOver = function (value) {
+    //     $scope.overStar = value;
+    //     $scope.percent = 100 * (value / $scope.max);
+    // };
 
-        scope.$watch('ratingValue', function(oldVal, newVal) {
-          if (newVal) {
-            updateStars();
-          }
-        });
-      }
-    }
-  })
+    // $scope.ratingStates = [
+    //     { stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle' },
+    //     { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' },
+    //     { stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle' },
+    //     { stateOn: 'glyphicon-heart' },
+    //     { stateOff: 'glyphicon-off' }
+    // ];
   });

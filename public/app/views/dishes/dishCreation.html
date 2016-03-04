@@ -4,47 +4,66 @@
         <div class="form-group"><label for="title">Title:</label>
             <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title"/>
         </div>
-        <div class="form-group"><label for="prepTIme">Prep Time (minutes):</label>
+        <div class="form-group">
+            <label for="prepTime">Prep Time (minutes):</label>
             <input class="form-control" type="number" ng-model="newDish.prepTime" value="00" />
         </div>
-        <div class="form-group"><label for="cookTime">Cook Time (minutes):</label>
+        <div class="form-group">
+            <label for="cookTime">Cook Time (minutes):</label>
             <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
         </div>
         <div class="form-group"><label for="ingredients">Ingredients:</label>
-            <input class="form-control" type="text" ng-model="newIngredient" placeholder="instructions"/><button type="button" ng-init="newDish.ingredients = newDish.ingredients || [] "  ng-click="newDish.ingredients.push(newIngredient)">add ingredient</button>
+            <input class="form-control" type="text" ng-model="newIngredient" placeholder="instructions"/>
+            <button type="button" ng-init="newDish.ingredients = newDish.ingredients || [] " ng-click="newDish.ingredients.push(newIngredient)">add ingredient</button>
         </div>
-        <div class="form-group"><label for="instructons">Instructions:</label>
-            <input class="form-control" type="text" ng-model="newDish.instructions" placeholder="instructions"/>
-          <div summernote></div>
+        <!-----SUMMERNOTE NOT WORKING ----->
+        <!--<div class="form-group">
+            <label for="instructons">Instructions:</label>
+            <input class="form-control" type="text" ng-model="newDish.instructions" placeholder="instructions" />
+            <div summernote></div>
+        </div>-->
+       <!-----STAR RATING NOT WORKING -----> 
+        <div ng-controller="RatingDemoCtrl">
+            <h4>Default</h4>
+            <uib-rating ng-model="rate" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']"
+            aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': percent<30, 'label-info': percent>=30 && percent<70, 'label-success': percent>=70}"
+            ng-show="overStar && !isReadonly">{{percent}}%</span>
+
+            <pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>
+
+            <button type="button" class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
+            <button type="button" class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+            <hr />
+
+            <h4>Custom icons</h4>
+            <div ng-init="x = 5">
+                <uib-rating ng-model="x" max="15" state-on="'glyphicon-ok-sign'" state-off="'glyphicon-ok-circle'" aria-labelledby="custom-icons-1"></uib-rating> <b>(<i>Rate:</i> {{x}})</b></div>
+            <div ng-init="y = 2">
+                <uib-rating ng-model="y" rating-states="ratingStates" aria-labelledby="custom-icons-2"></uib-rating> <b>(<i>Rate:</i> {{y}})</b></div>
         </div>
-         <div ng-controller="StarController" class="form-group">
-            
-             <label for="stars">Stars:</label>
-             <div rating-directive rating-value="rating" max="5" ng-model="newDish.stars"></div>
-            <!--<input class="form-control" type="range"" ng-model="newDish.stars"/>-->
-        </div>
-        <button ng-click="testPush()"type="submit">Add Recipe</button>    
+        <button ng-click="testPush()" type="submit">Add Recipe</button>
     </form>
-    
-<!--Begin view of build-->
+
+    <!--Begin view of build-->
 </div>
-    <div class="col-sm-8 recipeCard">
-        <img class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
+<div class="col-sm-8 recipeCard">
+    <img class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
 
-        <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}} Minutes
+    <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}} Minutes
 
-        <div <div class="panel">
-            <b>Ingredients:</b>
-            <div>
-                <ul>
-                    <li ng-repeat="i in newDish.ingredients">{{i}}</li>
-                </ul>
-            </div>
-           
+    <div <div class="panel">
+        <b>Ingredients:</b>
+        <div>
+            <ul>
+                <li ng-repeat="i in newDish.ingredients">{{i}}</li>
+            </ul>
         </div>
-        <b>Instructions: </b></p>{{newDish.instructions}}</p>
 
-
-        <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
     </div>
+    <b>Instructions: </b></p>{{newDish.instructions}}</p>
+
+
+    <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
+</div>
 <!--end view of build-->
