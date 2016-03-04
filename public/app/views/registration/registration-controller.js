@@ -1,5 +1,5 @@
 /* global Firebase */
-app.controller('RegistrationController', function ($scope, $rootScope, $state, AuthService) {
+app.controller('RegistrationController', function ($scope, $rootScope, $state, AuthService, CONSTANTS, $firebaseObject) {
 
     $scope.login = function (user) {
        	clearErr();
@@ -7,9 +7,17 @@ app.controller('RegistrationController', function ($scope, $rootScope, $state, A
     };
 
     $scope.register = function (user) {
-        clearErr();
-        AuthService.register($scope.user, handleDBResponse);
-        $state.go('home');
+        if (user.password === $scope.password2){
+            debugger;
+            clearErr();
+            AuthService.register($scope.user, handleDBResponse);
+            setTimeout(function () {
+               $scope.login(user)
+            $state.go('defaults');
+            }, 300)
+        } else  {
+            alert('Please verify your passwords are matching and try again')
+        }
     };
 
     $scope.facebookLogin = function () {
@@ -23,12 +31,13 @@ app.controller('RegistrationController', function ($scope, $rootScope, $state, A
 
     function handleDBResponse(err) {
         if (err) {
+            debugger;
             $scope.authErr = err.message;
             $scope.$apply();
         } else {
             $state.go('home');
         }
-    }   
+    }
 
 });
 
@@ -45,7 +54,7 @@ app.controller('AuthController', function ($scope, $rootScope, $state, AuthServi
 });
 
 
-app.service('AuthService', function ($rootScope, $firebaseObject, CONSTANTS) {
+app.service('AuthService', function ($rootScope, $state, $firebaseObject, CONSTANTS) {
 
     var db = new Firebase(CONSTANTS.fbRef)
 
