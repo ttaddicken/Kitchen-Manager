@@ -17,7 +17,7 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
     //         $rootScope.member.$save();
     //     })
     // }
-    $scope.testPush = function () {
+    $scope.createDish = function () {
         //GET LOCAL DISH FROM YOUR FORM
         $scope.dishList.$add($scope.localdish).then(function(dish){
             $rootScope.member.dishList = $rootScope.member.dishList || {}
@@ -45,23 +45,31 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
 // });
 
 //CREATE A STAR RATING CAPABILITY TO CREATE A DISH **Also needed for Manage Dishes
-// ??? DO WE REALLY NEED A CONTROLLER FOR THIS???
-// app.controller('RatingDemoCtrl', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
-//     $scope.rate = 5;
-//     $scope.max = 5;
-//     $scope.isReadonly = false;
 
-//     $scope.hoveringOver = function (value) {
-//         $scope.overStar = value;
-//         $scope.percent = 100 * (value / $scope.max);
-//     };
+    $scope.rate = 0;
+    $scope.max = 5;
+    $scope.isReadonly = false;
 
-//     $scope.ratingStates = [
-//         { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-//         { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-//         { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-//         { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-//         { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
-//     ];
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+
+  $scope.rate = 5;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+
+    $scope.ratingStates = [
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
+    ];
 // })
   });
