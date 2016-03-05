@@ -45,21 +45,23 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
 // });
 
 //CREATE A STAR RATING CAPABILITY TO CREATE A DISH **Also needed for Manage Dishes
+// ??? DO WE REALLY NEED A CONTROLLER FOR THIS???
+app.controller('RatingDemoCtrl', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
+    $scope.rate = 5;
+    $scope.max = 5;
+    $scope.isReadonly = false;
 
-    //     $scope.rate = 7;
-    //     $scope.max = 10;
-    //     $scope.isReadonly = false;
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
 
-    //     $scope.hoveringOver = function (value) {
-    //     $scope.overStar = value;
-    //     $scope.percent = 100 * (value / $scope.max);
-    // };
-
-    // $scope.ratingStates = [
-    //     { stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle' },
-    //     { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' },
-    //     { stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle' },
-    //     { stateOn: 'glyphicon-heart' },
-    //     { stateOff: 'glyphicon-off' }
-    // ];
+    $scope.ratingStates = [
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
+    ];
+})
   });
