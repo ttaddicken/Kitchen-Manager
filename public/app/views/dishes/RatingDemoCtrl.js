@@ -1,8 +1,8 @@
 
 //CREATE A STAR RATING CAPABILITY TO CREATE A DISH **Also needed for Manage Dishes
 app.controller('RatingDemoCtrl', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
-        $scope.rate = 7;
-        $scope.max = 10;
+        $scope.rate = 5;
+        $scope.max = 5;
         $scope.isReadonly = false;
 
         $scope.hoveringOver = function (value) {

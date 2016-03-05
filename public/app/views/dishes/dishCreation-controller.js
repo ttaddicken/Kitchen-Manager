@@ -1,6 +1,3 @@
-/* global Firebase */
-// app.controller('DishCreationController', function ($scope, $rootScope, $window, CONSTANTS, $firebaseArray, summernote) {
-
 app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
 
     // links recipies/dishes from firebase
