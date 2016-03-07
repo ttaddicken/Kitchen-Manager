@@ -66,11 +66,11 @@ app.controller('DishCreationController', function ($scope, $rootScope, DishServi
     };
 
     $scope.ratingStates = [
-        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
     ];
 // })
   });
