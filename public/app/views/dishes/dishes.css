@@ -3,8 +3,8 @@
 .recipeInput{
     border: 5 px solid black;
     text-align: left;
-    height: 75%;
-    width: 31.333333%;
+    /*height: 75%;*/
+    /*width: 31.333333%;*/
 }
 .input{
     margin: 3px;
@@ -12,34 +12,6 @@
 .recipeCard{
     border: 5 px solid black;
     text-align: left;
-    width: 65.666666%;
-    height: 75%;
+    
 }
 /*END: DISH CREATION CSS CONTENT*/
-/*BEGIN STAR RATING CSS CONTENT*/
-.rating{
-  color: silver;
-  margin: 0;
-  padding: 0;
-}
-
-ul.rating {
-  display: inline-block;
-}
-
-.rating li {
-  list-style-type: none;
-  display: inline-block;
-  padding: 1px;
-  text-align: center;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.rating .filled {
-  color: orange;
-}
-/*END CSS STARS CONTENT*/
-
-
-

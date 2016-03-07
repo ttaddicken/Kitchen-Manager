@@ -1,7 +1,7 @@
-app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
+app.controller('DishCreationController', function ($scope, $rootScope, DishService, $firebaseArray) {
 
     // links recipies/dishes from firebase
-    // $scope.dishes = DataService.getDishes();
+     $scope.dishes = DishService.getDishes();
     
 
     // Create a recipe 
@@ -17,13 +17,14 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
     //         $rootScope.member.$save();
     //     })
     // }
-    $scope.testPush = function () {
+    $scope.createDish = function (newDish) {
         //GET LOCAL DISH FROM YOUR FORM
-        $scope.dishList.$add($scope.localdish).then(function(dish){
+        newDish.creationDate = Date.now();
+        $scope.dishes.$add($scope.newDish).then(function(dish){
             $rootScope.member.dishList = $rootScope.member.dishList || {}
-            $rootScope.member.dishList[dish.key()] = $scope.localdish;
-            $rootScope.member.creationDate = Date.now();
+            $rootScope.member.dishList[dish.key()] = $scope.newDish;
             $rootScope.member.$save();
+            $scope.newDish = ''
         });
     }
 
@@ -46,20 +47,30 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
 
 //CREATE A STAR RATING CAPABILITY TO CREATE A DISH **Also needed for Manage Dishes
 
-    //     $scope.rate = 7;
-    //     $scope.max = 10;
-    //     $scope.isReadonly = false;
+    $scope.rate = 0;
+    $scope.max = 5;
+    $scope.isReadonly = false;
 
-    //     $scope.hoveringOver = function (value) {
-    //     $scope.overStar = value;
-    //     $scope.percent = 100 * (value / $scope.max);
-    // };
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
 
-    // $scope.ratingStates = [
-    //     { stateOn: 'glyphicon-ok-sign', stateOff: 'glyphicon-ok-circle' },
-    //     { stateOn: 'glyphicon-star', stateOff: 'glyphicon-star-empty' },
-    //     { stateOn: 'glyphicon-heart', stateOff: 'glyphicon-ban-circle' },
-    //     { stateOn: 'glyphicon-heart' },
-    //     { stateOff: 'glyphicon-off' }
-    // ];
+  $scope.rate = 5;
+    $scope.max = 5;
+    $scope.isReadonly = false;
+
+    $scope.hoveringOver = function (value) {
+        $scope.overStar = value;
+        $scope.percent = 100 * (value / $scope.max);
+    };
+
+    $scope.ratingStates = [
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
+        { stateOn: 'fa fa-spoon fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
+    ];
+// })
   });

@@ -1,61 +1,9 @@
-<body>
-
-
-
-    <div class="panel-body container-fluid">
-        <h1>My Dish</h1>
-        <div>
-            <ul class="list-group">
-                <li class="list-group-item" ng-repeat="dish in member.dishList track by $index">{{dish.title}}<span class="badge" ng-click="removeDish($index)">X</span><span class="badge" ng-click="editDish()">Edit Dish</span></li>
-            </ul>
-        </div>
-        <button ng-click="testPush()">push to firebase</button>
+<div class="panel-body container-fluid">
+    <h1>My Dish</h1>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="dish in member.dishList track by $index">{{dish.title}}<span class="badge" ng-click="removeDish($index)">X</span><span class="badge" ng-click="editDish()">Edit Dish</span></li>
+        </ul>
     </div>
-
-<div id="summernote">Instructions</div>
-
-      <!--<div class="form-group">
-            <label for="instructons">Instructions:</label>
-            <div id="summernote" ng-model="newDish.instructions" >Instructions</div> 
-        </div>-->
-    
-</body>
-
-
-
-
-<!--<div class="col-sm-6 login">-->
-    <!--<form ng-submit="login()">-->
-    <!--<div>
-        <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                Resting at the Manage Dishes page
-                
-            </h4>
-        <div ng-repeat="dish in dishes" class="panel">
-
-            <ul>
-                <li>
-                    <div class="media">
-                        <div class="media-left media-middle">
-                            <a href="{{dish.img}}">
-                                <img class="media-object" src="{{dish.img}}" alt="{{dish.title}}">
-                            </a>
-                        </div>
-                        <div class="media-body">
-                            <h2 class="media-heading">{{dish.title}}</h2> ...
-                        </div>
-                    </div>
-                </li>
-            </ul>
-
-        </div>
-        <button ui-sref="home">Go Home</button>
-        <button ui-sref="dishCreation">Create Dishes</button>
-        <button ui-sref="profile">Update Profile</button>
-    </div>
-    </form>
-
-</div>-->
-
-<!---------------------------------->
-
+    <button ng-click="testPush()">push to firebase</button>
+</div>
