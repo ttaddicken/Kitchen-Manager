@@ -19,14 +19,6 @@ app.controller('ManageDishesController', function ($rootScope, $scope, DishServi
         width: 56,
         focus: true
     };
-    
-    // $('#summernote').summernote({
-    //     height: 150,                 // set editor height
-    //     minHeight: null,             // set minimum height of editor
-    //     maxHeight: null,             // set maximum height of editor
-    //     focus: true                  // set focus to editable area after initializing summernote
-    // });
-    
 })
 //  Begginning of borrowed from firebase
 // {

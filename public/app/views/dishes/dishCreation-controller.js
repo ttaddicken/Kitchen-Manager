@@ -1,7 +1,7 @@
-app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS, $firebaseArray) {
+app.controller('DishCreationController', function ($scope, $rootScope, DishService, $firebaseArray) {
 
     // links recipies/dishes from firebase
-    // $scope.dishes = DataService.getDishes();
+     $scope.dishes = DishService.getDishes();
     
 
     // Create a recipe 
@@ -17,13 +17,14 @@ app.controller('DishCreationController', function ($scope, $rootScope, CONSTANTS
     //         $rootScope.member.$save();
     //     })
     // }
-    $scope.createDish = function () {
+    $scope.createDish = function (newDish) {
         //GET LOCAL DISH FROM YOUR FORM
-        $scope.dishList.$add($scope.localdish).then(function(dish){
+        newDish.creationDate = Date.now();
+        $scope.dishes.$add($scope.newDish).then(function(dish){
             $rootScope.member.dishList = $rootScope.member.dishList || {}
-            $rootScope.member.dishList[dish.key()] = $scope.localdish;
-            $rootScope.member.creationDate = Date.now();
+            $rootScope.member.dishList[dish.key()] = $scope.newDish;
             $rootScope.member.$save();
+            $scope.newDish = ''
         });
     }
 

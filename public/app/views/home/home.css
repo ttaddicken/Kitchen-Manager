@@ -1,0 +1,12 @@
+
+.input{
+    width: 100px;
+}
+.cell{
+    border: 5px solid black;
+    /*width: 150px;*/
+    height: 100px;
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+}

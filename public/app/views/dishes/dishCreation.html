@@ -1,6 +1,6 @@
 <div class="col-sm-7 recipeInput">
     <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
-    <form class="form" ng-submit="createDish()">
+    <form class="form" ng-submit="createDish(newDish)">
         <div class="form-group">
             <label for="title">Title:</label>
             <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title" />
@@ -21,8 +21,8 @@
         <!-----SUMMERNOTE  WORKING ----->
         <div class="form-group">
             <label for="instructons">Instructions:</label>
-            <input class="form-control" type="text" ng-model="newDish.instructions" placeholder="instructions" />
-            <div summernote></div>
+           
+            <div ng-model="newDish.instructions" summernote></div>
         </div>
         <!-----Spoon RATING  WORKING --- -->
         <div>
@@ -35,6 +35,7 @@
             <div>
                 <button type="button" class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
                 <button type="button" class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+                <button type="submit" class="btn btn-sm btn-default">Create Dish</button>                
             </div>
         </div>
     </form>
