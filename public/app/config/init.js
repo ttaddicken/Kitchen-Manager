@@ -3,4 +3,5 @@ var app = angular.module('Kitchen', [
     'firebase',
     'summernote',
     'ui.bootstrap',
+    'ngSanitize'
 ]);

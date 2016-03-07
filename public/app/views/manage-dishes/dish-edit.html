@@ -16,8 +16,7 @@
             Dish Stars:{{dish.stars}}
         </div>
         <h4>Ingredients:</h4>
-        <div style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients">
-           {{ingredient}} 
+        <input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients" value="{{ingredient}}" type="text">
         </div>
         </div>
         </div>
@@ -26,7 +25,7 @@
 <div>
     <h4>Instructions:</h4>
     <div class="panel">
-        {{dish.instructions}}
+        <div ng-bind-html="dish.instructions"></div>
     </div>
 </div>
 <span style="display: inline">

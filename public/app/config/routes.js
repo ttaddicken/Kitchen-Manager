@@ -53,7 +53,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
         })
         .state('manageDishes', {
             url: '/manage-dishes',
-            templateUrl: '/app/views/dishes/manageDishes.html',
+            templateUrl: '/app/views/manage-dishes/manageDishes.html',
             controller: 'ManageDishesController',
             controllerAs: 'mc'
         })
@@ -68,6 +68,17 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '/app/views/public-dishes/dish-details.html',
             controller: 'DishDetails',
             controllerAs: 'dd',
+            resolve: {
+			dish: function($stateParams, DishService){
+				return DishService.getDish($stateParams.id);
+			},
+					}
+        })
+        .state('dishEdit', {
+            url: '/manage-dishes/:id',
+            templateUrl: '/app/views/manage-dishes/dish-edit.html',
+            controller: 'DishDetails',
+            controllerAs: 'de',
             resolve: {
 			dish: function($stateParams, DishService){
 				return DishService.getDish($stateParams.id);

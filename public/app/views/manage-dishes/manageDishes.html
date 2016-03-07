@@ -1,0 +1,16 @@
+<div class="panel-body container-fluid">
+    <h1>My Dish</h1>
+    <div>
+        <ul class="list-group">
+            <li class="list-group-item" ng-repeat="dish in myDishes track by $index">
+                <a style="margin-right: 5px" ng-href="/#/manage-dishes/{{dish.$id}}">
+                {{dish["title"]}}
+            </a>
+                
+                <span class="badge" ng-click="removeDish($index)">X</span>
+                <span class="badge" ng-click="editDish()">Edit Dish</span>
+            </li>
+        </ul>
+    </div>
+   </div>
+
