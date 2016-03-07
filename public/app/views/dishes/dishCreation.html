@@ -14,7 +14,7 @@
             <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
         </div>
         <div class="form-group">
-            <label for="ingredients">Ingredients:</label>
+            <label for="ingredients">Ingredients: (this section assists in creating the grocery list)</label>
             <input class="form-control" type="text" ng-model="newIngredient" placeholder="instructions" />
             <button type="button" ng-init="newDish.ingredients = newDish.ingredients || [] " ng-click="newDish.ingredients.push(newIngredient)">add ingredient</button>
         </div>
