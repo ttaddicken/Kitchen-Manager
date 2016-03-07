@@ -25,8 +25,13 @@ app.controller('DishCreationController', function ($scope, $rootScope, DishServi
             $rootScope.member.dishList[dish.key()] = $scope.newDish;
             $rootScope.member.$save();
             $scope.newDish = ''
+
         });
     }
+    
+    $scope.clearSearch = function() {
+        $scope.newIngredient = '';
+}
 
     // clearRecipe()
     // $scope.clearDish = function (clearRecipe) {
