@@ -6,9 +6,8 @@
                 <a style="margin-right: 5px" ng-href="/#/manage-dishes/{{dish.$id}}">
                 {{dish["title"]}}
             </a>
-                
-                <span class="badge" ng-click="removeDish($index)">X</span>
-                <span class="badge" ng-click="editDish()">Edit Dish</span>
+               
+               <a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge" >Edit Dish</a>
             </li>
         </ul>
     </div>
