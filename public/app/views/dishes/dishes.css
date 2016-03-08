@@ -22,3 +22,9 @@
     width: 50px;
     margin-right: 5px;
 }
+
+/*dish display*/
+.nutr{
+   display: inline;
+   margin-right: 10px; 
+}

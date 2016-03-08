@@ -28,19 +28,22 @@
     <div class="panel">
         {{dish.instructions}}
     </div>
-</div>
-<span style="display: inline">
-    <div>Calories: {{dish.nutritionInfo[0].Calories}}</div>
-    <div>Total Fat: {{dish.nutritionInfo[0].TotalFat}}</div>
-    <div>Saturated Fats: {{dish.sfat}}</div>
-    <div>Cholesterol: {{dish.cholesterol}}</div>
-    <div>Carbohydrates: {{dish.carbohydrates}}</div>
-    <div>Protein: {{dish.protein}}</div>
-    <div>Fiber: {{dish.fiber}}</div>
-    <div>Sodium: {{dish.sodium}}</div>
-    <div>Potassium: {{dish.potassium}}</div>
-    <div>Calcium: {{dish.calcium}}</div>
-    <div>Iron: {{dish.iron}}</div>
     </div>
+</div>
+<h4>Nutritional Info</h4>
+<span style="display: inline">
+    <span class = "panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
+    <span class = "panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
+    <span class = "panel nutr">Saturated Fats: {{dish.sfat}}</span>
+    <span class = "panel nutr">Cholesterol: {{dish.cholesterol}}</span>
+    <span class = "panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
+    <span class = "panel nutr">Protein: {{dish.protein}}</span>
+    <span class = "panel nutr">Fiber: {{dish.fiber}}</span>
+    <span class = "panel nutr">Sodium: {{dish.sodium}}</span>
+    <span class = "panel nutr">Potassium: {{dish.potassium}}</span>
+    <span class = "panel nutr">Calcium: {{dish.calcium}}</span>
+    <span class = "panel nutr">Iron: {{dish.iron}}</span>
 </span>
+<div style = "text-align: center; margin: 5px;">
 <a  class="btn btn-default" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
+</div>
