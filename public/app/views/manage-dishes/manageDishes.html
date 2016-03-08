@@ -6,24 +6,13 @@
                 <a style="margin-right: 5px" ng-href="/#/manage-dishes/{{dish.$id}}">
                 {{dish["title"]}}
             </a>
-<<<<<<< HEAD
-               
-               <a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge" >Edit Dish</a>
-            </li>
-        </ul>
-    </div>
-   </div>
-
-=======
-
-                <h4>Recipe Rating</h4>
-                <uib-rating ng-model="rate" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
-                on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
-                <span class="label" ng-class="{'label-warning': value<=2, 'label-info': value>2 && value<4, 'label-success': value>=4}" ng-show="overStar && !isReadonly">{{rate}}</span>
-
-                <a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge">Edit Dish</a>
+                 <a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge">Edit Dish</a>
             </li>
         </ul>
     </div>
 </div>
->>>>>>> c4d3bce4f62cc6680d70ca811f44d32260d8bd34
+
+<!--<h4>Recipe Rating</h4>
+<uib-rating ng-model="rate" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
+on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+<span class="label" ng-class="{'label-warning': value<=2, 'label-info': value>2 && value<4, 'label-success': value>=4}" ng-show="overStar && !isReadonly">{{rate}}</span>-->

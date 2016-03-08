@@ -71,12 +71,6 @@ app.controller('DishCreationController', function ($scope, $rootScope, DishServi
         $scope.percent = 100 * (value / $scope.max);
     };
 
-    $scope.ratingStates = [
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
-    ];
+    $scope.ratingStates = DishService.ratingStates;
 
   });
