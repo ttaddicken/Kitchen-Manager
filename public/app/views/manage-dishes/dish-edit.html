@@ -16,29 +16,33 @@
             Dish Stars:{{dish.stars}}
         </div>
         <h4>Ingredients:</h4>
-        <input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients" value="{{ingredient}}" type="text">
+        <input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients track by $index" ng-model="ingredient" ng-blur="test(ingredient, $index)" type="text">
         </div>
         </div>
         </div>
 </span>
 <div class="col-sm-12">
-<div>
-    <h4>Instructions:</h4>
-    <div class="panel">
-        <div ng-bind-html="dish.instructions"></div>
+    <div>
+        <h4>Instructions:</h4>
+        <div class="panel">
+            <!--<div ng-bind-html="dish.instructions"></div>-->
+            <div  ng-model="dish.instructions" summernote></div>
+            <!--<summernote ng-value="{{dish.instructions}}" ></summernote>-->
+            <!--scope.dish.$save-->
+        </div>
     </div>
-</div>
-<span style="display: inline">
-    <div>Calories: {{dish.nutritionInfo[0].Calories}}</div>
-    <div>Total Fat: {{dish.nutritionInfo[0].TotalFat}}</div>
-    <div>Saturated Fats: {{dish.sfat}}</div>
-    <div>Cholesterol: {{dish.cholesterol}}</div>
-    <div>Carbohydrates: {{dish.carbohydrates}}</div>
-    <div>Protein: {{dish.protein}}</div>
-    <div>Fiber: {{dish.fiber}}</div>
-    <div>Sodium: {{dish.sodium}}</div>
-    <div>Potassium: {{dish.potassium}}</div>
-    <div>Calcium: {{dish.calcium}}</div>
-    <div>Iron: {{dish.iron}}</div>
-    </div>
+    <span style="display: inline">
+   <label> Calories: <input ng-model="dish.nutritionInfo[0].Calories"> </input> </label>
+   <label> Total Fat: <input ng-model="dish.nutritionInfo[0].TotalFat"> </input> </label>
+   <label> Saturated Fats: <input ng-model="dish.sfat"> </input> </label>
+   <label> Cholesterol: <input ng-model="dish.cholesterol"> </input> </label>
+   <label> Carbohydrates: <input ng-model="dish.carbohydrates"> </input> </label>
+   <label> Protein: <input ng-model="dish.protein"> </input> </label>
+   <label> Fiber: <input ng-model="dish.fiber"> </input> </label>
+   <label> Sodium: <input ng-model="dish.sodium"> </input> </label>
+   <label> Potassium: <input ng-model="dish.potassium"> </input> </label>
+   <label> Calcium: <input ng-model="dish.calcium"></input> </label>
+   <label> Iron: <input ng-model="dish.iron"> </input> </label>
 </span>
+<button ng-click="updateDish(dish)">Update Dish</button>
+</div>

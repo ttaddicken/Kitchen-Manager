@@ -10,7 +10,6 @@ app.service('DishService', function($rootScope, $firebaseArray, $firebaseObject,
    
 //    Member Dishes
     this.getMyDishes = function(){
-        debugger;
         return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/dishList'));
     }
 	
