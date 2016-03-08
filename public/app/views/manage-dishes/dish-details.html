@@ -26,7 +26,8 @@
 <div>
     <h4>Instructions:</h4>
     <div class="panel">
-        {{dish.instructions}}
+        <div ng-bind-html="dish.instructions"></div>
+        <!--{{dish.instructions}}-->
     </div>
     </div>
 </div>
