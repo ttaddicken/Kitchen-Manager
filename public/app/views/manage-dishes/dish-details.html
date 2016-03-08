@@ -22,38 +22,29 @@
         </div>
         </div>
 </span>
+<!-- instructions-->
 <div class="col-sm-12">
-<div>
-<<<<<<< HEAD
+    <div>
         <h4>Instructions:</h4>
         <div class="panel">
-            <!--<div ng-bind-html="dish.instructions"></div>-->
             <div ng-bind-html="dish.instructions"></div>
-            <!--<summernote ng-value="{{dish.instructions}}" ></summernote>-->
-            <!--scope.dish.$save-->
         </div>
-=======
-    <h4>Instructions:</h4>
-    <div class="panel">
-        <div ng-bind-html="dish.instructions"></div>
-        <!--{{dish.instructions}}-->
     </div>
->>>>>>> ed939faca6a48025d4d56e3fd00c4fd3052877ea
-    </div>
-<h4>Nutritional Info</h4>
-<span style="display: inline">
+<!--nutriytional info-->
+    <h4>Nutritional Info</h4>
+    <span style="display: inline">
     <span class = "panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
-    <span class = "panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
-    <span class = "panel nutr">Saturated Fats: {{dish.sfat}}</span>
-    <span class = "panel nutr">Cholesterol: {{dish.cholesterol}}</span>
-    <span class = "panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
-    <span class = "panel nutr">Protein: {{dish.protein}}</span>
-    <span class = "panel nutr">Fiber: {{dish.fiber}}</span>
-    <span class = "panel nutr">Sodium: {{dish.sodium}}</span>
-    <span class = "panel nutr">Potassium: {{dish.potassium}}</span>
-    <span class = "panel nutr">Calcium: {{dish.calcium}}</span>
-    <span class = "panel nutr">Iron: {{dish.iron}}</span>
-</span>
-<div style = "text-align: center; margin: 5px;">
-<a  class="btn btn-default" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
-</div>
+    <span class="panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
+    <span class="panel nutr">Saturated Fats: {{dish.sfat}}</span>
+    <span class="panel nutr">Cholesterol: {{dish.cholesterol}}</span>
+    <span class="panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
+    <span class="panel nutr">Protein: {{dish.protein}}</span>
+    <span class="panel nutr">Fiber: {{dish.fiber}}</span>
+    <span class="panel nutr">Sodium: {{dish.sodium}}</span>
+    <span class="panel nutr">Potassium: {{dish.potassium}}</span>
+    <span class="panel nutr">Calcium: {{dish.calcium}}</span>
+    <span class="panel nutr">Iron: {{dish.iron}}</span>
+    </span>
+    <div style="text-align: center; margin: 5px;">
+        <a class="btn btn-default" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
+    </div>
