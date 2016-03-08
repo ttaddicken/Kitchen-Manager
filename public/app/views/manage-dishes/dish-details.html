@@ -24,12 +24,14 @@
 </span>
 <div class="col-sm-12">
 <div>
-    <h4>Instructions:</h4>
-    <div class="panel">
-        {{dish.instructions}}
+        <h4>Instructions:</h4>
+        <div class="panel">
+            <!--<div ng-bind-html="dish.instructions"></div>-->
+            <div ng-bind-html="dish.instructions"></div>
+            <!--<summernote ng-value="{{dish.instructions}}" ></summernote>-->
+            <!--scope.dish.$save-->
+        </div>
     </div>
-    </div>
-</div>
 <h4>Nutritional Info</h4>
 <span style="display: inline">
     <span class = "panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
