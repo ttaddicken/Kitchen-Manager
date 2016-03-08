@@ -81,7 +81,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controllerAs: 'dd',
             resolve: {
 			dish: function($stateParams, DishService){
-				return DishService.getDish($stateParams.id);
+				return DishService.getMyDish($stateParams.id);
 			},
 					}
         })
@@ -92,7 +92,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controllerAs: 'dd',
             resolve: {
 			dish: function($stateParams, DishService){
-				return DishService.getDish($stateParams.id);
+				return DishService.getMyDish($stateParams.id);
 			},
 					}
         })
