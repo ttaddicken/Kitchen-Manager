@@ -1,0 +1,69 @@
+<div class="col-sm-7 recipeInput">
+    <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
+    <form class="form" ng-submit="createDish(newDish)">
+        <div class="form-group">
+            <label for="title">Title:</label>
+            <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title" />
+        </div>
+        <div class="form-group">
+            <label for="imgUrl">Dish Image:</label>
+            <input class="form-control" type="url" ng-model="newDish.img" value="00" />
+        </div>
+        <div class="form-group">
+            <label for="prepTime">Prep Time (minutes):</label>
+            <input class="form-control" type="number" ng-model="newDish.prepTime" value="00" />
+        </div>
+        <div class="form-group">
+            <label for="cookTime">Cook Time (minutes):</label>
+            <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
+        </div>
+        <div class="form-group">
+            <label for="ingredients">Ingredients: (this section assists in creating the grocery list)</label>
+            <input class="form-control" type="text" ng-model="newIngredient" placeholder="ingedients" />
+            <button type="button" ng-init="newDish.ingredients = newDish.ingredients || [] " ng-click="newDish.ingredients.push(newIngredient); clearSearch()">add ingredient</button>
+        </div>
+        <!-----SUMMERNOTE  WORKING ----->
+        <div class="form-group">
+            <label for="instructons">Instructions:</label>
+           
+            <div ng-model="newDish.instructions" summernote></div>
+        </div>
+        <!-----Spoon RATING  WORKING --- -->
+        <div>
+            <h4>Recipe Rating</h4>
+            <uib-rating ng-model="rate" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
+            on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+            <span class="label" ng-class="{'label-warning': value<=2, 'label-info': value>2 && value<4, 'label-success': value>=4}" ng-show="overStar && !isReadonly">{{rate}}</span>
+
+            <!--<pre style="margin:15px 0;">Rate: <b>{{rate}}</b> - Readonly is: <i>{{isReadonly}}</i> - Hovering over: <b>{{overStar || "none"}}</b></pre>-->
+            <div>
+                <button type="button" class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
+                <button type="button" class="btn btn-sm btn-default" ng-click="isReadonly = ! isReadonly">Toggle Readonly</button>
+                <button type="submit" class="btn btn-sm btn-default">Create Dish</button>                
+            </div>
+        </div>
+    </form>
+
+    <!--Begin view of build-->
+</div>
+<div class="col-sm-4 recipeCard">
+    <img class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
+
+    <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}
+    Minutes
+
+    <div <div class="panel">
+        <b>Ingredients:</b>
+        <div>
+            <ul>
+                <li ng-repeat="i in newDish.ingredients">{{i}}</li>
+            </ul>
+        </div>
+
+    </div>
+    <b>Instructions: </b></p>{{newDish.instructions}}</p>
+
+
+    <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
+</div>
+<!--end view of build-->

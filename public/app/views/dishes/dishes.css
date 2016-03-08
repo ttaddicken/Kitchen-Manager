@@ -1,0 +1,30 @@
+/*BEGIN: DISHCREATION CSS CONTENT*/
+
+.recipeInput{
+    border: 5 px solid black;
+    text-align: left;
+    /*height: 75%;*/
+    /*width: 31.333333%;*/
+}
+.input{
+    margin: 3px;
+}
+.recipeCard{
+    border: 5 px solid black;
+    text-align: left;
+    
+}
+/*END: DISH CREATION CSS CONTENT*/
+
+/*dish edit begin*/
+
+.nutinput{
+    width: 50px;
+    margin-right: 5px;
+}
+
+/*dish display*/
+.nutr{
+   display: inline;
+   margin-right: 10px; 
+}

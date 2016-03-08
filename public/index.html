@@ -1,0 +1,150 @@
+<html ng-app="Kitchen">
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Kitchen manager</title>
+
+    <!--BOOTSTRAP & OTHER CSS FILES-->
+    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="bower_components/angular-bootstrap/ui-bootstrap-csp.css">
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.1/summernote.css" rel="stylesheet">
+
+    <!--text area summernote-->
+
+    <!-- include summernote css/js-->
+    <!--<link href="bower_components/angular-summernote/dist/summernote.css" rel="stylesheet">-->
+
+
+    <!--end summer note-->
+
+    <!--OUR CSS Files-->
+    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="app/views/login/login.css">
+    <link rel="stylesheet" href="app/views/registration/registration.css">
+    <link rel="stylesheet" href="app/views/dishes/dishes.css">
+    <link rel="stylesheet" href="app/views/modals/modal.css">
+    <link rel="stylesheet" href="app/views/home/home.css">
+    <!--End CSS-->
+</head>
+
+<body>
+    <!--start of member view-->
+    <div ng-if="member">
+        <div class="">
+            <div class="font clearfix back-color">
+                <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar font-color-red"></span>
+                                <span class="icon-bar font-color-red"></span>
+                                <span class="icon-bar font-color-red"></span>
+                            </button>
+                            <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/" class="font-color">Home</a></li>
+                                <li><a href="#/dish-creation" class="font-color">Create Dish</a></li>
+                                <li><a href="#/profile" class="font-color">Update Profile</a></li>
+                                <li><a href="#/manage-dishes" class="font-color">Manage Dishes</a></li>
+                                <li><a href="#/public-dishes" class="font-color">Public Dishes</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#/login" ng-click="logout()" ng-click="showDropDown = false" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <ui-view></ui-view>
+            </div>
+        </div>
+    </div>
+    <!--end member view-->
+
+    <!--Start nonmember view-->
+    <div ng-if="!member">
+        <div class="container-fluid row font">
+            <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+                <div class="container">
+                    <div class="navbar-header">
+                        <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                    </div>
+                </div>
+            </nav>
+            <ui-view></ui-view>
+        </div>
+    </div>
+
+
+    <!--end nonmember view-->
+<!--scipts-->
+    
+    <!--summernote-->
+
+
+
+        <!--<div id="summernote">Hello Summernote</div>-->
+
+    <!--summernote end-->
+
+
+    <!--Load jquery-->
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    
+    <!-- Load Angular -->
+    <script src="bower_components/angular/angular.js"></script>
+
+    <!--Load angular fire-->
+    <script src="bower_components/angularfire/dist/angularfire.js"></script>
+
+    <!--Load ui-router--->
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+
+    <!--Load angular sanitize-->
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    
+    <!--Load Bootstrap-->
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+
+
+
+
+    <!--Load Firebase-->
+    <script src="bower_components/firebase/firebase.js"></script>
+
+    <!--Load angular bootstrap-->
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+
+    <!--Load Angular-summernote-->
+    <script src="bower_components/summernote/dist/summernote.js"></script>
+    <script src="bower_components/angular-summernote/dist/angular-summernote.js"></script>
+
+    <!--START APP CONFIG-->
+    <script src="app/config/init.js"></script>
+    <script src="app/config/routes.js"></script>
+    <script src="app/config/constants.js"></script>
+
+    <!--LOAD CONTROLLERS-->
+    <script src="app/views/login/login-controller.js"></script>
+    <script src="app/views/registration/registration-controller.js"></script>
+    <script src="app/views/profile/userProfile-controller.js"></script>
+    <script src="app/views/home/home-controller.js"></script>
+    <script src="app/views/favorites/favorites-controller.js"></script>
+    <script src="app/views/manage-dishes/manageDishes-controller.js"></script>
+    <script src="app/views/dishes/dishCreation-controller.js"></script>
+    <script src="app/views/grocery/groceryList-controller.js"></script>
+    <script src="app/services/firebase-service.js"></script>
+    <script src="app/services/dish-service.js"></script>
+    <script src="app/config/constants.js"></script>
+    <script src="app/views/public-dishes/publicDishes-controller.js"></script>
+    <script src="app/views/public-dishes/dishDetails-controller.js"></script>
+    <script src="app/views/manage-dishes/dish-edit-controller.js"></script>
+<!--scipts end-->
+</body>
+
+</html>

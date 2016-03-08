@@ -1,0 +1,51 @@
+<div class="row">
+    <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
+    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" src="{{dish.img}}" alt="{{dish.title}">
+    <label style="margin-right: 5px;">Dish Image Url: </label><input style="width: 500px" ng-model="dish.img" type="url"></div>
+    </span>
+</div>
+<span>
+
+    <div class="col-sm-12">
+
+    <div style="align-content: center;" class="col-sm-12">
+
+        <div style="text-align: center" class="row">
+         Prep Time: <input ng-model="dish.prepTime" type="number"></input> + Cook Time: <input ng-model="dish.cookTime" type="number"> = Total Time: <p> {{dish.prepTime + dish.cookTime}}</p>
+        </div>
+        <div style="text-align: center">
+            Dish Stars:{{dish.stars}}
+        </div>
+        <h4>Ingredients:</h4>
+        <input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients track by $index" ng-model="ingredient" ng-blur="test(ingredient, $index)" type="text">
+        </div>
+        </div>
+        </div>
+</span>
+<div class="col-sm-12">
+    <div>
+        <h4>Instructions:</h4>
+        <div class="panel">
+            <!--<div ng-bind-html="dish.instructions"></div>-->
+            <div ng-model="dish.instructions" summernote></div>
+            <!--<summernote ng-value="{{dish.instructions}}" ></summernote>-->
+            <!--scope.dish.$save-->
+        </div>
+    </div>
+    <span style="display: inline">
+   <label> Calories: <input class = "nutinput" ng-model="dish.nutritionInfo[0].Calories"> </input> </label>
+   <label> Total Fat: <input class = "nutinput" ng-model="dish.nutritionInfo[0].TotalFat"> </input> </label>
+   <label> Saturated Fats: <input class = "nutinput" ng-model="dish.sfat"> </input> </label>
+   <label> Cholesterol: <input class = "nutinput" ng-model="dish.cholesterol"> </input> </label>
+   <label> Carbohydrates: <input class = "nutinput" ng-model="dish.carbohydrates"> </input> </label>
+   <label> Protein: <input class = "nutinput" ng-model="dish.protein"> </input> </label>
+   <label> Fiber: <input class = "nutinput" ng-model="dish.fiber"> </input> </label>
+   <label> Sodium: <input class = "nutinput" ng-model="dish.sodium"> </input> </label>
+   <label> Potassium: <input class = "nutinput" ng-model="dish.potassium"> </input> </label>
+   <label> Calcium: <input class = "nutinput" ng-model="dish.calcium"></input> </label>
+   <label> Iron: <input class = "nutinput" ng-model="dish.iron"> </input> </label>
+</span>
+<div style="text-align: center; margin: 10px">
+<button ng-click="updateDish(dish)">Update Dish</button>
+</div>
+</div>

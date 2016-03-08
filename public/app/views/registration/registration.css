@@ -1,0 +1,21 @@
+.weeks{
+    margin: 10px;
+}
+.calendar{
+  margin: 2px;
+}
+.dessert{
+  
+    margin: 20px;
+}
+.desshow{
+    margin-right: 15px;
+    display: inline
+}
+.seporator{
+    border-top: 5px solid black;
+    border-bottom: 5px solid black;
+}
+.align-center{
+    text-align: center;
+}

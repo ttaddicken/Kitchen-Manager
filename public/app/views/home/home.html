@@ -1,0 +1,51 @@
+<div class="col-sm-12 login">
+    <form ng-submit="login()">
+        <div>
+            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Resting at the Home page<br>
+                {{member.email}}
+            </h4>
+
+            <button ui-sref="dishCreation">Create a Dish</button>
+            <button ui-sref="manageDishes">Manage Dishes</button>
+            <button ui-sref="profile">Update Profile</button>
+            <button ng-click="test()">test for route</button>
+            <input ng-model="g" type="number">
+            <button ng-click="makeCalendar(g)">Create Calendar</button>
+
+        </div>
+    </form>
+    <h1>{{famName}} Family Calendar</h1>
+
+    <!--<div style="width: {{width*g+30}}," class="col-sm-12">
+        <div ng-repeat="row in grid">
+            <div class="cell" ng-repeat="cell in row">
+                Column:{{cell.row}} Row:{{cell.colum}}
+            </div>
+        </div>
+    </div>-->
+
+    <table class="col-sm-12 table cell">
+        <thead>
+            <tr>
+                <th>Activities</th>
+                <th>Day</th>
+                <th>Main Dish</th>
+                <th>Side Dish</th>
+                <th>Salad</th>
+                <th>Desserts</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in calendar">
+                <td>{{item.activities}}</td>
+                <td>{{item.day}}</td>
+                <td>{{item.main}}</td>
+                <td>{{item.sides}}</td>
+                <td>{{item.salads}}</td>
+                <td>{{item.deserts}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
