@@ -11,7 +11,7 @@
     <div style="align-content: center;" class="col-sm-12">
 
         <div style="text-align: center" class="row">
-         Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
+         Prep Time: <input ng-model="dish.prepTime" type="number"></input> + Cook Time: <input ng-model="dish.cookTime" type="number"> = Total Time: <p> {{dish.prepTime + dish.cookTime}}</p>
         </div>
         <div style="text-align: center">
             Dish Stars:{{dish.stars}}
@@ -27,7 +27,7 @@
         <h4>Instructions:</h4>
         <div class="panel">
             <!--<div ng-bind-html="dish.instructions"></div>-->
-            <div  ng-model="dish.instructions" summernote></div>
+            <div ng-model="dish.instructions" summernote></div>
             <!--<summernote ng-value="{{dish.instructions}}" ></summernote>-->
             <!--scope.dish.$save-->
         </div>
