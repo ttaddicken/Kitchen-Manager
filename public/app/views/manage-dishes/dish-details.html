@@ -13,15 +13,27 @@
          Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
         </div>
         <div style="text-align: center">
+<<<<<<< HEAD
             Dish Stars:{{dish.stars}}
         </div>
         <h4>Ingredients:</h4>
+=======
+            <h4>Recipe Rating</h4>
+            
+                <uib-rating ng-model="rate" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
+                on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+                <span class="label" ng-class="{'label-warning': value<=2, 'label-info': value>2 && value<4, 'label-success': value>=4}" ng-show="overStar && !isReadonly">{{dish.stars}}</span>
+                
+        </div>
+            <h4>Ingredients:</h4>
+>>>>>>> c4d3bce4f62cc6680d70ca811f44d32260d8bd34
         <div style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients">
            {{ingredient}} 
         </div>
         </div>
         </div>
 </span>
+<<<<<<< HEAD
 <!-- instructions-->
 <div class="col-sm-12">
     <div>
@@ -48,3 +60,30 @@
     <div style="text-align: center; margin: 5px;">
         <a class="btn btn-default" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
     </div>
+=======
+<div class="col-sm-12">
+<div>
+    <h4>Instructions:</h4>
+    <div class="panel">
+        {{dish.instructions}}
+    </div>
+    </div>
+</div>
+<h4>Nutritional Info</h4>
+<span style="display: inline">
+    <span class = "panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
+    <span class = "panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
+    <span class = "panel nutr">Saturated Fats: {{dish.sfat}}</span>
+    <span class = "panel nutr">Cholesterol: {{dish.cholesterol}}</span>
+    <span class = "panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
+    <span class = "panel nutr">Protein: {{dish.protein}}</span>
+    <span class = "panel nutr">Fiber: {{dish.fiber}}</span>
+    <span class = "panel nutr">Sodium: {{dish.sodium}}</span>
+    <span class = "panel nutr">Potassium: {{dish.potassium}}</span>
+    <span class = "panel nutr">Calcium: {{dish.calcium}}</span>
+    <span class = "panel nutr">Iron: {{dish.iron}}</span>
+</span>
+<div style = "text-align: center; margin: 5px;">
+<a  class="btn btn-default" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
+</div>
+>>>>>>> c4d3bce4f62cc6680d70ca811f44d32260d8bd34
