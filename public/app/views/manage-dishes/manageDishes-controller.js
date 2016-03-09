@@ -2,6 +2,8 @@ app.controller('ManageDishesController', function ($rootScope, $scope, DishServi
 
 $scope.myDishes = DishService.getMyDishes()
 
+$scope.ratingStates = DishService.ratingStates
+
 //     $scope.removeDish = function (index) {
 //         $scope.dishes.splice(index, 1)
 //     }

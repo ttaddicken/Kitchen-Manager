@@ -17,6 +17,7 @@ app.controller('MyDishDetails', function($firebaseArray, $scope, $state, dish, D
         })
 
     }
+$scope.ratingStates = DishService.ratingStates
 
 });
 
