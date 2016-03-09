@@ -1,24 +1,18 @@
-app.controller('DishDetails', function($firebaseArray, $scope, $rootScope, dish, DishService, CONSTANTS ) {
+app.controller('DishDetails', function($firebaseArray, $scope, $rootScope, dish, DishService, CONSTANTS, $state) {
 
-    // $scope.dishes = DishService.getDishes();
-    //   $scope.dishList.$get(dishes);
     $scope.dish = dish
- $scope.indatabase = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
-//  console.log($scope.indatabase, $scope.indatabase.length);
+    $scope.indatabase = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
 
-    $scope.importDish = function (dish) {
-        //GET LOCAL DISH FROM YOUR FORM 
-        // newDish.creationDate = Date.now();
-        // $scope.dishes.$add($scope.newDish).then(function(dish){
+
+    $scope.importDish = function(dish) {
+        $rootScope.member.dishList = $rootScope.member.dishList || {}
+        $rootScope.member.dishList[dish.$id] = dish;
+
+        $rootScope.member.$save().then(function(a, b) {
             debugger;
-            $rootScope.member.dishList = $rootScope.member.dishList || {}
-            $rootScope.member.dishList[dish.$id] = dish;
-            $rootScope.member.$save();
-            // $scope.dish = ''
+            $state.go("publicDishes", { id: $state.params.id })
+        })
 
-        // });
     }
-
-
 
 });
