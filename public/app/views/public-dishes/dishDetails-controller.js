@@ -9,7 +9,6 @@ app.controller('DishDetails', function($firebaseArray, $scope, $rootScope, dish,
         $rootScope.member.dishList[dish.$id] = dish;
 
         $rootScope.member.$save().then(function(a, b) {
-            debugger;
             $state.go("publicDishes", { id: $state.params.id })
         })
 
