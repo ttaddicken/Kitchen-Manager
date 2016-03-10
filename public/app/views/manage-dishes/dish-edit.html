@@ -30,6 +30,20 @@
             <div ng-model="dish.instructions" summernote></div>
         </div>
     </div>
+<!--dish type-->
+<div class="dropdown">
+  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+    Type of Dish
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+    <li><a ng-model="dish.type">Salad</a></li>
+    <li><a ng-model="dish.type">Side</a></li>
+    <li><a ng-model="dish.type">Main Entree</a></li>
+    <li><a ng-model="dish.type">Dessert</a></li>
+  </ul>
+</div>
+<!--nutrition info-->
     <span style="display: inline">
         <label> Calories: <input class = "nutinput" ng-model="dish.nutritionInfo[0].Calories"> </input> </label>
         <label> Total Fat: <input class = "nutinput" ng-model="dish.nutritionInfo[0].TotalFat"> </input> </label>
