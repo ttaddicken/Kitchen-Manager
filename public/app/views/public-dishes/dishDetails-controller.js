@@ -3,7 +3,6 @@ app.controller('DishDetails', function($firebaseArray, $scope, $rootScope, dish,
     $scope.dish = dish
     $scope.indatabase = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
 
-
     $scope.importDish = function(dish) {
         $rootScope.member.dishList = $rootScope.member.dishList || {}
         $rootScope.member.dishList[dish.$id] = dish;
@@ -11,7 +10,8 @@ app.controller('DishDetails', function($firebaseArray, $scope, $rootScope, dish,
         $rootScope.member.$save().then(function(a, b) {
             $state.go("publicDishes", { id: $state.params.id })
         })
-
     }
+        
+     $scope.ratingStates = DishService.ratingStates
 
 });

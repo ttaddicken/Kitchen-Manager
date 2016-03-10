@@ -1,14 +1,11 @@
-app.controller('MyDishDetails', function($firebaseArray, $scope, $state, dish, DishService, CONSTANTS) {
+app.controller('DishEditController', function($firebaseArray, $scope, $state, dish, DishService, CONSTANTS) {
 
-    // $scope.dishes = DishService.getDishes();
-    //   $scope.dishList.$get(dishes);
     $scope.dish = dish
-    // $scope.indatabase = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
-    //  console.log($scope.indatabase, $scope.indatabase.length);
 
-    $scope.test = function(updated, i){
-       $scope.dish.ingredients[i] = updated;
-        
+
+    $scope.test = function(updated, i) {
+        $scope.dish.ingredients[i] = updated;
+
     }
 
     $scope.updateDish = function() {
@@ -17,7 +14,7 @@ app.controller('MyDishDetails', function($firebaseArray, $scope, $state, dish, D
         })
 
     }
-$scope.ratingStates = DishService.ratingStates
+    $scope.ratingStates = DishService.ratingStates
 
 });
 

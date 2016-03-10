@@ -1,6 +1,4 @@
-
-
-angular.module('ui.bootstrap.demo').controller('RatingDemoCtrl', function ($scope) {
+app.controller('RatingDemoCtrl', function ($scope) {
   $scope.rate = 7;
   $scope.max = 10;
   $scope.isReadonly = false;
