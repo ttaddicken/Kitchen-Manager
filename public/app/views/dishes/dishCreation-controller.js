@@ -39,10 +39,6 @@ app.controller('DishCreationController', function ($scope, $rootScope, DishServi
     // }    
 
 
-
-
-
-
     // WE NEED THESE FUNCTIONS:
     // addToFavorites()
     // addIngredient()
