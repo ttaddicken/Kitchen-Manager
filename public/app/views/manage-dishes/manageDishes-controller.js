@@ -4,29 +4,9 @@ $scope.myDishes = DishService.getMyDishes()
 
 $scope.ratingStates = DishService.ratingStates
 
-//     $scope.removeDish = function (index) {
-//         $scope.dishes.splice(index, 1)
-//     }
-    
-//     // $scope.publicDishList = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/dishes'));
-    
-//     $scope.testPush = function () {
-//         //GET LOCAL DISH FROM YOUR FORM
-//         $scope.dishList.$add($scope.localdish).then(function (dish) {
-//             $rootScope.member.dishList = $rootScope.member.dishList || {}
-//             $rootScope.member.dishList[dish.key()] = $scope.localdish;
-//             $rootScope.member.$save();
-//         });
-//     }
-//     $scope.options = {
-//         height: 56,
-//         width: 56,
-//         focus: true
-//     };
-//      $scope.dish = dish
-//  $scope.indatabase = $firebaseArray(new Firebase('https://kitchen-manager.firebaseio.com/users/{{user:$id}}/dishList'));
 })
-// //  Begginning of borrowed from firebase
+
+// //  Beginning of borrowed from firebase
 // // {
 // //   "rules": {
 // //     "users": {
@@ -42,4 +22,4 @@ $scope.ratingStates = DishService.ratingStates
 // //     }
 // //   }
 // // }
-// // End of barroweed from firebase
+// // End of borrowed from firebase
