@@ -1,4 +1,6 @@
-app.controller('HomeController', function($scope, $state){
+app.controller('HomeController', function($scope, $state, DishService){
+
+$scope.myDishes = DishService.getMyDishes()
 
 //  $scope.Calendar = [];
 // $state.go('defaults')

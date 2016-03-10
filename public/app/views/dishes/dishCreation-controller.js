@@ -2,23 +2,8 @@ app.controller('DishCreationController', function ($scope, $rootScope, DishServi
 
     // links recipies/dishes from firebase
      $scope.dishes = DishService.getDishes();
-    
 
-    // Create a recipe 
-    // $scope.createDish = function (newRecipe) {
-    //     newRecipe.memberId = $rootScope.member.$id
-    //     $scope.newRecipe.member = $rootScope.member;
-    //     $scope.recipes.$add(newRecipe).then(function (ref) {
-    //         //Add the newly added recipe to the member object	
-    //         $rootScope.member.recipes = $rootScope.member.recipes || {};
-    //         //A dictonary structure is needed to add the recipeId to the member.recipes dictionary.  (ie our favorites)
-    //         //To avoid duplicating data in our favorites database we only store the recipeId instead of the entire recipe again 
-    //         $rootScope.member.recipes[ref.key()] = ref.key();
-    //         $rootScope.member.$save();
-    //     })
-    // }
     $scope.createDish = function (newDish) {
-        //GET LOCAL DISH FROM YOUR FORM
         newDish.creationDate = Date.now();
         $scope.dishes.$add($scope.newDish).then(function(dish){
             $rootScope.member.dishList = $rootScope.member.dishList || {}

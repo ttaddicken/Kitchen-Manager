@@ -48,4 +48,18 @@
             </tr>
         </tbody>
     </table>
+    
+<div class="col-sm-3 container-fluid">
+
+    <div class="panel-body container-fluid">
+        <div class="panel panel-default">
+            <div class="panel-heading" ng-repeat="dish in myDishes track by $index">{{dish.title}}
+                <img class="panel-body" style="height:60px; margin-bottom: 5px;" ng-src="{{dish.img}}"></img>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+    
 </div>
