@@ -6,12 +6,12 @@
                 {{member.email}}
             </h4>
 
-            <button ui-sref="dishCreation">Create a Dish</button>
-            <button ui-sref="manageDishes">Manage Dishes</button>
-            <button ui-sref="profile">Update Profile</button>
-            <button ng-click="test()">test for route</button>
+            <button class="btn btn-default" ui-sref="dishCreation">Create a Dish</button>
+            <button class="btn btn-default" ui-sref="manageDishes">Manage Dishes</button>
+            <button class="btn btn-default" ui-sref="profile">Update Profile</button>
+            <button class="btn btn-default" ng-click="test()">test for route</button>
             <input ng-model="g" type="number">
-            <button ng-click="makeCalendar(g)">Create Calendar</button>
+            <button class="btn btn-default" ng-click="makeCalendar(g)">Create Calendar</button>
 
         </div>
     </form>
@@ -50,9 +50,10 @@
     </table>
     
 <div class="row text-center">
+    <h2>Our Favorites</h2>
     <div class ="col-sm-12">
-            <div class="col-sm-3 card" ng-repeat="dish in myDishes track by $index"><p class="text-center">{{dish.title}}</p>
-                <img style="height:150px; width: 150px; align-content:center margin-bottom:5px" ng-src="{{dish.img}}"></img>
+            <div class="col-sm-3 panel panel-default card container" ng-repeat="dish in myDishes track by $index"><p class="text-center panel-heading">{{dish.title}}</p>
+                <img class="panel-body img-card container" ng-src="{{dish.img}}"></img>
             </div>
         </div>
 </div>
