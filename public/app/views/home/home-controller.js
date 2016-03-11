@@ -56,6 +56,29 @@ $scope.calendar = [
         }
         
             }
+            
+//logic for favorites
+
+// $scope.showFavorites = function (){
+//     for (var i=0; i < myDishes.length; i++){
+//         if(myDishes.length <= 15 ){
+//             return true;
+//         } else{
+//             return findTopFavorites();
+//         }
+//     }
+// }
+
+// $scope.findTopFavorites = function (){
+//     myDishes.sort(function(a, b) {
+//         var sortedByStarsArr = parseFloat(a.stars) - parseFloat(b.stars);
+//     })
+//     for(var i = 0; i < sortedByStarsArr.length; i++){
+//         var currentItem = sortedByStarsArr[i];
+//         if(current)
+//     }
+
+// }
     
 
 })
