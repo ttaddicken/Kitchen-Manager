@@ -49,27 +49,24 @@
             </div>
         </div>
     </form>
-
-    <!--Begin view of build-->
 </div>
+    <!--Begin view of build-->
+
 <div class="col-sm-4 recipeCard">
     <img class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
-
-    <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}
-    Minutes
-
+    <div>
+        <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}  Minutes
+    </div>
+    <p><b>Dish type: {{newDish.type}}</b></p>
     <div <div class="panel">
-        <b>Ingredients:</b>
+        <p><b>Ingredients:</b></p>
         <div>
             <ul>
                 <li ng-repeat="i in newDish.ingredients">{{i}}</li>
             </ul>
         </div>
-
     </div>
-    <b>Instructions: </b></p>{{newDish.instructions}}</p>
-
-
-    <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
+    <p><b>Instructions:</b>{{newDish.instructions}}</p>
+    <p>Nutritional Information: {{newDish.nutrientFacts}}</p>
 </div>
 <!--end view of build-->
