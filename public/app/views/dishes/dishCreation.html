@@ -10,11 +10,11 @@
             <input class="form-control" type="url" ng-model="newDish.img" value="00" />
         </div>
         <div class="form-group">
-            <label for="prepTime">Prep Time (minutes):</label>
+            <label for="prepTime">Prep Time (minutes):
             <input class="form-control" type="number" ng-model="newDish.prepTime" value="00" />
         </div>
         <div class="form-group">
-            <label for="cookTime">Cook Time (minutes):</label>
+            <label for="cookTime">Cook Time (minutes):
             <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
         </div>
         <div class="form-group">
@@ -23,19 +23,14 @@
             <button class="btn btn-default" type="button" ng-init="newDish.ingredients = newDish.ingredients || [] " ng-click="newDish.ingredients.push(newIngredient); clearSearch()">add ingredient</button>
         </div>
         <div class="form-group">
-        <div class="dropdown">
-            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true"
-            aria-expanded="true">
-                Type of Dish
-                <span class="caret"></span>
-            </button>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                <li><a ng-model="newDish.type">Salad</a></li>
-                <li><a ng-model="newDish.type">Side</a></li>
-                <li><a ng-model="newDish.type">Main Entree</a></li>
-                <li><a ng-model="newDish.type">Dessert</a></li>
-            </ul>
-        </div>
+            <label>Type of Dish
+            <select ng-model="newDish.type" class="form-control">
+                <option>Appetizer</option>
+                <option>Salad</option>
+                <option>Side</option>
+                <option>Main Dish</option>
+                <option>Dessert</option>
+            </select>
         </div>
         <!-----SUMMERNOTE  WORKING ----->
         <div class="form-group">
@@ -54,27 +49,24 @@
             </div>
         </div>
     </form>
-
-    <!--Begin view of build-->
 </div>
+    <!--Begin view of build-->
+
 <div class="col-sm-4 recipeCard">
     <img class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
-
-    <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}
-    Minutes
-
+    <div>
+        <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}  Minutes
+    </div>
+    <p><b>Dish type: {{newDish.type}}</b></p>
     <div <div class="panel">
-        <b>Ingredients:</b>
+        <p><b>Ingredients:</b></p>
         <div>
             <ul>
                 <li ng-repeat="i in newDish.ingredients">{{i}}</li>
             </ul>
         </div>
-
     </div>
-    <b>Instructions: </b></p>{{newDish.instructions}}</p>
-
-
-    <p> Nutritional Information: {{newDish.nutrientFacts}}</p>
+    <p><b>Instructions:</b>{{newDish.instructions}}</p>
+    <p>Nutritional Information: {{newDish.nutrientFacts}}</p>
 </div>
 <!--end view of build-->

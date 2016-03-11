@@ -34,23 +34,23 @@ app.controller('DishCreationController', function ($scope, $rootScope, DishServi
 //CREATE A STAR RATING CAPABILITY TO CREATE A DISH **Also needed for Manage Dishes
 
 
-    $scope.rate = 0;
-    $scope.max = 5;
-    $scope.isReadonly = false;
+//     $scope.rate = 0;
+//     $scope.max = 5;
+//     $scope.isReadonly = false;
 
-    $scope.hoveringOver = function (value) {
-        $scope.overStar = value;
-        $scope.percent = 100 * (value / $scope.max);
-    };
+//     $scope.hoveringOver = function (value) {
+//         $scope.overStar = value;
+//         $scope.percent = 100 * (value / $scope.max);
+//     };
 
-  $scope.rate = 5;
-    $scope.max = 5;
-    $scope.isReadonly = false;
+//   $scope.rate = 5;
+//     $scope.max = 5;
+//     $scope.isReadonly = false;
 
-    $scope.hoveringOver = function (value) {
-        $scope.overStar = value;
-        $scope.percent = 100 * (value / $scope.max);
-    };
+//     $scope.hoveringOver = function (value) {
+//         $scope.overStar = value;
+//         $scope.percent = 100 * (value / $scope.max);
+//     };
 
     $scope.ratingStates = DishService.ratingStates;
 
