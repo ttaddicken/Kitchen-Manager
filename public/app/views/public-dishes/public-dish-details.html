@@ -14,9 +14,13 @@
 <!--stars-->
         <div style="text-align: center">
         <uib-rating ng-model="dish.stars" rating-states="ratingStates" max="max" read-only="true" on-hover="hoveringOver(value)" on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
-        
         </div>
     </div>  
+<!--dish type-->
+        <div style="text-align: center" class="row">
+                Type of Dish: {{dish.type}}
+        </div>
+    </div>
 </div>
 <!--ingredients-->
 <div>
