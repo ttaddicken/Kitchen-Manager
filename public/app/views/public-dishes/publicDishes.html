@@ -1,7 +1,8 @@
 <div class="row text-center">
     <div class="col-sm-12 content-ceter">
-            <div class="col-sm-3 panel panel-default card" ng-repeat="dish in indatabase"><p class="text-center panel-heading">{{dish.title}}</p>
+            <div class="col-sm-3 panel panel-default card" ng-repeat="dish in indatabase"><span><a ng-href="/#/public-dishes/{{dish.$id}}" class="text-center panel-heading">{{dish.title}}</a></span>
                 <img class="panel-body img-card" ng-src="{{dish.img}}"></img>
             </div>
         </div>
 </div>
+
