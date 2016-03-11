@@ -1,6 +1,6 @@
 <div class="col-sm-12 login">
-    <form ng-submit="login()">
-        <div>
+    
+        <!--<div>
             <h4 style="margin-top: 10px; margin-bottom: 0px;">
                 Resting at the Home page<br>
                 {{member.email}}
@@ -13,10 +13,13 @@
             <input ng-model="g" type="number">
             <button class="btn btn-default" ng-click="makeCalendar(g)">Create Calendar</button>
 
-        </div>
-    </form>
+        </div>-->
+  
     <h1>{{famName}} Family Calendar</h1>
-
+    
+<div class="temp" ondrop="drop(event)" ondragover="allowDrop(event)">
+    <h4>Drop your food here</h4>
+    </div>
     <!--<div style="width: {{width*g+30}}," class="col-sm-12">
         <div ng-repeat="row in grid">
             <div class="cell" ng-repeat="cell in row">
@@ -25,7 +28,7 @@
         </div>
     </div>-->
 
-    <table class="col-sm-12 table cell">
+    <!--<table class="col-sm-12 table cell">
         <thead>
             <tr>
                 <th>Activities</th>
@@ -47,7 +50,7 @@
                 <td>{{item.deserts}}</td>
             </tr>
         </tbody>
-    </table>
+    </table>-->
     
 <div class="row text-center">
     <h2>Our Favorites</h2>
