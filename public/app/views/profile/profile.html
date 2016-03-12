@@ -8,17 +8,36 @@
             <li>Notify how many of each entrees</li>
             <li>Notify how many dishes have not been voted on after creation</li>
             <li>Change calendar</li>
-            <li>hange basic color theme</li>
+            <li>Change basic color theme</li>
             <li>planning time in weeks</li>
             <li>Include Deserts?</li>
             <li>Track Nutrition</li>
         </ul>
 
     </div>
-    <button ng-click=updateProfile()>Save</button>
-    <button ui-sref="home">Go Home</button>
-
 </div>
-</form>
-
+<!--<div class="row">-->
+    <div class="col-sm-3 container">
+        <div class="well">
+            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Recipes by type:               
+            </h4>
+            <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
+            <h4>Total Private Recipes: = {{myDishes.length}} </h4>
+        </div>
+        <div class="well">
+            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Recipes by Star ratings:               
+            </h4>
+            <nvd3 options="starOptions" data="starData"></nvd3>
+            <h4>Recipes with no Rating: = {{zeroStars}} </h4>
+        </div>
+    </div>
+<!--</div>-->
+<div>
+<button ng-click=updateProfile()>Save</button>
+<button ui-sref="home">Go Home</button>
 </div>
+<!--</form>-->
+
+<!--</div>-->
