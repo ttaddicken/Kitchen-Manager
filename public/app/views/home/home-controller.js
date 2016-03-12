@@ -11,13 +11,13 @@ app.controller('HomeController', function($scope, $state, DishService) {
 
     var days = [
         "Day",
-        "Sun",
-        "Mon",
-        "Tue",
-        "Wed",
-        "Thu",
-        "Fri",
-        "Sat"
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
     ];
 
 
@@ -38,10 +38,15 @@ app.controller('HomeController', function($scope, $state, DishService) {
                     obj.name = days[row];
                     obj.hideLg = true;                    
                 }
+                if (row !== 0 && col !== 0) {
+                    obj.name = days[row] + " : " + activities[col];
+                    obj.hideLgguts = true;
+                    // obj.hideSm = true;
+                } 
                 if (row === 0) {
                     obj.name = activities[col];
                     obj.hideSm = true;
-                }
+                } 
                 $scope.grid[row].push(obj);
             }
         }
