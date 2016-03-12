@@ -4,4 +4,5 @@ var app = angular.module('Kitchen', [
     'summernote',
     'ui.bootstrap',
     'ngSanitize',
+    'ngDraggable',
 ]);
