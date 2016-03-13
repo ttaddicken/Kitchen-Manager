@@ -21,7 +21,7 @@
             <div class="row text-center fixed-sidebar">
                 <h2>Our Favorites</h2>
                 <div class="list-group">
-                    <div class="list-group-item" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-center-anchor="true"
+                    <div style = "background-color: {{tims}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-center-anchor="true"
                     ng-repeat="dish in myDishes track by $index">
                         <div class="media">
                             <div class="media-left">

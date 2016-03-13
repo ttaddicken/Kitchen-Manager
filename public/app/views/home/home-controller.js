@@ -19,7 +19,7 @@ app.controller('HomeController', function($scope, $state, DishService) {
         "Friday",
         "Saturday"
     ];
-
+$scope.tims = "#eadcc3";
 
     $scope.myDishes = DishService.getMyDishes()
 
@@ -35,7 +35,7 @@ app.controller('HomeController', function($scope, $state, DishService) {
                 var column = col
                 var obj = { row: row, col: column };
                 if (col === 0) {
-                    obj.header = "#eadcc3";
+                    obj.header = $scope.tims;
                     obj.name = days[row];
                     obj.hideLg = true;                    
                 }
