@@ -39,7 +39,7 @@
         </div>
         <div class="col-sm-9">
             <div ng-repeat="row in grid" class="col-sm-12">
-                <div class="col-sm-2 cell" ng-repeat="cell in row" ng-drop="true" ng-drop-success="onDragComplete($data, $event, cell)">
+                <div class="col-sm-2 cell" ng-repeat="cell in row" style = "background-color: {{cell.header}}" ng-drop="true" ng-drop-success="onDragComplete($data, $event, cell)">
                     <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>

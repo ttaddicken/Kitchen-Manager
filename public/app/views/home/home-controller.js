@@ -35,17 +35,20 @@ app.controller('HomeController', function($scope, $state, DishService) {
                 var column = col
                 var obj = { row: row, col: column };
                 if (col === 0) {
+                    obj.header = "#eadcc3";
                     obj.name = days[row];
                     obj.hideLg = true;                    
                 }
                 if (row !== 0 && col !== 0) {
                     obj.name = days[row] + " : " + activities[col];
                     obj.hideLgguts = true;
+                    
                     // obj.hideSm = true;
                 } 
                 if (row === 0) {
                     obj.name = activities[col];
                     obj.hideSm = true;
+                    obj.header = "#eadcc3";
                 } 
                 $scope.grid[row].push(obj);
             }

@@ -2,14 +2,13 @@
 .input{
     width: 100px;
 }
+
 .cell{
     border: 2px solid black;
     /*min-width: 150px;*/
     min-height: 100px;
     background-color: #f3ede4;
     /*display: inline-block;*/
-    /*text-align: center;*/
-    /*vertical-align: middle;*/
 }
 
 .card {
@@ -21,6 +20,7 @@
     box-shadow: 1px 1px darkgrey;
 
 }
+
 .img-card{
 
     width:150px; 
@@ -29,6 +29,7 @@
     
     
 }
+
 .temp {
     border: 3px solid black;
 }
