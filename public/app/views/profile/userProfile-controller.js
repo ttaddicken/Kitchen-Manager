@@ -4,9 +4,9 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
 
     
 $rootScope.myDishes = DishService.getMyDishes();
+console.log($rootScope.myDishes);
 
 $scope.ratingStates = DishService.ratingStates
-
     $scope.zeroStars = 10;
     $scope.oneStar = 5;
     $scope.twoStars = 10;
