@@ -1,7 +1,7 @@
 app.controller('HomeController', function($scope, $state, DishService) {
 
     var activities = [
-        "Day",
+        "",
         "Activities",
         "Main Dish",
         "Side Dish",
@@ -54,6 +54,7 @@ app.controller('HomeController', function($scope, $state, DishService) {
         return $scope.grid
     }
 
+    
     // calendarWeeks
 
     // drag and drop functionality
