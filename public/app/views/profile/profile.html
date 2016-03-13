@@ -13,19 +13,30 @@
             <li>Include Deserts?</li>
             <li>Track Nutrition</li>
         </ul>
+        <ol style="text-align: left;">
+            <li>oneStar = {{oneStar.length}}</li>
+            <li>twoStars = {{twoStars.length}}</li>
+            <li>threeStars = {{threeStars.length}}</li>
+            <li>fourStars = {{fourStars.length}}</li>
+            <li>fiveStars = {{fiveStars.length}}</li>
+            <li>zeroStars = {{zeroStars.length}}</li>
+            <li>TotalStars = {{myDishes.length}}</li>
+            </ul>
 
     </div>
 </div>
-<!--<div class="row">-->
-    <div class="col-sm-3 container">
-        <div class="well">
+<div class="row" style="height=250px">
+    <div class="col-sm-4 container">
+        <div style="width=400px">
             <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                Recipes by type:               
+               Recipes by type:               
             </h4>
             <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
             <h4>Total Private Recipes: = {{myDishes.length}} </h4>
         </div>
-        <div class="well">
+    </div>
+    <div class="col-sm-4 container">
+        <div style="width=400px">
             <h4 style="margin-top: 10px; margin-bottom: 0px;">
                 Recipes by Star ratings:               
             </h4>
@@ -33,10 +44,11 @@
             <h4>Recipes with no Rating: = {{zeroStars}} </h4>
         </div>
     </div>
+</div>
 <!--</div>-->
 <div>
-<button ng-click=updateProfile()>Save</button>
-<button ui-sref="home">Go Home</button>
+    <button ng-click=updateProfile()>Save</button>
+    <button ui-sref="home">Go Home</button>
 </div>
 <!--</form>-->
 
