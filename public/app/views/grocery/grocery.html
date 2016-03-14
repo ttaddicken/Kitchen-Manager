@@ -1,0 +1,51 @@
+<div class="table-responsive">
+    <table class="table table-striped">
+        <h2>Grocery List</h2>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Store Section</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in groceryItems track by $index">
+                <td>
+                   <div ng-click="updateCompletedItems($index)">
+                    <input type="checkbox">
+                    </div>
+                </td>
+                <td>{{item.name}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="badge">Edit</span></td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <hr>
+    
+    <h3>Completed Items</h3>
+    <table class="table table-striped">
+        <tbody>
+            <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
+                <td>
+                   <div>
+                    <input type="checkbox">
+                    </div>
+                </td>
+                <td>{{item}}</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td><span class="badge">Edit</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
