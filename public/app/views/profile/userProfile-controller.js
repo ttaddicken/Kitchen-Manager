@@ -4,9 +4,57 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
 
     
 $rootScope.myDishes = DishService.getMyDishes();
-console.log($rootScope.myDishes);
 
 $scope.ratingStates = DishService.ratingStates
+
+var zeroStars = [];
+    
+function buildZeros(){
+    for(var i = 0; i < $rootScope.myDishes.length; i++){
+        if($rootScope.myDishes[i].stars === 0){
+            zeroStars.push(myDishes[i])
+        }
+    }
+return zeroStars;
+}
+buildZeros();    
+    
+    
+    
+//     var oneStar = [];
+//     var twoStars = [];
+//     var threeStars = [];
+//     var fourStars = [];
+//     var fiveStars = [];
+    
+//     var starCounter = function() {
+        
+//     for(var i = 0; i <= $rootScope.myDishes.length; i++){
+        
+//         var currDish = $rootScope.myDishes[i];
+        
+//         if(currDish[stars] === 1){
+//             oneStar.push(currDish);
+//         } 
+//         if(currDish[stars]  === 2){
+//             twoStars.push(currDish);
+//         }
+//         if(currDish[stars]  === 3){
+//             threeStars.push(currDish);
+//         } 
+//         if(currDish[stars]  === 4){
+//             fourStars.push(currDish);
+//         }
+//         if(currDish[stars]  === 5){
+//             fiveStars.push(currDish);
+//         }           
+//         else{ zeroStars.push(currDish);
+//         }
+//     }    
+// };
+
+// starCounter();
+    
     $scope.zeroStars = 10;
     $scope.oneStar = 5;
     $scope.twoStars = 10;
@@ -14,27 +62,6 @@ $scope.ratingStates = DishService.ratingStates
     $scope.fourStars = 10;
     $scope.fiveStars = 5;
     
-//     var starCounter = function() {
-//     for(i = 0; i <= myDishes.length; i++);
-//         if(myDishes[i].stars === 1){
-//             oneStar++;
-//         } 
-//         if(myDishes[i].stars === 2){
-//             twoStars++;
-//         }
-//         if(myDishes[i].stars === 3){
-//             threeStars++;
-//         } 
-//         if(myDishes[i].stars === 4){
-//             fourStars++;
-//         }
-//         if(myDishes[i].stars === 5){
-//             fiveStars++;
-//         }           
-//         else{ zeroStars++ };
-// };
-
-// starCounter();
     
 //  CHART RECIPES BY STAR RATING: 
  $scope.starOptions = {
@@ -125,6 +152,10 @@ $scope.ratingStates = DishService.ratingStates
             {
                 key: "Salads",
                 y: 7
+            },
+            {
+                key: "Desserts",
+                y: 4
             },
             
         ];
