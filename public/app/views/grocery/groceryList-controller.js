@@ -38,15 +38,22 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     
     $scope.completedItems = [];
 
-    $scope.updateCompletedItems = function(index){
-        for(var i = 0; i < $scope.groceryItems.length; i++){
+    $scope.updateCompletedItems = function(index, item){
+        $scope.groceryItems.splice(index,1);
+        $scope.completedItems.push(item);
+        
+        // $scope.groceryItems.splice(index,1).then(function(){
+        //     $scope.completedItems.push(index)
+        // })
+        
+        // for(var i = 0; i < $scope.groceryItems.length; i++){
 
-            if($scope.groceryItems[i] == index){
-                debugger;
-                $scope.groceryItems.splice(index,1);
-                $scope.completedItems.push(groceryItems);
-            }
-        }
+        //     if($scope.groceryItems[i] == index){
+        //         debugger;
+        //         $scope.groceryItems.splice(index,1);
+        //         $scope.completedItems.push(groceryItems);
+        //     }
+        // }
         
         
         }

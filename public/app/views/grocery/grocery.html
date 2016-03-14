@@ -13,8 +13,8 @@
         <tbody>
             <tr ng-repeat="item in groceryItems track by $index">
                 <td>
-                   <div ng-click="updateCompletedItems($index)">
-                    <input type="checkbox">
+                    <div ng-click="updateCompletedItems($index, item)">
+                        <input type="checkbox">
                     </div>
                 </td>
                 <td>{{item.name}}</td>
@@ -26,19 +26,15 @@
             </tr>
         </tbody>
     </table>
-    
+
     <hr>
-    
+
     <h3>Completed Items</h3>
     <table class="table table-striped">
         <tbody>
             <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
-                <td>
-                   <div>
-                    <input type="checkbox">
-                    </div>
-                </td>
                 <td>{{item}}</td>
+                <td></td>
                 <td></td>
                 <td></td>
                 <td></td>
