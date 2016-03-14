@@ -4,22 +4,20 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
 
     
 $rootScope.myDishes = DishService.getMyDishes();
-// console.log($rootScope.myDishes);
 
 $scope.ratingStates = DishService.ratingStates
-    
+
 var zeroStars = [];
     
 function buildZeros(){
-for(var i = 0; i < $rootScope.myDishes.length; i++){
-    if($rootScope.myDishes[i].stars === '1'){
-        zeroStars.push(myDishes[i])
+    for(var i = 0; i < $rootScope.myDishes.length; i++){
+        if($rootScope.myDishes[i].stars === 0){
+            zeroStars.push(myDishes[i])
+        }
     }
-}
 return zeroStars;
 }
 buildZeros();    
-    
     
     
     
