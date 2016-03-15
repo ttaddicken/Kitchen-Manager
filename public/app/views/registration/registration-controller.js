@@ -109,7 +109,6 @@ app.service('AuthService', function ($rootScope, $state, $firebaseObject, CONSTA
     }
 
     $rootScope.logout = function () {
-        debugger
         db.unauth();
         $rootScope.member = null;
         $state.go('login')
