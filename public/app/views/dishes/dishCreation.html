@@ -17,11 +17,34 @@
             <label for="cookTime">Cook Time (minutes):
             <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
         </div>
-        <div class="form-group">
-            <label for="ingredients">Ingredients: (this section assists in creating the grocery list)</label>
-            <input class="form-control" type="text" ng-model="newIngredient" placeholder="ingedients" />
-            <button class="btn btn-default" type="button" ng-init="newDish.ingredients = newDish.ingredients || [] " ng-click="newDish.ingredients.push(newIngredient); clearSearch()">add ingredient</button>
+        
+        <!-- Ingredianet strat-->
+        
+        <div class="form-group ingredient">
+            <label class = "ingredient">Quantity
+            <input class = "ingredient" style = "width: 50px" class="form-control" type="text" ng-model="newIngredient.qty" placeholder="Qty" />
+            <label class = "ingredient">Unit of Measure
+                <!--drop down for unit of measurement-->
+            <select style = "width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
+                <option>Cup</option>
+                <option>Teaspoon</option>
+                <option>Tablespoon</option>
+                <option>Ounce</option>
+                <option>Pound</option>
+            </select>
+            <!--end dropdown-->
+            <label>Ingredients: (this section assists in creating the grocery list)
+            <input class="form-control ingredient" type="text" ng-model="newIngredient.name" placeholder="ingedients" />
+             <button class="btn btn-default" type="button" ng-click="addIngredient(newIngredient)">add ingredient</button>
+            <!--
+                <button class="btn btn-default" type="button" 
+                ng-init="newDish.ingredients = newDish.ingredients || [] " 
+                ng-click="newDish.ingredient.push(newIngredient);
+                 clearSearch()">
+                 add ingredient</button>-->
+      
         </div>
+        <!--ingredient end-->
         <div class="form-group">
             <label>Type of Dish
             <select ng-model="newDish.type" class="form-control">
@@ -62,7 +85,11 @@
         <p><b>Ingredients:</b></p>
         <div>
             <ul>
-                <li ng-repeat="i in newDish.ingredients">{{i}}</li>
+                <li ng-repeat="i in newDish.ingredients">
+                    {{i.qty}}
+                    {{i.unit}}
+                    {{i.name}}
+                    </li>
             </ul>
         </div>
     </div>
