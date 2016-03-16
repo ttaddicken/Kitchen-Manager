@@ -23,14 +23,33 @@
         </div>
         <!--dish type-->
         <div class="form-group">
-            <label>Type of Dish
-                <select ng-model="dish.type" class="form-control">
-                    <option>Appetizer</option>
-                    <option>Salad</option>
-                    <option>Side</option>
-                    <option>Main Dish</option>
-                    <option>Dessert</option>
-                </select>
+             <label>Type of Dish
+            <select ng-model="newDish.type" class="form-control">
+                <option>Appetizer</option>
+                <option>Salad</option>
+                <option>Side</option>
+                <option>Main Dish</option>
+                <option>Dessert</option>
+            </select>
+                   <!--drop down for unit of measurement-->
+            <select style = "width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
+                <option>each</option>
+                <option>piece</option>
+                <option>pack</option>
+                <option>bunch</option>
+                <option>roll</option>
+                <option>dozen</option>
+                
+                <option>lbs</option>
+                <option>qt</option>
+                <option>oz</option>
+                <option>pt</option>
+                <option>cup</option>
+                <option>tbs</option>
+                <option>tsp</option>
+                
+            </select>
+            <!--end dropdown-->
         </div>
     </div>
 </div>

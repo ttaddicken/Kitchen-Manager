@@ -16,15 +16,7 @@
         <ol style="text-align: left;">
             <li ng-repeat="(key, total) in starRatings">
                 {{key}}Star = {{total.dishes.length}} 
-            <!--</li>
-            <li>oneStar = {{oneStar.length}}</li>
-            <li>twoStars = {{twoStars.length}}</li>
-            <li>threeStars = {{threeStars.length}}</li>
-            <li>fourStars = {{fourStars.length}}</li>
-            <li>fiveStars = {{fiveStars.length}}</li>
-            <li>zeroStars = {{zeroStars.length}}</li>
-            <li>TotalStars = {{myDishes.length}}</li>-->
-            </ul>
+        </ul>
 
     </div>
 </div>
@@ -35,7 +27,7 @@
                Recipes by type:               
             </h4>
             <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
-            <h4>Total Private Recipes: = {{myDishes.length}} </h4>
+            <h4>Total Private Recipes: {{myDishes.length}}</h4>
         </div>
     </div>
     <div class="col-sm-4 container">
@@ -44,7 +36,7 @@
                 Recipes by Star ratings:               
             </h4>
             <nvd3 options="starOptions" data="starData"></nvd3>
-            <h4>Recipes with no Rating: = {{zeroStars}} </h4>
+            <h4 ng-bind-html="zeroStars.name">Recipes with no Rating: = {{zeroStars}} </h4>
         </div>
     </div>
 </div>
