@@ -21,14 +21,14 @@
             <div class="row text-center fixed-sidebar">
                 <h2>Our Favorites</h2>
                 <div class="list-group">
-                    <div style = "box-shadow: 5px 5px grey; background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" 
+                    <div style = "box-shadow: 5px 5px grey; background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" 
                     ng-repeat="dish in myDishes track by $index">
                         <div class="media">
                             <div class="media-left">
-                                <img class="media-object" width="80" ng-src="{{dish.img}}"></img>
+                                <!--<img class="media-object" width="80" ng-src="{{dish.img}}"></img>-->
                             </div>
-                            <div class="media-body">
-                                <div class="media-heading dishcalendar">
+                            <div style = "padding-left: 116px;" class="media-body">
+                                <div class="media-heading dishcalendar dish-title">
                                     {{dish.title}}
                                 </div>
                             </div>

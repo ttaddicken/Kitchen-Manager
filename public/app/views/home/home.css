@@ -26,7 +26,8 @@
 
     width:150px; 
     align-content:center; 
-    margin:5px
+    margin:5px;
+    background-image: url({{dish.img}})
     
     
 }
@@ -35,6 +36,14 @@
     border: 3px solid black;
 }
 .dish {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     margin: 13px;
+    height: 80px;
+    background-repeat:no-repeat;
+    background-position: left;
+    /*background-size:100% 100%;*/
+    background-size:contain;
+}
+.dish-title{
+    text-align: right;
 }

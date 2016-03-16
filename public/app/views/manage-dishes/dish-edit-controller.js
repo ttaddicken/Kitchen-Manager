@@ -1,6 +1,14 @@
 app.controller('DishEditController', function($firebaseArray, $scope, $state, dish, DishService, CONSTANTS) {
 
     $scope.dish = dish
+    $scope.units = [
+        "Cup",
+        "Teaspoon",
+        "Tablespoon",
+        "Ounce",
+        "Pound",
+    ]
+    // $scope.selectOption = $scope.ingredient.unit
 
 
     $scope.test = function(updated, i) {
