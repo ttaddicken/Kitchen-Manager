@@ -5,26 +5,14 @@
                 {{familyName}} Resting at the User Profile page                
             </h4>
         <ul>
-            <li>Notify how many of each entrees</li>
-            <li>Notify how many dishes have not been voted on after creation</li>
+
+
             <li>Change calendar</li>
             <li>Change basic color theme</li>
             <li>planning time in weeks</li>
             <li>Include Deserts?</li>
             <li>Track Nutrition</li>
         </ul>
-        <ol style="text-align: left;">
-            <li ng-repeat="(key, total) in starRatings">
-                {{key}}Star = {{total.dishes.length}} 
-            <!--</li>
-            <li>oneStar = {{oneStar.length}}</li>
-            <li>twoStars = {{twoStars.length}}</li>
-            <li>threeStars = {{threeStars.length}}</li>
-            <li>fourStars = {{fourStars.length}}</li>
-            <li>fiveStars = {{fiveStars.length}}</li>
-            <li>zeroStars = {{zeroStars.length}}</li>
-            <li>TotalStars = {{myDishes.length}}</li>-->
-            </ul>
 
     </div>
 </div>
@@ -35,7 +23,10 @@
                Recipes by type:               
             </h4>
             <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
-            <h4>Total Private Recipes: = {{myDishes.length}} </h4>
+            <h4>Total Private Recipes: {{myDishes.length}}</h4>
+            <!--<ul style="text-align: left;">
+                <li ng-repeat="(key, total) in starRatings">{{key}}Star = {{total.dishes.length}}</li>
+            </ul>-->
         </div>
     </div>
     <div class="col-sm-4 container">
@@ -44,7 +35,14 @@
                 Recipes by Star ratings:               
             </h4>
             <nvd3 options="starOptions" data="starData"></nvd3>
-            <h4>Recipes with no Rating: = {{zeroStars}} </h4>
+            <h4>Recipes with no Rating:</h4>
+            <ul ng-repeat="myDish in zeroStars track by $index">
+                <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/{{dish.$id}}">{{myDish["title"]}}</a></h4>
+                <h4 ng-bind="zeroStars.title"></h4>
+                <!--<h4 data-ng-bind="zeroStars.[myDish.title]"></h4>-->
+                <!--<h4 ng-sanitize="zeroStars.title"></h4>-->
+                <!--<h4>Recipes with no Rating: = {{zeroStars}}</h4>-->
+                <!--<h4 ng-bind-html="zeroStars.name">Recipes with no Rating: = {{zeroStars}} </h4>-->
         </div>
     </div>
 </div>

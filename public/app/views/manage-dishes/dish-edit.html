@@ -1,19 +1,18 @@
-    <div class="row">
-        <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
-        <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" src="{{dish.img}}" alt="{{dish.title}">
-            <label style="margin-right: 5px;">Dish Image Url:
+<div class="row">
+    <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
+    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" src="{{dish.img}}" alt="{{dish.title}">
+        <label style="margin-right: 5px;">Dish Image Url:
             <input style="width: 500px" ng-model="dish.img" type="url">
-        </div>
-        </span>
     </div>
-    <div class="col-sm-12">
+    </span>
+</div>
+<div class="col-sm-12">
     <div style="align-content: center;" class="col-sm-12">
         <!--Prep Time-->
         <div style="text-align: center" class="row">
             Prep Time:
-            <input ng-model="dish.prepTime" type="number"></input> + Cook Time:
-            <input ng-model="dish.cookTime" type="number"></input> = Total Time:
-            <p>{{dish.prepTime + dish.cookTime}}</p>
+            <input ng-model="dish.prepTime" type="number" style="width: 45px;"></input> + Cook Time:
+            <input ng-model="dish.cookTime" type="number"style="width: 45px;"></input><h4>Total Time: {{dish.prepTime + dish.cookTime}}</h4>
         </div>
         <!--Recipe Rating-->
         <div style="text-align: center">
@@ -36,33 +35,43 @@
 </div>
 <!--Ingredients-->
 <div>
-    
+
     <h4>Ingredients:</h4>
     <div style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 container-fluid" ng-repeat="ingredient in dish.ingredients">
-    <!--<input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients track by $index" ng-model="ingredient" ng-blur="test(ingredient, $index)" type="text">-->
-    <input class = "ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.name" >
-    <input class = "ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.qty" >
-    <!--<input class = "ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.unit" >-->
-    <label class = "ingredient">Unit of Measure
-              <select style = "width: 150px" ng-options="" ng-model="ingredient.unit" class="form-control ingredient" ng-selected="ingredient.unit">
-                <option>Cup</option>
-                <option>Teaspoon</option>
-                <option>Tablespoon</option>
-                <option>Ounce</option>
-                <option>Pound</option>
+        <!--<input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients track by $index" ng-model="ingredient" ng-blur="test(ingredient, $index)" type="text">-->
+        <input class="ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.name">
+        <input class="ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.qty">
+        <!--<input class = "ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.unit" >-->
+        <label class="ingredient">Unit of Measure
+            <!--drop down for unit of measurement-->
+            <select style="width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
+                <option>each</option>
+                <option>piece</option>
+                <option>pack</option>
+                <option>bunch</option>
+                <option>roll</option>
+                <option>dozen</option>
+                <option>lbs</option>
+                <option>qt</option>
+                <option>oz</option>
+                <option>pt</option>
+                <option>cup</option>
+                <option>tbs</option>
+                <option>tsp</option>
             </select>
-</div>
-<!--Instuctions-->
-<div class="col-sm-12">
-    <div>
-        <h4>Instructions:</h4>
-        <div class="panel">
-            <div ng-model="dish.instructions" summernote></div>
-        </div>
+            <!--end dropdown-->
     </div>
+    <!--Instuctions-->
+    <div class="col-sm-12">
+        <div>
+            <h4>Instructions:</h4>
+            <div class="panel">
+                <div ng-model="dish.instructions" summernote></div>
+            </div>
+        </div>
 
-<!--nutrition info-->
-    <span style="display: inline">
+        <!--nutrition info-->
+        <span style="display: inline">
         <label> Calories: <input class = "nutinput" ng-model="dish.nutritionInfo[0].Calories"> </input> </label>
         <label> Total Fat: <input class = "nutinput" ng-model="dish.nutritionInfo[0].TotalFat"> </input> </label>
         <label> Saturated Fats: <input class = "nutinput" ng-model="dish.sfat"> </input> </label>
@@ -75,7 +84,7 @@
         <label> Calcium: <input class = "nutinput" ng-model="dish.calcium"></input> </label>
         <label> Iron: <input class = "nutinput" ng-model="dish.iron"> </input> </label>
     </span>
-    <div style="text-align: center; margin: 10px">
-        <button ng-click="updateDish(dish)">Update Dish</button>
+        <div style="text-align: center; margin: 10px">
+            <button ng-click="updateDish(dish)">Update Dish</button>
+        </div>
     </div>
-</div>

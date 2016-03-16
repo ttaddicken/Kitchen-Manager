@@ -10,9 +10,10 @@
     margin: 3px;
 }
 .recipeCard{
-    border: 5 px solid black;
+    border: 5 px solid white;
     text-align: left;
-    
+    background-color:#112233,
+
 }
 /*END: DISH CREATION CSS CONTENT*/
 
