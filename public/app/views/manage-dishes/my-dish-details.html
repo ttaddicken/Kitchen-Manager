@@ -1,6 +1,6 @@
 <div class="row">
     <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
-    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" src="{{dish.img}}" alt="{{dish.title}"></div>
+    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" ng-src="{{dish.img}}" alt="{{dish.title}"></div>
     </span>
 </div>
 
@@ -51,7 +51,7 @@
         <!--nutritional info-->
         <h4>Nutritional Info</h4>
         <span style="display: inline">
-    <span class="panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
+        <span class="panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
         <span class="panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
         <span class="panel nutr">Saturated Fats: {{dish.sfat}}</span>
         <span class="panel nutr">Cholesterol: {{dish.cholesterol}}</span>

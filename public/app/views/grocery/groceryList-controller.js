@@ -1,34 +1,34 @@
 app.controller('GroceryController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray){
     
-    $scope.groceryItems = [
-        {store:'Wal-Mart',
-        section: 'produce',
-        name:'baby carrots',
-        quantity: '',
-        price: '',
-        completed: false
-        },{
-        store:'WinCo',
-        section: 'dairy',
-        name:'milk',
-        quantity: '',
-        price: '',
-        completed: false  
-        },{
-        store:'WinCo',
-        section: 'butcher',
-        name:'ground beef',
-        quantity: '2 pounds',
-        price: '',
-        completed: false  
-        },{
-        store:'WinCo',
-        section: 'bakery',
-        name:'cupcakes',
-        quantity: '1 dozen',
-        price: '',
-        completed: false  
-        }]
+    // $scope.groceryItems = [
+    //     {store:'Wal-Mart',
+    //     section: 'produce',
+    //     name:'baby carrots',
+    //     quantity: '',
+    //     price: '',
+    //     completed: false
+    //     },{
+    //     store:'WinCo',
+    //     section: 'dairy',
+    //     name:'milk',
+    //     quantity: '',
+    //     price: '',
+    //     completed: false  
+    //     },{
+    //     store:'WinCo',
+    //     section: 'butcher',
+    //     name:'ground beef',
+    //     quantity: '2 pounds',
+    //     price: '',
+    //     completed: false  
+    //     },{
+    //     store:'WinCo',
+    //     section: 'bakery',
+    //     name:'cupcakes',
+    //     quantity: '1 dozen',
+    //     price: '',
+    //     completed: false  
+    //     }]
     
     this.getGroceryItems = function(){
         return groceryItems;
