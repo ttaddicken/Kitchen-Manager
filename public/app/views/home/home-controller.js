@@ -53,8 +53,7 @@ $scope.dishcard = "#CF000F";
                     obj.hideSm = true;
                     obj.header = $scope.dishcard;
                 } 
-                $scope.grid[col].push(obj);
-
+                $scope.grid[row].cells.push(obj);
             }
         }
         // console.log($scope.grid);
@@ -90,9 +89,6 @@ $scope.dishcard = "#CF000F";
     //     console.log($scope.grid);
     //     return $scope.grid
     
-    
-    
-    // calendarWeeks
 
     // drag and drop functionality
     $scope.dragStart = function(event) {
