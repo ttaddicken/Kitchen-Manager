@@ -19,8 +19,13 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         "Friday",
         "Saturday"
     ];
+<<<<<<< HEAD
     // $scope.dishcard = "#eadcc3";
     $scope.dishcard = "#FC575E";
+=======
+// $scope.dishcard = "#eadcc3";
+$scope.dishcard = "#CF000F";
+>>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
 
     $scope.myDishes = DishService.getMyDishes()
 
@@ -29,6 +34,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
     $scope.grid = [];
 
     buildGrid();
+<<<<<<< HEAD
     function buildGrid() {
         for (var row = 0, count=0; row < days.length; row++) {
             $scope.grid[row] = $scope.grid[row] || {id: row, cells:[]};
@@ -39,12 +45,53 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
                     obj.header = $scope.dishcard;
                     obj.name = days[row];
                     obj.hideLg = true;
+=======
+    // function buildGrid() {
+    //     for (var row = 0; row < days.length; row++) {
+    //         $scope.grid[row] = [];
+    //         for (var col = 0; col < activities.length; col++) {
+    //             var column = col
+    //             var obj = { row: row, col: column };
+    //             if (col === 0) {
+    //                 obj.header = $scope.dishcard;
+    //                 obj.name = days[row];
+    //                 obj.hideLg = true;                    
+    //             }
+    //             if (row !== 0 && col !== 0) {
+    //                 obj.name = days[row] + " : " + activities[col];
+    //                 obj.hideLgguts = true;
+                    
+    //                 // obj.hideSm = true;
+    //             } 
+    //             if (row === 0) {
+    //                 obj.name = activities[col];
+    //                 obj.hideSm = true;
+    //                 obj.header = $scope.dishcard;
+    //             } 
+    //             $scope.grid[row].push(obj);
+    //         }
+    //     }
+    //     console.log($scope.grid);
+    //     return $scope.grid
+    // }
+function buildGrid() {
+        for (var col = 0; col < activities.length; col++) {
+            $scope.grid[col] = [];
+            for (var row = 0; row < days.length; row++) {
+                var rowumn = row
+                var obj = { col: col, row: rowumn };
+                if (row === 0) {
+                    obj.header = $scope.dishcard;
+                    obj.name = activities[col];
+                    obj.hideLg = true;                    
+>>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
                 }
-                if (row !== 0 && col !== 0) {
-                    obj.name = days[row] + " : " + activities[col];
+                if (col !== 0 && row !== 0) {
+                    obj.name = activities[col] + " : " + days[row];
                     obj.hideLgguts = true;
 
                     // obj.hideSm = true;
+<<<<<<< HEAD
                 }
                 if (row === 0) {
                     obj.name = activities[col];
@@ -52,13 +99,26 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
                     obj.header = $scope.dishcard;
                 }
                 $scope.grid[row].cells.push(obj);
+=======
+                } 
+                if (col === 0) {
+                    obj.name = days[row];
+                    obj.hideSm = true;
+                    obj.header = $scope.dishcard;
+                } 
+                $scope.grid[col].push(obj);
+>>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
             }
         }
         // console.log($scope.grid);
         return $scope.grid
     }
+<<<<<<< HEAD
 
 
+=======
+    
+>>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
     // calendarWeeks
 
     // drag and drop functionality

@@ -2,14 +2,14 @@
 .font{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode';
 }
-.back-color{
+/*.back-color{
     /*background-color: #9fd496;*/
-    background-image:  url('http://schneiderstone.com/wp-content/uploads/2014/05/River-White-Leathered-Granite.jpg');
+    /*background-image:  url('http://schneiderstone.com/wp-content/uploads/2014/05/River-White-Leathered-Granite.jpg');
     background-image: no-repeat; 
     background-position: right top;
     background-attachment: fixed;
     background-size: 100%;
-}
+}*/
 .acc-color{
     /*background-color: #83e972;*/
     background-color: #CF000F
@@ -35,7 +35,8 @@
 /*comment out for now*/
 
 body{
-    background-color:#66CC99 !important;
+    /*background-color:#66CC99 !important;*/
+    background-color:#ECF0F1 !important;
 }
 
 p {
