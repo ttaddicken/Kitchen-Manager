@@ -37,18 +37,14 @@
             <nvd3 options="starOptions" data="starData"></nvd3>
             <h4>Recipes with no Rating:</h4>
             <ul ng-repeat="myDish in zeroStars track by $index">
-                <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/{{dish.$id}}">{{myDish["title"]}}</a></h4>
-                <h4 ng-bind="zeroStars.title"></h4>
-                <!--<h4 data-ng-bind="zeroStars.[myDish.title]"></h4>-->
-                <!--<h4 ng-sanitize="zeroStars.title"></h4>-->
-                <!--<h4>Recipes with no Rating: = {{zeroStars}}</h4>-->
-                <!--<h4 ng-bind-html="zeroStars.name">Recipes with no Rating: = {{zeroStars}} </h4>-->
+                <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h4>
+                <!--<h4 ng-bind="zeroStars.title"></h4>-->
         </div>
     </div>
 </div>
 <!--</div>-->
 <div>
-    <button ng-click=updateProfile()>Save</button>
+    <button ng-click="updateProfile()">Save</button>
     <button ui-sref="home">Go Home</button>
 </div>
 <!--</form>-->
