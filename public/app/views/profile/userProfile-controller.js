@@ -157,28 +157,29 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
     $scope.dishTypeData = [
         {
             key: "Appetizer",
-            y: $scope.dishesByType['Appetizer'] ? $scope.dishesByType['Appetizer'].dishes.length : 0
+            y: $scope.dishesByType['Appetizer'] ? $scope.dishesByType['Appetizer'].dishes.length : .01
         },
         {
             key: "Salads",
-            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : 0
+            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : .01
         },
         {
             key: "Side Dish",
-            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : 0
+            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : .01
         },
         {
             key: "Main Entre",
-            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : 0
+            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : .01
         },
         {
             key: "Desserts",
-            y: $scope.dishesByType['Dessert'] ? $scope.dishesByType['Dessert'].dishes.length : 0
+            y: $scope.dishesByType['Dessert'] ? $scope.dishesByType['Dessert'].dishes.length : .01
         },
-        {
+     /* {
             key: "Undefined",
             y: $scope.dishesByType['Undefined'] ? $scope.dishesByType['Undefined'].dishes.length : 0
         },
+        */
     ];
 
 })
