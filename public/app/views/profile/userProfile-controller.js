@@ -5,6 +5,7 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
         $scope.myDishes = dishes;
         buildZeros();
         starCounter();
+        typeCounter();
         buildGraphs();
     });
 
@@ -17,7 +18,7 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
             if (!$scope.myDishes[i].stars) {
                 $scope.zeroStars.push($scope.myDishes[i])
             }
-        }
+        } 
     }
 
     $scope.starRatings = {};
@@ -33,21 +34,9 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
                 $scope.starRatings[starCount].dishes = $scope.starRatings[starCount].dishes || [];
                 $scope.starRatings[starCount].dishes.push(currDish);
             } catch (error) {
-                debugger;
             }
         }
-        console.log($scope.myDishes);
     };
-    // starCounter();
-
-    // $scope.zeroStars = 10;
-    // $scope.oneStar = 5;
-    // $scope.twoStars = 10;
-    // $scope.threeStars = 5;
-    // $scope.fourStars = 10;
-    // $scope.fiveStars = 5;
-    //  starCounter();
-
 
     //  CHART RECIPES BY STAR RATING: 
     function buildGraphs() {
@@ -106,6 +95,38 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
 
     }
 
+    $scope.noTypes = [];
+
+    function buildnoTypes() {
+        for (var i = 0; i < $scope.myDishes.length; i++) {
+            if (!$scope.myDishes[i].type) {
+                $scope.noTypes.push($scope.myDishes[i])
+            }
+        } 
+    }
+
+    $scope.dishesByType = {};
+
+    var typeCounter = function() {
+        //AngularFire brute force $firebaseArray != [] its a tricky trick 
+        //$scope.myDishes === {} != []; 
+        for (var i = 0; i <= $scope.myDishes.length - 1; i++) {
+            try {
+                var currDish = $scope.myDishes[i];
+                var dishTypeCount = currDish.type || 'Undefined';
+                $scope.dishesByType[dishTypeCount] = $scope.dishesByType[dishTypeCount] || {};
+                $scope.dishesByType[dishTypeCount].dishes = $scope.dishesByType[dishTypeCount].dishes || [];
+                $scope.dishesByType[dishTypeCount].dishes.push(currDish);
+            } catch (error) {
+            }
+        }
+    };
+
+
+
+
+
+
     //  CHART RECIPES BY DISH TYPE:
 
     $scope.dishTypeOptions = {
@@ -135,22 +156,29 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
 
     $scope.dishTypeData = [
         {
-            key: "Main Entre",
-            y: 5
-        },
-        {
-            key: "Side Dish",
-            y: 3
+            key: "Appetizer",
+            y: $scope.dishesByType['Appetizer'] ? $scope.dishesByType['Appetizer'].dishes.length : 0
         },
         {
             key: "Salads",
-            y: 7
+            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : 0
+        },
+        {
+            key: "Side Dish",
+            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : 0
+        },
+        {
+            key: "Main Entre",
+            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : 0
         },
         {
             key: "Desserts",
-            y: 4
+            y: $scope.dishesByType['Dessert'] ? $scope.dishesByType['Dessert'].dishes.length : 0
         },
-
+        {
+            key: "Undefined",
+            y: $scope.dishesByType['Undefined'] ? $scope.dishesByType['Undefined'].dishes.length : 0
+        },
     ];
 
 })
