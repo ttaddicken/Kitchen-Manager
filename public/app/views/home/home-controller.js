@@ -29,35 +29,62 @@ $scope.dishcard = "#CF000F";
     $scope.grid = [];
 
     buildGrid();
-    function buildGrid() {
-        for (var row = 0; row < days.length; row++) {
-            $scope.grid[row] = [];
-            for (var col = 0; col < activities.length; col++) {
-                var column = col
-                var obj = { row: row, col: column };
-                if (col === 0) {
+    // function buildGrid() {
+    //     for (var row = 0; row < days.length; row++) {
+    //         $scope.grid[row] = [];
+    //         for (var col = 0; col < activities.length; col++) {
+    //             var column = col
+    //             var obj = { row: row, col: column };
+    //             if (col === 0) {
+    //                 obj.header = $scope.dishcard;
+    //                 obj.name = days[row];
+    //                 obj.hideLg = true;                    
+    //             }
+    //             if (row !== 0 && col !== 0) {
+    //                 obj.name = days[row] + " : " + activities[col];
+    //                 obj.hideLgguts = true;
+                    
+    //                 // obj.hideSm = true;
+    //             } 
+    //             if (row === 0) {
+    //                 obj.name = activities[col];
+    //                 obj.hideSm = true;
+    //                 obj.header = $scope.dishcard;
+    //             } 
+    //             $scope.grid[row].push(obj);
+    //         }
+    //     }
+    //     console.log($scope.grid);
+    //     return $scope.grid
+    // }
+function buildGrid() {
+        for (var col = 0; col < activities.length; col++) {
+            $scope.grid[col] = [];
+            for (var row = 0; row < days.length; row++) {
+                var rowumn = row
+                var obj = { col: col, row: rowumn };
+                if (row === 0) {
                     obj.header = $scope.dishcard;
-                    obj.name = days[row];
+                    obj.name = activities[col];
                     obj.hideLg = true;                    
                 }
-                if (row !== 0 && col !== 0) {
-                    obj.name = days[row] + " : " + activities[col];
+                if (col !== 0 && row !== 0) {
+                    obj.name = activities[col] + " : " + days[row];
                     obj.hideLgguts = true;
                     
                     // obj.hideSm = true;
                 } 
-                if (row === 0) {
-                    obj.name = activities[col];
+                if (col === 0) {
+                    obj.name = days[row];
                     obj.hideSm = true;
                     obj.header = $scope.dishcard;
                 } 
-                $scope.grid[row].push(obj);
+                $scope.grid[col].push(obj);
             }
         }
         console.log($scope.grid);
         return $scope.grid
     }
-
     
     // calendarWeeks
 
