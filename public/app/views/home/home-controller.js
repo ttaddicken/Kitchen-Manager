@@ -19,13 +19,10 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         "Friday",
         "Saturday"
     ];
-<<<<<<< HEAD
-    // $scope.dishcard = "#eadcc3";
-    $scope.dishcard = "#FC575E";
-=======
+
 // $scope.dishcard = "#eadcc3";
 $scope.dishcard = "#CF000F";
->>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
+
 
     $scope.myDishes = DishService.getMyDishes()
 
@@ -34,7 +31,7 @@ $scope.dishcard = "#CF000F";
     $scope.grid = [];
 
     buildGrid();
-<<<<<<< HEAD
+
     function buildGrid() {
         for (var row = 0, count=0; row < days.length; row++) {
             $scope.grid[row] = $scope.grid[row] || {id: row, cells:[]};
@@ -45,7 +42,26 @@ $scope.dishcard = "#CF000F";
                     obj.header = $scope.dishcard;
                     obj.name = days[row];
                     obj.hideLg = true;
-=======
+              
+                }
+                if (col !== 0 && row !== 0) {
+                    obj.name = activities[col] + " : " + days[row];
+                    obj.hideLgguts = true;
+                } 
+                if (col === 0) {
+                    obj.name = days[row];
+                    obj.hideSm = true;
+                    obj.header = $scope.dishcard;
+                } 
+                $scope.grid[col].push(obj);
+
+            }
+        }
+        // console.log($scope.grid);
+        return $scope.grid
+    }
+
+
     // function buildGrid() {
     //     for (var row = 0; row < days.length; row++) {
     //         $scope.grid[row] = [];
@@ -73,52 +89,9 @@ $scope.dishcard = "#CF000F";
     //     }
     //     console.log($scope.grid);
     //     return $scope.grid
-    // }
-function buildGrid() {
-        for (var col = 0; col < activities.length; col++) {
-            $scope.grid[col] = [];
-            for (var row = 0; row < days.length; row++) {
-                var rowumn = row
-                var obj = { col: col, row: rowumn };
-                if (row === 0) {
-                    obj.header = $scope.dishcard;
-                    obj.name = activities[col];
-                    obj.hideLg = true;                    
->>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
-                }
-                if (col !== 0 && row !== 0) {
-                    obj.name = activities[col] + " : " + days[row];
-                    obj.hideLgguts = true;
-
-                    // obj.hideSm = true;
-<<<<<<< HEAD
-                }
-                if (row === 0) {
-                    obj.name = activities[col];
-                    obj.hideSm = true;
-                    obj.header = $scope.dishcard;
-                }
-                $scope.grid[row].cells.push(obj);
-=======
-                } 
-                if (col === 0) {
-                    obj.name = days[row];
-                    obj.hideSm = true;
-                    obj.header = $scope.dishcard;
-                } 
-                $scope.grid[col].push(obj);
->>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
-            }
-        }
-        // console.log($scope.grid);
-        return $scope.grid
-    }
-<<<<<<< HEAD
-
-
-=======
     
->>>>>>> dc010f976ca68147640491eb60f71a7c9d4c493d
+    
+    
     // calendarWeeks
 
     // drag and drop functionality
@@ -136,7 +109,6 @@ function buildGrid() {
         cell.dishes = cell.dishes || [];
         cell.dishes.push(dish);
         // console.log('DONE MOVING DISH TO MYDISHES');
-
     }
 
     $scope.moveDish = function(cell, index) {
@@ -177,6 +149,7 @@ function buildGrid() {
                 }
             })
         })
+        
         $rootScope.member.weeks = $rootScope.member.weeks || {};
         var calendarLayout = {
             name: $scope.name,
@@ -185,48 +158,11 @@ function buildGrid() {
         $rootScope.member.weeks[$scope.name] = calendarLayout; 
         $rootScope.member.groceryList = items;
         $rootScope.member.$save();
-        //    $rootScope.groceryList.items =  $scope.groceryList.items || [];
-        //    $scope.groceryList.items.push(newItems);
-        //    $scope.groceryList.items.push($scope.cell.dishes);
-        // $scope.newItems = '';
     }
 
-
-    // $scope.createGroceryList = function(newGroceryList){
-    //     debugger;
-
-    //         $rootScope.member.groceryList = $rootScope.member.groceryList || {}
-    //         $rootScope.member.groceryList = $scope.newGroceryList;
-    //         newGroceryList.creationDate = Date.now();
-    //         $rootScope.member.$save();
-
-    //         }
-
-
-
-    //logic for favorites
-
-    // $scope.showFavorites = function (){
-    //     for (var i=0; i < myDishes.length; i++){
-    //         if(myDishes.length <= 15 ){
-    //             return true;
-    //         } else{
-    //             return findTopFavorites();
-    //         }
-    //     }
-    // }
-
-    // $scope.findTopFavorites = function (){
-    //     myDishes.sort(function(a, b) {
-    //         var sortedByStarsArr = parseFloat(a.stars) - parseFloat(b.stars);
-    //     })
-    //     for(var i = 0; i < sortedByStarsArr.length; i++){
-    //         var currentItem = sortedByStarsArr[i];
-    //         if(current)
-    //     }
-
-    // }
-
-
+  
 })
-// calendarWeeks
+
+
+
+
