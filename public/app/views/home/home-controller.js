@@ -19,7 +19,8 @@ app.controller('HomeController', function($scope, $state, DishService) {
         "Friday",
         "Saturday"
     ];
-$scope.dishcard = "#eadcc3";
+// $scope.dishcard = "#eadcc3";
+$scope.dishcard = "#FC575E";
 
     $scope.myDishes = DishService.getMyDishes()
 
