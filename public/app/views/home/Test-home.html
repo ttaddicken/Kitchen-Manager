@@ -1,0 +1,220 @@
+<div class="col-sm-12 login">
+    <h1>{{famName}} Family Calendar</h1>
+    <div class="row">
+        <div class="col-sm-2">
+            <!----------------Begin Navbar-----------------  http://www.bootply.com/1u6VW4bsrR#-->
+<!--<div class="accordion" id="accordion2">
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+				Collapsible Group Item #1
+			</a>
+		</div>
+		<div id="collapseOne" class="accordion-body collapse in" style="height: auto;">
+			<div class="accordion-inner">
+				Anim pariatur cliche. Minim qui you in1.com probably haven't heard of them et cardigan trust fund culpa biodiesel.
+			</div>
+		</div>
+	</div>
+	<div class="accordion-group">
+		<div class="accordion-heading">
+			<a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+				Collapsible Group Item #2
+			</a>
+		</div>
+		<div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+			<div class="accordion-inner">
+				Anim pariatur cliche...
+			</div>
+		</div>
+	</div>
+</div>-->
+            <div class="accordion" id="accordion1">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne">
+                            <h4>Main Entre's</h4>
+                        </a>
+                    </div>
+                    <div id="collapseOne" class="accordion-body collapse in" style="height: auto;">
+                        <div class="accordion-inner">
+                            <div class="list-group">
+                                <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                                class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
+                                ng-repeat="dish in myDishes track by dish.$id | filter : dish.type === 'Main Dish'">
+                                    <div class="media">
+                                        <div class="media-left">
+                                        </div>
+                                        <div style="padding-left: 116px;" class="media-body">
+                                            <div class="media-heading dishcalendar dish-title">
+                                                {{dish.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+                            <h4>Side Dishes</h4>
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse" style="height: 0px;">
+                        <div class="accordion-inner">
+                            <div class="list-group">
+                                <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                                class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
+                                ng-repeat="dish in myDishes track by dish.$id">
+                                    <div class="media">
+                                        <div class="media-left">
+                                        </div>
+                                        <div style="padding-left: 116px;" class="media-body">
+                                            <div class="media-heading dishcalendar dish-title">
+                                                {{dish.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion2">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion3" href="#collapseThree">
+                            <h4>Salad's</h4>
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse" style="height: 0px;">
+                        <div class="accordion-inner">
+                            <div class="list-group">
+                                <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                                class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
+                                ng-repeat="dish in myDishes track by dish.$id">
+                                    <div class="media">
+                                        <div class="media-left">
+                                        </div>
+                                        <div style="padding-left: 116px;" class="media-body">
+                                            <div class="media-heading dishcalendar dish-title">
+                                                {{dish.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion3">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion4" href="#collapseFour">
+                            <h4>Appetizers</h4>
+                        </a>
+                    </div>
+                    <div id="collapseFour" class="accordion-body collapse" style="height: 0px;">
+                        <div class="accordion-inner">
+                            <div class="list-group">
+                                <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                                class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
+                                ng-repeat="dish in myDishes track by dish.$id">
+                                    <div class="media">
+                                        <div class="media-left">
+                                        </div>
+                                        <div style="padding-left: 116px;" class="media-body">
+                                            <div class="media-heading dishcalendar dish-title">
+                                                {{dish.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="accordion" id="accordion4">
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion5" href="#collapseFive">
+                            <h4>Desserts</h4>
+                        </a>
+                    </div>
+                    <div id="collapseFive" class="accordion-body collapse" style="height: 0px;">
+                        <div class="accordion-inner">
+                            <div class="list-group">
+                                <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                                class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
+                                ng-repeat="dish in myDishes track by dish.$id || dish.type === Desserts">
+                                    <div class="media">
+                                        <div class="media-left">
+                                        </div>
+                                        <div style="padding-left: 116px;" class="media-body">
+                                            <div class="media-heading dishcalendar dish-title">
+                                                {{dish.title}}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!----------------End Navbar------------------->
+            <!--<div class="row text-center fixed-sidebar">
+                                    <h2>Our Favorites</h2>
+                                    <div class="list-group">
+                                        <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                                        class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
+                                        ng-repeat="dish in myDishes track by dish.$id">
+                                            <div class="media">
+                                                <div class="media-left">
+                                                </div>
+                                                <div style="padding-left: 116px;" class="media-body">
+                                                    <div class="media-heading dishcalendar dish-title">
+                                                        {{dish.title}}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>-->
+        </div>
+        <div class="col-sm-9 contianer">
+            <div ng-repeat="row in grid track by row.id" class="col-sm-12">
+                <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                ng-drop-success="onDragComplete($data, $event, cell)">
+                    <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
+                    <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
+                    <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
+                    <div class="list-group">
+                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
+                        ng-drag-success="moveDish(cell, $index)">
+                            {{dish.title}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <input type="text" ng-model="name" class="form-control">
+                <button class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+            </div>
+        </div>
+    </div>
+    <div>
+    </div>
+
+
+</div>
