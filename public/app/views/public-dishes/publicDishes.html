@@ -1,8 +1,13 @@
 <div class="row text-center">
-    <div class="col-sm-12 content-ceter">
-            <div class="col-sm-3 fancybox-skin panel panel-default card" ng-repeat="dish in indatabase"><span><a ng-href="/#/public-dishes/{{dish.$id}}" class="text-center panel-heading">{{dish.title}}</a></span>
-                <img class="panel-body img-card" ng-src="{{dish.img}}"></img>
+    <div class="col-sm-12 pagination-centered">
+        <div class="col-sm-2 panel panel-default public-card" ng-repeat="dish in indatabase">
+               <a ng-href="/#/public-dishes/{{dish.$id}}" class="text-center">
+            <div>
+                    {{dish.title}}
             </div>
+            <img class="img-card" style="background-image: url({{dish.img}})">
+            </img>
+               </a>
         </div>
+    </div>
 </div>
-
