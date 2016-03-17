@@ -21,8 +21,8 @@
             <div class="row text-center fixed-sidebar">
                 <h2>Our Favorites</h2>
                 <div class="list-group">
-                    <div style = "box-shadow: 5px 5px grey; background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" 
-                    ng-repeat="dish in myDishes track by $index">
+                     <div style = "box-shadow: 5px 5px grey; background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" 
+ -                    ng-repeat="dish in myDishes track by $index">
                         <div class="media">
                             <div class="media-left">
                                 <!--<img class="media-object" width="80" ng-src="{{dish.img}}"></img>-->
@@ -44,15 +44,20 @@
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
                     <div class="list-group">
-                        <div style= "color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true" ng-drag-success="moveDish(cell, $index)">
+                        <div style= "color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true" ng-drag-success="moveDish($event, cell, $index)">
                             {{dish.title}}
                         </div>
                     </div>
                 </div>
             </div>
+            <div>
+                <input type="text" ng-model="name" class="form-control">
+                <button class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+            </div>
         </div>
     </div>
-
+<div>
+</div>
 
   
 </div>

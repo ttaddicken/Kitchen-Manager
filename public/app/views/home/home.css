@@ -10,9 +10,9 @@
     min-height: 100px;
     /*background-color: #f3ede4;*/
     background-color: #ECF0F1;
-    box-shadow: 13px 13px grey;
+    box-shadow: 5px 4px rgba(128, 128, 128, 0.26);
     /*display: inline-block;*/
-    color: white
+    color: black;
 }
 
 .card {
