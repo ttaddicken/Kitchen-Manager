@@ -21,16 +21,11 @@
     margin-left: 7px;
     width: 255px;
     height: 275px;
-    box-shadow: 1px 1px darkgrey;
+    /*box-shadow: 1px 1px darkgrey;*/
 
 }
 
-.img-card{
 
-    width:150px; 
-    align-content:center; 
-    margin:5px;
-    background-image: url({{dish.img}})
     
     
 }
