@@ -4,7 +4,7 @@
             <div class="scrollable">
                 <h1 class="scrollable-header app-name">Our Favorites</h1>
                 <div class="scrollable-content">
-                    <div class="list-group">
+                    <div class="list-group" ui-turn-off='uiSidebarLeft'>
                         <div style=" background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true"
                         ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id">
                             {{dish.title}}
@@ -66,9 +66,9 @@
         </div>
     </div>
 </div>
-<div style="margin-top: 15px">
+<div style="margin-top: 15px; text-align: center;">
     <input type="text" ng-model="name" class="form-control">
-    <button style="margin-top: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+    <button style="margin-top: 10px; margin-bottom: 10px;" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
 </div>
 </div>
 </div>
