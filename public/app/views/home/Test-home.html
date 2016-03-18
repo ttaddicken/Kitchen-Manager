@@ -41,7 +41,7 @@
                             <div class="list-group">
                                 <div style="box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}"
                                 class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish"
-                                ng-repeat="dish in myDishes track by dish.$id | filter : dish.type === 'Main Dish'">
+                                ng-repeat="dish in myDishes track by dish.$id | filter : dish.type == 'Main Dish'">
                                     <div class="media">
                                         <div class="media-left">
                                         </div>
