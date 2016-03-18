@@ -47,3 +47,76 @@
     text-align: right;
     color: white;
 }*/
+/* For flex Box*/
+.flexbox-parent {
+  @include display-flex;
+  background: #FFD54F;
+  overflow: hidden;
+  width: 100%;
+  padding: 3px;
+  min-height: 550px;
+  max-height: 1000px;
+
+  // Flex items
+  > div {
+    display: inline-block;
+    background: white;
+    overflow: hidden;
+    margin: 3px;
+    padding: 5px;
+
+    .child-controls {
+      margin-top: 7px;
+    }
+  }
+}
+
+.child-number {
+  display: block;
+  width: 22px;
+  height: 22px;
+  background: #FFB300;
+  color: white;
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 3px;
+  text-align: center;
+  @include border-radius(50%);
+  float: left;
+}
+
+.code {
+  font-family: Consolas, "Courier New", Monospace;
+  font-size: 15px;
+}
+
+.remove-child {
+  background: transparent;
+  color: #FF6F00;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.highlight {
+  color: #FF8F00;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.clearfix {
+  &:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.right-padding {
+  padding-right: 15px;
+  /*end of flexbox*/

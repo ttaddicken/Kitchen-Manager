@@ -84,7 +84,7 @@
         </div>-->
         <div class="col-sm-10">
             <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
-            <div ng-repeat="row in grid track by row.id" class="col-sm-12">
+            <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
                 <div class="col-sm-2 cell row" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
                 ng-drop-success="onDragComplete($data, $event, cell)">
                     <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
@@ -97,11 +97,11 @@
                         </div>
                     </div>
                 </div>
-            </div>
         </div>
-        <div style="margin-top: 15px">
-            <input type="text" ng-model="name" class="form-control">
-            <button style="margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+        <div style="display: inline; margin-top: 15px;">
+            <input style="display: inline; width: 600px;"  type="text" ng-model="name" class="form-control">
+            <button style="display: inline;text-align: center; margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+            </div>
         </div>
     </div>
 </div>
