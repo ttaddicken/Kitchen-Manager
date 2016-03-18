@@ -4,6 +4,7 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
     DishService.getMyDishes().$loaded(function(dishes) {
         $scope.myDishes = dishes;
         buildZeros();
+        buildnoTypes(); 
         starCounter();
         typeCounter();
         buildGraphs();
@@ -113,7 +114,7 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
         for (var i = 0; i <= $scope.myDishes.length - 1; i++) {
             try {
                 var currDish = $scope.myDishes[i];
-                var dishTypeCount = currDish.type || 'Undefined';
+                var dishTypeCount = currDish.type || 'Uncategorized';
                 $scope.dishesByType[dishTypeCount] = $scope.dishesByType[dishTypeCount] || {};
                 $scope.dishesByType[dishTypeCount].dishes = $scope.dishesByType[dishTypeCount].dishes || [];
                 $scope.dishesByType[dishTypeCount].dishes.push(currDish);
@@ -157,27 +158,27 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
     $scope.dishTypeData = [
         {
             key: "Appetizer",
-            y: $scope.dishesByType['Appetizer'] ? $scope.dishesByType['Appetizer'].dishes.length : .01
+            y: $scope.dishesByType['Appetizer'] ? $scope.dishesByType['Appetizer'].dishes.length : 0
         },
         {
             key: "Salads",
-            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : .01
+            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : 1
         },
         {
             key: "Side Dish",
-            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : .01
+            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : 2
         },
         {
             key: "Main Entre",
-            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : .01
+            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : 2
         },
         {
             key: "Desserts",
-            y: $scope.dishesByType['Dessert'] ? $scope.dishesByType['Dessert'].dishes.length : .01
+            y: $scope.dishesByType['Dessert'] ? $scope.dishesByType['Dessert'].dishes.length : 3
         },
      /* {
-            key: "Undefined",
-            y: $scope.dishesByType['Undefined'] ? $scope.dishesByType['Undefined'].dishes.length : 0
+            key: "Not Categorized",
+            y: $scope.dishesByType['Uncategorized'] ? $scope.dishesByType['Uncategorized'].dishes.length : 0
         },
         */
     ];
