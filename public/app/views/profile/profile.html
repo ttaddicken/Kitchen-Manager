@@ -24,9 +24,10 @@
             </h4>
             <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
             <h4>Total Private Recipes: {{myDishes.length}}</h4>
-            <!--<ul style="text-align: left;">
-                <li ng-repeat="(key, total) in starRatings">{{key}}Star = {{total.dishes.length}}</li>
-            </ul>-->
+            <ul style="text-align: left;">
+                <ul ng-repeat="myDish in dishesByType track by $index">
+                <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h4>
+            </ul>
         </div>
     </div>
     <div class="col-sm-4 container">
@@ -38,7 +39,7 @@
             <h4>Recipes with no Rating:</h4>
             <ul ng-repeat="myDish in zeroStars track by $index">
                 <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h4>
-                <!--<h4 ng-bind="zeroStars.title"></h4>-->
+                
         </div>
     </div>
 </div>
