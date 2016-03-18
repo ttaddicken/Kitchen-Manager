@@ -20,16 +20,8 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         "Saturday"
     ];
 
-<<<<<<< HEAD
     // $scope.dishcard = "#eadcc3";
     $scope.dishcard = "#CF000F";
-
-=======
-// $scope.dishcard = "#eadcc3";
-$scope.dishcard = "#CF000F";
->>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
-
-
     $scope.myDishes = DishService.getMyDishes()
 
     //  $scope.Calendar = [];
@@ -39,7 +31,6 @@ $scope.dishcard = "#CF000F";
     buildGrid();
 
     function buildGrid() {
-<<<<<<< HEAD
         for (var col = 0; col < activities.length; col++) {
             $scope.grid[col] = $scope.grid[col] || {id: col, cells:[]};
             for (var row = 0; row < days.length; row++) {
@@ -50,46 +41,21 @@ $scope.dishcard = "#CF000F";
                     obj.header = $scope.dishcard;
                     obj.name = activities[col];
                     obj.hideLg = true;
-=======
-        for (var row = 0, count=0; row < days.length; row++) {
-            $scope.grid[row] = $scope.grid[row] || {id: row, cells:[]};
-            for (var col = 0; col < activities.length; col++) {
-                var column = col
-                var obj = { row: row, col: column, id: row+''+col};
-                if (col === 0) {
-                    obj.header = $scope.dishcard;
-                    obj.name = days[row];
-                    obj.hideLg = true;
-              
->>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
                 }
                 if (col !== 0 && row !== 0) {
                     obj.name = activities[col] + " : " + days[row];
                     obj.hideLgguts = true;
-<<<<<<< HEAD
-
                     // obj.hideSm = true;
                 }
-=======
-                } 
->>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
                 if (col === 0) {
                     obj.name = days[row];
                     obj.hideSm = true;
                     obj.header = $scope.dishcard;
-<<<<<<< HEAD
                 }
                 $scope.grid[col].cells.push(obj);
             }
         }
         console.log($scope.grid);
-=======
-                } 
-                $scope.grid[row].cells.push(obj);
-            }
-        }
-        // console.log($scope.grid);
->>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
         return $scope.grid
     }
 

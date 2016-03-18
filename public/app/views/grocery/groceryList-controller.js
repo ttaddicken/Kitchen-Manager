@@ -1,10 +1,5 @@
-<<<<<<< HEAD
 app.controller('GroceryController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
    $scope.checkboxModel = {};
-=======
-app.controller('GroceryController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray){
-    
->>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
     // $scope.groceryItems = [
     //     {store:'Wal-Mart',
     //     section: 'produce',
@@ -34,17 +29,10 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     //     price: '',
     //     completed: false  
     //     }]
-<<<<<<< HEAD
-
     this.getGroceryItems = function() {
         return $rootScope.member.groceryList = items;
         // debugger;
         // return groceryItems;
-=======
-    
-    this.getGroceryItems = function(){
-        return groceryItems;
->>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
     }
 
     // $scope.myDishes = DishService.getMyDishes()
