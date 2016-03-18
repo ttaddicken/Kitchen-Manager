@@ -1,5 +1,12 @@
 app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray) {
 
+    $scope.parent = {
+    flexDirection:  'row',
+    flexWrap:       'nowrap',
+    justifyContent: 'flex-start',
+    alignItems:     'stretch',
+    alignContent:   'stretch'
+  };
     var activities = [
         "Day",
         "Activities",

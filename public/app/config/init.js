@@ -5,5 +5,6 @@ var app = angular.module('Kitchen', [
     'ui.bootstrap',
     'ngSanitize',
     'ngDraggable',
-    'nvd3'
+    'nvd3',
+    'ngMaterial'
 ]);
