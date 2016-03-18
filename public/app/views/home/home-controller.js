@@ -20,8 +20,14 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         "Saturday"
     ];
 
+<<<<<<< HEAD
     // $scope.dishcard = "#eadcc3";
     $scope.dishcard = "#CF000F";
+
+=======
+// $scope.dishcard = "#eadcc3";
+$scope.dishcard = "#CF000F";
+>>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
 
 
     $scope.myDishes = DishService.getMyDishes()
@@ -33,6 +39,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
     buildGrid();
 
     function buildGrid() {
+<<<<<<< HEAD
         for (var col = 0; col < activities.length; col++) {
             $scope.grid[col] = $scope.grid[col] || {id: col, cells:[]};
             for (var row = 0; row < days.length; row++) {
@@ -43,22 +50,46 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
                     obj.header = $scope.dishcard;
                     obj.name = activities[col];
                     obj.hideLg = true;
+=======
+        for (var row = 0, count=0; row < days.length; row++) {
+            $scope.grid[row] = $scope.grid[row] || {id: row, cells:[]};
+            for (var col = 0; col < activities.length; col++) {
+                var column = col
+                var obj = { row: row, col: column, id: row+''+col};
+                if (col === 0) {
+                    obj.header = $scope.dishcard;
+                    obj.name = days[row];
+                    obj.hideLg = true;
+              
+>>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
                 }
                 if (col !== 0 && row !== 0) {
                     obj.name = activities[col] + " : " + days[row];
                     obj.hideLgguts = true;
+<<<<<<< HEAD
 
                     // obj.hideSm = true;
                 }
+=======
+                } 
+>>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
                 if (col === 0) {
                     obj.name = days[row];
                     obj.hideSm = true;
                     obj.header = $scope.dishcard;
+<<<<<<< HEAD
                 }
                 $scope.grid[col].cells.push(obj);
             }
         }
         console.log($scope.grid);
+=======
+                } 
+                $scope.grid[row].cells.push(obj);
+            }
+        }
+        // console.log($scope.grid);
+>>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
         return $scope.grid
     }
 
@@ -91,8 +122,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
     //     console.log($scope.grid);
     //     return $scope.grid
 
-
-    // drag and drop functionality
+ // drag and drop functionality
     $scope.dragStart = function(event) {
         // console.log("WOrking")
         return
@@ -164,6 +194,39 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         $rootScope.member.$save();
     }
 
+    // creates grocerylist and pushes to firebase
+
+    //creates groceryList Array on firebase
+    $rootScope.groceryList = $rootScope.groceryList || {}
+
+    //Adds Items to Grocery list --an item is an ingredient from myDishes
+
+    $scope.createGroceryList = function(newItems) {
+        $rootScope.member.groceryList = $rootScope.member.groceryList || [];
+        var items = [];
+        $scope.grid.forEach(function(row) {
+            row.cells.forEach(function(cell) {
+                if(cell.dishes){
+                    cell.dishes.forEach(function(dish) {
+                        if(dish.ingredients){
+                            dish.ingredients.forEach(function(ing){
+                                items.push(ing);
+                            })
+                        }
+                    })
+                }
+            })
+        })
+        
+        $rootScope.member.weeks = $rootScope.member.weeks || {};
+        var calendarLayout = {
+            name: $scope.name,
+            grid: $scope.grid
+        }
+        $rootScope.member.weeks[$scope.name] = calendarLayout; 
+        $rootScope.member.groceryList = items;
+        $rootScope.member.$save();
+    }
 
 })
 

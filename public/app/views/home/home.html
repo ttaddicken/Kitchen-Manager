@@ -21,8 +21,13 @@
             <div class="row text-center fixed-sidebar">
                 <h2>Our Favorites</h2>
                 <div class="list-group">
+<<<<<<< HEAD
                      <div style = "box-shadow: 5px 5px grey; background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" 
  -                    ng-repeat="dish in myDishes track by dish.$id">
+=======
+                    <div style = "box-shadow: 5px 5px rgba(128, 128, 128, 0.26); background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" 
+                    ng-repeat="dish in myDishes track by dish.$id">
+>>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
                         <div class="media">
                             <div class="media-left">
                                 <!--<img class="media-object" width="80" ng-src="{{dish.img}}"></img>-->
@@ -37,7 +42,11 @@
                 </div>
             </div>
         </div>
+<<<<<<< HEAD
         <div class="col-sm-10">
+=======
+        <div class="col-sm-9 contianer">
+>>>>>>> 3487a77888d3666f80bc94b32624b24535ba6af6
             <div ng-repeat="row in grid track by row.id" class="col-sm-12">
                 <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true" ng-drop-success="onDragComplete($data, $event, cell)">
                     <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
