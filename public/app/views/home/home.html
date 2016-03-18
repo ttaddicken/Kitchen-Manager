@@ -1,33 +1,26 @@
 <div class="col-sm-2">
-    <div class="text-center fixed-sidebar">
-        <div class="sidebar sidebar-left">
-            <div class="scrollable">
-                <h1 class="scrollable-header app-name">Our Favorites</h1>
-                <div class="scrollable-content">
-                    <div class="list-group">
-                        <div style=" background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true"
-                        ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id">
-                            {{dish.title}}
-                            <!--<div class="media media-left" style="padding-left: 80px; color: white; text-align: right">-->
-                            <!--<div class="">
+            <div class="text-center fixed-sidebar">
+                <h2>Our Favorites</h2>
+                <div class="list-group">
+                    <div style=" background-image: url({{dish.img}}); background-color: {{dishcard}}"
+                    class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id">
+                        {{dish.title}}
+                        <!--<div class="media media-left" style="padding-left: 80px; color: white; text-align: right">-->
+                        <!--<div class="">
                             <!--</div>-->
-                            <!--<div style="padding-left: 116px;" class="media-body">-->
-                            <!--<div class="media-heading dishcalendar dish-title">-->
-                            <!--{{dish.title}}-->
-                            <!--</div>-->
-                            <!--</div>-->
-                            <!--</div>-->
-                        </div>
+                        <!--<div style="padding-left: 116px;" class="media-body">-->
+                        <!--<div class="media-heading dishcalendar dish-title">-->
+                        <!--{{dish.title}}-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>-->
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
 <!--<div class="col-sm-12 login">
     <div >-->
-<!--<div class="col-sm-2">
+        <!--<div class="col-sm-2">
             <h1>{{famName}} Family Calendar</h1>
             <div class="row text-center fixed-sidebar">
                 <h2>Our Favorites</h2>
@@ -37,38 +30,38 @@
                     class="list-group-item dish" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id">
                         {{dish.title}}
                         <!--<div class="media media-left" style="padding-left: 80px; color: white; text-align: right">-->
-<!--<div class="">
+                        <!--<div class="">
                             </div>-->
-<!--<div style="padding-left: 116px;" class="media-body">-->
-<!--<div class="media-heading dishcalendar dish-title">-->
-<!--{{dish.title}}-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>
+                        <!--<div style="padding-left: 116px;" class="media-body">-->
+                        <!--<div class="media-heading dishcalendar dish-title">-->
+                        <!--{{dish.title}}-->
+                        <!--</div>-->
+                        <!--</div>-->
+                        <!--</div>
                     </div>
                 </div>
             </div>
         </div>-->
-<div class="col-sm-10">
-    <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
-    <div ng-repeat="row in grid track by row.id" class="col-sm-12">
-        <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
-        ng-drop-success="onDragComplete($data, $event, cell)">
-            <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
-            <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
-            <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
-            <div class="list-group">
-                <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
-                ng-drag-success="moveDish($event, cell, $index)">
-                    {{dish.title}}
+        <div class="col-sm-10">
+            <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
+            <div ng-repeat="row in grid track by row.id" class="col-sm-12">
+                <div class="col-sm-2 cell row" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                ng-drop-success="onDragComplete($data, $event, cell)">
+                    <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
+                    <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
+                    <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
+                    <div class="list-group">
+                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
+                        ng-drag-success="moveDish($event, cell, $index)">
+                            {{dish.title}}
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <div style="margin-top: 15px">
+            <input type="text" ng-model="name" class="form-control">
+            <button style="margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+        </div>
     </div>
-</div>
-<div style="margin-top: 15px">
-    <input type="text" ng-model="name" class="form-control">
-    <button style="margin-top: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
-</div>
-</div>
 </div>
