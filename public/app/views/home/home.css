@@ -25,14 +25,10 @@
 
 }
 
-
-    
-    
-}
-
 .temp {
     border: 3px solid black;
 }
+
 .dish {
     /*border: 1px solid black;*/
     margin: 13px;
@@ -42,6 +38,7 @@
     /*background-size:100% 100%;*/
     background-size:contain;
 }
+
 .dish-title{
     text-align: right;
     color: white;

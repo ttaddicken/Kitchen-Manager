@@ -1,20 +1,4 @@
 <div class="col-sm-12 login">
-
-    <!--<div>
-            <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                Resting at the Home page<br>
-                {{member.email}}
-            </h4>
-
-            <button class="btn btn-default" ui-sref="dishCreation">Create a Dish</button>
-            <button class="btn btn-default" ui-sref="manageDishes">Manage Dishes</button>
-            <button class="btn btn-default" ui-sref="profile">Update Profile</button>
-            <button class="btn btn-default" ng-click="test()">test for route</button>
-            <input ng-model="g" type="number">
-            <button class="btn btn-default" ng-click="makeCalendar(g)">Create Calendar</button>
-
-        </div>-->
-
     <div class="row">
         <h1>{{famName}} Family Calendar</h1>
         <div class="col-sm-2">
@@ -26,7 +10,6 @@
                     ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id">
                         <div class="media">
                             <div class="media-left">
-                                <!--<img class="media-object" width="80" ng-src="{{dish.img}}"></img>-->
                             </div>
                             <div style="padding-left: 116px;" class="media-body">
                                 <div class="media-heading dishcalendar dish-title">
@@ -59,8 +42,4 @@
             </div>
         </div>
     </div>
-    <div>
-    </div>
-
-
 </div>
