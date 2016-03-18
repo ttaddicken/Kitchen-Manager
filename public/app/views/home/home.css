@@ -12,34 +12,38 @@
     background-color: #ECF0F1;
     box-shadow: 5px 4px rgba(128, 128, 128, 0.26);
     /*display: inline-block;*/
-    color: black;
+    color: white;
 }
 
-.card {
+/*.card {
     background-color:white;
     /*border: 1px solid darkgrey;*/
-    margin-left: 7px;
+    /*margin-left: 7px;
     width: 255px;
-    height: 275px;
+    height: 275px;*/
     /*box-shadow: 1px 1px darkgrey;*/
 
-}
+/*}*/
 
 .temp {
     border: 3px solid black;
 }
 
 .dish {
-    /*border: 1px solid black;*/
     margin: 13px;
-    height: 80px;
+    min-height: 80px;
     background-repeat:no-repeat;
     background-position: left;
-    /*background-size:100% 100%;*/
     background-size:contain;
+    padding-left: 100px; 
+    padding-top: 0px; 
+    padding-right: 4px; 
+    color: white; 
+    text-align: right; 
+    box-shadow: 5px 5px grey; 
 }
 
-.dish-title{
+/*.dish-title{
     text-align: right;
     color: white;
-}
+}*/

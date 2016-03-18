@@ -1,4 +1,4 @@
-app.controller('HomeController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
+app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray) {
 
     var activities = [
         "Day",
@@ -173,6 +173,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         $rootScope.member.weeks[$scope.name] = calendarLayout;
         $rootScope.member.groceryList = items;
         $rootScope.member.$save();
+         $state.go('grocery');
     }
 
 })
