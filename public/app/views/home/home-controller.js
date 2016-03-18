@@ -1,7 +1,7 @@
 app.controller('HomeController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
 
     var activities = [
-        "",
+        "Day",
         "Activities",
         "Main Dish",
         "Side Dish",
@@ -10,7 +10,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
     ];
 
     var days = [
-        "Day",
+        "",
         "Sunday",
         "Monday",
         "Tuesday",
@@ -34,10 +34,11 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
 
     function buildGrid() {
         for (var col = 0; col < activities.length; col++) {
-            $scope.grid[col] = [];
+            $scope.grid[col] = $scope.grid[col] || {id: col, cells:[]};
             for (var row = 0; row < days.length; row++) {
-                var rowumn = row;
-                var obj = { col: col, row: rowumn };
+                // var rowumn = row;
+                // var obj = { col: col, row: rowumn };
+                 var obj = { col: col, row: row, id: col+''+row};
                 if (row === 0) {
                     obj.header = $scope.dishcard;
                     obj.name = activities[col];
@@ -54,7 +55,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
                     obj.hideSm = true;
                     obj.header = $scope.dishcard;
                 }
-                $scope.grid[col].push(obj);
+                $scope.grid[col].cells.push(obj);
             }
         }
         console.log($scope.grid);
@@ -112,7 +113,6 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
 
     $scope.moveDish = function(e, cell, index) {
         if (e.data) {
-            debugger;
             cell.dishes.splice(index,1);
         }
     }
@@ -136,6 +136,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
     //Adds Items to Grocery list --an item is an ingredient from myDishes
 
     $scope.createGroceryList = function(newItems) {
+        debugger;
         $rootScope.member.groceryList = $rootScope.member.groceryList || [];
         var items = [];
         $scope.grid.forEach(function(row) {
@@ -153,6 +154,7 @@ app.controller('HomeController', function($rootScope, $scope, DishService, CONST
         })
 
         $rootScope.member.weeks = $rootScope.member.weeks || {};
+        debugger;
         var calendarLayout = {
             name: $scope.name,
             grid: $scope.grid

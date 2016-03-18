@@ -11,13 +11,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in groceryItems track by $index">
+            <tr ng-repeat="item in member.groceryList track by $index">
                 <td>
                     <div ng-click="updateCompletedItems($index, item)">
-                        <input type="checkbox">
+                        <!--<input ng-model="itemCheckbox.value" type="checkbox">-->
+                        <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
                     </div>
                 </td>
-                <td>{{item.name}}</td>
+                <td>{{item}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
@@ -33,7 +34,7 @@
     <table class="table table-striped">
         <tbody>
             <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
-                <td>{{item.name}}</td>
+                <td>{{item}}</td>
                 <td></td>
                 <td></td>
                 <td></td>
