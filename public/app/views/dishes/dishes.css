@@ -3,7 +3,7 @@
 .recipeInput{
     border: 5 px solid black;
     text-align: left;
-    /*height: 75%;*/
+    height: 100%;
     /*width: 31.333333%;*/
 }
 .input{
@@ -30,5 +30,7 @@
    margin-right: 10px; 
 }
 .ingredient{
-    display: inline
-}
+    display: inline;
+    border-radius: 4px;
+    height: 30px;
+    }
