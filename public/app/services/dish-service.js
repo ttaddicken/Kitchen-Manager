@@ -18,6 +18,11 @@ app.service('DishService', function($rootScope, $firebaseArray, $firebaseObject,
         return $firebaseObject(new Firebase(CONSTANTS.fbRef + 'users/'+ $rootScope.member.$id + '/dishList/' + id));
     }
     
+// Grocery list
+    this.getGroceryItems = function() {
+        return $rootScope.member.groceryList = items;
+    }
+    
 // The STARS
 
     this.rate = 7;
