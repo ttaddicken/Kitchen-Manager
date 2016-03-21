@@ -1,9 +1,12 @@
 app.controller('GroceryController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
+   
    $scope.checkboxModel = {};
 
-    this.getGroceryItems = function() {
-        return $rootScope.member.groceryList = items;
-    }
+   $scope.items = DishService.getGroceryItems();
+   
+    // this.getGroceryItems = function() {
+    //     return $rootScope.member.groceryList = items;
+    // }
 
     $scope.completedItems = [];
 
@@ -12,20 +15,19 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
         $scope.completedItems.push(item);
         $scope.checkboxModel.value = "NO";
     }
-    
-    
 
-    $scope.acceptChanges = function(index, item){
+
+    $scope.updateItem = function(index, item){
         list = $rootScope.member.groceryList
         list[index] = item;
         $rootScope.member.$save();
         
     }
 
-    $scope.removeItem = function(index, item){
-        $rootScope.member.groceryList[index] = null
-        $rootScope.member.$save();
-    }
+    // $scope.removeItem = function(index, item){
+    //     $rootScope.member.groceryList[index] = null
+    //     $rootScope.member.$save();
+    // }
 
 
 

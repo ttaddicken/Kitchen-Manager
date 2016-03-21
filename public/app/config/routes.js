@@ -26,11 +26,11 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: '/app/views/grocery/grocery-edit.html',
             controller: 'GroceryController',
             controllerAs: 'gc',
-            // resolve: {
-			// item: function($stateParams, GroceryController){
-			// 	return GroceryController.getGroceryItems($stateParams);
-			// },
-			// 		}
+            resolve: {
+			item: function($stateParams, DishService){
+				return DishService.getGroceryItems($stateParams.index);
+			},
+					}
         })
         .state('login', {
             url: '/login',

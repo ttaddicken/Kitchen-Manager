@@ -14,9 +14,9 @@
                         <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
                     </div>
                 </td>
-                <td>{{item}}</td>
-                <!--<td><a ng-href="/#/grocery/{{item[index]}}">!!</td>-->
-                <td><a ng-sref="groceryEdit" class="text-center">!!</td>
+                <td>{{item.name}}</td>
+                <td><a ng-href="/#/grocery/{{item[index]}}">!!</td>
+                <!--<td><a ng-sref="groceryEdit" class="text-center">!!</td>-->
             </tr>
         </tbody>
     </table>
@@ -27,7 +27,7 @@
     <table class="table table-striped">
         <tbody>
             <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
-                <td>{{item}}</td>
+                <td>{{item.name}}</td>
                 <td><span class="badge">Edit</span></td>
             </tr>
         </tbody>
