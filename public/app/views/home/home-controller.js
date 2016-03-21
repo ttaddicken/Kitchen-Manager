@@ -1,12 +1,19 @@
 app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray) {
 
+    $scope.parent = {
+    flexDirection:  'row',
+    flexWrap:       'nowrap',
+    justifyContent: 'flex-start',
+    alignItems:     'stretch',
+    alignContent:   'stretch'
+  };
     var activities = [
         "Day",
-        "Activities",
-        "Main Dish",
-        "Side Dish",
-        "Salad",
-        "Dessert",
+        "Menu",
+        // "Main Dish",
+        // "Side Dish",
+        // "Salad",
+        // "Dessert",
     ];
 
     var days = [
@@ -173,9 +180,55 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         $rootScope.member.weeks[$scope.name] = calendarLayout;
         $rootScope.member.groceryList = items;
         $rootScope.member.$save();
-         $state.go('grocery');
+        $state.go('grocery');
     }
 
+    // BEGIN NAVBAR SCRIPT
+    $scope.oneAtATime = true;
+
+    $scope.groups = [
+        {
+            title: 'Main Dish',
+            content: ''
+                    //  dish in myDishes track by dish.$id | filter : dish.type === 'Main Dish'
+        },
+        {
+            title: 'Side Dish',
+            content: ''
+        },
+        {
+            title: 'Salad',
+            content: 'Dynamic Group Body - 3'
+        },
+        {
+            title: 'Appetizer',
+            content: 'Dynamic Group Body - 4'
+        },
+        {
+            title: 'Dessert',
+            content: 'Dynamic Group Body - 5'
+        }
+    ];
+    
+    $scope.status = {
+        isFirstOpen: true,
+        isFirstDisabled: false
+    };
+    
+    
+// Not currently using this array
+    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+    $scope.addItem = function() {
+        var newItemNo = $scope.items.length + 1;
+        $scope.items.push('Item ' + newItemNo);
+    };
+
+
+
+
+
+    // END NAVBER SCRIPT
 })
 
 
