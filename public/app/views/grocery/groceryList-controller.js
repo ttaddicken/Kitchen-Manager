@@ -21,16 +21,15 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     }
     
     
-    // this don't work :(
+
     $scope.acceptChanges = function(index, item){
         list = $rootScope.member.groceryList
         list[index] = item;
         $rootScope.member.$save();
         
     }
-// this almost works
+
     $scope.removeItem = function(index, item){
-        debugger;
         $rootScope.member.groceryList[index] = null
         $rootScope.member.$save();
     }

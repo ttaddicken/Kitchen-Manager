@@ -1,0 +1,20 @@
+/*@media only screen and (max-device-width: 480px) {
+.grocery-list-input{
+    width:100px
+}
+	}*/
+   
+input.grocery-list-input{
+    width: 100px;
+}
+/*    
+.grocery-list-input.ng-show-add{
+    width: 100px
+}    */
+
+/*
+input.ng-hide-remove{
+    width: 100px
+}    */
+
+
