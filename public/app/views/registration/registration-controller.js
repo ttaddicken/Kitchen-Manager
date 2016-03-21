@@ -31,7 +31,6 @@ app.controller('RegistrationController', function ($scope, $rootScope, $state, A
 
     function handleDBResponse(err) {
         if (err) {
-            debugger;
             $scope.authErr = err.message;
             $scope.$apply();
         } else {

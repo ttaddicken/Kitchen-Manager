@@ -22,7 +22,7 @@ app.service('DishService', function($rootScope, $firebaseArray, $firebaseObject,
     this.getGroceryItems = function() {
         return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList'));
     }
-    this.getItems = function() {
+    this.getItem = function() {
         return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList' + index));
     }
     
