@@ -1,20 +1,27 @@
-/*@media only screen and (max-device-width: 480px) {
-.grocery-list-input{
-    width:100px
+input.grocery-list-input-big{
+    width: 200px;
 }
-	}*/
+
+input.grocery-list-input-small{
+    width: 75px;
+}
+
+@media only screen and (max-device-width: 480px) {
+input.grocery-list-input-big{
+    width: 30px
+}
+	}
    
-input.grocery-list-input{
-    width: 100px;
+   
+   
+
+
+
+
+
+/*Grocery-Edit CSS*/
+
+h4{
+    display: inline-flex;
 }
-/*    
-.grocery-list-input.ng-show-add{
-    width: 100px
-}    */
-
-/*
-input.ng-hide-remove{
-    width: 100px
-}    */
-
 

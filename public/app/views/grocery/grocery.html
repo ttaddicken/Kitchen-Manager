@@ -1,6 +1,45 @@
-<input class="grocery-list-input" type="text">
-
 <div class="table-responsive">
+    <table class="table table-striped">
+        <h2>Grocery List</h2>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in member.groceryList track by $index">
+                <td>
+                    <div ng-click="updateCompletedItems($index, item)">
+                        <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
+                    </div>
+                </td>
+                <td>{{item}}</td>
+                <!--<td><a ng-href="/#/grocery/{{item[index]}}">!!</td>-->
+                <td><a ng-sref="groceryEdit" class="text-center">!!</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Completed Items</h3>
+    <table class="table table-striped">
+        <tbody>
+            <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
+                <td>{{item}}</td>
+                <td><span class="badge">Edit</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<!--Desktop View-->
+<!--<div class="table-responsive">
     <table class="table table-striped">
         <h2>Grocery List</h2>
         <thead>
@@ -20,11 +59,11 @@
                         <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
                     </div>
                 </td>
-                <td><input ng-show="edit" ng-model="newInfo.section" type="text" class="grocery-list-input"><span ng-hide="edit">{{item.section}}</span></td>
-                <td><input ng-show="edit" class="grocery-list-input" ng-model="item" type="text"><span ng-hide="edit">{{item}}</span></td>
-                <td><input ng-show="edit" ng-model="newInfo.qty" type="text"><span ng-hide="edit">{{item.qty}}</span></td>
-                <td><input ng-show="edit" ng-model="newInfo.unit" type="text"><span ng-hide="edit">{{item.unit}}</span></td>
-                <td><input ng-show="edit" ng-model="newInfo.cost" type="text"><span ng-hide="edit">{{item.price}}</span></td>
+                <td><input ng-show="edit" ng-model="newInfo.section" type="text" class="grocery-list-input"><span ng-hide="edit" class="grocery-list-input-big">{{item.section}}</span></td>
+                <td><input ng-show="edit" class="grocery-list-input-big" ng-model="item" type="text"><span ng-hide="edit">{{item}}</span></td>
+                <td><input ng-show="edit" class="grocery-list-input-small" ng-model="newInfo.qty" type="text"><span ng-hide="edit">{{item.qty}}</span></td>
+                <td><input ng-show="edit" class="grocery-list-input-small" ng-model="newInfo.unit" type="text"><span ng-hide="edit">{{item.unit}}</span></td>
+                <td><input ng-show="edit" class="grocery-list-input-small" ng-model="newInfo.cost" type="text"><span ng-hide="edit">{{item.price}}</span></td>
                 <td><span ng-click="edit = !edit" ng-hide="edit" class="badge">Edit</span></td>
                 <td><span ng-show="edit" ng-click="edit = !edit; acceptChanges($index, item)" class="badge">Accept Changes</span></td>
                 <td><span ng-show="edit" ng-click="removeItem($index, item)" class="badge">Remove Item</span></td>
@@ -48,5 +87,4 @@
             </tr>
         </tbody>
     </table>
-</div>
-</div>
+</div>-->
