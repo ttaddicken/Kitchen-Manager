@@ -8,7 +8,6 @@ app.controller('RegistrationController', function ($scope, $rootScope, $state, A
 
     $scope.register = function (user) {
         if (user.password === $scope.password2){
-            debugger;
             clearErr();
             AuthService.register($scope.user, handleDBResponse);
             setTimeout(function () {

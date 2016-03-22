@@ -13,8 +13,8 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 //   grid variables start
     var activities = [
         "Day",
+        "Activities",
         "Menu",
-        // "Main Dish",
         // "Side Dish",
         // "Salad",
         // "Dessert",
