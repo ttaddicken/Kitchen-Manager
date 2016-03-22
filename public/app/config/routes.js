@@ -107,6 +107,12 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			},
 					}
         })
+        .state('dishApi', {
+            url: '/api-dishes',
+            templateUrl: '/app/views/api/api.html',
+            controller: 'ApiController',
+            controllerAs: 'ap',
+        })
         
 })
 

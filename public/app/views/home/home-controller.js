@@ -9,8 +9,8 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
   };
     var activities = [
         "Day",
+        "Activities",
         "Menu",
-        // "Main Dish",
         // "Side Dish",
         // "Salad",
         // "Dessert",

@@ -11,3 +11,24 @@
         </div>
     </div>
 </div>
+
+
+<h1>Resting at the API-Controller</h1> <input ng-model="query" type="text"> <button ng-click="findDishes()">Search Recipes</button>
+<div class="list-group">
+	<div class="col-sm-2 panel panel-default public-card" ng-repeat="dish in results">
+		<div class="media">
+			<div class="media-left"> 
+				<img class="media-object" ng-src="{{dish.img}}" width="120" />
+			</div>
+			<div class="media-content" ng-bind="dish.ingredients"> 
+				{{dish.ingredients}}
+			</div>
+			<h3 class="media-heading; text-center">{{dish.name}}</h3>
+			<div class="media-content">
+				<a>{{dish.instructions}}</a>
+				<a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge">Edit Dish</a>
+				
+			</div>
+		</div>
+	</div>
+</div>
