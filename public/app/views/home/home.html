@@ -6,13 +6,7 @@
                 <!--BEGIN NAVBAR SECTION-->
                 <uib-accordion close-others="oneAtATime">
                     <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
-                        <!--{{group.content}}-->
-                        <!--<uib-accordion-group heading="Dynamic Body Content">-->
-                        <!--<uib-accordion-group heading="Dynamic Body Content" class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': status.open, 'glyphicon-chevron-right': !status.open}">-->
-                            <!--<p>The body of the uib-accordion group grows to fit the contents</p> <button type="button" class="btn btn-default btn-sm"-->
-                                <!--ng-click="addItem()">Add Item</button> -->
-                        <!--</uib-accordion-group>-->
-                        <div class="scrollable-content">
+                       <div class="scrollable-content">
                             <div class="list-group">
                                 <div style=" background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish"
                                     ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id" ng-show="group.title.indexOf(dish.type) > -1">
@@ -31,6 +25,11 @@
         
         <!--Mobile view start-->
         <div ng-if="check" class="col-sm-12">
+            <menu visible="visible" alignment="left">
+            <menu-item hash="first-page">First Page></menu-item>
+            <menu-item hash="second-page">Second Page></menu-item>
+            <menu-item hash="third-page">Third Page></menu-item>
+            </menu>
         
             <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
                 <div class="col-sm-2 cellmobile" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
@@ -62,7 +61,7 @@
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
                     <div class="list-group">
-                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
+                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by cell.id" ng-drag-data="dish" ng-drag="true"
                         ng-drag-success="moveDish($event, cell, $index)">
                             {{dish.title}}
                         </div>
@@ -70,8 +69,8 @@
                 </div>
         </div>
         <div style="display: inline; margin-top: 15px;">
-            <input style="display: inline; width: 600px;"  type="text" ng-model="name" class="form-control">
-            <button style="display: inline;text-align: center; margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+            <input style="display: inline; width: 600px;"  type="text" ng-model="weekName" class="form-control">
+            <button style="display: inline;text-align: center; margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList(weekName)">Create Grocery List</button>
             </div>
         </div>
     </div>

@@ -208,7 +208,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 
     //Adds Items to Grocery list --an item is an ingredient from myDishes
 
-    $scope.createGroceryList = function(newItems) {
+    $scope.createGroceryList = function(weekName) {
         $rootScope.member.groceryList = $rootScope.member.groceryList || [];
         var items = [];
         $scope.grid.forEach(function(row) {
@@ -224,13 +224,13 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
                 }
             })
         })
-
+debugger
         $rootScope.member.weeks = $rootScope.member.weeks || {};
         var calendarLayout = {
-            name: $scope.name,
+            name: weekName,
             grid: $scope.grid
         }
-        $rootScope.member.weeks[$scope.name] = calendarLayout;
+        $rootScope.member.weeks[weekName] = calendarLayout;
         $rootScope.member.groceryList = items;
         $rootScope.member.$save();
         $state.go('grocery');
