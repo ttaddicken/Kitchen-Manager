@@ -36,11 +36,11 @@ var addChild = function (order, flexGrow, flexShrink, flexBasis, alignSelf) {
 //  end of flex
     var activities = [
         "Day",
-        "Activities",
-        "Main Dish",
-        "Side Dish",
-        "Salad",
-        "Dessert",
+        "Menu",
+        // "Main Dish",
+        // "Side Dish",
+        // "Salad",
+        // "Dessert",
     ];
 
     var days = [
@@ -215,24 +215,24 @@ var addChild = function (order, flexGrow, flexShrink, flexBasis, alignSelf) {
 
     $scope.groups = [
         {
-            title: 'Main Dishes',
-            content: 'Dynamic Group Body - 1'
+            title: 'Main Dish',
+            content: ''
                     //  dish in myDishes track by dish.$id | filter : dish.type === 'Main Dish'
         },
         {
-            title: 'Side Dishes',
-            content: 'Dynamic Group Body - 2'
+            title: 'Side Dish',
+            content: ''
         },
         {
-            title: 'Salads',
+            title: 'Salad',
             content: 'Dynamic Group Body - 3'
         },
         {
-            title: 'Appetizers',
+            title: 'Appetizer',
             content: 'Dynamic Group Body - 4'
         },
         {
-            title: 'Desserts',
+            title: 'Dessert',
             content: 'Dynamic Group Body - 5'
         }
     ];

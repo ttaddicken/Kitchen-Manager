@@ -16,10 +16,21 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controllerAs: 'fc'
         })
         .state('grocery', {
-            url: '/grocery',
+            url: '/grocery/:index',
             templateUrl: '/app/views/grocery/grocery.html',
             controller: 'GroceryController',
             controllerAs: 'gc'
+        })
+        .state('groceryEdit', {
+            url: '/grocery/:index',
+            templateUrl: '/app/views/grocery/grocery-edit.html',
+            controller: 'GroceryEditController',
+            controllerAs: 'gec',
+            resolve: {
+			item: function($stateParams, DishService){
+				return DishService.getGroceryItem($stateParams.index);
+			},
+					}
         })
         .state('login', {
             url: '/login',
@@ -96,6 +107,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
 			},
 					}
         })
+        
 })
 
 // Sets auto Login

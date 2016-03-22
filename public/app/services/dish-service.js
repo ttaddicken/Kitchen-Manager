@@ -18,6 +18,14 @@ app.service('DishService', function($rootScope, $firebaseArray, $firebaseObject,
         return $firebaseObject(new Firebase(CONSTANTS.fbRef + 'users/'+ $rootScope.member.$id + '/dishList/' + id));
     }
     
+// Grocery list
+    this.getGroceryItems = function() {
+        return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList'));
+    }
+    this.getItem = function() {
+        return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList' + index));
+    }
+    
 // The STARS
 
     this.rate = 7;

@@ -1,0 +1,27 @@
+input.grocery-list-input-big{
+    width: 200px;
+}
+
+input.grocery-list-input-small{
+    width: 75px;
+}
+
+@media only screen and (max-device-width: 480px) {
+input.grocery-list-input-big{
+    width: 30px
+}
+	}
+   
+   
+   
+
+
+
+
+
+/*Grocery-Edit CSS*/
+
+h4{
+    display: inline-flex;
+}
+

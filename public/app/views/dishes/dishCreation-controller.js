@@ -15,6 +15,20 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
 
         });
     }
+    $scope.clearRecipe = function() {
+        $scope.newDish = '';
+        $scope.newDish.title = '';
+        $scope.newDish.img = '';
+        $scope.newDish.prepTime = '';
+        $scope.newDish.cookTime = '';
+        $scope.newIngredient = '';
+        $scope.newIngredient.qty = '';
+        $scope.newIngredient.unit = '';
+        $scope.newIngredient.name = '';
+        $scope.newDish.type = '';
+        $scope.newDish.instructions = '';
+        $scope.newDish.stars = '';
+        }
 
     $scope.clearSearch = function() {
         $scope.newIngredient = '';

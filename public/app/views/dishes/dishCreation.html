@@ -1,5 +1,5 @@
 <div class="col-sm-7 recipeInput">
-    <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe (incomplete)</button>
+    <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe</button>
     <form class="form" ng-submit="createDish(newDish)">
         <div class="form-group">
             <label for="title">Title:</label>
@@ -7,22 +7,26 @@
         </div>
         <div class="form-group">
             <label for="imgUrl">Dish Image:</label>
-            <input class="form-control" type="url" ng-model="newDish.img" value="00" />
+            <input class="form-control" type="url" ng-model="newDish.img" value="" default="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ0kWp2aH-5VfoVX8ajUTV2wCmDkL0naV_jVjXw0ocSKeWDd9uu" />
         </div>
+
         <div class="form-group">
-            <label for="prepTime">Prep Time (minutes):
-            <input class="form-control" type="number" ng-model="newDish.prepTime" value="00" />
+            <label class="ingredient">Prep Time (minutes):
+            <input class="ingredient" type="number" ng-model="newDish.prepTime" style="width: 70px">
+
+            <label class="ingredient">Cook Time (minutes):
+            <input class="ingredient" type="number" ng-model="newDish.cookTime" style="width: 70px">
         </div>
-        <div class="form-group">
-            <label for="cookTime">Cook Time (minutes):
-            <input class="form-control" type="number" ng-model="newDish.cookTime" value="00" />
-        </div>
+
         
         <!-- Ingredianet strat-->
+         <div>
+            <label>Ingredients: (this section assists in creating the grocery list)
+         </div>
         
         <div class="form-group ingredient">
             <label class = "ingredient">Quantity
-            <input class = "ingredient" style = "width: 50px" class="form-control" type="text" ng-model="newIngredient.qty" placeholder="Qty" />
+            <input class = "ingredient" style = "width: 70px" class="form-control" type="number" ng-model="newIngredient.qty" placeholder="Qty" />
             <label class = "ingredient">Unit of Measure
                 <!--drop down for unit of measurement-->
             <select style = "width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
@@ -41,30 +45,52 @@
                 <option>tsp</option>
                 
             </select>
-            <!--end dropdown-->
-            <label>Ingredients: (this section assists in creating the grocery list)
+            
+             <label class = "ingredient">Store Section   
+             <select style = "width: 150px" ng-model="newIngredient.section" class="form-control ingredient">
+                <option>Other</option>
+                <option>Bakery & Bread</option>
+                <option>Baking & Cooking</option>
+                <option>Beverages</option>
+                <option>Canned Goods</option>
+                <option>Cereal</option>
+                <option>Condiments</option>
+                <option>Dairy</option>
+                <option>Deli</option>
+                <option>Frozen</option>
+                <option>Health & Beauty</option>
+                <option>Herbs & Spices</option>
+                <option>Household</option>
+                <option>Meat</option>
+                <option>Outdoor</option>
+                <option>Packaged Meals</option>
+                <option>Pasta & Noodles</option>
+                <option>Produce</option>
+                <option>Seafood</option>
+                <option>Snack Foods</option>
+                <option>Paper Goods</option>
+            </select>
+            
             <input class="form-control ingredient" type="text" ng-model="newIngredient.name" placeholder="ingredients" />
              <button class="btn btn-default" type="button" ng-click="addIngredient(newIngredient)">add ingredient</button>
-            <!--
-                <button class="btn btn-default" type="button" 
-                ng-init="newDish.ingredients = newDish.ingredients || [] " 
-                ng-click="newDish.ingredient.push(newIngredient);
-                 clearSearch()">
-                 add ingredient</button>-->
-      
+
         </div>
         <!--ingredient end-->
         <div class="form-group">
             <label>Type of Dish
             <select ng-model="newDish.type" class="form-control">
+                <option>Breakfast</option>
+                <option>Brunch</option>
+                <option>Lunch</option>
                 <option>Appetizer</option>
                 <option>Salad</option>
                 <option>Side</option>
                 <option>Main Dish</option>
                 <option>Dessert</option>
+                
             </select>
         </div>
-        <!-----SUMMERNOTE  WORKING ----->
+
         <div class="form-group">
             <label for="instructons">Instructions:</label>
            

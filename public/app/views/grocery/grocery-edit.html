@@ -1,0 +1,75 @@
+<div class="container-fluid">
+    <div class="col-xs-12">
+        <div class="col-xs-12">
+            <h1>{{item.name}}Item Name</h1>          
+        </div>
+        
+        <div class="col-xs-12">
+            <h4>Quantity</h4>
+            <input ng-src="{{item.qty}}">
+        </div>
+        
+        <div class="col-xs-12">
+            <div class="form-group">
+            <h4>Unit</h4>
+                    <select ng-model="item.unit" class="form-control">
+                        <option>each</option>
+                        <option>piece</option>
+                        <option>pack</option>
+                        <option>bunch</option>
+                        <option>roll</option>
+                        <option>dozen</option>
+                        <option>lbs</option>
+                        <option>qt</option>
+                        <option>oz</option>
+                        <option>pt</option>
+                        <option>cup</option>
+                        <option>tbs</option>
+                        <option>tsp</option>
+                    </select>
+            </div>
+        </div>
+        
+        <div class="col-xs-12">
+                <h4>Store Section</h4>
+            <div class="form-group">
+                    <select ng-model="item.section" class="form-control">
+                        <option>Other</option>
+                        <option>Bakery & Bread</option>
+                        <option>Baking & Cooking</option>
+                        <option>Beverages</option>
+                        <option>Canned Goods</option>
+                        <option>Cereal</option>
+                        <option>Condiments</option>
+                        <option>Dairy</option>
+                        <option>Deli</option>
+                        <option>Frozen</option>
+                        <option>Health & Beauty</option>
+                        <option>Herbs & Spices</option>
+                        <option>Household</option>
+                        <option>Meat</option>
+                        <option>Outdoor</option>
+                        <option>Packaged Meals</option>
+                        <option>Pasta & Noodles</option>
+                        <option>Produce</option>
+                        <option>Seafood</option>
+                        <option>Snack Foods</option>
+                        <option>Paper Goods</option>
+                    </select>
+            </div>
+        </div>
+       
+        <div class="col-xs-12">
+            <h4>Unit Price</h4>
+            <input ng-src="{{item.price}}">
+        </div>
+        <div class="col-xs-12">
+            <div class="col-xs-6">
+                <button class="btn btn-primary" ng-click="updateItem()">Update Item</button>
+            </div>
+            <div class="col-xs-6">
+                <button class="btn btn-danger"ng-sref="grocery">Cancel</button>
+            </div>
+        </div>
+    </div> 
+</div>
