@@ -22,8 +22,8 @@ app.service('DishService', function($rootScope, $firebaseArray, $firebaseObject,
     this.getGroceryItems = function() {
         return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList'));
     }
-    this.getItem = function() {
-        return $firebaseArray(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList' + index));
+    this.getItem = function(index) {
+        return $firebaseObject(new Firebase(CONSTANTS.fbRef + 'users/' + $rootScope.member.$id + '/groceryList/' + index));
     }
     
 // The STARS

@@ -1,15 +1,22 @@
-app.controller('GroceryEditController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
+app.controller('GroceryEditController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray, item, $state) {
     
-    $scope.updateItem = function(index, item){
-        list = $rootScope.member.groceryList
-        list[index] = item;
-        $rootScope.member.$save();
-        
+    $scope.item = item;
+    
+    $scope.cancel = function(){
+        $state.go('grocery')
+    }
+    
+    $scope.updateItem = function(){       
+        $scope.item.$save().then(function() {
+            $state.go("grocery")
+        })
     }
 
     $scope.removeItem = function(index, item){
-        $rootScope.member.groceryList[index] = null
-        $rootScope.member.$save();
+        delete $rootScope.member.groceryList[item.$id];
+        $rootScope.member.$save().then(function() {
+            $state.go("grocery")
+        })
     }
 
     

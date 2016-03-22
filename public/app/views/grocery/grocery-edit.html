@@ -1,12 +1,12 @@
 <div class="container-fluid">
     <div class="col-xs-12">
         <div class="col-xs-12">
-            <h1>{{item.name}}Item Name</h1>          
+            <input ng-model="item.name"></input>          
         </div>
         
         <div class="col-xs-12">
             <h4>Quantity</h4>
-            <input ng-src="{{item.qty}}">
+            <input ng-model="item.qty">
         </div>
         
         <div class="col-xs-12">
@@ -61,14 +61,17 @@
        
         <div class="col-xs-12">
             <h4>Unit Price</h4>
-            <input ng-src="{{item.price}}">
+            <input ng-model="item.price">
         </div>
         <div class="col-xs-12">
-            <div class="col-xs-6">
-                <button class="btn btn-primary" ng-click="updateItem()">Update Item</button>
+            <div class="col-xs-4">
+                <button class="btn btn-primary" ng-click="updateItem(item)">Update Item</button>
             </div>
-            <div class="col-xs-6">
-                <button class="btn btn-danger"ng-sref="grocery">Cancel</button>
+            <div class="col-xs-4">
+                <button class="btn btn-danger" ng-click="removeItem($index, item)">Remove Item</button>
+            </div>
+            <div class="col-xs-4">
+                <button class="btn btn-danger" ng-click="cancel()">Cancel</button>
             </div>
         </div>
     </div> 

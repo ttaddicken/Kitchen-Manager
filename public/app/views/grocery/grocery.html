@@ -8,15 +8,14 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in member.groceryList track by $index">
+            <tr ng-repeat="item in items">
                 <td>
                     <div ng-click="updateCompletedItems($index, item)">
                         <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
                     </div>
                 </td>
                 <td>{{item.name}}</td>
-                <td><a ng-href="/#/grocery/{{item.index}}">!!</td>
-                <!--<td><a ng-sref="groceryEdit" class="text-center">!!</td>-->
+                <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
             </tr>
         </tbody>
     </table>

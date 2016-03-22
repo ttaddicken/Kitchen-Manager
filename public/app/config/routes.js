@@ -16,10 +16,15 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controllerAs: 'fc'
         })
         .state('grocery', {
-            url: '/grocery/:index',
+            url: '/grocery',
             templateUrl: '/app/views/grocery/grocery.html',
             controller: 'GroceryController',
-            controllerAs: 'gc'
+            controllerAs: 'gc',
+            resolve: {
+			item: function($stateParams, DishService){
+				return DishService.getGroceryItems
+			},
+                    }
         })
         .state('groceryEdit', {
             url: '/grocery/:index',
@@ -28,7 +33,7 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             controllerAs: 'gec',
             resolve: {
 			item: function($stateParams, DishService){
-				return DishService.getGroceryItem($stateParams.index);
+				return DishService.getItem($stateParams.index);
 			},
 					}
         })
