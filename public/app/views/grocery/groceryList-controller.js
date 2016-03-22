@@ -4,6 +4,7 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     
     DishService.getGroceryItems().$loaded(function(x){
         $scope.items =  x;
+        console.log($scope.items)
     })
     
        
