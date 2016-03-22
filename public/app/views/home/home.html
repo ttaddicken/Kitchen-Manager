@@ -81,10 +81,32 @@
                 </div>
             </div>
         </div>-->
-        <div class="col-sm-10">
+        
+        <div ng-if="check" class="col-sm-10">
+        
+            <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
+                <div class="col-sm-2 cellmobile" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                ng-drop-success="onDragComplete($data, $event, cell)">
+                    <h4 >{{cell.name}}</h4>
+                    <div class="list-group">
+                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
+                        ng-drag-success="moveDish($event, cell, $index)">
+                            {{dish.title}}
+                        </div>
+                    </div>
+                </div>
+        </div>
+        <div style="display: inline; margin-top: 15px;">
+            <input style="display: inline; width: 600px;"  type="text" ng-model="name" class="form-control">
+            <button style="display: inline;text-align: center; margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
+            </div>
+        </div>
+        
+        <div ng-if="!check" class="col-sm-10">
+          
             <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
             <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
-                <div class="col-sm-2 cell row" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
                 ng-drop-success="onDragComplete($data, $event, cell)">
                     <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>

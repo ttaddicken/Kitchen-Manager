@@ -14,7 +14,13 @@
     /*display: inline-block;*/
     color: white;
 }
-
+.cellmobile{
+    border:2 px black;
+    min-height: 100px;
+    min-width: 150px;
+    text-align: center;
+    color: white;
+}
 /*.card {
     background-color:white;
     /*border: 1px solid darkgrey;*/
