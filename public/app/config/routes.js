@@ -19,18 +19,23 @@ app.config(function ($stateProvider, $urlRouterProvider) {
             url: '/grocery',
             templateUrl: '/app/views/grocery/grocery.html',
             controller: 'GroceryController',
-            controllerAs: 'gc'
+            controllerAs: 'gc',
+            resolve: {
+			item: function($stateParams, DishService){
+				return DishService.getGroceryItems
+			},
+                    }
         })
         .state('groceryEdit', {
             url: '/grocery/:index',
             templateUrl: '/app/views/grocery/grocery-edit.html',
-            controller: 'GroceryController',
-            controllerAs: 'gc',
-            // resolve: {
-			// item: function($stateParams, GroceryController){
-			// 	return GroceryController.getGroceryItems($stateParams);
-			// },
-			// 		}
+            controller: 'GroceryEditController',
+            controllerAs: 'gec',
+            resolve: {
+			item: function($stateParams, DishService){
+				return DishService.getItem($stateParams.index);
+			},
+					}
         })
         .state('login', {
             url: '/login',
