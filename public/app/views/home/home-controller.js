@@ -66,6 +66,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     ];
 
     var days2 = [
+        "Select a day to add a dish/activity",
         "Sun",
         "Mon",
         "Tues",
