@@ -14,11 +14,9 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
 
     $scope.updateCompletedItems = function(index, item) {
         debugger;
+        $scope.item.value = true
         $scope.checkboxModel.value = "NO";
-        $scope.
-        // $rootScope.member.groceryList.completeItems.$add(item.$id);
-        completedItems.push(item);
+    }    
 
-    }
 
 })

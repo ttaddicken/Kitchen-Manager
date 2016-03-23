@@ -5,7 +5,7 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
     $scope.dishes = DishService.getDishes();
 
     $scope.createDish = function(newDish) {
-        newDish.ingredients.value = false;
+        
         newDish.creationDate = Date.now();
         $scope.dishes.$add($scope.newDish).then(function(dish) {
             $rootScope.member.dishList = $rootScope.member.dishList || {}
@@ -25,7 +25,9 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
     }
 
     $scope.addIngredient = function(newIngredient) {
+        debugger;
         $scope.newDish.ingredients = $scope.newDish.ingredients || [];
+        newIngredient.value = false;
         $scope.newDish.ingredients.push($scope.newIngredient);
         $scope.clearSearch()
     }
