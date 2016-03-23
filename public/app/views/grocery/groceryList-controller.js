@@ -12,9 +12,13 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
 
     $scope.completedItems = [];
 
-    $scope.updateCompletedItems = function(index) {
-        $scope.completedItems.push(item);
+    $scope.updateCompletedItems = function(index, item) {
+        debugger;
         $scope.checkboxModel.value = "NO";
+        $scope.
+        // $rootScope.member.groceryList.completeItems.$add(item.$id);
+        completedItems.push(item);
+
     }
 
 })

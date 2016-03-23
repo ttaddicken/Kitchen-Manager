@@ -15,7 +15,7 @@
                     </div>
                 </td>
 
-                <td>{{item.$value}}</td>
+                <td>{{item.name}}</td>
                 <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
 
             </tr>
@@ -28,7 +28,7 @@
     <table class="table table-striped">
         <tbody>
             <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
-                <td>{{item.$value}}</td>
+                <td>{{item[index]}}</td>
                 <td><span class="badge">Edit</span></td>
             </tr>
         </tbody>

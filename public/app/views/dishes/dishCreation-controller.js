@@ -5,7 +5,7 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
     $scope.dishes = DishService.getDishes();
 
     $scope.createDish = function(newDish) {
-
+        newDish.ingredients.value = false;
         newDish.creationDate = Date.now();
         $scope.dishes.$add($scope.newDish).then(function(dish) {
             $rootScope.member.dishList = $rootScope.member.dishList || {}

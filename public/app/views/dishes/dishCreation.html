@@ -26,11 +26,12 @@
         
         <div class="form-group ingredient">
             <label class = "ingredient">Quantity
-            <input class = "ingredient" style = "width: 70px" class="form-control" type="number" ng-model="newIngredient.qty" placeholder="Qty" />
+            <input class = "ingredient" style = "width: 70px" class="form-control"  ng-model="newIngredient.qty" placeholder="Qty" />
             <label class = "ingredient">Unit of Measure
                 <!--drop down for unit of measurement-->
             <select style = "width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
                 <option>each</option>
+                <option>pinch</option>
                 <option>piece</option>
                 <option>pack</option>
                 <option>bunch</option>
@@ -41,7 +42,7 @@
                 <option>oz</option>
                 <option>pt</option>
                 <option>cup</option>
-                <option>tbs</option>
+                <option>tbsp</option>
                 <option>tsp</option>
                 
             </select>
