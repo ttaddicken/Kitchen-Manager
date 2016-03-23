@@ -8,13 +8,13 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in items" ng-if="!item.value">
+            <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value">
                 <td>
                     <div ng-click="updateItems(item)">
                         <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
                     </div>
                 </td>
-                <td>{{item.name}}</td>
+                <td>{{item.name}}  -  {{item.section}}</td>
                 <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
             </tr>
         </tbody>
@@ -32,7 +32,6 @@
                     </div>
                 </td>
                 <td>{{item.name}}</td>
-                <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
             </tr>
         </tbody>
     </table>
