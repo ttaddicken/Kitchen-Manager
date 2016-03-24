@@ -25,7 +25,6 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
     }
 
     $scope.addIngredient = function(newIngredient) {
-        debugger;
         $scope.newDish.ingredients = $scope.newDish.ingredients || [];
         newIngredient.value = false;
         $scope.newDish.ingredients.push($scope.newIngredient);
