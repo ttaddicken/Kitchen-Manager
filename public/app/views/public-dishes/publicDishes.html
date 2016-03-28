@@ -1,4 +1,4 @@
-<div class="row text-center">
+<!--<div class="row text-center">
     <div class="col-sm-12 pagination-centered">
         <div class="col-sm-2 panel panel-default public-card" ng-repeat="dish in indatabase">
                <a ng-href="/#/public-dishes/{{dish.$id}}" class="text-center">
@@ -10,25 +10,32 @@
                </a>
         </div>
     </div>
-</div>
+</div>-->
 
 
-<h1>Resting at the API-Controller</h1> <input ng-model="query" type="text"> <button ng-click="findDishes()">Search Recipes</button>
 <div class="list-group">
-	<div class="col-sm-2 panel panel-default public-card" ng-repeat="dish in results">
-		<div class="media">
-			<div class="media-left"> 
-				<img class="media-object" ng-src="{{dish.img}}" width="120" />
+	<div class="list-group-item" ng-repeat="dish in results">
+	<div class="media">
+		<div class="media-left media-middle">
+			<div class="media-left"> <img class="media-object" ng-src="{{dish.img}}" width="120" /> 
 			</div>
-			<div class="media-content" ng-bind="dish.ingredients"> 
-				{{dish.ingredients}}
-			</div>
-			<h3 class="media-heading; text-center">{{dish.name}}</h3>
-			<div class="media-content">
-				<a>{{dish.instructions}}</a>
-				<a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge">Edit Dish</a>
-				
-			</div>
+				<h3 class="media-heading">{{dish.title}}</h3> 
+		</div>
+		<div class="media-content panel-body">
+
+			<a ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}"><button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary" >Go to recipe URL</button></a>
+			<button ng-click="saveRecipe(dish)"style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary">Add to my Recipes</button>
+		</div>
+			
+		<div class="media-body">
+			<span  ng-repeat="ingredient in dish.ingredients">
+					<ul class="ingredients">
+						<li>{{ingredient}}</li>
+					</ul>
+			</span> 
+		</div>
+		<div class="panel-body"> <span ng-repeat="nutrient in dish.nutrientFacts">
+			<span style="font-weight: bold"> {{nutrient.label}}</span> : {{nutrient.total | number: 1}}{{nutrient.unit}}, </span>
 		</div>
 	</div>
 </div>
