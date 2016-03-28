@@ -1,3 +1,5 @@
+<button class="btn btn-default" ng-click="storesection = !storesection">Sort By Store Section</button>
+
 <div class="table-responsive">
     <table class="table table-striped">
         <h2>Grocery List</h2>
@@ -8,16 +10,16 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in items">
+            <tr ng-repeat="item in items | orderBy:'section'">
                 <td>
-                    <div ng-click="updateCompletedItems($index, item)">
+                    <div ng-click="updateItems(item)">
                         <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
                     </div>
                 </td>
-
-                <td>{{item.name}}</td>
+                <td>
+                    <span ng-if="storesection" class="store-section">{{item.section}}</span>
+                    {{item.name}}</td>
                 <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
-
             </tr>
         </tbody>
     </table>
@@ -27,9 +29,13 @@
     <h3>Completed Items</h3>
     <table class="table table-striped">
         <tbody>
-            <tr ng-model="completedItem" ng-repeat="item in completedItems track by $index">
+            <tr ng-repeat="item in items" ng-if="item.value">
+                <td>
+                    <div ng-click="updateCompletedItems(item)">
+                        <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
+                    </div>
+                </td>
                 <td>{{item.name}}</td>
-                <td><span class="badge">Edit</span></td>
             </tr>
         </tbody>
     </table>
