@@ -27,6 +27,7 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
     $scope.addIngredient = function(newIngredient) {
         $scope.newDish.ingredients = $scope.newDish.ingredients || [];
         newIngredient.value = false;
+        newIngredient.totalCost = '';
         $scope.newDish.ingredients.push($scope.newIngredient);
         $scope.clearSearch()
     }
