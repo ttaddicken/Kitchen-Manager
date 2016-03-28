@@ -5,11 +5,12 @@ app.controller('PublicDishesController', function ($firebaseArray, $scope, DishS
  $scope.indatabase = DishService.getDishes();
 //  console.log($scope.indatabase, $scope.indatabase.length);
 });
+// Temporary paste while working with the API
 
 app.controller('ApiController', function($scope, EdamamService){
 	$scope.findDishes = function(){
 		EdamamService.search($scope.query).success(function(results){
-				debugger
+debugger
 			$scope.results = results.hits.map(function(hit){
 				var recipe = hit.recipe || {}
 				//fix ingredients
