@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <h1>Search and connect to online recipes</h1> <input ng-model="query" type="text"> <button ng-click="findDishes()">Find Recipes</button>
 <div class="list-group">
 	<div class="list-group-item" ng-repeat="dish in results">
@@ -6,10 +6,10 @@
 			<span class="media-left media-middle">
 				<img class="media-object" ng-src="{{dish.img}}" width="120" /> 
 			</span>
-
 			<span>
 			<h3 class="media-heading">{{dish.title}}</h3>
-			<button ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}" style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px; margin-right:3px;" class="btn btn-sm btn-primary">View recipe</a>
+			<a ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}"><button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-primary" >Go to recipe URL</button></a>
+    		<!--<button ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}" style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px; margin-right:3px;" class="btn btn-sm btn-primary">View recipe</a>-->
 			<button ng-click="saveRecipe(dish)" style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary">Add to my Recipes</button>
 			</span>
 			<span class="media-body" ng-repeat="ingredient in dish.ingredients">
@@ -22,8 +22,8 @@
 			</div>
 	</div> 
 </div>
-=======
 
+<!--
 <div class="list-group">
 	<div class="list-group-item" ng-repeat="dish in results">
 	<div class="media">
@@ -50,5 +50,4 @@
 		</div>
 	</div>
 </div>
-
->>>>>>> 959265df5fc4ef9d79c637ec001cad3d53711d26
+--!>

@@ -1,4 +1,4 @@
-app.controller('ApiController', function($scope,  $state, EdamamService){
+app.controller('ApiController', function($scope, $rootScope, $state, EdamamService, DishService, CONSTANTS, $firebaseArray){
 	$scope.findDishes = function(){
 		EdamamService.search($scope.query).success(function(results){
 			
@@ -22,12 +22,23 @@ app.controller('ApiController', function($scope,  $state, EdamamService){
 		
 	}
 	
-	    $scope.saveRecipe = function(dish) {
-			console.log(dish);
-        $state.go("dishCreation");
 
+	
+	$scope.saveRecipe = function(dish) {
+		debugger;
+        $rootScope.member.dishList = $rootScope.member.dishList || {}
+        $rootScope.member.dishList[dish.$id] = dish;
+
+        $rootScope.member.$save().then(function(a, b) {
+            $state.go("dishEdit", { id: $state.params.id })
+			// ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}"
+        })
     }
-});	
+        
+     $scope.ratingStates = DishService.ratingStates
+
+});
+
 	
 					/*  MY DISH CREATION SCHEMA
 					dish.img: dish.image,
