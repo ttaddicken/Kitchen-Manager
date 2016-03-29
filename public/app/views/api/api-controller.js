@@ -1,7 +1,11 @@
 app.controller('ApiController', function($scope,  $state, EdamamService){
 	$scope.findDishes = function(){
 		EdamamService.search($scope.query).success(function(results){
+<<<<<<< HEAD
 			
+=======
+			console.log(results);
+>>>>>>> 959265df5fc4ef9d79c637ec001cad3d53711d26
 			$scope.results = results.hits.map(function(hit){
 				var dish = hit.recipe || {}
 				//fix ingredients

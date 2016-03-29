@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <h1>Search and connect to online recipes</h1> <input ng-model="query" type="text"> <button ng-click="findDishes()">Find Recipes</button>
 <div class="list-group">
 	<div class="list-group-item" ng-repeat="dish in results">
@@ -21,3 +22,33 @@
 			</div>
 	</div> 
 </div>
+=======
+
+<div class="list-group">
+	<div class="list-group-item" ng-repeat="dish in results">
+	<div class="media">
+		<div class="media-left media-middle">
+			<div class="media-left"> <img class="media-object" ng-src="{{dish.img}}" width="120" /> 
+			</div>
+				<h3 class="media-heading">{{dish.title}}</h3> 
+		</div>
+		<div class="media-content panel-body">
+
+			<a ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}"><button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary" >Go to recipe URL</button></a>
+			<button ng-click="saveRecipe(dish)"style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary">Add to my Recipes</button>
+		</div>
+			
+		<div class="media-body">
+			<span  ng-repeat="ingredient in dish.ingredients">
+					<ul class="ingredients">
+						<li>{{ingredient}}</li>
+					</ul>
+			</span> 
+		</div>
+		<div class="panel-body"> <span ng-repeat="nutrient in dish.nutrientFacts">
+			<span style="font-weight: bold"> {{nutrient.label}}</span> : {{nutrient.total | number: 1}}{{nutrient.unit}}, </span>
+		</div>
+	</div>
+</div>
+
+>>>>>>> 959265df5fc4ef9d79c637ec001cad3d53711d26
