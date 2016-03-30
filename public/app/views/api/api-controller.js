@@ -1,27 +1,25 @@
-app.controller('ApiController', function($scope, $rootScope, $state, EdamamService, DishService, CONSTANTS, $firebaseArray){
-	$scope.findDishes = function(){
-		EdamamService.search($scope.query).success(function(results){
-			
-			console.log(results);
+app.controller('ApiController', function($scope, $rootScope, $state, EdamamService, DishService, CONSTANTS, $firebaseArray) {
+	$scope.findDishes = function() {
+		EdamamService.search($scope.query).success(function(results) {
 
-			$scope.results = results.hits.map(function(hit){
+
+			$scope.results = results.hits.map(function(hit) {
 				var dish = hit.recipe || {}
-				//fix ingredients
+				fixIngrids(dish);
+				
 				return {
 					title: dish.label,
 					img: dish.image,
 					prepTime: '',
 					cookTime: '',
 					servings: dish.yield,
-					// ingredients: dish.ingredients,
-					// name: dish.ingredients.food,
-					// qty: dish.ingredients.quantity,
-					// unit: dish.ingredients.unit,
-					ingredients: dish.ingredientLines,
-					// instructionUrl: dish.shareAs,
+					ingredy: dish.ingredientLines,
+					ingredients: ingredients,
 					instructions: dish.shareAs,
-					
+					instructionUrl: dish.shareAs,
 					nutrientFacts: dish.digest,
+					
+					//fix nutrients
 					Calories: dish.calories,
 					TotalFat: dish.digest[0],
 					sfat: dish.digest[6],
@@ -33,31 +31,76 @@ app.controller('ApiController', function($scope, $rootScope, $state, EdamamServi
 					potassium: dish.digest[7],
 					calcium: dish.digest[5],
 					iron: dish.digest[8],
-							
-				}
+
+				};
+
+
+
 			});
 		})
-		
-	}
-	
 
+	};
+	var ingredients = [];
+
+	var fixIngrids = function(dish) {
+		var ingredient = {
+			qty: "",
+			name: "",
+			unit: ""
+		};
+		for (var i = 0; i < dish.ingredients.length; i++) {
+			var current = dish.ingredients[i];
+
+			for (var prop in current) {
+				if (current.hasOwnProperty(prop)) {
+					var newprop = prop;
+					if (newprop === "quantity") {
+						ingredient.qty = dish.ingredients[i].quantity;
+					}
+					if (newprop === "measure") {
+						ingredient.unit = dish.ingredients[i].measure;
+					}
+					if (newprop === "food") {
+						ingredient.name = dish.ingredients[i].food;
+					}
+
+
+				}
+			}
+		}
+		ingredients.push(ingredient);
+		console.log("New = ", ingredient);
+	};
 	
 	$scope.saveRecipe = function(dish) {
-		debugger;
+		dish.creationDate = Date.now();
+		// var dish = $firebaseObject(ref);
+		
+		// need to enforce forebase to create an ID
         $rootScope.member.dishList = $rootScope.member.dishList || {}
         $rootScope.member.dishList[dish.$id] = dish;
-
-        $rootScope.member.$save().then(function(a, b) {
-            $state.go("dishEdit", { id: $state.params.id })
-			// ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}"
+		// $rootScope.member.dishList[dish.key()] = $scope.newDish;
+        $rootScope.member.$save().then(function(a, b, ref) {
+            $state.go("manageDishes", { id: $state.params.id })
         })
     }
-        
-     $scope.ratingStates = DishService.ratingStates
+	
+	$scope.ratingStates = DishService.ratingStates
 
 });
 
-	
+
+	// $scope.createDish = function(newDish) {
+        
+    //     newDish.creationDate = Date.now();
+    //     $scope.dishes.$add($scope.newDish).then(function(dish) {
+    //         $rootScope.member.dishList = $rootScope.member.dishList || {}
+    //         $rootScope.member.dishList[dish.key()] = $scope.newDish;
+    //         $rootScope.member.$save();
+    //         $scope.newDish = ''
+
+    //     });
+
 					/*  MY DISH CREATION SCHEMA
 					dish.img: dish.image,
 					{{newDish.title}}
