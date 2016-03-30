@@ -1,9 +1,7 @@
-<div class="row">
-    <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
-   <div style="text-align: center; margin-bottom: 28px">
+<div class="row"> <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
+    <div style="text-align: center; margin-bottom: 28px">
     <input ng-model="dish.title" style="text-align: center; width: 500px" type="text"></div>
-    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" ng-src="{{dish.img}}" alt="{{dish.title}">
-        <label style="margin-right: 5px;">Dish Image Url:
+    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" ng-src="{{dish.img}}" alt="{{dish.title}"> <label style="margin-right: 5px;">Dish Image Url:
             <input style="width: 500px" ng-model="dish.img" type="url">
     </div>
     </span>
@@ -14,14 +12,18 @@
         <div style="text-align: center" class="row">
             Prep Time:
             <input ng-model="dish.prepTime" type="number" style="width: 45px;"></input> + Cook Time:
-            <input ng-model="dish.cookTime" type="number"style="width: 45px;"></input><h4>Total Time: {{dish.prepTime + dish.cookTime}}</h4>
+            <input ng-model="dish.cookTime" type="number"style="width: 45px;"></input><h5>Total Time: {{dish.prepTime + dish.cookTime}}</h5>
         </div>
         <!--Recipe Rating-->
         <div style="text-align: center">
+            <h4>Servings: {{dish.servings}}</h4>
             <h4>Recipe Rating</h4>
             <uib-rating ng-model="dish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
             on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
         </div>
+        <div style="text-align: center">
+            <h4>Servings: {{dish.servings}}</h4>
+       </div>
         <!--dish type-->
         <div class="form-group">
             <label>Type of Dish
@@ -36,17 +38,16 @@
     </div>
 </div>
 <!--Ingredients-->
+    <h4>Ingredients:</h4>
 <div>
 
-    <h4>Ingredients:</h4>
     <div style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 container-fluid" ng-repeat="ingredient in dish.ingredients">
         <!--<input style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients track by $index" ng-model="ingredient" ng-blur="test(ingredient, $index)" type="text">-->
-        <input class="ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.name">
-        <input class="ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.qty">
+        <input class="ingredient" style="margin-right: 8px; margin-bottom: 8px; width: 100;" ng-model="ingredient.qty" placeholder="Qty">
         <!--<input class = "ingredient" style="margin-right: 8px; margin-bottom: 8px" ng-model="ingredient.unit" >-->
-        <label class="ingredient">Unit of Measure
+        <!--<label class="ingredient">Unit of Measure-->
             <!--drop down for unit of measurement-->
-            <select style="width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
+            <select style="width: 100px" ng-model="newIngredient.unit" class="form-control ingredient" placeholder="lbs">
                 <option>each</option>
                 <option>piece</option>
                 <option>pack</option>
@@ -62,6 +63,7 @@
                 <option>tsp</option>
             </select>
             <!--end dropdown-->
+        <input class="ingredient" style="margin-right: 8px; margin-bottom: 8px; width: 200;" ng-model="ingredient.name" placeholder="Name">
     </div>
     <!--Instuctions-->
     <div class="col-sm-12">
@@ -74,19 +76,8 @@
 
         <!--nutrition info-->
         <span style="display: inline">
-        <label> Calories: <input class = "nutinput" ng-model="dish.nutritionInfo[0].Calories"> </input> </label>
-        <label> Total Fat: <input class = "nutinput" ng-model="dish.nutritionInfo[0].TotalFat"> </input> </label>
-        <label> Saturated Fats: <input class = "nutinput" ng-model="dish.sfat"> </input> </label>
-        <label> Cholesterol: <input class = "nutinput" ng-model="dish.cholesterol"> </input> </label>
-        <label> Carbohydrates: <input class = "nutinput" ng-model="dish.carbohydrates"> </input> </label>
-        <label> Protein: <input class = "nutinput" ng-model="dish.protein"> </input> </label>
-        <label> Fiber: <input class = "nutinput" ng-model="dish.fiber"> </input> </label>
-        <label> Sodium: <input class = "nutinput" ng-model="dish.sodium"> </input> </label>
-        <label> Potassium: <input class = "nutinput" ng-model="dish.potassium"> </input> </label>
-        <label> Calcium: <input class = "nutinput" ng-model="dish.calcium"></input> </label>
-        <label> Iron: <input class = "nutinput" ng-model="dish.iron"> </input> </label>
-    </span>
+        <label> Calories: <input class = "nutinput" ng-model="dish.nutritionInfo[0].Calories"> </input> </label> <label> Total Fat: <input class = "nutinput" ng-model="dish.nutritionInfo[0].TotalFat"> </input> </label>        <label> Saturated Fats: <input class = "nutinput" ng-model="dish.sfat"> </input> </label> <label> Cholesterol: <input class = "nutinput" ng-model="dish.cholesterol"> </input> </label>        <label> Carbohydrates: <input class = "nutinput" ng-model="dish.carbohydrates"> </input> </label> <label> Protein: <input class = "nutinput" ng-model="dish.protein"> </input> </label>        <label> Fiber: <input class = "nutinput" ng-model="dish.fiber"> </input> </label> <label> Sodium: <input class = "nutinput" ng-model="dish.sodium"> </input> </label>        <label> Potassium: <input class = "nutinput" ng-model="dish.potassium"> </input> </label> <label> Calcium: <input class = "nutinput" ng-model="dish.calcium"></input> </label>        <label> Iron: <input class = "nutinput" ng-model="dish.iron"> </input> </label> </span>
         <div style="text-align: center; margin: 10px">
-            <button ng-click="updateDish(dish)">Update Dish</button>
-        </div>
+        <button class="btn btn-sm btn-success" ng-click="updateDish(dish)">Update Dish</button> <button class="btn btn-sm btn-danger"
+                ng-click="removeDish(dish)">Delete Dish</button> </div>
     </div>
