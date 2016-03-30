@@ -18,7 +18,6 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
             }
         }
         $scope.items.$save(item);
-        
         $scope.checkboxModel.value = "NO";
     }    
 
@@ -29,8 +28,17 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
             }
         }
         $scope.items.$save(item);
-        
         $scope.checkboxModel.value = "NO";
     } 
+    
+    $scope.saveBudget = function(newBudget){
+        debugger;
+        $rootScope.member.groceryList.budget = $rootScope.member.groceryList.budget || '';
+        // $rootScope.member.groceryList.budget = newBudget
+        $rootScope.member.groceryList.budget.push(newBudget)
+        
+        $rootScope.member.$save();
+    }
+
 
 })
