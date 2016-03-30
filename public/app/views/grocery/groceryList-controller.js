@@ -31,11 +31,14 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
         $scope.checkboxModel.value = "NO";
     } 
     
-    $scope.saveBudget = function(budget){
-        $rootScope.member.groceryList.budget = $rootScope.member.groceryList.budget || '';
-        $rootScope.member.groceryList.budget = budget;
+    $scope.saveBudget = function(newBudget){
         debugger;
-        $scope.member.$save()
+        $rootScope.member.groceryList.budget = $rootScope.member.groceryList.budget || '';
+        // $rootScope.member.groceryList.budget = newBudget
+        $rootScope.member.groceryList.budget.push(newBudget)
+        
+        $rootScope.member.$save();
     }
+
 
 })
