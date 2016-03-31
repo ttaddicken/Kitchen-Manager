@@ -4,7 +4,6 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     
     DishService.getGroceryItems().$loaded(function(x){
         $scope.items =  x;
-        console.log($scope.items)
     })
     
        
@@ -12,9 +11,34 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
 
     $scope.completedItems = [];
 
-    $scope.updateCompletedItems = function(index) {
-        $scope.completedItems.push(item);
+    $scope.updateItems = function(item) {
+        for(key in item){
+            if(item[key] === false){
+             item[key] = true
+            }
+        }
+        $scope.items.$save(item);
         $scope.checkboxModel.value = "NO";
+    }    
+
+    $scope.updateCompletedItems = function(item) {
+        for(key in item){
+            if(item[key] === true){
+             item[key] = false
+            }
+        }
+        $scope.items.$save(item);
+        $scope.checkboxModel.value = "NO";
+    } 
+    
+    $scope.saveBudget = function(newBudget){
+        debugger;
+        $rootScope.member.groceryList.budget = $rootScope.member.groceryList.budget || '';
+        // $rootScope.member.groceryList.budget = newBudget
+        $rootScope.member.groceryList.budget.push(newBudget)
+        
+        $rootScope.member.$save();
     }
+
 
 })

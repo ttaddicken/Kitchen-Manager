@@ -22,6 +22,14 @@ app.controller('DishEditController', function($firebaseArray, $scope, $state, di
         })
 
     }
+    
+    $scope.removeDish = function() {
+            $scope.dish.$remove().then(function() {
+            $state.go("manageDishes")
+        })
+
+    }
+    
     $scope.ratingStates = DishService.ratingStates
 
 });
