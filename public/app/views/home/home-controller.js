@@ -281,6 +281,18 @@ debugger
 
     // END NAVBER SCRIPT
 gridcall();
+
+
+// section is for pull menus
+$scope.tims = function(cbpspmenus1){
+    debugger;
+                menuLeft = document.getElementById( 'cbp-spmenu-s1' );
+              
+                classie.toggle( this, 'active' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				
+            };
+
 })
 
 
