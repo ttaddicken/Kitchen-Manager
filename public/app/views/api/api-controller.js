@@ -1,14 +1,14 @@
-app.controller('ApiController', function($scope, $rootScope, $state, EdamamService, DishService, CONSTANTS, $firebaseArray) {
-	
+app.controller('ApiController', function ($scope, $rootScope, $state, EdamamService, DishService, CONSTANTS, $firebaseArray) {
+
 	$scope.myDishes = DishService.getMyDishes();
-	
-	$scope.findDishes = function() {
-		EdamamService.search($scope.query).success(function(results) {
-			$scope.results = results.hits.map(function(hit) {
+
+	$scope.findDishes = function () {
+		EdamamService.search($scope.query).success(function (results) {
+			$scope.results = results.hits.map(function (hit) {
 				var dish = hit.recipe || {}
 				console.log(dish);
 				// fixIngrids(dish);	
-				
+
 				return {
 					title: dish.label,
 					img: dish.image,
@@ -16,11 +16,11 @@ app.controller('ApiController', function($scope, $rootScope, $state, EdamamServi
 					cookTime: '',
 					servings: dish.yield,
 					ingredientLines: dish.ingredientLines,
-					ingredients: ingredients,
+					ingredients: dish.ingredients,
 					instructions: dish.shareAs,
 					instructionUrl: dish.shareAs,
 					nutrientFacts: dish.digest,
-					
+
 					//fix nutrients
 					Calories: dish.calories,
 					TotalFat: dish.digest[0],
@@ -35,36 +35,82 @@ app.controller('ApiController', function($scope, $rootScope, $state, EdamamServi
 					iron: dish.digest[8],
 
 				};
-
-
 			});
 		})
 	};
-					
-	
-	
-	var ingredients = [];
+
+
+
+	// var ingredients = [];
+
+	var fixIngrids = function (dish) {
+		var ingredients = dish.ingredients;
+
+		var ingredient = {
+			qty: "",
+			name: "",
+			unit: ""
+		};
+
+		for (var i = 0; i < ingredients.length; i++) {
+			var current = dish.ingredients[i];
+
+			ingredients.forEach(function (ingredient, i) {
+				for(var prop in ingredient){
+					if (ingredient.hasOwnProperty(prop)) {
+						if (prop === "text") {
+							dish.ingredients[i].name = dish.ingredients[i].text;
+						}
+						if (prop === "quantity") {
+							dish.ingredients[i].qty = dish.ingredients[i].quantity;
+						}
+						if (prop === "measure") {
+							dish.ingredients[i].unit = dish.ingredients[i].measure;
+						}
+					}
+				}
+			})
+		};
+		console.log("New = ", ingredients);
+	}
+
+
+
+	$scope.saveRecipe = function (dish) {
+		fixIngrids(dish);
+		dish.creationDate = Date.now();
+		debugger;
+		$scope.myDishes.$add(dish).then(function (ref) {
+			$state.go("manageDishes", { id: ref.key() })
+		})
+	}
+
+	$scope.ratingStates = DishService.ratingStates
+
+});
+/*
+var ingredients = [];
 
 	var fixIngrids = function(dish) {
-		// var ingredient = {
-		// 	qty: "",
-		// 	name: "",
-		// 	unit: ""
-		// };
+		var ingredient = {
+			qty: "",
+			name: "",
+			unit: ""
+		};
 		for (var i = 0; i < dish.ingredients.length; i++) {
-			var current = dish.ingredients[i];
+			var current = dish.ingredients;
 			for (var prop in current) {
 				debugger;
 				if (current.hasOwnProperty(prop)) {
-					var newprop = prop;
-					if (newprop === "quantity") {
+					var prop = prop;
+					if (prop === "text") {
+						ingredient.name = dish.ingredients[i].text;
+					}
+					if (prop === "quantity") {
 						ingredient.qty = dish.ingredients[i].quantity;
 					}
-					if (newprop === "measure") {
+					if (prop === "measure") {
 						ingredient.unit = dish.ingredients[i].measure;
-					}
-					if (newprop === "text") {
-						ingredient.name = dish.ingredients[i].text;
 					}
 
 
@@ -74,18 +120,4 @@ app.controller('ApiController', function($scope, $rootScope, $state, EdamamServi
 		ingredients.push(ingredient);
 		console.log("New = ", ingredients);
 	};
-	
-	
-	
-	$scope.saveRecipe = function(dish){
-			debugger;
-		fixIngrids(dish);
-		$scope.dish.creationDate = Date.now();
-        $scope.myDishes.$add(dish).then(function(ref) {
-			$state.go("manageDishes", { id: ref.key() })
-        })
-    }
-	
-	$scope.ratingStates = DishService.ratingStates
-
-});
+*/
