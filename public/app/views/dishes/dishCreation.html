@@ -1,5 +1,4 @@
 <div class="col-sm-7 recipeInput">
-    <button type="button" ng-click="clearRecipe()" class="btn btn-danger input">Clear Recipe</button>
     <form class="form" ng-submit="createDish(newDish)">
         <div class="form-group">
             <label for="title">Title:</label>
@@ -38,12 +37,18 @@
                 <option>roll</option>
                 <option>dozen</option>
                 <option>lbs</option>
+                <option>pounds</option>
                 <option>qt</option>
+                <option>quart</option>
                 <option>oz</option>
+                <option>ounce</option>
                 <option>pt</option>
+                <option>pint</option>
                 <option>cup</option>
                 <option>tbsp</option>
+                <option>tablespoon</option>
                 <option>tsp</option>
+                <option>teaspoon</option>
                 
             </select>
             
@@ -103,8 +108,9 @@
             <uib-rating ng-model="newDish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
             on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
             <div>
-                <button type="button" class="btn btn-sm btn-danger" ng-click="rate = 0" ng-disabled="isReadonly">Clear</button>
-                <button type="submit" class="fc-state-default">Create Dish</button>                
+                
+                <button type="button" ng-click="clearRecipe()" class="btn btn-danger">Clear Recipe</button>
+                <button type="submit" class="btn btn-success">Create Dish</button>                
             </div>
         </div>
     </form>

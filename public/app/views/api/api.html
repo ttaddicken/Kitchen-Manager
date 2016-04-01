@@ -1,59 +1,40 @@
-<div class="container">
-<div>
-<h1>Search and connect to online recipes</h1> <input ng-model="query" type="text"> <button ng-click="findDishes()">Find Recipes</button>
+<div class="well">
+	<form class="form" ng-submit="findDishes()">
+	<h1>Search and connect to online recipes</h1> <input ng-model="query" type="text"> <button type="submit">Find Recipes</button>
+	</form>
 </div>
-
-	<div class="list-group">
-		<div class="list-group-item" ng-repeat="dish in results">
-			<div class="media">
-			<span class="media-left media-middle">
-				<img class="media-object" ng-src="{{dish.img}}" width="120"/> 
-			</span>
-				<span class="media-heading"><h3>{{dish.title}}</h3></span>
-			<a ng-href="{{dish.instructions}}" target="{{'_blank'}}">
-    		<!--<button ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}" style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px; margin-right:3px;" class="btn btn-sm btn-primary">View recipe</a>-->
-			
-				<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-primary" >Go to recipe URL</button></a>
-				<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-success" ng-click="saveRecipe(dish)" >Add to my Recipes</button>
-			
-			</span> <span class="media-body" ng-repeat="ingredy in dish.ingredientLines">
-				<ul class="ingredients">
-					<li>{{ingredy}}</li>
-					
-				</ul>
-			</span>
-				<div class="panel-body"> <span ng-repeat="nutrient in dish.nutrientFacts">
-				<span style="font-weight: bold"> {{nutrient.label}}</span> : {{nutrient.total | number: 1}}{{nutrient.unit}}, </span>
-				</div>
+	<div class="container">
+		<div class="list-group">
+			<div class="list-group-item" ng-repeat="dish in results">
+				<div class="row">
+					<div class="media"> 
+						<div class="col-sm-2" style="padding-left: 18px;">
+							<img ng-src="{{dish.img}}" width="120"/> 
+						</div> 
+						<div class="col-sm-6" style="display: inline; padding: 8px;">
+							<span>
+								<h3>{{dish.title}}</h3>
+							</span>
+							<a ng-href="{{dish.instructions}}" target="{{'_blank'}}">
+							<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-primary">Go to recipe URL</button></a>
+							<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-success" ng-click="saveRecipe(dish)">Add to my Recipes</button> 
+						</div>
+					</div>
+				</div> 
+				<div class="container">
+					<div>
+					<div class="col-sm-4" style="margin-top: 10px; margin-left: -20;" ng-repeat="ingreeds in dish.ingredientLines track by $index">
+					<!--<div class="col-sm-4" style="float: left; margin-top: 10px;" ng-repeat="ingredients in dish.ingredients">	-->
+						<ul class="ingredients">
+							<li>{{ingreeds}}</li>
+							<!--<li>{{ingredients}}-->
+						<ul>
+					</div>
+					</div>
+				</div>	
+					<div class="panel-body"> <span ng-repeat="nutrient in dish.nutrientFacts">
+						<span style="font-weight: bold"> {{nutrient.label}}</span> : {{nutrient.total | number: 1}}{{nutrient.unit}}, </span>
+					</div>
 			</div>
 		</div>
 	</div>
-</div>
-<!--
-<div class="list-group">
-	<div class="list-group-item" ng-repeat="dish in results">
-	<div class="media">
-		<div class="media-left media-middle">
-			<div class="media-left"> <img class="media-object" ng-src="{{dish.img}}" width="120" /> 
-			</div>
-				<h3 class="media-heading">{{dish.title}}</h3> 
-		</div>
-		<div class="media-content panel-body">
-
-			<a ng-href="{{dish.instructionUrl}}" target="{{'_blank'}}"><button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary" >Go to recipe URL</button></a>
-			<button ng-click="saveRecipe(dish)"style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px" class="btn btn-sm btn-primary">Add to my Recipes</button>
-		</div>
-			
-		<div class="media-body">
-			<span  ng-repeat="ingredient in dish.ingredients">
-					<ul class="ingredients">
-						<li>{{ingredient}}</li>
-					</ul>
-			</span> 
-		</div>
-		<div class="panel-body"> <span ng-repeat="nutrient in dish.nutrientFacts">
-			<span style="font-weight: bold"> {{nutrient.label}}</span> : {{nutrient.total | number: 1}}{{nutrient.unit}}, </span>
-		</div>
-	</div>
-</div>
---!>
