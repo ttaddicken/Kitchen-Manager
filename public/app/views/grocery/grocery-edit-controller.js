@@ -6,8 +6,10 @@ app.controller('GroceryEditController', function($rootScope, $scope, DishService
         $state.go('grocery')
     }
     
-    $scope.updateItem = function(){       
-        $scope.item.$save().then(function() {
+    $scope.updateItem = function(item){
+        debugger;
+        $scope.item.totalCost = $scope.item.unitsbuying * $scope.item.price;   
+        $scope.item.$save(item).then(function() {
             $state.go("grocery")
         })
     }
@@ -18,6 +20,5 @@ app.controller('GroceryEditController', function($rootScope, $scope, DishService
             $state.go("grocery")
         })
     }
-
     
 });

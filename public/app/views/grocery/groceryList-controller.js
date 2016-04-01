@@ -12,14 +12,13 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     $scope.completedItems = [];
 
     $scope.updateItems = function(item) {
-        debugger;
         for(key in item){
             if(item[key] === false){
              item[key] = true
             }
         }
+        $scope.checkboxModel.value = "YES";
         $scope.items.$save(item);
-        $scope.checkboxModel.value = "NO";
     }    
 
     $scope.updateCompletedItems = function(item) {
@@ -28,8 +27,8 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
              item[key] = false
             }
         }
+        $scope.checkboxModel.value = "YES";
         $scope.items.$save(item);
-        $scope.checkboxModel.value = "NO";
     } 
     
     $scope.makeBudget = function(budget){
@@ -41,7 +40,6 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
                 prices.push($scope.items[i].totalCost)
             }
         }
-        debugger;
             for (var i = 0; i < prices.length; i++){
                 $scope.totalExpenses += prices[i]
             }
