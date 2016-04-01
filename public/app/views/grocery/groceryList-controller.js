@@ -1,6 +1,6 @@
 app.controller('GroceryController', function($rootScope, $scope, DishService, CONSTANTS, $firebaseArray) {
     
-    // $scope.item = item;
+    $scope.items = DishService.getGroceryItems()
     
     DishService.getGroceryItems().$loaded(function(x){
         $scope.items =  x;
@@ -17,8 +17,8 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
              item[key] = true
             }
         }
+        $scope.checkboxModel.value = "YES";
         $scope.items.$save(item);
-        $scope.checkboxModel.value = "NO";
     }    
 
     $scope.updateCompletedItems = function(item) {
@@ -27,18 +27,24 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
              item[key] = false
             }
         }
+        $scope.checkboxModel.value = "YES";
         $scope.items.$save(item);
-        $scope.checkboxModel.value = "NO";
     } 
     
-    $scope.saveBudget = function(newBudget){
-        debugger;
-        $rootScope.member.groceryList.budget = $rootScope.member.groceryList.budget || '';
-        // $rootScope.member.groceryList.budget = newBudget
-        $rootScope.member.groceryList.budget.push(newBudget)
-        
-        $rootScope.member.$save();
+    $scope.makeBudget = function(budget){
+        var prices = [];
+        $scope.totalExpenses = 0;
+        $scope.newBudget = 0;
+        for(var i = 0; i < $scope.items.length; i++){
+            if ($scope.items[i].totalCost){
+                prices.push($scope.items[i].totalCost)
+            }
+        }
+            for (var i = 0; i < prices.length; i++){
+                $scope.totalExpenses += prices[i]
+            }
+            return $scope.newBudget = $scope.budget - $scope.totalExpenses
     }
-
+    
 
 })
