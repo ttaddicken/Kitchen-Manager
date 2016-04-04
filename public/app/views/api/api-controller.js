@@ -19,21 +19,42 @@ app.controller('ApiController', function ($scope, $rootScope, $state, EdamamServ
 					ingredients: dish.ingredients,
 					instructions: dish.shareAs,
 					instructionUrl: dish.shareAs,
-					nutrientFacts: dish.digest,
-
-					//fix nutrients
-					Calories: dish.calories,
-					TotalFat: dish.digest[0],
-					carbohydrates: dish.digest[1].sub[1],
-					fiber: dish.digest[1].sub[2],
-					protein: dish.digest[2],
-					cholesterol: dish.digest[3],
-					sodium: dish.digest[4],
-					calcium: dish.digest[5],
-					sfat: dish.digest[6],
-					potassium: dish.digest[7],
-					iron: dish.digest[8],
-
+					//nutrientFacts: dish.digest,
+					nutrientFacts: dish.totalNutrients,
+									
+					//Primary Nutrients
+					/*
+					Calories: dish.totalNutrients.KCAL,
+					TotalFat: dish.totalNutrients.FAT,
+					monounsaturatedFat: dish.totalNutrients.FAMS,
+					polyunsaturatedFat: dish.totalNutrients.FAPU,
+					transFat: dish.totalNutrients.FATRN,
+					sfat: dish.totalNutrients.FASAT,
+					cholesterol: dish.totalNutrients.CHOLE,
+					carbohydrates: dish.totalNutrients.CHOCDF,
+					protein: dish.totalNutrients.PROCNT,
+					fiber: dish.totalNutrients.FIBTG,
+					sodium: dish.totalNutrients.NA,
+					potassium: dish.totalNutrients.K,
+					calcium: dish.totalNutrients.CA,
+					iron: dish.totalNutrients.FE,
+					// Secondary Nutrients
+					folicAcid: dish.totalNutrients.FOL,
+					magnesium: dish.totalNutrients.MG,
+					niacin: dish.totalNutrients.NIA,
+					phosphorus: dish.totalNutrients.P,
+					riboflavin: dish.totalNutrients.RIBF,
+					sugar: dish.totalNutrients.SUGAR,
+					thiamin: dish.totalNutrients.THIA,
+					vitaminE: dish.totalNutrients.TOCPHA,
+					vitaminA: dish.totalNutrients.VITA_RAE,
+					vitaminB6: dish.totalNutrients.VITB6A,
+					vitaminB12: dish.totalNutrients.VITB12,
+					vitaminC: dish.totalNutrients.VITC,
+					vitaminD: dish.totalNutrients.VITD,
+					vitaminK1: dish.totalNutrients.VITK1,
+					zinc: dish.totalNutrients.ZN,
+					*/
 				};
 			});
 		})
