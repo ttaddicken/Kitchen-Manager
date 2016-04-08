@@ -13,6 +13,7 @@
     box-shadow: 5px 4px rgba(128, 128, 128, 0.26);
     /*display: inline-block;*/
     color: white;
+    display: table-row;
 }
 .cellmobile{
     border:2 px black;
