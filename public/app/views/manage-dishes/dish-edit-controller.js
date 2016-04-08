@@ -9,7 +9,7 @@ app.controller('DishEditController', function($firebaseArray, $scope, $state, di
         "Pound",
     ]
     // $scope.selectOption = $scope.ingredient.unit
-
+    $scope.dish.totalTime = $scope.dish.prepTime + $scope.dish.cookTime;
 
     $scope.test = function(updated, i) {
         $scope.dish.ingredients[i] = updated;
