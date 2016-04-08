@@ -1,22 +1,21 @@
-<div class="col-sm-12 login">
-    <form ng-submit="login(user)">
-        <div>
-            <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                Sign In
-            </h4>
-            <!--<input class="input" ng-model="user.userName" type="text" placeholder="Enter family login Name">
-        </div>-->
-        <div>
-            <input class="input" ng-model="user.email" type="email" placeholder="email">
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="well">
+            <h3>LOGIN</h3>
         </div>
-        <div>
-            <input class="input" ng-model="user.password" type="password" placeholder="password">
-        </div>
-        <button type="submit">Login</button>
-        <button ng-click="" ui-sref="home">Temp. Skip to Home</button>
-    </form>
-        <div>
-           <a ui-sref="registration">Not a member? Click here to register for free </a>
+        <form class="form" style="margin-top:10px;" ng-submit="login(user)">
+            <div class="form-group">
+                <label for="Email">Email:</label>
+                <input class="form-control" ng-model="user.email" type="email" placeholder="email">
             </div>
+            <div class="form-group">
+                <label for="Password">Password:</label>
+                <input class="form-control" ng-model="user.password" type="password" placeholder="password">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Login</button>
+        </form>
+        <div class="text-center">
+            <a ui-sref="registration">Not a member? Click here to register for free </a>
+        </div>
+    </div>
 </div>
-

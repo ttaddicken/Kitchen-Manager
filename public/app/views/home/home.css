@@ -126,4 +126,17 @@
 
 .right-padding {
   padding-right: 15px;
+}
   /*end of flexbox*/
+  
+  /*hoverscroll*/
+#scrollArea {
+  height: 800px;
+  overflow: auto;
+}
+
+#bottom {
+  display: block;
+  margin-top: 2000px;
+}
+/*end hover scroll*/

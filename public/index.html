@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Kitchen manager</title>
-    
+
     <!--Start section for pull menus-->
     <meta charset="UTF-8" />
-		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-		<meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-		<meta name="description" content="Blueprint: Slide and Push Menus" />
-		<meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
-		<!--not sourced <link rel="shortcut icon" href="../favicon.ico">-->
-		<link rel="stylesheet" type="text/css" href="SlidePushMenus/css/default.css" />
-		<link rel="stylesheet" type="text/css" href="SlidePushMenus/css/component.css" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Blueprint: Slide and Push Menus" />
+    <meta name="keywords" content="sliding menu, pushing menu, navigation, responsive, menu, css, jquery" />
+    <!--not sourced <link rel="shortcut icon" href="../favicon.ico">-->
+    <link rel="stylesheet" type="text/css" href="SlidePushMenus/css/default.css" />
+    <link rel="stylesheet" type="text/css" href="SlidePushMenus/css/component.css" />
     <!--End section for pull menus-->
 
     <!--BOOTSTRAP & OTHER CSS FILES-->
@@ -30,11 +30,11 @@
 
     <!--end summer note-->
     <!--Angular NVD3 charts-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css"/>
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css" />
+
     <!--Angular material css-->
     <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css">
-    
+
     <!--OUR CSS Files-->
     <link rel="stylesheet" href="assets/style.css">
     <link rel="stylesheet" href="app/views/login/login.css">
@@ -44,67 +44,45 @@
     <link rel="stylesheet" href="app/views/public-dishes/dish-details.css">
     <link rel="stylesheet" href="app/views/grocery/grocery.css">
     <!--End CSS-->
-    
+
     <!-- this is to test reactive response on calendar-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
 </head>
 
 <body>
     <!--start of member view-->
-    <div ng-if="member">
-        <div class="">
-            <div class="font clearfix back-color">
-                <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
-                    <div class="container">
-                        <div class="navbar-header">
-                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-                                <span class="icon-bar font-color-red"></span>
-                                <span class="icon-bar font-color-red"></span>
-                                <span class="icon-bar font-color-red"></span>
-                            </button>
-                            <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
-                        </div>
-                        <div class="collapse navbar-collapse" id="myNavbar">
-                            <ul class="nav navbar-nav">
-                                <li><a href="/" class="font-color">Home</a></li>
-                                <li><a href="#/dish-creation" class="font-color">Create Dish</a></li>
-                                <li><a href="#/profile" class="font-color">Update Profile</a></li>
-                                <li><a href="#/manage-dishes" class="font-color">Manage Dishes</a></li>
-                                <li><a href="#/public-dishes" class="font-color">Public Dishes</a></li>
-                                <li><a href="#/api-dishes" class="font-color">API Dishes</a></li>
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li>
-                                    <a href="#/login" ng-click="logout()" ng-click="showDropDown = false" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
-                <ui-view></ui-view>
-            </div>
-        </div>
-    </div>
-    <!--end member view-->
-
-    <!--Start non-member view-->
-    <div ng-if="!member">
-        <div class="container-fluid row font">
-            <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
-                <div class="container">
-                    <div class="navbar-header">
-                        <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
-                    </div>
+    <div class="font">
+        <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar font-color-red"></span>
+                        <span class="icon-bar font-color-red"></span>
+                        <span class="icon-bar font-color-red"></span>
+                    </button>
+                    <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
                 </div>
-            </nav>
-            <ui-view></ui-view>
-        </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav" ng-if="member">
+                        <li><a href="/" class="font-color">Home</a></li>
+                        <li><a href="#/dish-creation" class="font-color">Create Dish</a></li>
+                        <li><a href="#/profile" class="font-color">Update Profile</a></li>
+                        <li><a href="#/manage-dishes" class="font-color">Manage Dishes</a></li>
+                        <li><a href="#/public-dishes" class="font-color">Public Dishes</a></li>
+                        <li><a href="#/api-dishes" class="font-color">API Dishes</a></li>
+                        <li>
+                            <a href="#/login" ng-click="logout()" ng-click="showDropDown = false" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </div>
-    <!--end non-member view-->
-
-    <!--scripts Start-->
-
+    <div class="container-fluid" style="margin-top: 20px; background-color:#ECF0F1 !important;">
+        <ui-view></ui-view>
+    </div>
+    <div class="clearfix" style="background-color:#ECF0F1 !important;">.</div>
     <!--Load jquery-->
     <script src="bower_components/jquery/dist/jquery.js"></script>
 
@@ -135,16 +113,16 @@
 
     <!--Load ng-draggable-->
     <script src="node_modules/ng-draggable/ngDraggable.js"></script>
-    
+
     <!--Load mg-material-->
     <script src="bower_components/angular-material/angular-material.min.js"></script>
-   
+
     <!--ng animate which is a dependency of ng-material-->
     <script src="bower_components/angular-animate/angular-animate.min.js"></script>
-    
+
     <!--ng aria which is a dependency of ng-material-->
     <script src="bower_components/angular-aria/angular-aria.min.js"></script>
-   
+
     <!--Load Angular NVD3 charts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.js"></script>
@@ -173,10 +151,10 @@
     <script src="app/services/edamam-service.js"></script>
     <script src="app/views/api/api-controller.js"></script>
     <script src="app/views/grocery/grocery-edit-controller.js"></script>
-    
+
     <!--pull menu scripts-->
-<script src="SlidePushMenus/js/modernizr.custom.js"></script>
-<script src="SlidePushMenus/js/classie.js"></script>
+    <script src="SlidePushMenus/js/modernizr.custom.js"></script>
+    <script src="SlidePushMenus/js/classie.js"></script>
     <!--scripts end-->
 </body>
 
