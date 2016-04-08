@@ -1,31 +1,29 @@
 <div class="col-sm-2 login">
     <!--<form ng-submit="login()">-->
     <div>
-        <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                {{familyName}} Resting at the User Profile page                
-            </h4>
-        <ul>
-
-
+        <h4 style="margin-top: 10px; margin-bottom: 0px;">{{familyName}} Resting at the User Profile page</h4>
+        <h4>Total Private Recipes: {{myDishes.length}}</h4>
+        <!--<ul>
             <li>Change calendar</li>
             <li>Change basic color theme</li>
             <li>planning time in weeks</li>
             <li>Include Deserts?</li>
             <li>Track Nutrition</li>
-        </ul>
+        </ul>-->
 
     </div>
 </div>
 <div class="row" style="height=250px">
     <div class="col-sm-4 container-fluid">
-        <div style="width=400px">
+        <div style="width=400px; margin-left: 2px;">
             <h4 style="margin-top: 10px; margin-bottom: 0px;">
                Recipes by type:               
             </h4>
             <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
-            <h4>Total Private Recipes: {{myDishes.length}}</h4>
-            <ul style="text-align: left;">
-                <ul ng-repeat="myDish in dishesByType track by $index">
+            <h4>Recipes Not Categorized:</h4>
+                
+            <!--<ul style="text-align: left;">-->
+                <ul ng-repeat="myDish in noTypes track by $index">
                 <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h4>
             </ul>
         </div>

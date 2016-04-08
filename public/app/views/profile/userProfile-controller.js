@@ -4,10 +4,11 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
     DishService.getMyDishes().$loaded(function(dishes) {
         $scope.myDishes = dishes;
         buildZeros();
-        buildnoTypes(); 
+        buildTypes(); 
         starCounter();
         typeCounter();
-        buildGraphs();
+        buildStarGraph();
+        buildTypeGraph();
     });
 
     // $scope.ratingStates = DishService.ratingStates;
@@ -39,8 +40,35 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
         }
     };
 
+    $scope.noTypes = [];
+
+    function buildTypes() {
+        for (var i = 0; i < $scope.myDishes.length; i++) {
+            if (!$scope.myDishes[i].type) {
+                $scope.noTypes.push($scope.myDishes[i])
+            }
+        } 
+    }
+
+    $scope.dishesByType = {};
+
+    var typeCounter = function() {
+        //AngularFire brute force $firebaseArray != [] its a tricky trick 
+        //$scope.myDishes === {} != []; 
+        for (var i = 0; i <= $scope.myDishes.length - 1; i++) {
+            try {
+                var currDish = $scope.myDishes[i];
+                var dishTypeCount = currDish.type || 'uncategorized';
+                $scope.dishesByType[dishTypeCount] = $scope.dishesByType[dishTypeCount] || {};
+                $scope.dishesByType[dishTypeCount].dishes = $scope.dishesByType[dishTypeCount].dishes || [];
+                $scope.dishesByType[dishTypeCount].dishes.push(currDish);
+            } catch (error) {
+            }
+        }
+    };
+
     //  CHART RECIPES BY STAR RATING: 
-    function buildGraphs() {
+    function buildStarGraph() {
 
         $scope.starOptions = {
             chart: {
@@ -96,40 +124,14 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
 
     }
 
-    $scope.noTypes = [];
-
-    function buildnoTypes() {
-        for (var i = 0; i < $scope.myDishes.length; i++) {
-            if (!$scope.myDishes[i].type) {
-                $scope.noTypes.push($scope.myDishes[i])
-            }
-        } 
-    }
-
-    $scope.dishesByType = {};
-
-    var typeCounter = function() {
-        //AngularFire brute force $firebaseArray != [] its a tricky trick 
-        //$scope.myDishes === {} != []; 
-        for (var i = 0; i <= $scope.myDishes.length - 1; i++) {
-            try {
-                var currDish = $scope.myDishes[i];
-                var dishTypeCount = currDish.type || 'Uncategorized';
-                $scope.dishesByType[dishTypeCount] = $scope.dishesByType[dishTypeCount] || {};
-                $scope.dishesByType[dishTypeCount].dishes = $scope.dishesByType[dishTypeCount].dishes || [];
-                $scope.dishesByType[dishTypeCount].dishes.push(currDish);
-            } catch (error) {
-            }
-        }
-    };
-
 
 
 
 
 
     //  CHART RECIPES BY DISH TYPE:
-
+        function buildTypeGraph() {
+    
     $scope.dishTypeOptions = {
         chart: {
             type: 'pieChart',
@@ -162,25 +164,25 @@ app.controller('ProfileController', function($rootScope, $scope, DishService, CO
         },
         {
             key: "Salads",
-            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : 1
+            y: $scope.dishesByType['Salad'] ? $scope.dishesByType['Salad'].dishes.length : 0
         },
         {
             key: "Side Dish",
-            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : 2
+            y: $scope.dishesByType['Side'] ? $scope.dishesByType['Side'].dishes.length : 0
         },
         {
             key: "Main Entre",
-            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : 2
+            y: $scope.dishesByType['Main Dish'] ? $scope.dishesByType['Main Dish'].dishes.length : 0
         },
         {
             key: "Desserts",
-            y: $scope.dishesByType['Dessert'] ? $scope.dishesByType['Dessert'].dishes.length : 3
+            y: $scope.dishesByType['dessert'] ? $scope.dishesByType['dessert'].dishes.length : 0
         },
-     /* {
+        {
             key: "Not Categorized",
-            y: $scope.dishesByType['Uncategorized'] ? $scope.dishesByType['Uncategorized'].dishes.length : 0
+            y: $scope.dishesByType['uncategorized'] ? $scope.dishesByType['uncategorized'].dishes.length : 0
         },
-        */
+        
     ];
-
+} 
 })
