@@ -1,51 +1,69 @@
-<div class="col-sm-2 login">
-    <!--<form ng-submit="login()">-->
+<!--<div class="col-sm-2 login" style="height: 50px; ">
+
+</div>-->
+<div class="col-sm-2" style="height: 100%;">
+    <!--<div class="row">-->
     <div>
-        <h4 style="margin-top: 10px; margin-bottom: 0px;">{{familyName}} Resting at the User Profile page</h4>
-        <h4>Total Private Recipes: {{myDishes.length}}</h4>
-        <!--<ul>
-            <li>Change calendar</li>
-            <li>Change basic color theme</li>
-            <li>planning time in weeks</li>
-            <li>Include Deserts?</li>
-            <li>Track Nutrition</li>
-        </ul>-->
-
+        <div class="media">
+            <div class="media-left media-middle">
+                <a href="#">
+                    <img style="text-align: center;" class="media-object" src="assets/images/YeoChef.jpg" alt="...">
+                </a>
+            </div>
+            <div>
+            </div>
+            <div class="media-body">
+                <div>
+                    <div>
+                        <h4>{{famName}}</h4>
+                    </div>
+                    <label>Recipe Dashboard</label>
+                    <input style="margin-bottom: 5px;" ng-model="famName" type="text">
+                    <h4 class="media-heading">Total Private Recipes: {{myDishes.length}}</h4>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
-<div class="row" style="height=250px">
+<div class="row">
     <div class="col-sm-4 container-fluid">
-        <div style="width=400px; margin-left: 2px;">
-            <h4 style="margin-top: 10px; margin-bottom: 0px;">
+        <div class="panel">
+            <div class="panel-heading">
+                <h4 style="margin-top: 10px; margin-bottom: 0px;">
                Recipes by type:               
-            </h4>
-            <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
-            <h4>Recipes Not Categorized:</h4>
-                
-            <!--<ul style="text-align: left;">-->
-                <ul ng-repeat="myDish in noTypes track by $index">
-                <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h4>
-            </ul>
-        </div>
-    </div>
-    <div class="col-sm-4 container">
-        <div style="width=400px">
-            <h4 style="margin-top: 10px; margin-bottom: 0px;">
-                Recipes by Star ratings:               
-            </h4>
-            <nvd3 options="starOptions" data="starData"></nvd3>
-            <h4>Recipes with no Rating:</h4>
-            <ul ng-repeat="myDish in zeroStars track by $index">
-                <h4><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h4>
-                
-        </div>
-    </div>
-</div>
-<!--</div>-->
-<div>
-    <button ng-click="updateProfile()">Save</button>
-    <button ui-sref="home">Go Home</button>
-</div>
-<!--</form>-->
+            </h4></div>
+            <div class="panel-body">
+                <div style="width=400px; margin-left: 2px;">
 
-<!--</div>-->
+                    <nvd3 options="dishTypeOptions" data="dishTypeData"></nvd3>
+                </div>
+                <div style="width=400px; margin-left: 2px; margin-top: -150px;">
+                    <h4>Recipes Not Categorized:</h4>
+                    <ul ng-repeat="myDish in noTypes track by $index">
+                        <h5><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h5>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4 container-fluid">
+        <div class="panel">
+            <div class="panel-heading">
+                <h4 style="margin-top: 10px; margin-bottom: 0px;">
+                Recipes by Star ratings:               
+            </h4></div>
+            <div class="panel-body">
+                <div style="width=400px; margin-left: 2px;">
+
+                    <nvd3 options="starOptions" data="starData"></nvd3>
+                </div>
+                <div style="width=400px; margin-left: 2px; margin-top: -150px;">
+                    <h4>Recipes with no Rating:</h4>
+                    <ul ng-repeat="myDish in zeroStars track by $index">
+                        <h5><a style="margin-right: 5px" ng-href="/#/manage-dishes/dish-edit/{{myDish.$id}}">{{myDish["title"]}}</a></h5>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
