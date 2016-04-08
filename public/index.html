@@ -52,6 +52,7 @@
 
 <body>
     <!--start of member view-->
+<<<<<<< HEAD
     <div class="font">
         <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
             <div class="container">
@@ -76,6 +77,38 @@
                         </li>
                     </ul>
                 </div>
+
+    <div ng-if="member">
+        <div class="">
+            <div class="font clearfix back-color">
+                <nav class="navbar navbar-default acc-color-dark-blue font-color-red row">
+                    <div class="container">
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                <span class="icon-bar font-color-red"></span>
+                                <span class="icon-bar font-color-red"></span>
+                                <span class="icon-bar font-color-red"></span>
+                            </button>
+                            <a class="navbar-brand navbar-kitchen-manager">Kitchen Manager</a>
+                        </div>
+                        <div class="collapse navbar-collapse" id="myNavbar">
+                            <ul class="nav navbar-nav">
+                                <li><a href="/" class="font-color">Home</a></li>
+                                <li><a href="#/dish-creation" class="font-color">Create Dish</a></li>
+                                <li><a href="#/profile" class="font-color">Update Profile</a></li>
+                                <li><a href="#/manage-dishes" class="font-color">Manage Dishes</a></li>
+                                <!--<li><a href="#/public-dishes" class="font-color">Public Dishes</a></li>-->
+                                <li><a href="#/api-dishes" class="font-color">Find Dishes</a></li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li>
+                                    <a href="#/login" ng-click="logout()" ng-click="showDropDown = false" style="cursor: pointer"><span class="glyphicon glyphicon-log-out"></span> Logout</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+                <ui-view></ui-view>
             </div>
         </nav>
     </div>

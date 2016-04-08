@@ -7,7 +7,6 @@ app.controller('GroceryEditController', function($rootScope, $scope, DishService
     }
     
     $scope.updateItem = function(item){
-        debugger;
         $scope.item.totalCost = $scope.item.unitsbuying * $scope.item.price;   
         $scope.item.$save(item).then(function() {
             $state.go("grocery")

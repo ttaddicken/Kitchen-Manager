@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="row">
     <div class="row">
         <button class="btn btn-default" ng-click="storesection = !storesection">Sort By Store Section</button>
@@ -9,9 +10,25 @@
             <button ng-model="currentMoney" ng-click="makeBudget(budget)">Calculate Money Left to Spend</button>
             <p ng-model="budget">{{budget | currency}}</p>
             <p ng-if="newBudget" ng-model="currentMoney">According to your budget you have {{newBudget | currency}} left to spend</p>
+=======
+<!--mobile view-->
+<div ng-if="check">
+    <container class="container-fluid">
+        <div class="container-fluid">
+            <button class="btn btn-default" ng-click="storesection = !storesection">Sort By Store Section</button>
         </div>
-    </div>
+        <div class="container-fluid">
+            <div>
+                <h4>Add an overall shopping budget and we'll keep you on track!</h4>
+                <input type="number" ng-model="budget"></input>
+                <button ng-model="currentMoney" ng-click="makeBudget(budget)">Calculate Money Left to Spend</button>
+                <p ng-model="budget">Budget: {{budget | currency}}</p>
+                <p ng-if="newBudget" ng-model="currentMoney">According to your budget you have {{newBudget | currency}} left to spend</p>
+            </div>
+>>>>>>> 94acb0f852791763c5ec79db296543f10b4a0b0b
+        </div>
 
+<<<<<<< HEAD
     <div class="table-responsive row">
         <table class="table table-striped">
             <h2>Grocery List</h2>
@@ -31,6 +48,27 @@
                         <span ng-if="storesection" class="store-section">{{item.section}}</span> {{item.name}}
                     </td>
                     <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
+=======
+        <div class="table-responsive container-fluid">
+            <table class="table table-striped">
+                <h2>Grocery List</h2>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Item</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value">
+                        <td>
+                            <input ng-click="updateItems(item)" type="checkbox">
+                            </input>
+                        </td>
+                        <td>
+                            <span ng-if="storesection" class="store-section">{{item.section}}</span>{{item.name}}
+                        </td>
+                        <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
+>>>>>>> 94acb0f852791763c5ec79db296543f10b4a0b0b
             </tr>
         </tbody>
     </table>
@@ -52,4 +90,140 @@
             </tr>
         </tbody>
     </table>
+<<<<<<< HEAD
+=======
+</div>
+</container>
+</div>
+
+
+
+<!--Desktop View-->
+
+<div class="container-fluid">
+        <div>
+            <h4>Add an overall shopping budget and we'll keep you on track!</h4>
+            <input type="number" ng-model="budget"></input>
+            <button ng-model="currentMoney" ng-click="makeBudget(budget)">Calculate Money Left to Spend</button>
+            <p ng-model="budget">Budget: {{budget | currency}}</p>
+            <p ng-if="newBudget" ng-model="currentMoney">According to your budget you have {{newBudget | currency}} left to spend</p>
+        </div>
+    </div>
+<div class="table-responsive">
+    <table class="table table-striped">
+        <h2>Grocery List</h2>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Store Section</th>
+                <th>Item</th>
+                <th>Quantity</th>
+                <th>Unit</th>
+                <th>Unit Price</th>
+                <th>Units Buying</th>
+                <th>Total Cost</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value">
+                <td>
+                    <div ng-click="moveItems(item)">
+                        <input type="checkbox">
+                    </div>
+                </td>
+                <td>
+                    <span ng-hide="edit" class="store-section">{{item.section}}</span>
+                    <select ng-show="edit" ng-model="item.section" type="text" class="form-control">
+                        <option>Other</option>
+                        <option>Bakery & Bread</option>
+                        <option>Baking & Cooking</option>
+                        <option>Beverages</option>
+                        <option>Canned Goods</option>
+                        <option>Cereal</option>
+                        <option>Condiments</option>
+                        <option>Dairy</option>
+                        <option>Deli</option>
+                        <option>Frozen</option>
+                        <option>Health & Beauty</option>
+                        <option>Herbs & Spices</option>
+                        <option>Household</option>
+                        <option>Meat</option>
+                        <option>Outdoor</option>
+                        <option>Packaged Meals</option>
+                        <option>Pasta & Noodles</option>
+                        <option>Produce</option>
+                        <option>Seafood</option>
+                        <option>Snack Foods</option>
+                        <option>Paper Goods</option>
+                    </select>
+                 </td>
+                 <td>
+                    <input ng-show="edit" class="grocery-list-input-big" ng-model="item.name" type="text">
+                    <span ng-hide="edit">{{item.name}}</span>
+                </td>
+                <td>
+                    <input ng-show="edit" class="grocery-list-input-small" ng-model="item.qty">
+                    <span ng-hide="edit">{{item.qty}}</span>
+               </td>
+               <td>
+                    <select ng-show="edit" class="grocery-list-input-small form-control" ng-model="item.unit">
+                        <option>each</option>
+                        <option>piece</option>
+                        <option>pack</option>
+                        <option>bunch</option>
+                        <option>roll</option>
+                        <option>dozen</option>
+                        <option>lbs</option>
+                        <option>qt</option>
+                        <option>oz</option>
+                        <option>pt</option>
+                        <option>cup</option>
+                        <option>tbsp</option>
+                        <option>tsp</option>
+                    </select>
+                    <span ng-hide="edit">{{item.unit}}</span>
+               </td>
+               <td>
+                    <input ng-show="edit" class="grocery-list-input-small" ng-model="item.price" type="number" >
+                    <span ng-hide="edit">{{item.price  | currency}}</span>
+               </td>
+               <td>
+                    <input ng-show="edit" class="grocery-list-input-small" ng-model="item.unitsbuying" type="number">
+                    <span ng-hide="edit">{{item.unitsbuying}}</span>
+               </td>
+               <td>
+                    <span ng-show="edit" class="grocery-list-input-small" ng-model="item.totalCost">{{item.unitsbuying * item.price | currency}}</span>
+                    <span ng-hide="edit">{{item.totalCost | currency}}</span>
+               </td>
+               <td>
+                    <span ng-click="edit = !edit" ng-hide="edit" class="badge">Edit</span>
+               </td>
+               <td>
+                    <span ng-show="edit" ng-click="edit = !edit; acceptChanges(item); " class="badge">Accept Changes</span>
+                </td>
+                <td>
+                    <span ng-show="edit" ng-click="deleteItem($index, item)" class="badge">Remove Item</span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <hr>
+
+    <h3>Completed Items</h3>
+    <table class="table table-striped">
+        <tbody>
+            <tr ng-repeat="item in items | orderBy:'section'" ng-if="item.value">
+                    <td>
+                        <div ng-click="updateCompletedItems(item)">
+                            <input type="checkbox" ng-model="checkboxModel.value" ng-true-value="'YES'" ng-false-value="'NO'">
+                        </div>
+                    </td>
+                    <td>
+                        <span ng-if="storesection" class="store-section">{{item.section}}</span> {{item.name}}
+                    </td>
+            </tr>
+        </tbody>
+    </table>
+>>>>>>> 94acb0f852791763c5ec79db296543f10b4a0b0b
 </div>
