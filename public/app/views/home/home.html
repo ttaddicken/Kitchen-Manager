@@ -1,123 +1,132 @@
-<div class="col-sm-2">
-    <div ng-if="!check" class="text-center fixed-sidebar">
-        <div class="sidebar sidebar-left">
-            <div class="scrollable">
-                <h1 class="scrollable-header app-name">Our Favorites</h1>
-                <!--BEGIN NAVBAR SECTION-->
-                <uib-accordion close-others="oneAtATime">
-                    <uib-accordion-group heading="{{group.title}}" ng-repeat="group in groups">
+<div class="row">
+    <div class="col-sm-2">
+        <div ng-if="!check" class="text-center fixed-sidebar">
+            <div class="sidebar sidebar-left">
+                <div style="overflow-y:scroll; max-height:800px;">
+                    <h1 class="scrollable-header app-name">Our Favorites</h1>
+                    <!--BEGIN NAVBAR SECTION-->
+                    <div ng-repeat="group in groups">
+                        <h4 ng-click="group.visible = !group.visible" ng-init="group.visible = false">{{group.title}}</h4>
                         <div class="scrollable-content">
-                            <div class="list-group">
-                                <div style=" background-image: url({{dish.img}}); background-color: {{dishcard}}" class="list-group-item dish" ng-drag="true"
-                                ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
+                            <div uib-collapse="group.visible" class="list-group">
+                                <div class="list-group-item" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
                                 ng-show="group.title.indexOf(dish.type) > -1">
+                                    <div class="media">
+                                        <div class="media-left">
+                                            <img class="media-object" width="60" ng-src="{{dish.img}}" alt="">
+                                        </div>
+                                        <div class="media-body">
+                                            <div class="">
+                                                {{dish.title}}
+                                            </div>
+                                        </div>
+                                    </div>
                                     <!--ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id | filter : dish.type === {{group.title">-->
-                                    {{dish.title}}
                                 </div>
                             </div>
                         </div>
-                </uib-accordion>
-            </div>
-        </div>
-    </div>
-</div>
-
-
-
-<!--Mobile view start-->
-<div ng-if="check" class="col-sm-12">
-
-    <!--push menu start-->
-
-    <body class="cbp-spmenu-push">
-        <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" ng-value="cbp-spmenu-s1" id="cbp-spmenu-s1">
-            <h3>What would you like to do?</h3>
-            <a href="#">Add Activity</a>
-            <a href="#">Add a dish</a>
-            <a href="#">Create a Custom List</a>
-        </nav>
-
-        <div class="container">
-            <div class="main">
-                <section>
-                    <h2>Slide Menus</h2>
-                    <!-- Class "cbp-spmenu-open" gets applied to menu -->
-                    <button id="showLeft">Show/Hide Left Slide Menu</button>
-                </section>
-
-            </div>
-        </div>
-          <script>
-            var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
-				body = document.body;
-                                 
-			showLeft.onclick = function() {
-                debugger;
-				classie.toggle( this, 'active' );
-				classie.toggle( menuLeft, 'cbp-spmenu-open' );
-				// disableOther( 'showLeft' );
-			};
-			
-        </script>
-    </body>
-    <!--push menu end-->
-    <!--<div class="main">
-				<section>
-					<h2>Slide Menus</h2>
-					<!-- Class "cbp-spmenu-open" gets applied to menu -->
-    <!--<button id="showLeft">Show/Hide Left Slide Menu</button>-->
-    <!--<button id="showRight">Show/Hide Right Slide Menu</button>
-					<button id="showTop">Show/Hide Top Slide Menu</button>
-					<button id="showBottom">Show/Hide Bottom Slide Menu</button>
-				</section>
-				<section class="buttonset">
-					<h2>Push Menus</h2>-->
-    <!-- Class "cbp-spmenu-open" gets applied to menu and "cbp-spmenu-push-toleft" or "cbp-spmenu-push-toright" to the body -->
-    <!--<button id="showLeftPush">Show/Hide Left Push Menu</button>
-					<button id="showRightPush">Show/Hide Right Push Menu</button>
-				</section>
-			</div>-->
-
-    <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
-        <div class="col-sm-2 cellmobile" ng-click="tims(cbp-spmenu-s1)" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}"
-        ng-drop="true" ng-drop-success="onDragComplete($data, $event, cell)">
-            <h4>{{cell.name}}</h4>
-            <div class="list-group">
-                <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
-                ng-drag-success="moveDish($event, cell, $index)">
-                    {{dish.title}}
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div style="display: inline; margin-top: 15px;">
-        <input style="display: inline; width: 600px;" type="text" ng-model="name" class="form-control">
-        <button style="display: inline;text-align: center; margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList()">Create Grocery List</button>
-    </div>
-</div>
-<!--Mobile view end-->
 
-<!--Non Mobile view-->
-<div ng-if="!check" class="col-sm-10">
-    <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
-    <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
-        <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
-        ng-drop-success="onDragComplete($data, $event, cell)">
-            <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
-            <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
-            <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
-            <div class="list-group">
-                <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by cell.id" ng-drag-data="dish" ng-drag="true"
-                ng-drag-success="moveDish($event, cell, $index)">
-                    {{dish.title}}</br>
+    <!--Non Mobile view-->
+    <div ng-if="!check" class="col-sm-10">
+        <div class="row center-block">
+            <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
+            <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
+                <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                ng-drop-success="onDragComplete($data, $event, cell)">
+                    <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
+                    <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
+                    <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
+                    <div class="list-group">
+                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by cell.id" ng-drag-data="dish" ng-drag="true"
+                        ng-drag-success="moveDish($event, cell, $index)">
+                            {{dish.title}}</br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-5">
+                <h3>Save Week</h3>
+                <form ng-submit="createGroceryList(weekName)">
+                    <div class="form-group">
+                        <input type="text" ng-model="weekName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary btn-block" type="submit">Create Grocery List</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--Mobile view start-->
+    <div ng-if="check" class="col-sm-12">
+        <div class="cbp-spmenu-push">
+            <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" style="overflow-y: scroll" ng-value="cbp-spmenu-s1" id="cbp-spmenu-s1">
+                <h3>What would you like to do?</h3>
+                <a href="#">Add Activity</a>
+                <a href="#">Add a dish</a>
+                <div ng-repeat="group in groups">
+                    <h4 ng-click="group.visible = !group.visible" style="color: #fff;">{{group.title}}</h4>
+                    <div class="scrollable-content">
+                        <div uib-collapse="group.visible" class="list-group">
+                            <div class="list-group-item" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
+                            ng-show="group.title.indexOf(dish.type) > -1">
+                                <div class="media">
+                                    <div class="media-left">
+                                        <img class="media-object" width="60" ng-src="{{dish.img}}" alt="">
+                                    </div>
+                                    <div class="media-body">
+                                        <div class="">
+                                            {{dish.title}}
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id | filter : dish.type === {{group.title">-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+
+        <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
+            <div class="col-sm-2 cellmobile" ng-click="toggleMenu()" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}"
+            ng-drop="true" ng-drop-success="onDragComplete($data, $event, cell)">
+                <h4>{{cell.name}}</h4>
+                <div class="list-group">
+                    <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
+                    ng-drag-success="moveDish($event, cell, $index)">
+                        {{dish.title}}
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-5">
+                    <h3>Save Week</h3>
+                    <form ng-submit="createGroceryList(weekName)">
+                        <div class="form-group">
+                            <input type="text" ng-model="weekName" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <button class="btn btn-primary btn-block" type="submit">Create Grocery List</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-    <div style="display: inline; margin-top: 15px;">
-        <input style="display: inline; width: 600px;" type="text" ng-model="weekName" class="form-control">
-        <button style="display: inline;text-align: center; margin-top: 10px; margin-bottom: 10px" class="btn btn-primary" ng-click="createGroceryList(weekName)">Create Grocery List</button>
+
+    <!--Mobile view end-->
+    
+    <div>
+        <div ng-repeat="week in member.weeks" ng-click="loadWeek(week)">{{week.name}}</div>
     </div>
-</div>
-</div>
+
 </div>
