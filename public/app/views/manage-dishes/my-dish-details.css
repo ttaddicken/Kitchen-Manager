@@ -1,0 +1,43 @@
+.our-picture{
+    height: 300px;
+}
+
+.media-spacers{
+    margin:20px;
+}
+
+.ingredient-spacers{
+   margin-right: 8px;
+   margin-bottom: 8px;
+   background: #ECF0F1;
+}
+
+hr {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 96%;               
+  background-color:#ECF0F1;
+  height: 1px;
+}
+
+.panel-color{
+    background: #ECF0F1;
+}
+
+.btn-blue{
+    background:#112233;
+    color:white;
+}
+.btn-blue:hover{
+    color:#FC575E
+}
+
+.small-spacer{
+    margin-bottom: 10px;
+    padding:0px;
+}
+
+.instructions-spacer{
+    margin-bottom:3px;
+}

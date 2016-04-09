@@ -1,70 +1,94 @@
 <div class="row">
-    <span style="text-align: center; display: inline;"><span> <h2>{{dish.title}}</h2></span>
-    <div style="text-align: center; margin-bottom:10px;"><img class="img" height="120" ng-src="{{dish.img}}" alt="{{dish.title}"></div>
-    </span>
-</div>
-
-
-<div class="col-sm-12">
-    <div style="align-content: center;" class="col-sm-12">
-        <!--prep time-->
-        <div style="text-align: center" class="row">
-            Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}
-        </div>
-        <!--stars-->
-        <div style="text-align: center">
-            <uib-rating ng-model="dish.stars" rating-states="ratingStates" read-only="true" titles="['one','two','three']" aria-labelledby="default-rating"
-            ng-readonly="dish.stars"></uib-rating>
-        </div>
-        <!--dish type-->
-        <div style="text-align: center" class="row">
-            Type of Dish: {{dish.type}}
-        </div>
-    </div>
-</div>
-<!--ingredients-->
-<div>
-    <h4>Ingredients:</h4>
-    <div style="margin-right: 8px; margin-bottom: 8px" class="col-sm-3 panel container-fluid" ng-repeat="ingredient in dish.ingredients">
-
-        <div style="width: 50px" style="width: 50px" class="ingredient">
-            {{ingredient.qty}}
-        </div>
-        <div style="width: 100px" class="ingredient">
-            {{ingredient.unit}}
-        </div>
-        <div style="width: 200px" class="ingredient">
-            {{ingredient.name}}
-        </div>
-
-
-    </div>
-
-    <!-- instructions-->
-    <div class="col-sm-12">
+    <div class="col-sm-8 col-sm-offset-2 panel">
+        <!--top media part-->
         <div>
-            <h4>Instructions:</h4>
-            <div class="panel">
-                <div ng-bind-html="dish.instructions"></div>
+            <div class="media">
+                <div class="media-left media-middle">
+                    <img class="media-object our-picture" ng-src="{{dish.img}}" alt="{{dish.title}}">
+                    </a>
+                </div>
+                <div class="media-body text-center">
+                    <h2 class="media-heading media-spacers">{{dish.title}}</h2>
+                    <div class="media-spacers">
+                        <uib-rating ng-if="dish.stars" ng-model="dish.stars" rating-states="ratingStates" read-only="true" titles="['one','two','three']" aria-labelledby="default-rating"
+                        ng-readonly="dish.stars"></uib-rating>
+                    </div>
+                    <p ng-if="dish.prepTime && dish.cookTime" class="media-spacers"> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}</p>
+                </div>
+            </div>
+        </div>
+        
+        <hr>
+        
+        <!--ingredients-->
+        <div>
+            <h4 class="col-sm-12 small-spacer">Ingredients:</h4>
+            <div class="col-sm-3 container-fluid ingredient-spacers" ng-repeat="ingredient in dish.ingredients">
+                <div style="width: 50px" style="width: 50px" class="ingredient">
+                    {{ingredient.qty}}
+                </div>
+                <div style="width: 100px" class="ingredient">
+                    {{ingredient.unit}}
+                </div>
+                <div style="width: 200px" class="ingredient">
+                    {{ingredient.name}}
+                </div>
+            </div>
+        </div>
+        
+        <!--instructions-->
+        <hr>
+        
+        <div class="col-sm-12 small-spacer">
+            <div>
+                <h4>Instructions:</h4>
+                <div class="panel-color instructions-spacer">
+                    <div ng-bind-html="dish.instructions"></div>
+                </div>
             </div>
         </div>
         <!--nutritional info-->
-        <h4>Nutritional Info</h4>
-        <span style="display: inline">
-        <span class="panel nutr">Calories: {{dish.nutritionInfo[0].Calories}}</span>
-        <span class="panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
-        <span class="panel nutr">Saturated Fats: {{dish.sfat}}</span>
-        <span class="panel nutr">Cholesterol: {{dish.cholesterol}}</span>
-        <span class="panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
-        <span class="panel nutr">Protein: {{dish.protein}}</span>
-        <span class="panel nutr">Fiber: {{dish.fiber}}</span>
-        <span class="panel nutr">Sodium: {{dish.sodium}}</span>
-        <span class="panel nutr">Potassium: {{dish.potassium}}</span>
-        <span class="panel nutr">Calcium: {{dish.calcium}}</span>
-        <span class="panel nutr">Iron: {{dish.iron}}</span>
-        </span>
+        <div ng-if="dish.nutrientFacts">
+            <h4 class="col-sm-12">Nutritional Info:</h4>
+            <span style="display: inline"></span>
+            <span class="panel nutr">Calories: {{dish.nutrientFacts.ENERC_KCAL.quantity}} {{dish.nutrientFacts.ENERC_KCAL.unit}}</span>
+            <span class="panel nutr">Calcium: {{dish.nutrientFacts.CA.label}} {{dish.nutrientFacts.CA.unit}}</span>
+            <span class="panel nutr">Total Fat: {{dish.nutrientFacts.FAT.label}}  {{dish.nutrientFacts.FAT.unit}}</span>
+            <span class="panel nutr">Saturated Fats: {{dish.nutrientFacts.FASAT.label}} {{dish.nutrientFacts.FASAT.unit}} </span>
+            <span class="panel nutr">Cholesterol: {{dish.cholesterol}}</span>
+            <span class="panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
+            <span class="panel nutr">Protein: {{dish.protein}}</span>
+            <span class="panel nutr">Fiber: {{dish.fiber}}</span>
+            <span class="panel nutr">Sodium: {{dish.sodium}}</span>
+            <span class="panel nutr">Potassium: {{dish.potassium}}</span>
+            <span class="panel nutr">Calcium: {{dish.calcium}}</span>
+            <span class="panel nutr">Iron: {{dish.iron}}</span>
+            </span>
+        </div>
+        <div ng-if="dish.nutritionFacts">
+            <h4 class="col-sm-12">Nutritional Info:</h4>
+            <span style="display: inline"></span>
+            <span class="panel nutr">Calcium: {{dish.nutritionInfo[0].Calories}}</span>
+            <span class="panel nutr">Total Fat: {{dish.nutritionInfo[0].TotalFat}}</span>
+            <span class="panel nutr">Saturated Fats: {{dish.sfat}}</span>
+            <span class="panel nutr">Cholesterol: {{dish.cholesterol}}</span>
+            <span class="panel nutr">Carbohydrates: {{dish.carbohydrates}}</span>
+            <span class="panel nutr">Protein: {{dish.protein}}</span>
+            <span class="panel nutr">Fiber: {{dish.fiber}}</span>
+            <span class="panel nutr">Sodium: {{dish.sodium}}</span>
+            <span class="panel nutr">Potassium: {{dish.potassium}}</span>
+            <span class="panel nutr">Calcium: {{dish.calcium}}</span>
+            <span class="panel nutr">Iron: {{dish.iron}}</span>
+            </span>
+        </div>
+        
         <!--edit recipe button-->
-        <div style="text-align: center; margin: 5px;">
-            <a class="btn btn-default" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
+        <div class="col-sm-12">
+            <a class="btn btn-blue center-block" ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}">Edit Recipe</a>
         </div>
     </div>
+</div>
+
+
+
+    
