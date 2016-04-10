@@ -65,17 +65,17 @@
             <div ng-if="dish.nutrientFacts" class="small-spacer">
                 <h4 class="col-sm-12 small-spacer">Nutritional Info:</h4>
                 <span style="display: inline"></span>
-                <span class="panel panel-ingredients">Calories: {{dish.nutrientFacts.ENERC_KCAL.quantity | limitTo : 5}} {{dish.nutrientFacts.ENERC_KCAL.unit}}</span>
-                <span class="panel panel-ingredients">Calcium: {{dish.nutrientFacts.CA.quantity | limitTo : 5}} {{dish.nutrientFacts.CA.unit}}</span>
-                <span class="panel panel-ingredients">Total Fat: {{dish.nutrientFacts.FAT.quantity | limitTo : 5}}  {{dish.nutrientFacts.FAT.unit}}</span>
-                <span class="panel panel-ingredients">Saturated Fats: {{dish.nutrientFacts.FASAT.quantity | limitTo : 5}} {{dish.nutrientFacts.FASAT.unit}} </span>
-                <span class="panel panel-ingredients">Cholesterol: {{dish.nutrientFacts.CHOLE.quantity | limitTo : 5}} {{dish.nutrientFacts.CHOLE.unit}}</span>
-                <span class="panel panel-ingredients">Carbohydrates: {{dish.nutrientFacts.CHOCDF.quantity | limitTo : 5}} {{dish.nutrientFacts.CHOCDF.unit}}</span>
-                <span class="panel panel-ingredients">Protein: {{dish.nutrientFacts.PROCNT.quantity | limitTo : 5}} {{dish.nutrientFacts.PROCNT.unit}}</span>
-                <span class="panel panel-ingredients">Fiber: {{dish.nutrientFacts.FIBTG.quantity | limitTo : 5}} {{dish.nutrientFacts.FIBTG.unit}}</span>
-                <span class="panel panel-ingredients">Sodium: {{dish.nutrientFacts.NA.quantity | limitTo : 5}} {{dish.nutrientFacts.NA.unit}}</span>
-                <span class="panel panel-ingredients">Potassium: {{dish.nutrientFacts.K.quantity | limitTo : 5}} {{dish.nutrientFacts.K.unit}} </span>
-                <span class="panel panel-ingredients">Iron: {{dish.nutrientFacts.FE.quantity | limitTo : 5}} {{dish.nutrientFacts.FE.unit}}</span>
+                <!--<span class="panel panel-ingredients">Calories: {{dish.nutrientFacts.ENERC_KCAL.quantity | limitTo : 5}} {{dish.nutrientFacts.ENERC_KCAL.unit}}</span>-->
+                <span class="panel panel-ingredients">Calcium: {{dish.nutrientFacts[5].total | limitTo : 5}} {{dish.nutrientFacts[5].unit}}</span>
+                <span class="panel panel-ingredients">Total Fat: {{dish.nutrientFacts[0].total| limitTo : 5}}  {{dish.nutrientFacts[0].unit}}</span>
+                <!--<span class="panel panel-ingredients">Saturated Fats: {{dish.nutrientFacts.FASAT.quantity | limitTo : 5}} {{dish.nutrientFacts.FASAT.unit}} </span>-->
+                <span class="panel panel-ingredients">Cholesterol: {{dish.nutrientFacts[3].total | limitTo : 5}} {{dish.nutrientFacts[3].unit}}</span>
+                <span class="panel panel-ingredients">Carbohydrates: {{dish.nutrientFacts[1].total | limitTo : 5}} {{dish.nutrientFacts[1].unit}}</span>
+                <span class="panel panel-ingredients">Protein: {{dish.nutrientFacts[2].total | limitTo : 5}} {{dish.nutrientFacts.PROCNT.unit}}</span>
+                <!--<span class="panel panel-ingredients">Fiber: {{dish.nutrientFacts.FIBTG.quantity | limitTo : 5}} {{dish.nutrientFacts[2].unit}}</span>-->
+                <span class="panel panel-ingredients">Sodium: {{dish.nutrientFacts[4].total | limitTo : 5}} {{dish.nutrientFacts[4].unit}}</span>
+                <span class="panel panel-ingredients">Potassium: {{dish.nutrientFacts[7].total | limitTo : 5}} {{dish.nutrientFacts[7].unit}} </span>
+                <span class="panel panel-ingredients">Iron: {{dish.nutrientFacts[8].total | limitTo : 5}} {{dish.nutrientFacts[8].unit}}</span>
                 </span>
             </div>
             <div ng-if="dish.nutritionFacts">
@@ -170,17 +170,17 @@
             <div ng-if="dish.nutrientFacts" class="small-spacer">
                 <h4 class="col-sm-12 small-spacer">Nutritional Info:</h4>
                 <span style="display: inline"></span>
-                <span class="panel panel-ingredients">Calories: {{dish.nutrientFacts.ENERC_KCAL.quantity | limitTo : 5}} {{dish.nutrientFacts.ENERC_KCAL.unit}}</span>
-                <span class="panel panel-ingredients">Calcium: {{dish.nutrientFacts.CA.quantity | limitTo : 5}} {{dish.nutrientFacts.CA.unit}}</span>
-                <span class="panel panel-ingredients">Total Fat: {{dish.nutrientFacts.FAT.quantity | limitTo : 5}}  {{dish.nutrientFacts.FAT.unit}}</span>
-                <span class="panel panel-ingredients">Saturated Fats: {{dish.nutrientFacts.FASAT.quantity | limitTo : 5}} {{dish.nutrientFacts.FASAT.unit}} </span>
-                <span class="panel panel-ingredients">Cholesterol: {{dish.nutrientFacts.CHOLE.quantity | limitTo : 5}} {{dish.nutrientFacts.CHOLE.unit}}</span>
-                <span class="panel panel-ingredients">Carbohydrates: {{dish.nutrientFacts.CHOCDF.quantity | limitTo : 5}} {{dish.nutrientFacts.CHOCDF.unit}}</span>
-                <span class="panel panel-ingredients">Protein: {{dish.nutrientFacts.PROCNT.quantity | limitTo : 5}} {{dish.nutrientFacts.PROCNT.unit}}</span>
-                <span class="panel panel-ingredients">Fiber: {{dish.nutrientFacts.FIBTG.quantity | limitTo : 5}} {{dish.nutrientFacts.FIBTG.unit}}</span>
-                <span class="panel panel-ingredients">Sodium: {{dish.nutrientFacts.NA.quantity | limitTo : 5}} {{dish.nutrientFacts.NA.unit}}</span>
-                <span class="panel panel-ingredients">Potassium: {{dish.nutrientFacts.K.quantity | limitTo : 5}} {{dish.nutrientFacts.K.unit}} </span>
-                <span class="panel panel-ingredients">Iron: {{dish.nutrientFacts.FE.quantity | limitTo : 5}} {{dish.nutrientFacts.FE.unit}}</span>
+                <!--<span class="panel panel-ingredients">Calories: {{dish.nutrientFacts.ENERC_KCAL.quantity | limitTo : 5}} {{dish.nutrientFacts.ENERC_KCAL.unit}}</span>-->
+                <span class="panel panel-ingredients">Calcium: {{dish.nutrientFacts[5].total | limitTo : 5}} {{dish.nutrientFacts[5].unit}}</span>
+                <span class="panel panel-ingredients">Total Fat: {{dish.nutrientFacts[0].total| limitTo : 5}}  {{dish.nutrientFacts[0].unit}}</span>
+                <!--<span class="panel panel-ingredients">Saturated Fats: {{dish.nutrientFacts.FASAT.quantity | limitTo : 5}} {{dish.nutrientFacts.FASAT.unit}} </span>-->
+                <span class="panel panel-ingredients">Cholesterol: {{dish.nutrientFacts[3].total | limitTo : 5}} {{dish.nutrientFacts[3].unit}}</span>
+                <span class="panel panel-ingredients">Carbohydrates: {{dish.nutrientFacts[1].total | limitTo : 5}} {{dish.nutrientFacts[1].unit}}</span>
+                <span class="panel panel-ingredients">Protein: {{dish.nutrientFacts[2].total | limitTo : 5}} {{dish.nutrientFacts.PROCNT.unit}}</span>
+                <!--<span class="panel panel-ingredients">Fiber: {{dish.nutrientFacts.FIBTG.quantity | limitTo : 5}} {{dish.nutrientFacts[2].unit}}</span>-->
+                <span class="panel panel-ingredients">Sodium: {{dish.nutrientFacts[4].total | limitTo : 5}} {{dish.nutrientFacts[4].unit}}</span>
+                <span class="panel panel-ingredients">Potassium: {{dish.nutrientFacts[7].total | limitTo : 5}} {{dish.nutrientFacts[7].unit}} </span>
+                <span class="panel panel-ingredients">Iron: {{dish.nutrientFacts[8].total | limitTo : 5}} {{dish.nutrientFacts[8].unit}}</span>
                 </span>
             </div>
             <div ng-if="dish.nutritionFacts">

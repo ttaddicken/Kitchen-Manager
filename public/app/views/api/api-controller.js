@@ -19,8 +19,8 @@ app.controller('ApiController', function ($scope, $rootScope, $state, EdamamServ
 					ingredients: dish.ingredients,
 					instructions: dish.shareAs,
 					instructionUrl: dish.shareAs,
-					//nutrientFacts: dish.digest,
-					nutrientFacts: dish.totalNutrients,
+					nutrientFacts: dish.digest,
+					// nutrientFacts: dish.totalNutrients,
 									
 					//Primary Nutrients
 					/*
