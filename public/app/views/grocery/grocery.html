@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-<div class="row">
-    <div class="row">
-        <button class="btn btn-default" ng-click="storesection = !storesection">Sort By Store Section</button>
-    </div>
-    <div class="row">
-        <div>
-            <h4>Add an overall shopping budget and we'll keep you on track!</h4>
-            <input type="number" ng-model="budget"></input>
-            <button ng-model="currentMoney" ng-click="makeBudget(budget)">Calculate Money Left to Spend</button>
-            <p ng-model="budget">{{budget | currency}}</p>
-            <p ng-if="newBudget" ng-model="currentMoney">According to your budget you have {{newBudget | currency}} left to spend</p>
-=======
 <!--mobile view-->
 <div ng-if="check">
     <container class="container-fluid">
@@ -25,30 +12,8 @@
                 <p ng-model="budget">Budget: {{budget | currency}}</p>
                 <p ng-if="newBudget" ng-model="currentMoney">According to your budget you have {{newBudget | currency}} left to spend</p>
             </div>
->>>>>>> 94acb0f852791763c5ec79db296543f10b4a0b0b
         </div>
 
-<<<<<<< HEAD
-    <div class="table-responsive row">
-        <table class="table table-striped">
-            <h2>Grocery List</h2>
-            <thead>
-                <tr>
-                    <th></th>
-                    <th>Item</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value">
-                    <td tabindex="-1">
-                        <input ng-click="updateItems(item)" type="checkbox">
-                        </input>
-                    </td>
-                    <td>
-                        <span ng-if="storesection" class="store-section">{{item.section}}</span> {{item.name}}
-                    </td>
-                    <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
-=======
         <div class="table-responsive container-fluid">
             <table class="table table-striped">
                 <h2>Grocery List</h2>
@@ -68,7 +33,6 @@
                             <span ng-if="storesection" class="store-section">{{item.section}}</span>{{item.name}}
                         </td>
                         <td><a ng-href="/#/grocery/{{item.$id}}">!!</td>
->>>>>>> 94acb0f852791763c5ec79db296543f10b4a0b0b
             </tr>
         </tbody>
     </table>
@@ -90,8 +54,6 @@
             </tr>
         </tbody>
     </table>
-<<<<<<< HEAD
-=======
 </div>
 </container>
 </div>
@@ -225,5 +187,4 @@
             </tr>
         </tbody>
     </table>
->>>>>>> 94acb0f852791763c5ec79db296543f10b4a0b0b
 </div>

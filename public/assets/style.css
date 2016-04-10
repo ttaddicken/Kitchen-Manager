@@ -10,6 +10,24 @@
     background-attachment: fixed;
     background-size: 100%;
 }*/
+
+h1,h2,h3,h4{
+    font-family: museo-slab, Georgia, "Times New Roman", Times, serif;
+}
+
+h1{
+    font-size:35px;
+}
+h2{
+    font-size:30px;
+}
+h3{
+    font-size:28px;
+}
+
+h4{
+    font-size:26px
+}
 .acc-color{
     /*background-color: #83e972;*/
     background-color: #CF000F

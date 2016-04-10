@@ -38,6 +38,16 @@ hr {
     padding:0px;
 }
 
-.instructions-spacer{
-    margin-bottom:3px;
+
+.panel-ingredients{
+    background: #ECF0F1;
+    margin-right:4px;
+}
+
+.mobile-picture{
+    height:300px
+}
+
+.instructions-mobile{
+    font-size:2em;
 }
