@@ -1,6 +1,6 @@
 <div class="well">
 	<form class="form" ng-submit="findDishes()">
-	<h1>Search and connect to online recipes</h1> <input ng-model="query" type="text"> <button type="submit">Find Recipes</button>
+	<h1>Search and connect to online recipes</h1> <input ng-model="query" type="text"> <button class="btn btn-blue" type="submit">Find Recipes</button>
 	</form>
 </div>
 	<div class="container">
@@ -16,8 +16,8 @@
 								<h3>{{dish.title}}</h3>
 							</span>
 							<a ng-href="{{dish.instructions}}" target="{{'_blank'}}">
-							<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-primary">Go to recipe URL</button></a>
-							<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-success" ng-click="saveRecipe(dish)">Add to my Recipes</button> 
+							<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-green">Go to recipe URL</button></a>
+							<button style="display: inline;text-align: center; margin-top: 3px; margin-bottom: 3px margin-right:3px;" class="btn btn-sm btn-light-blue" ng-click="saveRecipe(dish)">Add to my Recipes</button> 
 						</div>
 					</div>
 				</div> 
