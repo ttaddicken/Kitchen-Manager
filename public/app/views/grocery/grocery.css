@@ -31,9 +31,22 @@ h4{
 }
 
 .btn-custom{
-    padding: 6px;
+    padding: 3px;
+    margin-right:7px;
 }
 
-.input{
-    width
+.salmon{
+    color:#FC575E;
+}
+
+.dark-blue{
+    color:#112233;
+}
+
+.light-blue{
+    color:#44BBFF;
+}
+
+.green{
+    color:#66CC99;
 }

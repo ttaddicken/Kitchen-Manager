@@ -58,6 +58,22 @@ h6{
     color:#FC575E;
 }
 
+.salmon{
+    color:#FC575E;
+}
+
+.dark-blue{
+    color:#112233;
+}
+
+.light-blue{
+    color:#44BBFF;
+}
+
+.green{
+    color:#66CC99;
+}
+
 /*comment out for now*/
 
 body{
@@ -121,6 +137,11 @@ p {
     color:white;
 }
 
+.btn-light-blue{
+    background: #44BBFF;
+    color:white;
+}
+
 .btn-blue:hover{
     color:#FC575E
 }
@@ -130,6 +151,10 @@ p {
 }
 
 .btn-green:hover{
+    color:#112233
+}
+
+.btn-light-blue:hover{
     color:#112233
 }
 
