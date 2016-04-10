@@ -8,7 +8,7 @@
                     <div ng-repeat="group in groups">
                         <h4 ng-click="group.visible = !group.visible" ng-init="group.visible = false">{{group.title}}</h4>
                         <div class="scrollable-content">
-                            <div uib-collapse="group.visible" class="list-group">
+                            <div uib-collapse="!group.visible" class="list-group">
                                 <div class="list-group-item" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
                                 ng-show="group.title.indexOf(dish.type) > -1">
                                     <div class="media">
