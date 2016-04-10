@@ -4,18 +4,25 @@
         <div class="col-xs-8 col-xs-offset-2 panel">
             <!--top media part-->
             <div>
+                <!--image-->
                 <div class="media">
                     <div class="media-left media-middle">
                         <img class="media-object our-picture" ng-src="{{dish.img}}" alt="{{dish.title}}"></img>
-
                     </div>
+                    <!--title-->
                     <div class="media-body text-center">
                         <h1 class="media-heading media-spacers">{{dish.title}}</h1>
+                        <!--stars-->
                         <div class="media-spacers">
                             <uib-rating ng-if="dish.stars" ng-model="dish.stars" rating-states="ratingStates" read-only="true" titles="['one','two','three']"
                             aria-labelledby="default-rating" ng-readonly="dish.stars"></uib-rating>
                         </div>
-                        <p ng-if="dish.prepTime && dish.cookTime" class="media-spacers"> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}</p>
+                        <!--dish type-->
+                        <div class="media-spacers">
+                            <p ng-if="dish.type">{{dish.type}}</p>
+                        </div>
+                        <!--fridge to fork-->
+                        <p ng-if="dish.prepTime && dish.cookTime" class="media-spacers"> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Fridge to Fork: {{dish.prepTime + dish.cookTime}} minutes</p>
                     </div>
                 </div>
             </div>
@@ -27,7 +34,7 @@
                 <div>
                     <h4 class="col-sm-12 small-spacer">Ingredients:</h4>
                     <div class="col-sm-3 ingredient-spacers" ng-repeat="ingredient in dish.ingredients">
-                        <div ng-if="!ingredient.qty" style="width: 50px" class="ingredient">
+                        <div ng-if="!ingredient.qty && !ingredient.unit" style="width: 50px" class="ingredient">
                             {{ingredient}}
                         </div>
                         <div ng-if="ingredient.qty" style="width: 50px" class="ingredient">
@@ -94,6 +101,7 @@
         </div>
     </div>
 </div>
+
 <!--mobile view-->
 <div ng-if="check">
 
@@ -101,16 +109,24 @@
         <div class="col-xs-12 panel">
             <!--top media part-->
             <div>
+                <!--img-->
                 <div class="media">
                     <div class="media-middle">
                         <img class="media-object mobile-picture" ng-src="{{dish.img}}" alt="{{dish.title}}"></img>
                     </div>
+                    <!--title-->
                     <div class="row align-center">
                         <h1>{{dish.title}}</h1>
+                        <!--stars-->
                         <div class="row align-center">
                             <uib-rating ng-if="dish.stars" ng-model="dish.stars" rating-states="ratingStates" read-only="true" titles="['one','two','three']"
                             aria-labelledby="default-rating" ng-readonly="dish.stars"></uib-rating>
                         </div>
+                        <!--dish type-->
+                        <div class="media-spacers">
+                            <p ng-if="dish.type">{{dish.type}}</p>
+                        </div>
+                        <!--fridge to fork-->
                         <p ng-if="dish.prepTime && dish.cookTime" class="row align-center"> Prep Time: {{dish.prepTime}} + Cook Time: {{dish.cookTime}} = Total Time: {{dish.prepTime + dish.cookTime}}</p>
                     </div>
                 </div>
@@ -123,7 +139,7 @@
                 <div>
                     <h4 class="col-sm-12 small-spacer">Ingredients:</h4>
                     <div class="col-sm-3 ingredient-spacers" ng-repeat="ingredient in dish.ingredients">
-                        <div ng-if="!ingredient.qty" style="width: 50px" class="ingredient">
+                        <div ng-if="!ingredient.qty && !ingredient.unit" style="width: 50px" class="ingredient">
                             {{ingredient}}
                         </div>
                         <div ng-if="ingredient.qty" style="width: 50px" class="ingredient">

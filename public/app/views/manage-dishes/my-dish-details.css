@@ -29,8 +29,18 @@ hr {
     background:#112233;
     color:white;
 }
+
+.btn-salmon{
+    background:#FC575E;
+    color:white;
+}
+
 .btn-blue:hover{
     color:#FC575E
+}
+
+.btn-salmon:hover{
+    color:#112233
 }
 
 .small-spacer{
@@ -50,4 +60,18 @@ hr {
 
 .instructions-mobile{
     font-size:2em;
+}
+
+/*dish edit css*/
+
+.input-custom{
+    width:300px;
+}
+
+.input-small{
+    width:70px;
+}
+
+.nutrition-edit{
+    width:70px
 }
