@@ -25,23 +25,7 @@ hr {
     background: #ECF0F1;
 }
 
-.btn-blue{
-    background:#112233;
-    color:white;
-}
 
-.btn-salmon{
-    background:#FC575E;
-    color:white;
-}
-
-.btn-blue:hover{
-    color:#FC575E
-}
-
-.btn-salmon:hover{
-    color:#112233
-}
 
 .small-spacer{
     margin-bottom: 10px;

@@ -1,141 +1,157 @@
-<div class="col-sm-7 recipeInput">
-    <form class="form" ng-submit="createDish(newDish)">
-        <div class="form-group">
-            <label for="title">Title:</label>
-            <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title" />
-        </div>
-        <div class="form-group">
-            <label for="imgUrl">Dish Image:</label>
-            <input class="form-control" type="url" ng-model="newDish.img" defalt="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTYWEBUqQDt5eOa_ebtIohIECuvJLor9buTHkQnl6hH0dZIgv4vVw"/>
-        </div>
-
-        <div class="form-group">
-            <label class="ingredient">Prep Time (minutes):
-            <input class="ingredient" type="number" ng-model="newDish.prepTime" style="width: 70px">
-
-            <label class="ingredient">Cook Time (minutes):
-            <input class="ingredient" type="number" ng-model="newDish.cookTime" style="width: 70px">
-        </div>
-
-        
-        <!-- Ingredianet strat-->
-         <div>
-            <label>Ingredients: (this section assists in creating the grocery list)
-         </div>
-        
-        <div class="form-group ingredient">
-            <label class ="ingredient">Quantity
-            <input class ="ingredient" style = "width: 70px" class="form-control"  ng-model="newIngredient.qty" placeholder="Qty" />
-            <label class = "ingredient">Unit of Measure
-                <!--drop down for unit of measurement-->
-            <select style = "width: 150px" ng-model="newIngredient.unit" class="form-control ingredient">
-                <option>each</option>
-                <option>pinch</option>
-                <option>piece</option>
-                <option>pack</option>
-                <option>bunch</option>
-                <option>roll</option>
-                <option>dozen</option>
-                <option>lbs</option>
-                <option>pounds</option>
-                <option>qt</option>
-                <option>quart</option>
-                <option>oz</option>
-                <option>ounce</option>
-                <option>pt</option>
-                <option>pint</option>
-                <option>cup</option>
-                <option>tbsp</option>
-                <option>tablespoon</option>
-                <option>tsp</option>
-                <option>teaspoon</option>
-                
-            </select>
-            
-             <label class = "ingredient">Store Section   
-             <select style = "width: 150px" ng-model="newIngredient.section" class="form-control ingredient">
-                <option>Other</option>
-                <option>Bakery & Bread</option>
-                <option>Baking & Cooking</option>
-                <option>Beverages</option>
-                <option>Canned Goods</option>
-                <option>Cereal</option>
-                <option>Condiments</option>
-                <option>Dairy</option>
-                <option>Deli</option>
-                <option>Frozen</option>
-                <option>Health & Beauty</option>
-                <option>Herbs & Spices</option>
-                <option>Household</option>
-                <option>Meat</option>
-                <option>Outdoor</option>
-                <option>Packaged Meals</option>
-                <option>Pasta & Noodles</option>
-                <option>Produce</option>
-                <option>Seafood</option>
-                <option>Snack Foods</option>
-                <option>Paper Goods</option>
-            </select>
-            
-            <input class="form-control ingredient" type="text" ng-model="newIngredient.name" placeholder="ingredients" />
-             <button class="btn btn-default" type="button" ng-click="addIngredient(newIngredient)">add ingredient</button>
-
-        </div>
-        <!--ingredient end-->
-        <div class="form-group">
-            <label>Type of Dish
-            <select ng-model="newDish.type" class="form-control">
-                <option>Breakfast</option>
-                <option>Brunch</option>
-                <option>Lunch</option>
-                <option>Appetizer</option>
-                <option>Salad</option>
-                <option>Side</option>
-                <option>Main Dish</option>
-                <option>Dessert</option>
-                
-            </select>
-        </div>
-
-        <div class="form-group">
-            <label for="instructons">Instructions:</label>
-           
-            <div ng-model="newDish.instructions" summernote></div>
-        </div>
-
-        <div>
-            <h4>Recipe Rating</h4>
-            <uib-rating ng-model="newDish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
-            on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
-            <div>
-                
-                <button type="button" ng-click="clearRecipe()" class="btn btn-danger">Clear Recipe</button>
-                <button type="submit" class="btn btn-success">Create Dish</button>                
+<div>
+    <div class="col-sm-7 panel-body">
+        <form class="form" ng-submit="createDish(newDish)">
+            <!--dish name-->
+            <div class="form-group">
+                <h6 for="title">Title:</h6>
+                <input class="form-control" type="text" ng-model="newDish.title" placeholder="Recipe Title"></input>
             </div>
-        </div>
-    </form>
+            <div class="form-group">
+                <!--dish image-->
+                <h6 for="imgUrl">Dish Image:</h6>
+                <input class="form-control" type="url" ng-model="newDish.img" defalt="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTYWEBUqQDt5eOa_ebtIohIECuvJLor9buTHkQnl6hH0dZIgv4vVw"></input>
+            </div>
+            <!--fridge to fork-->
+            <div class="form-group">
+                <h6 class="ingredient">Prep Time (minutes):</h6>
+                <input class="ingredient" type="number" ng-model="newDish.prepTime" style="width: 70px"></input>
+                <h6 class="ingredient">Cook Time (minutes):</h6>
+                <input class="ingredient" type="number" ng-model="newDish.cookTime" style="width: 70px"></input>
+            </div>
+            
+            <hr> 
+            <!-- Ingredients-->
+            <div class="form-group">
+                <div>
+                    <h4>Ingredients: (this section assists in creating the grocery list) </h4>
+                </div>
+                <div class="col-sm-12">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <h6>Quantity</h6>
+                            <input class="small-bottom-margin" style="width: 70px" class="form-control" ng-model="newIngredient.qty" placeholder="quantity"></input>
+                        </div>
+                        <div class="col-sm-6">
+                            <h6>Unit of Measure</h6>
+                            <select style="width: 125px" ng-model="newIngredient.unit" class="form-control  small-bottom-margin ingredient">
+                                <option>each</option>
+                                <option>pinch</option>
+                                <option>piece</option>
+                                <option>pack</option>
+                                <option>bunch</option>
+                                <option>roll</option>
+                                <option>dozen</option>
+                                <option>lbs</option>
+                                <option>pounds</option>
+                                <option>qt</option>
+                                <option>quart</option>
+                                <option>oz</option>
+                                <option>ounce</option>
+                                <option>pt</option>
+                                <option>pint</option>
+                                <option>cup</option>
+                                <option>tbsp</option>
+                                <option>tablespoon</option>
+                                <option>tsp</option>
+                                <option>teaspoon</option>
+                            </select>
+                        </div>
+                    </div>
+                    <!--ingredient name-->
+                    <div>
+                        <input class="form-control small-bottom-margin" type="text" ng-model="newIngredient.name" placeholder="ingredient name"></input>
+                    </div>
+                    <!--store section-->
+                    <div>
+                        <h6>Store Section</h6>
+                        <select style="width: 150px" ng-model="newIngredient.section" class="form-control small-bottom-margin">
+                            <option>Other</option>
+                            <option>Bakery & Bread</option>
+                            <option>Baking & Cooking</option>
+                            <option>Beverages</option>
+                            <option>Canned Goods</option>
+                            <option>Cereal</option>
+                            <option>Condiments</option>
+                            <option>Dairy</option>
+                            <option>Deli</option>
+                            <option>Frozen</option>
+                            <option>Health & Beauty</option>
+                            <option>Herbs & Spices</option>
+                            <option>Household</option>
+                            <option>Meat</option>
+                            <option>Outdoor</option>
+                            <option>Packaged Meals</option>
+                            <option>Pasta & Noodles</option>
+                            <option>Produce</option>
+                            <option>Seafood</option>
+                            <option>Snack Foods</option>
+                            <option>Paper Goods</option>
+                        </select>
+                    </div>
+                    <!--add ingredient-->
+                    <div>    
+                        <button class="btn btn-green small-bottom-margin" type="button" ng-click="addIngredient(newIngredient)">add ingredient</button>
+                    </div>
+                </div>
+            </div>    
+            
+            <hr> 
+            <!--dish type-->
+            <div class="form-group">
+                <h6>Type of Dish</h6>
+                <select ng-model="newDish.type" class="form-control">
+                    <option>Breakfast</option>
+                    <option>Brunch</option>
+                    <option>Lunch</option>
+                    <option>Appetizer</option>
+                    <option>Salad</option>
+                    <option>Side</option>
+                    <option>Main Dish</option>
+                    <option>Dessert</option>
+                </select>
+            </div>
+            <!--summernote-->
+            <div class="form-group">
+                <h6 >Instructions:</h6>
+                <div ng-model="newDish.instructions" summernote></div>
+            </div>
+            <!--recipe rating-->
+                <div>
+                    <h6>Recipe Rating</h6>
+                    <uib-rating ng-model="newDish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
+                    on-leave="overStar = null" titles="['one','two','three']" aria-labelledby="default-rating"></uib-rating>
+                </div>
+                <div>
+                    <button type="button" ng-click="clearRecipe()" class="btn btn-salmon">Clear Recipe</button>
+                    <button type="submit" class="btn btn-blue">Create Dish</button>
+                </div>
+        </form>
+    </div>
 </div>
+
     <!--Begin view of build-->
 
-<div class="col-sm-4 recipeCard">
-    <img class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
-    <div>
-        <h2>{{newDish.title}}</h2> Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Total Time: {{newDish.prepTime + newDish.cookTime}}  Minutes
-    </div>
-    <p><b>Dish type: {{newDish.type}}</b></p>
-    <div <div class="panel">
-        <p><b>Ingredients:</b></p>
+<div ng-if="newDish.title || newDish.img || newDish.prepTime || newDish.cookTime || newDish.ingredients">
+    <div class="col-sm-4 panel-body">
+        <img ng-if="newDish.img" class="img" height="120" ng-src="{{newDish.img}}" alt="picture goes here">
         <div>
-            <ul>
-                <li ng-repeat="i in newDish.ingredients">
-                    {{i.qty}}
-                    {{i.unit}}
-                    {{i.name}}
-                    </li>
-            </ul>
+            <h2>{{newDish.title}}</h2>
+
+            <span ng-if="newDish.prepTime && newDish.cookTime">Prep Time: {{newDish.prepTime}} + Cook Time: {{newDish.cookTime}} = Fridge to Fork: {{newDish.prepTime + newDish.cookTime}}  Minutes</span>
         </div>
+        <h6 ng-if="newDish.type">Dish type: {{newDish.type}}</h6>
+        <div <div class="panel">
+            <h6 ng-if="newDish.ingredients">Ingredients:</h6>
+            <div>
+                <ul>
+                    <li ng-repeat="i in newDish.ingredients track by $index">
+                        {{i.qty}} {{i.unit}} {{i.name}}
+                        <span class="fa fa-trash fa-pull-right" ng-click="removeItem($index)"></span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <h6 ng-if="newDish.instructions">Instructions: {{newDish.instructions}}</h6>
+        <h6 ng-if="newDish.instructions">Nutritional Information: {{newDish.nutrientFacts}}</h6>
     </div>
-    <p><b>Instructions:</b>{{newDish.instructions}}</p>
-    <p>Nutritional Information: {{newDish.nutrientFacts}}</p>
 </div>
-<!--end view of build-->
