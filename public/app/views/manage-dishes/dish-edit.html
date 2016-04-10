@@ -7,7 +7,7 @@
                 <div class="media">
                     <!--img-->
                     <div class="media-left media-middle">
-                        <img class="media-object our-picture" ng-src="{{dish.img}}" alt="{{dish.title}"> 
+                        <img class="media-object our-picture" ng-src="{{dish.img}}" alt="{{dish.title}">
                         <h4>Dish Image Url:</h4>
                         <input class="input-custom" ng-model="dish.img" type="url">
                     </div>
@@ -18,7 +18,7 @@
                         </div>
                         <!--stars-->
                         <div class="media-spacers">
-                             <uib-rating ng-model="dish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
+                            <uib-rating ng-model="dish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)" on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
                         </div>
                         <!--dish type-->
                         <div class="form-group media-spacers">
@@ -92,59 +92,63 @@
             <!--nutritional info-->
             <div class="small-spacer">
                 <h4 class="col-sm-12 small-spacer">Nutritional Info:</h4>
-                <div>
-                    <label>Calories: <input class="nutrition-edit" ng-model="dish.nutritionInfo.Calories"></input></label>
-                    <label>Total Fat: <input class="nutrition-edit" ng-model="dish.nutritionInfo.TotalFat"></input></label>
-                    <label>Saturated Fats: <input class="nutrition-edit" ng-model="dish.nutritionInfo.sfat"></input></label>
-                    <label>Cholesterol: <input class="nutrition-edit" ng-model="dish.nutritionInfo.cholesterol"></input></label>
-                    <label>Carbohydrates: <input class="nutrition-edit" ng-model="dish.nutritionInfo.carbohydrates"></input></label>
-                    <label>Protein: <input class="nutrition-edit" ng-model="dish.pnutritionInfo.rotein"></input></label>
-                    <label>Fiber: <input class="nutrition-edit" ng-model="dish.nutritionInfo.fiber"></input></label>
-                    <label>Sodium: <input class="nutrition-edit" ng-model="dish.nutritionInfo.sodium"></input></label>
-                    <label>Potassium: <input class="nutrition-edit" ng-model="dish.nutritionInfo.potassium"></input></label>
-                    <label>Iron: <input class="nutrition-edit" ng-model="dish.nutritionInfo.iron"></input></label>
-                </div>
+                    <div>
+                            <label>Calories: <input class="nutrition-edit" ng-model="dish.Calories"></input></label><label style="font-weight: bold">{{dish.Calories.unit}}</label>
+                            <label>Total Fat: <input class="nutrition-edit" ng-model="dish.TotalFat.total"></input></label><label style="font-weight: bold">{{dish.TotalFat.unit}} </label>
+                            <label>{{dish.TotalFat.sub[0].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[0].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[0].unit}}</label>
+                            <label>{{dish.TotalFat.sub[1].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[1].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[1].unit}}</label>
+                            <label>{{dish.TotalFat.sub[2].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[2].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[2].unit}}</label>
+                            <label>{{dish.TotalFat.sub[3].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[3].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[3].unit}}</label>
+                            <label>Cholesterol: <input class="nutrition-edit" ng-model="dish.nutrientFacts[3].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[3].unit}}</label>                       
+                            <label>Sodium: <input class="nutrition-edit" ng-model="dish.nutrientFacts[4].total"></input></label<label style="font-weight: bold">{{dish.nutrientFacts[4].unit}}</label>                        
+                            <label>Potassium: <input class="nutrition-edit" ng-model="dish.nutrientFacts[7].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[7].unit}}</label>                        
+                            <label>Carbohydrates: <input class="nutrition-edit" ng-model="dish.nutrientFacts[1].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[1].unit}}</label>                        
+                            <label>Fiber: <input class="nutrition-edit" ng-model="dish.carbohydrates.total"></input></label><label style="font-weight: bold">{{dish.carbohydrates.unit}}</label>                        
+                            <label>Sugars: <input class="nutrition-edit" ng-model="dish.nutrientFacts[8].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[8].unit}}</label>                        
+                            <label>Protein: <input class="nutrition-edit" ng-model="dish.nutrientFacts[2].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[2].unit}}</label>
+            
+                    </div>
             </div>
-
-            <!--update and delete buttons-->
-            <div class="col-sm-12">
-                <div class="col-sm-6">
-                    <button class="btn btn-large btn-blue center-block" ng-click="updateDish(dish)">Update Dish</button>
-                </div>
-                <div class="col-sm-6">
-                    <button class="btn btn-large btn-salmon center-block" ng-click="removeDish(dish)">Delete Dish</button>
+                    
+                    <!--update and delete buttons-->
+                    <div class="col-sm-12">
+                        <span><div class="col-sm-6"></span>
+                        <button class="btn btn-large btn-blue center-block" ng-click="updateDish(dish)">Update Dish</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <span></span><button class="btn btn-large btn-salmon center-block" ng-click="removeDish(dish)">Delete Dish</button>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
 
-<!--mobile view-->
+    <!--mobile view-->
 
-<div ng-if="check">
-    <div class="row">
-        <div class="col-xs-12 panel">
-            <div class="media">
-                <!--img-->
-                <div class="media-middle">
-                    <img class="media-object mobile-picture" ng-src="{{dish.img}}" alt="{{dish.title}}"></img>
-                    <h4>Dish Image Url:</h4>
-                    <input class="input-custom" ng-model="dish.img" type="url">
-                </div>
-                <!--title-->
-                <div class="row align-center">
-                    <div>
-                        <input class="media-heading media-spacers input-custom" ng-model="dish.title"></input>
+    <div ng-if="check">
+        <div class="row">
+            <div class="col-xs-12 panel">
+                <div class="media">
+                    <!--img-->
+                    <div class="media-middle">
+                        <img class="media-object mobile-picture" ng-src="{{dish.img}}" alt="{{dish.title}}"></img>
+                        <h4>Dish Image Url:</h4>
+                        <input class="input-custom" ng-model="dish.img" type="url">
                     </div>
-                    <!--stars-->
+                    <!--title-->
                     <div class="row align-center">
-                        <uib-rating ng-model="dish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
-                        on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
-                    </div>
-                    <!--type-->
-                    <div class="row align-center">
-                        <label>Type of Dish
+                        <div>
+                            <input class="media-heading media-spacers input-custom" ng-model="dish.title"></input>
+                        </div>
+                        <!--stars-->
+                        <div class="row align-center">
+                            <uib-rating ng-model="dish.stars" rating-states="ratingStates" max="max" read-only="isReadonly" on-hover="hoveringOver(value)"
+                                on-leave="overStar = null" aria-labelledby="default-rating"></uib-rating>
+                        </div>
+                        <!--type-->
+                        <div class="row align-center">
+                            <label>Type of Dish
                             <select ng-model="dish.type" class="form-control">
                                 <option>Breakfast</option>
                                 <option>Appetizer</option>
@@ -216,48 +220,31 @@
         <div class="small-spacer">
             <h4 class="col-sm-12 small-spacer">Nutritional Info:</h4>
             <div>
-                <label>Calories:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.Calories"></input>
-                </label>
-                <label>Total Fat:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.TotalFat"></input>
-                </label>
-                <label>Saturated Fats:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.sfat"></input>
-                </label>
-                <label>Cholesterol:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.cholesterol"></input>
-                </label>
-                <label>Carbohydrates:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.carbohydrates"></input>
-                </label>
-                <label>Protein:
-                    <input class="nutrition-edit" ng-model="dish.pnutritionInfo.rotein"></input>
-                </label>
-                <label>Fiber:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.fiber"></input>
-                </label>
-                <label>Sodium:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.sodium"></input>
-                </label>
-                <label>Potassium:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.potassium"></input>
-                </label>
-                <label>Iron:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.iron"></input>
-                </label>
-            </div>
-        </div>
+                <label>Calories: <input class="nutrition-edit" ng-model="dish.Calories"></input></label><label style="font-weight: bold">{{dish.Calories.unit}}</label>
+                            <label>Total Fat: <input class="nutrition-edit" ng-model="dish.TotalFat.total"></input></label><label style="font-weight: bold">{{dish.TotalFat.unit}} </label>
+                            <label>{{dish.TotalFat.sub[0].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[0].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[0].unit}}</label>
+                            <label>{{dish.TotalFat.sub[1].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[1].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[1].unit}}</label>
+                            <label>{{dish.TotalFat.sub[2].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[2].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[2].unit}}</label>
+                            <label>{{dish.TotalFat.sub[3].label}} Fats: <input class="nutrition-edit" ng-model="dish.TotalFat.sub[3].total"></input></label><label style="font-weight: bold">{{dish.TotalFat.sub[3].unit}}</label>
+                            <label>Cholesterol: <input class="nutrition-edit" ng-model="dish.nutrientFacts[3].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[3].unit}}</label>                       
+                            <label>Sodium: <input class="nutrition-edit" ng-model="dish.nutrientFacts[4].total"></input></label<label style="font-weight: bold">{{dish.nutrientFacts[4].unit}}</label>                        
+                            <label>Potassium: <input class="nutrition-edit" ng-model="dish.nutrientFacts[7].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[7].unit}}</label>                        
+                            <label>Carbohydrates: <input class="nutrition-edit" ng-model="dish.nutrientFacts[1].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[1].unit}}</label>                        
+                            <label>Fiber: <input class="nutrition-edit" ng-model="dish.carbohydrates.total"></input></label><label style="font-weight: bold">{{dish.carbohydrates.unit}}</label>                        
+                            <label>Sugars: <input class="nutrition-edit" ng-model="dish.nutrientFacts[8].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[8].unit}}</label>                        
+                            <label>Protein: <input class="nutrition-edit" ng-model="dish.nutrientFacts[2].total"></input></label><label style="font-weight: bold">{{dish.nutrientFacts[2].unit}}</label>
+                        </div>
+                    </div>
 
-        <!--update and delete buttons-->
-        <div class="col-sm-12">
-            <div class="col-sm-6">
-                <button class="btn btn-large btn-blue center-block" ng-click="updateDish(dish)">Update Dish</button>
-            </div>
-            <div class="col-sm-6">
-                <button class="btn btn-large btn-salmon center-block" ng-click="removeDish(dish)">Delete Dish</button>
+                    <!--update and delete buttons-->
+                    <div class="col-sm-12">
+                        <div class="col-sm-6">
+                            <button class="btn btn-large btn-blue center-block" ng-click="updateDish(dish)">Update Dish</button>
+                        </div>
+                        <div class="col-sm-6">
+                            <button class="btn btn-large btn-salmon center-block" ng-click="removeDish(dish)">Delete Dish</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
