@@ -112,23 +112,35 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         console.log($scope.grid);
         return $scope.grid
     }
-   
+
     $scope.dragStart = function(event) {
         // console.log("WOrking")
         return
     }
 
     $scope.onDragComplete = function(dish, event, cell) {
+        debugger;
         if (!cell.row || !cell.col) {
             return;
         }
         if (dish) {
             // console.log('Successfully moved dish to a dropable area');
             cell.dishes = cell.dishes || [];
-            cell.dishes.push(dish);
-            // console.log('DONE MOVING DISH TO MYDISHES');
+            cell.dishes.push(dish)
 
+
+            // console.log('DONE MOVING DISH TO MYDISHES');
         }
+        cellSize(cell);
+
+    }
+    function cellSize(cell) {
+        debugger;
+        var newcell = cell;
+        // console.log("Outer height of div: " + $("cell").outerHeight())
+        var x = document.getElementById(newcell.name).offsetHeight
+
+        console.log(x)
     }
 
     $scope.moveDish = function(e, cell, index) {
@@ -136,9 +148,9 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             cell.dishes.splice(index, 1);
         }
     }
-  
+
     $rootScope.groceryList = $rootScope.groceryList || {}
-    
+
     $scope.createGroceryList = function(weekName) {
         $rootScope.member.groceryList = $rootScope.member.groceryList || [];
         var items = [];
@@ -165,16 +177,16 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         $rootScope.member.$save();
         $state.go('grocery');
     }
-    
-    $scope.loadWeek = function(week){
+
+    $scope.loadWeek = function(week) {
         debugger;
         $scope.grid = week.grid;
     }
-    
-    $rootScope.member.$loaded(function(){
-        if($rootScope.member && $rootScope.member.weeks && $rootScope.member.weeks){
+
+    $rootScope.member.$loaded(function() {
+        if ($rootScope.member && $rootScope.member.weeks && $rootScope.member.weeks) {
             $scope.grid = $rootScope.member.weeks.pizza.grid;
-        }    
+        }
     })
 
     // BEGIN NAVBAR SCRIPT
@@ -209,7 +221,17 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         isFirstDisabled: false
     };
 
-       // END NAVBER SCRIPT
+
+    // // Not currently using this array
+    // $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+
+    // $scope.addItem = function() {
+    //     var newItemNo = $scope.items.length + 1;
+    //     $scope.items.push('Item ' + newItemNo);
+    // };
+
+
+    // END NAVBER SCRIPT
     gridcall();
 
     $scope.toggleMenu = function() {
@@ -219,45 +241,45 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         } else {
             menu.addClass('cbp-spmenu-open')
         }
-        
+
     }
     // modal start
- $scope.open = function () {
+    $scope.open = function() {
         var modalInstance = $uibModal.open({
             templateUrl: 'app/views/home/loadWeek.html',
-            controller: function ($scope, $uibModalInstance) {
-$scope.setMaster = function(week) {
-    debugger;
-    $scope.selected = week;
-}
+            controller: function($scope, $uibModalInstance) {
+                $scope.setMaster = function(week) {
+                    debugger;
+                    $scope.selected = week;
+                }
 
-$scope.isSelected = function(week) {
-    return $scope.selected === week;
-}
-                $scope.ok = function () {
+                $scope.isSelected = function(week) {
+                    return $scope.selected === week;
+                }
+                $scope.ok = function() {
                     debugger;
                     $uibModalInstance.close($scope.selected);
                 };
 
-                $scope.cancel = function () {
+                $scope.cancel = function() {
                     $uibModalInstance.dismiss('cancel');
                 };
             },
             size: 'lg'
         });
 
-        modalInstance.result.then(function (selected) {
+        modalInstance.result.then(function(selected) {
             debugger;
             $scope.loadWeek(selected)
-        }, function () {
+        }, function() {
             console.log('Modal dismissed at: ' + new Date());
         });
-// $scope.setMaster = function(obj)
-//         {
-//             debugger;
-//             // How do I get clicked element's parent li?
-//             console.log(obj);
-//         }
+        // $scope.setMaster = function(obj)
+        //         {
+        //             debugger;
+        //             // How do I get clicked element's parent li?
+        //             console.log(obj);
+        //         }
     }
     // modal end
 
