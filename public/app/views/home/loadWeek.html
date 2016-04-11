@@ -1,0 +1,18 @@
+<div class="modal fade">
+<div class="modal-header">
+    <h3 style="text-align: center" class="modal-title">Select the week you would like to load and click "ok"</h3>
+</div>
+<div class="modal-body col-sm-12">
+    <span class="col-sm-2" ng-repeat="week in member.weeks"ng-class="{active : isSelected(week)}">
+       <a href="#" ng-click="setMaster(week)">{{week.name}}</a>
+       <!--$event.preventDefault(); -->
+    </span>
+    <div class="col-sm-12 row">
+        You have selected: <b>{{selected.name}}{{selected | json}}</b>
+    </div>
+</div>
+<div class="modal-footer row">
+    <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+    <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+</div>
+</div>

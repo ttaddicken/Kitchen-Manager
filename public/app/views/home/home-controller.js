@@ -1,4 +1,4 @@
-app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray, $anchorScroll, $location) {
+app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray, $anchorScroll, $location, $uibModal, $log) {
     // // 
     //  function to determine mobile device or not
     mobilecheck = function() {
@@ -167,6 +167,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     }
     
     $scope.loadWeek = function(week){
+        debugger;
         $scope.grid = week.grid;
     }
     
@@ -208,17 +209,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         isFirstDisabled: false
     };
 
-
-    // Not currently using this array
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-    $scope.addItem = function() {
-        var newItemNo = $scope.items.length + 1;
-        $scope.items.push('Item ' + newItemNo);
-    };
-
-
-    // END NAVBER SCRIPT
+       // END NAVBER SCRIPT
     gridcall();
 
     $scope.toggleMenu = function() {
@@ -230,6 +221,45 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         }
         
     }
+    // modal start
+ $scope.open = function () {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'app/views/home/loadWeek.html',
+            controller: function ($scope, $uibModalInstance) {
+$scope.setMaster = function(week) {
+    debugger;
+    $scope.selected = week;
+}
+
+$scope.isSelected = function(week) {
+    return $scope.selected === week;
+}
+                $scope.ok = function () {
+                    debugger;
+                    $uibModalInstance.close($scope.selected);
+                };
+
+                $scope.cancel = function () {
+                    $uibModalInstance.dismiss('cancel');
+                };
+            },
+            size: 'lg'
+        });
+
+        modalInstance.result.then(function (selected) {
+            debugger;
+            $scope.loadWeek(selected)
+        }, function () {
+            console.log('Modal dismissed at: ' + new Date());
+        });
+// $scope.setMaster = function(obj)
+//         {
+//             debugger;
+//             // How do I get clicked element's parent li?
+//             console.log(obj);
+//         }
+    }
+    // modal end
 
 })
 
