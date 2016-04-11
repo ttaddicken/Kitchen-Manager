@@ -66,7 +66,7 @@
             <h4>Add an overall shopping budget and we'll keep you on track!</h4>
             <input type="number" ng-model="budget"></input>
             <button class="btn btn-green" ng-model="currentMoney" ng-click="makeBudget(budget)">Calculate Money Left to Spend</button>
-            <p ng-if="budget" ng-model="budget">Budget: {{budget | currency}}</p>
+            <p ng-if="budget"ng-model="budget">Budget: {{budget | currency}}</p>
             <p ng-if="newBudget && budget" ng-model="currentMoney">According to your budget you have {{newBudget | currency}} left to spend</p>
         </div>
     </div>

@@ -51,8 +51,8 @@
                     <h4 class="col-sm-12 small-spacer">Ingredients:</h4>
                     <div class="col-sm-3" ng-repeat="ingredient in dish.ingredients">
                         <input ng-if="!ingredient.qty && !ingredient.unit" ng-model="ingredient" class="ingredient"></input>
-                        <input ng-if="ingredient.qty" ng-model="ingredient.qty" style="width: 50px" class="ingredient"></input>
-                        <select ng-if="ingredient.unit" style="width: 100px" ng-model="ingredient.unit" class="form-control ingredient">
+                        <input ng-if="!ingredient" ng-model="ingredient.qty" style="width: 50px" class="ingredient"></input>
+                        <select ng-if="!ingredient" style="width: 100px" ng-model="ingredient.unit" class="form-control ingredient">
                             <option>each</option>
                             <option>pinch</option>
                             <option>piece</option>
@@ -74,7 +74,7 @@
                             <option>tsp</option>
                             <option>teaspoon</option>
                         </select>
-                        <input ng-if="ingredient.name" ng-model="ingredient.name" style="width: 200px" class="ingredient"></input>
+                        <input ng-if="ingredient.qty && ingredient.unit && ingredient.name" ng-model="ingredient.name" style="width: 200px" class="ingredient"></input>
                     </div>
                 </div>
             </div>
