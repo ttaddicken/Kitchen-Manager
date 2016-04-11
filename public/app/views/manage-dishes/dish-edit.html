@@ -51,8 +51,8 @@
                     <h4 class="col-sm-12 small-spacer">Ingredients:</h4>
                     <div class="col-sm-3" ng-repeat="ingredient in dish.ingredients">
                         <input ng-if="!ingredient.qty && !ingredient.unit" ng-model="ingredient" class="ingredient"></input>
-                        <input ng-if="ingredient.qty" ng-model="ingredient.qty" style="width: 50px" class="ingredient"></input>
-                        <select ng-if="ingredient.unit" style="width: 100px" ng-model="ingredient.unit" class="form-control ingredient">
+                        <input ng-if="!ingredient" ng-model="ingredient.qty" style="width: 50px" class="ingredient"></input>
+                        <select ng-if="!ingredient" style="width: 100px" ng-model="ingredient.unit" class="form-control ingredient">
                             <option>each</option>
                             <option>pinch</option>
                             <option>piece</option>
@@ -74,7 +74,7 @@
                             <option>tsp</option>
                             <option>teaspoon</option>
                         </select>
-                        <input ng-if="ingredient.name" ng-model="ingredient.name" style="width: 200px" class="ingredient"></input>
+                        <input ng-if="ingredient.qty && ingredient.unit && ingredient.name" ng-model="ingredient.name" style="width: 200px" class="ingredient"></input>
                     </div>
                 </div>
             </div>
@@ -93,16 +93,52 @@
             <div class="small-spacer">
                 <h4 class="col-sm-12 small-spacer">Nutritional Info:</h4>
                 <div>
-                    <label>Calories: <input class="nutrition-edit" ng-model="dish.nutritionInfo.Calories"></input></label>
-                    <label>Total Fat: <input class="nutrition-edit" ng-model="dish.nutritionInfo.TotalFat"></input></label>
-                    <label>Saturated Fats: <input class="nutrition-edit" ng-model="dish.nutritionInfo.sfat"></input></label>
-                    <label>Cholesterol: <input class="nutrition-edit" ng-model="dish.nutritionInfo.cholesterol"></input></label>
-                    <label>Carbohydrates: <input class="nutrition-edit" ng-model="dish.nutritionInfo.carbohydrates"></input></label>
-                    <label>Protein: <input class="nutrition-edit" ng-model="dish.pnutritionInfo.rotein"></input></label>
-                    <label>Fiber: <input class="nutrition-edit" ng-model="dish.nutritionInfo.fiber"></input></label>
-                    <label>Sodium: <input class="nutrition-edit" ng-model="dish.nutritionInfo.sodium"></input></label>
-                    <label>Potassium: <input class="nutrition-edit" ng-model="dish.nutritionInfo.potassium"></input></label>
-                    <label>Iron: <input class="nutrition-edit" ng-model="dish.nutritionInfo.iron"></input></label>
+                    <div>
+                        <label ng-if="dish.nutritionInfo">Calories:
+                            <input class="nutrition-edit" ng-model="dish.nutritionInfo.Calories"></input>
+                        </label>
+                        <label>Total Fat:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.TotalFat"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[0].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[0].unit"></input>
+                        </label>
+                        <label ng-if="dish.nutritionInfo">Saturated Fats:
+                            <input class="nutrition-edit" ng-model="dish.nutritionInfo.sfat"></input>
+                        </label>
+                        <label>Cholesterol:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.cholesterol"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[3].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[3].unit"></input>
+                        </label>
+                        <label>Carbohydrates:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.carbohydrates"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[1].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[1].unit"></input>
+                        </label>
+                        <label>Protein:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.protein"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[2].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[2].unit"></input>
+                        </label>
+                        <label ng-if="dish.nutritionInfo">Fiber:
+                            <input class="nutrition-edit" ng-model="dish.nutritionInfo.fiber"></input>
+                        </label>
+                        <label>Sodium:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.sodium"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[4].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[4].unit"></input>
+                        </label>
+                        <label>Potassium:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.potassium"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[7].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[7].unit"></input>
+                        </label>
+                        <label>Iron:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.iron"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[8].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[8].unit"></input>
+                        </label>
+                    </div>
                 </div>
             </div>
 
@@ -216,36 +252,54 @@
         <div class="small-spacer">
             <h4 class="col-sm-12 small-spacer">Nutritional Info:</h4>
             <div>
-                <label>Calories:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.Calories"></input>
-                </label>
-                <label>Total Fat:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.TotalFat"></input>
-                </label>
-                <label>Saturated Fats:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.sfat"></input>
-                </label>
-                <label>Cholesterol:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.cholesterol"></input>
-                </label>
-                <label>Carbohydrates:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.carbohydrates"></input>
-                </label>
-                <label>Protein:
-                    <input class="nutrition-edit" ng-model="dish.pnutritionInfo.rotein"></input>
-                </label>
-                <label>Fiber:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.fiber"></input>
-                </label>
-                <label>Sodium:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.sodium"></input>
-                </label>
-                <label>Potassium:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.potassium"></input>
-                </label>
-                <label>Iron:
-                    <input class="nutrition-edit" ng-model="dish.nutritionInfo.iron"></input>
-                </label>
+                div>
+                    <div>
+                        <label ng-if="dish.nutritionInfo">Calories:
+                            <input class="nutrition-edit" ng-model="dish.nutritionInfo.Calories"></input>
+                        </label>
+                        <label>Total Fat:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.TotalFat"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[0].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[0].unit"></input>
+                        </label>
+                        <label ng-if="dish.nutritionInfo">Saturated Fats:
+                            <input class="nutrition-edit" ng-model="dish.nutritionInfo.sfat"></input>
+                        </label>
+                        <label>Cholesterol:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.cholesterol"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[3].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[3].unit"></input>
+                        </label>
+                        <label>Carbohydrates:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.carbohydrates"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[1].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[1].unit"></input>
+                        </label>
+                        <label>Protein:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.protein"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[2].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[2].unit"></input>
+                        </label>
+                        <label ng-if="dish.nutritionInfo">Fiber:
+                            <input class="nutrition-edit" ng-model="dish.nutritionInfo.fiber"></input>
+                        </label>
+                        <label>Sodium:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.sodium"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[4].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[4].unit"></input>
+                        </label>
+                        <label>Potassium:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.potassium"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[7].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[7].unit"></input>
+                        </label>
+                        <label>Iron:
+                            <input ng-if="dish.nutritionInfo" class="nutrition-edit" ng-model="dish.nutritionInfo.iron"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[8].total"></input>
+                            <input ng-if="dish.nutrientFacts" class="nutrition-edit" ng-model="dish.nutrientFacts[8].unit"></input>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
 

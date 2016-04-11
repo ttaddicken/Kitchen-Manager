@@ -50,6 +50,7 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     }
     
     $scope.makeBudget = function(budget){
+        debugger;
         var prices = [];
         $scope.totalExpenses = 0;
         $scope.newBudget = 0;
@@ -61,7 +62,7 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
             for (var i = 0; i < prices.length; i++){
                 $scope.totalExpenses += prices[i]
             }
-            return $scope.newBudget = $scope.budget - $scope.totalExpenses
+            return $scope.newBudget = budget - $scope.totalExpenses
     }
     
 
