@@ -209,17 +209,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         isFirstDisabled: false
     };
 
-
-    // // Not currently using this array
-    // $scope.items = ['Item 1', 'Item 2', 'Item 3'];
-
-    // $scope.addItem = function() {
-    //     var newItemNo = $scope.items.length + 1;
-    //     $scope.items.push('Item ' + newItemNo);
-    // };
-
-
-    // END NAVBER SCRIPT
+       // END NAVBER SCRIPT
     gridcall();
 
     $scope.toggleMenu = function() {
