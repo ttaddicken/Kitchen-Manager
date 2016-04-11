@@ -36,7 +36,7 @@
         <div class="row center-block">
             <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
             <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
-                <div class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                <div id="{{cell.name}}" class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
                 ng-drop-success="onDragComplete($data, $event, cell)">
                     <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
@@ -84,7 +84,7 @@
                         <h4 ng-click="group.visible = !group.visible" style="color: #fff;">{{group.title}}</h4>
                         <div class="scrollable-content">
                             <div uib-collapse="group.visible" class="list-group">
-                                <div class="list-group-item" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
+                                <div class="list-group-item" ng-drag="true" ng-dblclick="onDragComplete(cell, $index)" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
                                 ng-show="group.title.indexOf(dish.type) > -1">
                                     <div class="media">
                                         <div class="media-left">
