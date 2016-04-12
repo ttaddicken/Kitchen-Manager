@@ -7,12 +7,6 @@ app.controller('PublicDishesController', function ($firebaseArray, $scope, DishS
 });
 
 
-
-
-
-
-
-
 // The following is a Temporary paste while working with the API
 
 //  app.controller('ApiController', function($scope,  $state, EdamamService){
