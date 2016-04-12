@@ -11,6 +11,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 
     // function mobile device end
     //   grid variables start
+    $scope.newHeight = 100;
     var activities = [
         "Day",
         "Activities",
@@ -119,7 +120,6 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     }
 
     $scope.onDragComplete = function(dish, event, cell) {
-        debugger;
         if (!cell.row || !cell.col) {
             return;
         }
@@ -135,12 +135,20 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 
     }
     function cellSize(cell) {
-        debugger;
-        var newcell = cell;
-        // console.log("Outer height of div: " + $("cell").outerHeight())
-        var x = document.getElementById(newcell.name).offsetHeight
-
-        console.log(x)
+       
+        var currentRow = cell.col
+        var grid = $scope.grid[currentRow]
+        for (var i = 0; i < grid.cells.length; i++) {
+            var currentcell = grid.cells[i];
+            // console.log(grid.cells[i].name);
+            var height = document.getElementById(grid.cells[i].name).offsetHeight
+            console.log("height= " + height)
+            if (height > $scope.newHeight) {
+                $scope.newHeight = height;
+                console.log("New Height is "+$scope.newHeight)
+            }
+        }
+       
     }
 
     $scope.moveDish = function(e, cell, index) {
@@ -185,7 +193,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 
     $rootScope.member.$loaded(function() {
         if ($rootScope.member && $rootScope.member.weeks && $rootScope.member.weeks) {
-            $scope.grid = $rootScope.member.weeks.pizza.grid;
+            // $scope.grid = $rootScope.member.weeks.pizza.grid;
         }
     })
 

@@ -36,7 +36,7 @@
         <div class="row center-block">
             <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
             <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
-                <div id="{{cell.name}}" class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}" ng-drop="true"
+                <div id="{{cell.name}}" class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}; min-height: {{newHeight}}" ng-drop="true"
                 ng-drop-success="onDragComplete($data, $event, cell)">
                     <h4 ng-show="cell.hideSm" class="hidden-sm hidden-xs">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>

@@ -7,7 +7,7 @@
     border: 2px solid black;
     min-width: 150px;
     max-width: 151px;
-    min-height: 100px;
+    /*min-height: 100px;*/
     /*background-color: #f3ede4;*/
     background-color: #ECF0F1;
     box-shadow: 5px 4px rgba(128, 128, 128, 0.26);
