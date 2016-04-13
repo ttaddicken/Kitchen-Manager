@@ -1,4 +1,4 @@
-app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray, $anchorScroll, $location) {
+app.controller('HomeController', function($rootScope, $state, $scope, DishService, CONSTANTS, $firebaseArray, $anchorScroll, $location, $uibModal, $log) {
     // // 
     //  function to determine mobile device or not
     mobilecheck = function() {
@@ -7,10 +7,12 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         // check = $scope.check;
         return $scope.check = check;
     }
-    mobilecheck();
+    //mobilecheck();
+    $scope.check = true;
 
     // function mobile device end
     //   grid variables start
+    $scope.newHeight = 100;
     var activities = [
         "Day",
         "Activities",
@@ -112,7 +114,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         console.log($scope.grid);
         return $scope.grid
     }
-   
+
     $scope.dragStart = function(event) {
         // console.log("WOrking")
         return
@@ -125,10 +127,26 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         if (dish) {
             // console.log('Successfully moved dish to a dropable area');
             cell.dishes = cell.dishes || [];
-            cell.dishes.push(dish);
-            // console.log('DONE MOVING DISH TO MYDISHES');
+            cell.dishes.push(dish)
 
+
+            // console.log('DONE MOVING DISH TO MYDISHES');
         }
+        cellSize(cell); 
+    }
+    function cellSize(cell) {
+        var currentRow = cell.col
+        var grid = $scope.grid[currentRow]
+        for (var i = 0; i < grid.cells.length; i++) {
+            var currentcell = grid.cells[i];
+            var height = document.getElementById(grid.cells[i].name).offsetHeight
+            console.log("height= " + height)
+            if (height > $scope.newHeight) {
+                $scope.newHeight = height;
+                console.log("New Height is "+$scope.newHeight)
+            }
+        }
+       
     }
 
     $scope.moveDish = function(e, cell, index) {
@@ -136,9 +154,13 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             cell.dishes.splice(index, 1);
         }
     }
-  
+
+    $scope.addDish = function(){
+        $scope.toggleMenu()
+    }
+
     $rootScope.groceryList = $rootScope.groceryList || {}
-    
+
     $scope.createGroceryList = function(weekName) {
         $rootScope.member.groceryList = $rootScope.member.groceryList || [];
         var items = [];
@@ -165,15 +187,16 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         $rootScope.member.$save();
         $state.go('grocery');
     }
-    
-    $scope.loadWeek = function(week){
+
+    $scope.loadWeek = function(week) {
+        debugger;
         $scope.grid = week.grid;
     }
-    
-    $rootScope.member.$loaded(function(){
-        if($rootScope.member && $rootScope.member.weeks && $rootScope.member.weeks){
-            $scope.grid = $rootScope.member.weeks.pizza.grid;
-        }    
+
+    $rootScope.member.$loaded(function() {
+        if ($rootScope.member && $rootScope.member.weeks && $rootScope.member.weeks) {
+            // $scope.grid = $rootScope.member.weeks.pizza.grid;
+        }
     })
 
     // BEGIN NAVBAR SCRIPT
@@ -209,13 +232,13 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     };
 
 
-    // Not currently using this array
-    $scope.items = ['Item 1', 'Item 2', 'Item 3'];
+    // // Not currently using this array
+    // $scope.items = ['Item 1', 'Item 2', 'Item 3'];
 
-    $scope.addItem = function() {
-        var newItemNo = $scope.items.length + 1;
-        $scope.items.push('Item ' + newItemNo);
-    };
+    // $scope.addItem = function() {
+    //     var newItemNo = $scope.items.length + 1;
+    //     $scope.items.push('Item ' + newItemNo);
+    // };
 
 
     // END NAVBER SCRIPT
@@ -228,8 +251,47 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         } else {
             menu.addClass('cbp-spmenu-open')
         }
-        
+
     }
+    // modal start
+    $scope.open = function() {
+        var modalInstance = $uibModal.open({
+            templateUrl: 'app/views/home/loadWeek.html',
+            controller: function($scope, $uibModalInstance) {
+                $scope.setMaster = function(week) {
+                    debugger;
+                    $scope.selected = week;
+                }
+
+                $scope.isSelected = function(week) {
+                    return $scope.selected === week;
+                }
+                $scope.ok = function() {
+                    debugger;
+                    $uibModalInstance.close($scope.selected);
+                };
+
+                $scope.cancel = function() {
+                    $uibModalInstance.dismiss('cancel');
+                };
+            },
+            size: 'lg'
+        });
+
+        modalInstance.result.then(function(selected) {
+            debugger;
+            $scope.loadWeek(selected)
+        }, function() {
+            console.log('Modal dismissed at: ' + new Date());
+        });
+        // $scope.setMaster = function(obj)
+        //         {
+        //             debugger;
+        //             // How do I get clicked element's parent li?
+        //             console.log(obj);
+        //         }
+    }
+    // modal end
 
 })
 
