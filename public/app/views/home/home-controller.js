@@ -7,8 +7,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         // check = $scope.check;
         return $scope.check = check;
     }
-    //mobilecheck();
-    $scope.check = true;
+    mobilecheck();
 
     // function mobile device end
     //   grid variables start
@@ -116,6 +115,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     }
 
     $scope.dragStart = function(event) {
+        
         // console.log("WOrking")
         return
     }
@@ -130,17 +130,15 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             cell.dishes.push(dish)
             // console.log('DONE MOVING DISH TO MYDISHES');
         }
-<<<<<<< HEAD
         cellSize(cell);
-=======
-        cellSize(cell); 
->>>>>>> 97d7bab4ec22c054f1fbca0c4dc2319c3b36e29e
     }
     function cellSize(cell) {
+       
         var currentRow = cell.col
         var grid = $scope.grid[currentRow]
         for (var i = 0; i < grid.cells.length; i++) {
             var currentcell = grid.cells[i];
+            // console.log(grid.cells[i].name);
             var height = document.getElementById(grid.cells[i].name).offsetHeight
             console.log("height= " + height)
             if (height > $scope.newHeight) {
@@ -156,10 +154,6 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         if (e.data) {
             cell.dishes.splice(index, 1);
         }
-    }
-
-    $scope.addDish = function(){
-        $scope.toggleMenu()
     }
 
     $rootScope.groceryList = $rootScope.groceryList || {}
