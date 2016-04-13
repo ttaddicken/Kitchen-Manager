@@ -41,7 +41,7 @@
                         <span class="dark-blue" style="font-weight: bold;">{{dish["title"]}}</span></a></td>
                     <td><span class="salmon" style="font-weight: bold;">{{dish.type}}</span></td>
                     <td><span class="light-blue" style="font-weight: bold;">{{dish.stars}}</span></td>
-                    <td><span ng-if="dish.prepTime && dish.cookTime"class="green" style="font-weight: bold;">{{dish.prepTime + dish.cookTime}} mins</span></td>
+                    <td><span ng-if="dish.prepTime && dish.cookTime" class="green" style="font-weight: bold;">{{dish.prepTime + dish.cookTime}} mins</span></td>
                     <td><a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge">Edit or Delete Dish</a></td>
                 </tr>
         </tbody>

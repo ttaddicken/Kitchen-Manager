@@ -38,11 +38,11 @@ app.service('DishService', function($rootScope, $firebaseArray, $firebaseObject,
     };
 
     this.ratingStates = [
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' },
-        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-lemon-o fa-2x' }
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-star-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-star-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-star-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-star-o fa-2x' },
+        { stateOn: 'fa fa-star fa-2x', stateOff: 'fa fa-star-o fa-2x' }
     ];
     
       
