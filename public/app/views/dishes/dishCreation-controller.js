@@ -36,8 +36,7 @@ app.controller('DishCreationController', function($scope, $rootScope, DishServic
     $scope.ratingStates = DishService.ratingStates;
     
     $scope.removeItem = function (index) {
-        debugger;
-        $scope.newDish.ingredients.splice(index,1);
+         $scope.newDish.ingredients.splice(index,1);
     } 
     
     

@@ -49,7 +49,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 
     //   grid variables end
 
-    $scope.dishcard = "#66CC99";
+    $scope.dishcard = "#CF000F";
     $scope.myDishes = DishService.getMyDishes()
     $scope.grid = [];
     // Grid build function for PCs
@@ -187,7 +187,6 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     }
 
     $scope.loadWeek = function(week) {
-        debugger;
         $scope.grid = week.grid;
     }
 
@@ -257,12 +256,15 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             templateUrl: 'app/views/home/loadWeek.html',
             controller: function($scope, $uibModalInstance) {
                 $scope.setMaster = function(week) {
+                    // debugger;
                     $scope.selected = week;
                 }
+
                 $scope.isSelected = function(week) {
                     return $scope.selected === week;
                 }
                 $scope.ok = function() {
+                    // debugger;
                     $uibModalInstance.close($scope.selected);
                 };
 
@@ -274,6 +276,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         });
 
         modalInstance.result.then(function(selected) {
+            // debugger;
             $scope.loadWeek(selected)
         }, function() {
             console.log('Modal dismissed at: ' + new Date());
