@@ -24,7 +24,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value">
+                    <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value || !item.name">
                         <td>
                             <input ng-click="moveItems(item)" type="checkbox">
                             </input>
@@ -86,7 +86,7 @@
                 </tr>
             </thead>
             <tbody>
-                <tr ng-repeat="item in items | orderBy:'section'" ng-if="!item.value">
+                <tr ng-repeat="item in items | orderBy:'section'" ng-if="item.name && !item.value">
                     <td>
                         <div ng-click="moveItems(item)">
                             <input type="checkbox">

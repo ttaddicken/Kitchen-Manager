@@ -77,6 +77,8 @@ app.controller('ApiController', function ($scope, $rootScope, $state, EdamamServ
 			var current = dish.ingredients[i];
 
 			ingredients.forEach(function (ingredient, i) {
+                debugger;
+                ingredient.value = false;
 				for(var prop in ingredient){
 					if (ingredient.hasOwnProperty(prop)) {
 						if (prop === "text") {
@@ -98,8 +100,10 @@ app.controller('ApiController', function ($scope, $rootScope, $state, EdamamServ
 
 
 	$scope.saveRecipe = function (dish) {
+
 		fixIngrids(dish);
 		dish.creationDate = Date.now();
+        
 		
 		$scope.myDishes.$add(dish).then(function (ref) {
 			$state.go("manageDishes", { id: ref.key() })

@@ -21,6 +21,7 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     $scope.completedItems = [];
 
     $scope.moveItems = function(item) {
+        debugger;
         for(key in item){
             if(item[key] === false){
              item[key] = true
@@ -50,7 +51,6 @@ app.controller('GroceryController', function($rootScope, $scope, DishService, CO
     }
     
     $scope.makeBudget = function(budget){
-        debugger;
         var prices = [];
         $scope.totalExpenses = 0;
         $scope.newBudget = 0;
