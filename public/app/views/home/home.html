@@ -58,12 +58,12 @@
                         <input type="text" ng-model="weekName" class="form-control">
                     </div>
                     <div class="form-group">
-                        <button class="btn btn-primary btn-block" type="submit">Create Grocery List</button>
+                        <button class="btn btn-blue btn-block" type="submit">Create Grocery List</button>
                     </div>
                 </form>
                 <!--load calendar week start-->
                 <div class="form-group">
-                    <button class="btn btn-primary btn-block" ng-click="open('lg')" type="submit">Load Grocery week</button>
+                    <button class="btn btn-light-blue btn-block" ng-click="open('lg')" type="submit">Load Grocery week</button>
                 </div>
                 <!--load calendar week end-->
             </div>
@@ -104,7 +104,7 @@
             </div>
 
             <div ng-repeat="row in grid track by row.id" class="row">
-                <div class="col-sm-6 col-sm-offset-3" ng-click="toggleMenu()" ng-repeat="cell in row.cells track by cell.id" style="background-color: #0D77B6; color: #fff; text-align: center; margin-top: 10px;">
+                <div class="col-sm-6 col-sm-offset-3" ng-click="toggleMenu()" ng-repeat="cell in row.cells track by cell.id" style="background-color: #66CC99; color: #fff; text-align: center; margin-top: 10px;">
                     <h4>{{cell.name}}</h4>
                     <div class="list-group">
                         <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index">
@@ -121,12 +121,12 @@
                             <input type="text" ng-model="weekName" class="form-control">
                         </div>
                         <div class="form-group">
-                            <button class="btn btn-primary btn-block" type="submit">Create Grocery List</button>
+                            <button class="btn btn-blue btn-block" type="submit">Create Grocery List</button>
                         </div>
                     </form>
                     <form ng-submit="open('sm')">
                         <div class="form-group">
-                            <button class="btn btn-primary btn-block" type="submit">Load Grocery week</button>
+                            <button class="btn btn-light-blue btn-block" type="submit">Load Grocery week</button>
                         </div>
                     </form>
                 </div>
