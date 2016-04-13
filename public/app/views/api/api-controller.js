@@ -100,7 +100,7 @@ app.controller('ApiController', function ($scope, $rootScope, $state, EdamamServ
 	$scope.saveRecipe = function (dish) {
 		fixIngrids(dish);
 		dish.creationDate = Date.now();
-		debugger;
+		
 		$scope.myDishes.$add(dish).then(function (ref) {
 			$state.go("manageDishes", { id: ref.key() })
 		})
