@@ -2,13 +2,16 @@ app.controller('ManageDishesController', function ($rootScope, $scope, DishServi
 
 $scope.myDishes = DishService.getMyDishes()
 
+
 $scope.ratingStates = DishService.ratingStates
 
 $scope.sortType     = 'dish.title'; // set the default sort type
 $scope.sortReverse  = false;  // set the default sort order
 $scope.searchDish   = '';     // set the default search/filter term
-})
 
+$scope.totalTime = ($scope.prepTime + $scope.cookTime);
+
+})
 // //  Beginning of borrowed from firebase
 // // {
 // //   "rules": {
