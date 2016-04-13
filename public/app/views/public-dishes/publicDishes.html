@@ -31,13 +31,21 @@
                 </div>
             </div>
             <div>
-                <div style = "overflow-y:scroll; max-height 300px">
-                    <div class="col-sm-4 row" style="margin-top: 10px; margin-left: -20; " ng-repeat="ingredient in dish.ingredients track by $index">
+                <div class = "panel-body" style = "overflow-y:scroll; max-height 300px">
+                    <div class="col-sm-4 row"  ng-repeat="ingredient in dish.ingredients track by $index">
                         <!--<div class="col-sm-4" style="float: left; margin-top: 10px;" ng-repeat="ingredients in dish.ingredients">	-->
-                        <ul class="ingredients row">
-                            <li>{{ingredient}}</li>
-                            <!--<li>{{ingredients}}-->
-                            <ul>
+                         <div ng-if="!ingredient.qty && !ingredient.unit" style="width: 50px" class="ingredient">
+                            {{ingredient}}
+                        </div>
+                        <div ng-if="ingredient.qty" style="width: 50px" class="ingredient">
+                            {{ingredient.qty}}
+                        </div>
+                        <div ng-if="ingredient.unit" style="width: 100px" class="ingredient">
+                            {{ingredient.unit}}
+                        </div>
+                        <div ng-if="ingredient.name" style="width: 200px" class="ingredient">
+                            {{ingredient.name}}
+                        </div>
                     </div>
                 </div>
             </div>
