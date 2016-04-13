@@ -187,7 +187,6 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     }
 
     $scope.loadWeek = function(week) {
-        debugger;
         $scope.grid = week.grid;
     }
 
@@ -257,7 +256,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             templateUrl: 'app/views/home/loadWeek.html',
             controller: function($scope, $uibModalInstance) {
                 $scope.setMaster = function(week) {
-                    debugger;
+                    // debugger;
                     $scope.selected = week;
                 }
 
@@ -265,7 +264,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
                     return $scope.selected === week;
                 }
                 $scope.ok = function() {
-                    debugger;
+                    // debugger;
                     $uibModalInstance.close($scope.selected);
                 };
 
@@ -277,7 +276,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
         });
 
         modalInstance.result.then(function(selected) {
-            debugger;
+            // debugger;
             $scope.loadWeek(selected)
         }, function() {
             console.log('Modal dismissed at: ' + new Date());
