@@ -57,7 +57,8 @@
                 <div>
                     <h4>Instructions:</h4>
                     <div class="panel-color instructions-spacer">
-                        <href ng-bind-html="dish.instructions"></href>
+                        <a href="{{dish.instructions}}" ng-if="dish.instructions.indexOf('http') > -1" target="_blank">Instructions</a>
+                        <div ng-bind-html="dish.instructions" data-ng-href="dish.instructions" ng-if="dish.instructions.indexOf('http') === -1" ></div>
                     </div>
                 </div>
             </div>
