@@ -11,7 +11,7 @@
                             <h4 ng-click="group.visible = !group.visible" ng-init="group.visible = false">{{group.title}}</h4>
                             <div class="scrollable-content">
                                 <div uib-collapse="!group.visible" class="list-group">
-                                    <div class="list-group-item" ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
+                                    <div class="list-group-item"  ng-drag="true" ng-drag-start="dragStart(event)" ng-drag-data="dish" ng-repeat="dish in myDishes track by dish.$id"
                                     ng-show="group.title.indexOf(dish.type) > -1">
                                         <div class="media">
                                             <div class="media-left">
@@ -33,7 +33,7 @@
             </div>
     </div>
     <div ng-if="!check" class="col-sm-10">
-        <div class="row center-block">
+         <div class="row center-block">
             <h1 style="text-align: center;">{{famName}} Family Calendar</h1>
             <div ng-repeat="row in grid track by row.id" class="col-sm-12 row">
                 <div id="{{cell.name}}" class="col-sm-2 cell" ng-repeat="cell in row.cells track by cell.id" style="background-color: {{cell.header}}; min-height: {{newHeight}}" ng-drop="true"

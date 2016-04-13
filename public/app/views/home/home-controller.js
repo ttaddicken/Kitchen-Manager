@@ -127,12 +127,9 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             // console.log('Successfully moved dish to a dropable area');
             cell.dishes = cell.dishes || [];
             cell.dishes.push(dish)
-
-
             // console.log('DONE MOVING DISH TO MYDISHES');
         }
         cellSize(cell);
-
     }
     function cellSize(cell) {
        
@@ -146,6 +143,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             if (height > $scope.newHeight) {
                 $scope.newHeight = height;
                 console.log("New Height is "+$scope.newHeight)
+                return
             }
         }
        
