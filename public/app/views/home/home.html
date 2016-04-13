@@ -42,7 +42,7 @@
                     <h4 ng-show="cell.hideLg">{{cell.name}}</h4>
                     <h4 ng-show="cell.hideLgguts" class="hidden-lg">{{cell.name}}</h4>
                     <div class="list-group">
-                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by dish.id" ng-drag-data="dish" ng-drag="true"
+                        <div style="color: black;" class="list-group-item" ng-repeat="dish in cell.dishes track by $index" ng-drag-data="dish" ng-drag="true"
                         ng-drag-success="moveDish($event, cell, $index)">
                             {{dish.title}}</br>
                         </div>
