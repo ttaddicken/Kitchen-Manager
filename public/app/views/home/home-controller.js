@@ -14,7 +14,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
     $scope.newHeight = 100;
     var activities = [
         "Day",
-        "Activities",
+        // "Activities",
         "Menu",
         // "Side Dish",
         // "Salad",
