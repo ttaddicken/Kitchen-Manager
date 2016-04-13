@@ -163,8 +163,9 @@
             <div class="col-sm-12 small-spacer">
                 <div>
                     <h4>Instructions:</h4>
-                    <div class="panel-color instructions-spacer instructions-mobile">
-                        <div ng-bind-html="dish.instructions"></div>
+                    <div class="panel-color instructions-spacer">
+                        <a href="{{dish.instructions}}" ng-if="dish.instructions.indexOf('http') > -1" target="_blank">Instructions</a>
+                        <div ng-bind-html="dish.instructions" data-ng-href="dish.instructions" ng-if="dish.instructions.indexOf('http') === -1" ></div>
                     </div>
                 </div>
             </div>
