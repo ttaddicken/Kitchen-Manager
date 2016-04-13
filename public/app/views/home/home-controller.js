@@ -49,7 +49,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
 
     //   grid variables end
 
-    $scope.dishcard = "#CF000F";
+    $scope.dishcard = "#66CC99";
     $scope.myDishes = DishService.getMyDishes()
     $scope.grid = [];
     // Grid build function for PCs
