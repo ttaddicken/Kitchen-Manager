@@ -128,11 +128,13 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             // console.log('Successfully moved dish to a dropable area');
             cell.dishes = cell.dishes || [];
             cell.dishes.push(dish)
-
-
             // console.log('DONE MOVING DISH TO MYDISHES');
         }
+<<<<<<< HEAD
+        cellSize(cell);
+=======
         cellSize(cell); 
+>>>>>>> 97d7bab4ec22c054f1fbca0c4dc2319c3b36e29e
     }
     function cellSize(cell) {
         var currentRow = cell.col
@@ -144,6 +146,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             if (height > $scope.newHeight) {
                 $scope.newHeight = height;
                 console.log("New Height is "+$scope.newHeight)
+                return
             }
         }
        
