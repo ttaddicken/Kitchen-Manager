@@ -131,6 +131,7 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             // console.log('DONE MOVING DISH TO MYDISHES');
         }
         cellSize(cell);
+
     }
     function cellSize(cell) {
        

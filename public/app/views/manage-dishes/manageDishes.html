@@ -22,6 +22,7 @@
                 <td><span ng-click="sortType = 'stars'; sortReverse = !sortReverse">Rating
                         <span ng-show="sortType == 'stars' && !sortReverse" class="fa fa-caret-down"></span>
                         <span ng-show="sortType == 'stars' && sortReverse" class="fa fa-caret-up"></span>
+<<<<<<< HEAD
                     </span></td>
                 <td>
                     <span>Fridge to Fork</span>
@@ -46,5 +47,26 @@
                     <a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
+=======
+                    </a></td>
+                    <td><p style="color:silver; font-weight:1000px;">Fridge to Fork
+                    </p></td>
+                    <td><span>Edit or Delete Dish</span>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+                           
+                <tr ng-repeat="dish in myDishes | orderBy:sortType:sortReverse | filter:searchDish track by $index">
+                    <td><a style="margin-right: 5px" ng-href="/#/manage-dishes/{{dish.$id}}">
+                        <span class="dark-blue" style="font-weight: bold;">{{dish["title"]}}</span></a></td>
+                    <td><span class="salmon" style="font-weight: bold;">{{dish.type}}</span></td>
+                    <!--<td><span class="light-blue" style="font-weight: bold;">{{dish.stars}}</span></td>-->
+                    <td><uib-rating ng-if="dish.stars" style="color: #FF8F00;" ng-model="dish.stars" rating-states="ratingStates" read-only="true" titles="['one','two','three']"
+                            aria-labelledby="default-rating" ng-readonly="dish.stars"></uib-rating></td>
+                    <td><span ng-if="dish.prepTime && dish.cookTime" class="green" style="font-weight: bold;">{{dish.prepTime + dish.cookTime}} mins</span></td>
+                    <td><a ng-href="/#/manage-dishes/dish-edit/{{dish.$id}}" class="badge">Edit or Delete Dish</a></td>
+                </tr>
+>>>>>>> 77b3716b59bc5c73bf082d7dced982542e0630a0
         </tbody>
     </table>
