@@ -130,11 +130,11 @@ app.controller('HomeController', function($rootScope, $state, $scope, DishServic
             cell.dishes.push(dish)
             // console.log('DONE MOVING DISH TO MYDISHES');
         }
-<<<<<<< HEAD
+
         cellSize(cell);
-=======
+
         cellSize(cell); 
->>>>>>> 97d7bab4ec22c054f1fbca0c4dc2319c3b36e29e
+
     }
     function cellSize(cell) {
         var currentRow = cell.col
