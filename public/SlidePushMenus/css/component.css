@@ -5,12 +5,12 @@
 }
 
 .cbp-spmenu h3 {
-	color: #afdefa;
+	color: #44BBFF;
 	font-size: 1.9em;
 	padding: 20px;
 	margin: 0;
 	font-weight: 300;
-	background: #0d77b6;
+	background: #112233;
 }
 
 .cbp-spmenu a {
@@ -21,7 +21,7 @@
 }
 
 .cbp-spmenu a:hover {
-	background: #258ecd;
+	background: #FC575E;
 }
 
 .cbp-spmenu a:active {
@@ -39,7 +39,7 @@
 }
 
 .cbp-spmenu-vertical a {
-	border-bottom: 1px solid #258ecd;
+	border-bottom: 1px solid #44BBFF;
 	padding: 1em;
 }
 
